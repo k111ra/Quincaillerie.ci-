@@ -1,737 +1,547 @@
-$(function() {
-    "use strict";
+/** ==========================================================================================
 
-    /*---------------------------
-       Commons Variables
-    ------------------------------ */
-    var $window = $(window),
-        $body = $("body");
+  Project :   Fixfellow - Tools Store Ecommerce Html Template
+  Author :    Themetechmount
+  Author URI: http://www.themetechmount.com
 
-    /*----------------------------------------
-            Bootstrap dropdown               
-    -------------------------------------------*/
+========================================================================================== */
 
-    // Add slideDown animation to Bootstrap dropdown when expanding.
 
-    $('.dropdown').on('show.bs.dropdown', function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+/** ===============
+
+01. Newsletter Popup
+02. Fixed-header
+03. Menu
+04. Number rotator
+05. Tab
+06. Isotope
+07. Slick_slider
+08. EasyZoom
+09. modal1
+10. quantity
+11. slider-range
+12. menu-vertical
+13. create_account 
+14. payment_methods
+15. Back to top 
+
+ =============== */
+
+
+(function($) {
+
+   'use strict'
+
+   
+/*------------------------------------------------------------------------------*/
+/* 01. Newsletter Popup
+/*------------------------------------------------------------------------------*/
+    setTimeout(function() {
+        $('.newsletter_popup_wrap').addClass('st-show');
+    }, 2400);
+
+    jQuery(".newsletter_popup_wrap .close").on('click',function(){
+        jQuery(".newsletter_popup_wrap").removeClass('st-show');
     });
-    // Add slideUp animation to Bootstrap dropdown when collapsing.
-    $('.dropdown').on('hide.bs.dropdown', function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-    });
+    jQuery('.newsletter_popup_wrap .close').on('click',function(event){event.stopPropagation()});
 
 
-    /*---------------------------
-       Menu Fixed On Scroll Active
-    ------------------------------ */
-    $(window).scroll(function() {
-        var window_top = $(window).scrollTop() + 1;
-        if (window_top > 250) {
-            $(".sticky-nav").addClass("menu_fixed animated fadeInDown");
-        } else {
-            $(".sticky-nav").removeClass("menu_fixed animated fadeInDown");
-        }
-    });
 
-    $('[data-bg-image]').each(function() {
-        var $this = $(this),
-            $image = $this.data('bg-image');
-        $this.css('background-image', 'url(' + $image + ')');
-    });
+/*------------------------------------------------------------------------------*/
+/* 02. Fixed-header
+/*------------------------------------------------------------------------------*/
+    $(window).scroll(function(){
+        if ( matchMedia( 'only screen and (min-width: 1200px)' ).matches ) 
+        {
+            if ($(window).scrollTop() >= 50 ) {
 
-    /*---------------------------
-       Menu menu-content
-    ------------------------------ */
-
-    $(".header-menu-vertical .menu-title").on("click", function(event) {
-        $(".header-menu-vertical .menu-content").slideToggle(500);
-    });
-
-    $(".menu-content").each(function() {
-        var $ul = $(this),
-            $lis = $ul.find(".menu-item:gt(7)"),
-            isExpanded = $ul.hasClass("expanded");
-        $lis[isExpanded ? "show" : "hide"]();
-
-        if ($lis.length > 0) {
-            $ul.append(
-                $(
-                    '<li class="expand">' +
-                    (isExpanded ? '<a href="javascript:;"><span><i class="ion-android-remove"></i>Close Categories</span></a>' : '<a href="javascript:;"><span><i class="ion-android-add"></i>More Categories</span></a>') +
-                    "</li>"
-                ).on("click", function(event) {
-                    var isExpanded = $ul.hasClass("expanded");
-                    event.preventDefault();
-                    $(this).html(isExpanded ? '<a href="javascript:;"><span><i class="ion-android-add"></i>More Categories</span></a>' : '<a href="javascript:;"><span><i class="ion-android-remove"></i>Close Categories</span></a>');
-                    $ul.toggleClass("expanded");
-                    $lis.toggle(300);
-                })
-            );
-        }
-    });
-
-    /*---------------------------------
-        Off Canvas Function
-    -----------------------------------*/
-    (function() {
-        var $offCanvasToggle = $(".offcanvas-toggle"),
-            $offCanvas = $(".offcanvas"),
-            $offCanvasOverlay = $(".offcanvas-overlay"),
-            $mobileMenuToggle = $(".mobile-menu-toggle");
-        $offCanvasToggle.on("click", function(e) {
-            e.preventDefault();
-            var $this = $(this),
-                $target = $this.attr("href");
-            $body.addClass("offcanvas-open");
-            $($target).addClass("offcanvas-open");
-            $offCanvasOverlay.fadeIn();
-            if ($this.parent().hasClass("mobile-menu-toggle")) {
-                $this.addClass("close");
+                $('.stickable-header').addClass('fixed-header');
             }
-        });
-        $(".offcanvas-close, .offcanvas-overlay").on("click", function(e) {
-            e.preventDefault();
-            $body.removeClass("offcanvas-open");
-            $offCanvas.removeClass("offcanvas-open");
-            $offCanvasOverlay.fadeOut();
-            $mobileMenuToggle.find("a").removeClass("close");
-        });
-    })();
+            else {
 
-    /*----------------------------------
-        Off Canvas Menu
-    -----------------------------------*/
-    function mobileOffCanvasMenu() {
-        var $offCanvasNav = $(".offcanvas-menu, .overlay-menu"),
-            $offCanvasNavSubMenu = $offCanvasNav.find(".sub-menu");
+                $('.stickable-header').removeClass('fixed-header');
+            }
+        }
+    });
 
-        /*Add Toggle Button With Off Canvas Sub Menu*/
-        $offCanvasNavSubMenu.parent().prepend('<span class="menu-expand"></span>');
 
-        /*Category Sub Menu Toggle*/
-        $offCanvasNav.on("click", "li a, .menu-expand", function(e) {
-            var $this = $(this);
-            if ($this.attr("href") === "#" || $this.hasClass("menu-expand")) {
+    
+/*------------------------------------------------------------------------------*/
+/* 03. Menu
+/*------------------------------------------------------------------------------*/
+        var menu = {
+        initialize: function() {
+            this.Menuhover();
+        },
+
+        Menuhover : function(){
+            var getNav = $("nav.menu"),
+                getWindow = $(window).width(),
+                getHeight = $(window).height(),
+                getIn = getNav.find("ul.nav").data("in"),
+                getOut = getNav.find("ul.nav").data("out");
+            
+                                                     
+                // Enable click event
+                $("nav.menu ul.nav").each(function(){
+                    
+                    // Dropdown Fade Toggle
+                    $("a.mega-menu-link", this).on('click', function (e) {
+                        e.preventDefault();
+                        var t = $(this);
+                        t.toggleClass('active').next('ul').toggleClass('active');
+                    });   
+                    
+
+                    // Megamenu style
+                    $(".megamenu-fw", this).each(function(){
+                        $(".col-menu", this).each(function(){
+                            $(".title", this).off("click");
+                            $(".title", this).on("click", function(){
+                                $(this).closest(".col-menu").find(".content").stop().toggleClass('active');
+                                $(this).closest(".col-menu").toggleClass("active");
+                                return false;
+                                e.preventDefault();
+                                
+                            });
+
+                        });
+                    });  
+                }); 
+
+
+        },
+    };
+
+    $('.btn-show-menu-mobile').on('click', function(){
+        $(this).toggleClass('is-active');
+        $('.menu-mobile').slideToggle();
+    });
+    
+    // Initialize
+    $(document).ready(function(){
+        menu.initialize();
+
+    });
+      
+
+    
+/*------------------------------------------------------------------------------*/
+/* 04. Animation on scroll: Number rotator
+/*------------------------------------------------------------------------------*/
+    $("[data-appear-animation]").each(function() {
+    var self      = $(this);
+    var animation = self.data("appear-animation");
+    var delay     = (self.data("appear-animation-delay") ? self.data("appear-animation-delay") : 0);
+        
+        if( $(window).width() > 959 ) {
+            self.html('0');
+            self.waypoint(function(direction) {
+                if( !self.hasClass('completed') ){
+                    var from     = self.data('from');
+                    var to       = self.data('to');
+                    var interval = self.data('interval');
+                    self.numinate({
+                        format: '%counter%',
+                        from: from,
+                        to: to,
+                        runningInterval: 2000,
+                        stepUnit: interval,
+                        onComplete: function(elem) {
+                            self.addClass('completed');
+                        }
+                    });
+                }
+            }, { offset:'85%' });
+        } else {
+            if( animation == 'animateWidth' ) {
+                self.css('width', self.data("width"));
+            }
+        }
+    });
+
+
+/*------------------------------------------------------------------------------*/
+/* 05. Tab
+/*------------------------------------------------------------------------------*/ 
+    $(document).ready(function() { 
+        
+        $('.content-tab').children('.content-inner').first().addClass('active');
+        $('.ttm-tabs .tabs li').on('click', function(e) {  
+            if (!$(this).hasClass('active')) { 
+                var i = $(this).index(); 
+                $('.ttm-tabs .tabs li.active').removeClass('active'); 
+                $('.content-tab .active').hide().removeClass('active'); 
+                $(this).addClass('active'); 
+                $($('.content-tab').children('.content-inner')[i]).fadeIn(600).addClass('active');
                 e.preventDefault();
-                if ($this.siblings("ul:visible").length) {
-                    $this.parent("li").removeClass("active");
-                    $this.siblings("ul").slideUp();
-                    $this.parent("li").find("li").removeClass("active");
-                    $this.parent("li").find("ul:visible").slideUp();
-                } else {
-                    $this.parent("li").addClass("active");
-                    $this.closest("li").siblings("li").removeClass("active").find("li").removeClass("active");
-                    $this.closest("li").siblings("li").find("ul:visible").slideUp();
-                    $this.siblings("ul").slideDown();
-                }
-            }
-        });
-    }
-    mobileOffCanvasMenu();
-
-    /*------------------------------
-            Hero Slider
-    -----------------------------------*/
-
-    $('.hero-slider-wrapper').slick({
-        infinite: true,
-        slidesToShow: 1,
-        arrows: false,
-        slidesToScroll: 1,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-    });
-
-    /*------------------------------
-            Feature Slider
-    -----------------------------------*/
-
-    $('.feature-slider-wrapper').slick({
-        infinite: true,
-        slidesToShow: 3,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 479,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-
-
-    /*------------------------------
-            Hot Deal Slider
-    -----------------------------------*/
-
-    $('.hot-deal-slider-wrapper').slick({
-        infinite: true,
-        slidesToShow: 1,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-    });
-    /*------------------------------
-          Hot Deal-2 Slider
-    -----------------------------------*/
-
-    $('.hot-deal-slider-wrapper-2').slick({
-        infinite: true,
-        slidesToShow: 4,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 1200,
-                Settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 492,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-        ]
-    });
-
-
-
-    /*------------------------------
-              Best Sell Slider
-      -----------------------------------*/
-
-    $('.best-sell-area-wrapper').slick({
-        infinite: true,
-        slidesToShow: 2,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 479,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-    /*------------------------------
-              Arrivel Slider
-      -----------------------------------*/
-
-    $('.arrival-slider-wrapper').slick({
-        infinite: true,
-        slidesToShow: 5,
-        arrows: true,
-        loop: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 1200,
-                Settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 479,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-
-    /*------------------------------
-            Category Slider
-    -----------------------------------*/
-
-    $('.category-slider-wraper').slick({
-        infinite: true,
-        slidesToShow: 1,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-    });
-    /*------------------------------
-            Brand Slider
-    -----------------------------------*/
-
-    $('.brand-slider').slick({
-        infinite: true,
-        slidesToShow: 5,
-        arrows: false,
-        slidesToScroll: 1,
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 1200,
-                Settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 479,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 400,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-    /*------------------------------
-            popular Category Slider
-    -----------------------------------*/
-
-    $('.popular-category-slider-wrapper').slick({
-        infinite: true,
-        slidesToShow: 4,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 1200,
-                Settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 479,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-        ]
-    });
-    /*------------------------------
-            Footer Blog Slider
-    -----------------------------------*/
-
-    $('.footer-blog-slider-wrapper').slick({
-        infinite: true,
-        slidesToShow: 1,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-    });
-
-    /*------------------------------
-            Quickview Slider
-    -----------------------------------*/
-    $('.gallery-top').slick({
-        autoplay: false,
-        autoplaySpeed: 1000,
-        pauseOnHover: true,
-        arrows: false,
-        dots: false,
-        infinite: true,
-        fade: true,
-        asNavFor: '.gallery-thumbs',
-    });
-    $('.gallery-thumbs').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        dots: false,
-        infinite: true,
-        focusOnSelect: true,
-        loop: true,
-        asNavFor: '.gallery-top',
-    });
-
-
-
-
-    /*----------------------------  
-        All Category toggle  
-     ------------------------------*/
-
-    $(".category-toggle").on("click", function(e) {
-        $(".category-menu").slideToggle("slow");
-    });
-    $(".menu-item-has-children-1").on("click", function(e) {
-        $(".category-mega-menu-1").slideToggle("slow");
-    });
-    $(".menu-item-has-children-2").on("click", function(e) {
-        $(".category-mega-menu-2").slideToggle("slow");
-    });
-    $(".menu-item-has-children-3").on("click", function(e) {
-        $(".category-mega-menu-3").slideToggle("slow");
-    });
-    $(".menu-item-has-children-4").on("click", function(e) {
-        $(".category-mega-menu-4").slideToggle("slow");
-    });
-    $(".menu-item-has-children-5").on("click", function(e) {
-        $(".category-mega-menu-5").slideToggle("slow");
-    });
-    $(".menu-item-has-children-6").on("click", function() {
-        $(".category-mega-menu-6").slideToggle("slow");
-    });
-
-    /*-----------------------------  
-              Category more toggle  
-        -------------------------------*/
-
-    $(".category-menu li.hidden").hide();
-    $("#more-btn").on("click", function(e) {
-        e.preventDefault();
-        $(".category-menu li.hidden").toggle(500);
-        var htmlAfter = '<i class="ion-ios-minus-empty" aria-hidden="true"></i> Less Categories';
-        var htmlBefore = '<i class="ion-ios-plus-empty" aria-hidden="true"></i> More Categories';
-
-        if ($(this).html() == htmlBefore) {
-            $(this).html(htmlAfter);
-        } else {
-            $(this).html(htmlBefore);
-        }
-    });
-
-    /*---------------------
-        Countdown
-    --------------------- */
-    $("[data-countdown]").each(function() {
-        var $this = $(this),
-            finalDate = $(this).data("countdown");
-        $this.countdown(finalDate, function(event) {
-            $this.html(event.strftime('<span class="cdown day">%-D <p>Days</p></span> <span class="cdown hour">%-H <p>Hours</p></span> <span class="cdown minutes">%M <p>Mins</p></span> <span class="cdown second">%S <p>Sec</p></span>'));
+            } 
         });
     });
 
-    /*---------------------
-        Scroll Up
-    --------------------- */
-    $.scrollUp({
-        scrollText: '<i class="ion-android-arrow-up"></i>',
-        easingType: "linear",
-        scrollSpeed: 900,
-        animation: "fade",
+
+/*------------------------------------------------------------------------------*/
+/* 06. Isotope
+/*------------------------------------------------------------------------------*/
+    $(window).on('load', function() {
+
+    var $container = $('#isotopeContainer');
+
+    // filter items when filter link is clicked
+    $('#filters a').on('click', function(){
+      var selector = $(this).attr('data-filter');
+      $container.isotope({ filter: selector });
+      return false;
     });
 
-    /*----------------------------
-        Cart Plus Minus Button
-    ------------------------------ */
-    var CartPlusMinus = $(".cart-plus-minus");
-    CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
-    $(".qtybutton").on("click", function() {
-        var $button = $(this);
-        var oldValue = $button.parent().find("input").val();
-        if ($button.text() === "+") {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 1) {
-                var newVal = parseFloat(oldValue) - 1;
+    var $optionSets = $('#filters li'),
+        $optionLinks = $optionSets.find('a');
+
+        $optionLinks.on('click',function(){
+            var $this = $(this);
+            // don't proceed if already selected
+            if ( $this.hasClass('selected') ) {
+              return false;
+            }
+            var $optionSet = $this.parents('#filters');
+            $optionSet.find('.selected').removeClass('selected');
+            $this.addClass('selected');
+
+            // make option object dynamically, i.e. { filter: '.my-filter-class' }
+            var options = {},
+                key = $optionSet.attr('data-option-key'),
+                value = $this.attr('data-option-value');
+            // parse 'false' as false boolean
+            value = value === 'false' ? false : value;
+            options[ key ] = value;
+            if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+              // changes in layout modes need extra logic
+              changeLayoutMode( $this, options )
             } else {
-                newVal = 1;
+              // otherwise, apply new options
+              $container.isotope( options );
+            }
+
+            return false;
+        });
+   });
+
+
+/*------------------------------------------------------------------------------*/
+/* 07. Slick_slider
+/*------------------------------------------------------------------------------*/
+
+    $(".slick_slider").slick({
+        speed: 1500,
+        dots: false,                     
+        autoplay: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+
+        responsive: [{
+
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+        },
+        {
+        breakpoint: 820,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 500,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+       
+        }]
+    });
+
+    $(".pro_slick_slider").slick({
+        speed: 1500,
+        dots: false,    
+        arrows: false,                 
+        autoplay: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+
+        responsive: [{
+
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }]
+    });
+    
+
+    $(".testimonial_slick_slider").slick({
+        speed: 1500,
+        dots: false,                     
+        autoplay: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+
+        responsive: [{
+
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+               
+        }]
+    });
+
+    /* easyzoom */
+    $(".easyzoom-gallery-slider").slick({
+        speed: 1000,
+        arrows: false,
+        dots: false,                   
+        autoplay: false,
+        infinite: false,
+        responsive: [{
+
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }]
+       
+    });
+     
+
+/*------------------------------------------------------------------------------*/
+/* 08. EasyZoom
+/*------------------------------------------------------------------------------*/
+    var $easyzoom = $('.easyzoom').easyZoom();
+
+    // Setup thumbnails example
+    var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+    $('.thumbnails').on('click', 'a', function(e) {
+        var $this = $(this);
+
+        e.preventDefault();
+
+        // Use EasyZoom's `swap` method
+        api1.swap($this.data('standard'), $this.attr('href'));
+    });
+
+
+    var $easyzoom2 = $('.easyzoom-model').easyZoom();
+
+    // Setup thumbnails example
+    var api2 = $easyzoom2.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+    $('.thumbnails').on('click', 'a', function(e) {
+        var $this = $(this);
+
+        e.preventDefault();
+
+        // Use EasyZoom's `swap` method
+        api2.swap($this.data('standard'), $this.attr('href'));
+    });
+
+    // Setup toggles example
+    var api3 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
+
+    $('.toggle').on('click', function() {
+        var $this = $(this);
+
+        if ($this.data("active") === true) {
+            $this.text("Switch on").data("active", false);
+            api3.teardown();
+        } else {
+            $this.text("Switch off").data("active", true);
+            api3._init();
+        }
+    });
+
+
+/*------------------------------------------------------------------------------*/
+/* 09. modal1
+/*------------------------------------------------------------------------------*/
+    $('.js-show-modal1').on('click',function(e){
+        e.preventDefault();
+        $('.js-modal1').addClass('show-modal1');
+    });
+
+    $('.js-hide-modal1').on('click',function(){
+        $('.js-modal1').removeClass('show-modal1');
+    });
+        
+
+/*------------------------------------------------------------------------------*/
+/* 10. quantity
+/*------------------------------------------------------------------------------*/
+    $('.quantity-button').on('click', function(){
+        var numberValue= $(this).parent().find('.qty').val();
+
+        if($(this).text()=="+") {
+            var newVal=parseFloat(numberValue) + 1;
+        }else{
+            if(numberValue > 0){
+                var newVal = parseFloat(numberValue) -1;
+            }else{
+                newVal = 0;
             }
         }
-        $button.parent().find("input").val(newVal);
+
+        $(this).parent().find('.qty').val(newVal);
     });
 
-    /*--------------------------
-            Product Zoom
-    ---------------------------- */
 
-    var zoomOptions = {
-        zoomType: "inner",
-        cursor: "crosshair",
-        easing: true,
-        responsive: true,
-    };
+/*------------------------------------------------------------------------------*/
+/* 11. slider-range
+/*------------------------------------------------------------------------------*/
+    $(function () {
+        $("#slider-range").slider({
+            range: true,
+            orientation: "horizontal",
+            min: 0,
+            max: 999,
+            values: [0, 780],
 
-    $(".zoompro-wrap").slick({
-        asNavFor: ".product-dec-slider-2",
-        slidesToShow: 1,
-        arrows: false,
-        dots: false,
-        fade: true,
-    });
-    $(".product-dec-slider-2").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        dots: false,
-        infinite: true,
-        loop: true,
-        asNavFor: ".zoompro-wrap",
-        focusOnSelect: true
-    });
-    $(".zoompro-wrap .slick-current img").elevateZoom(zoomOptions);
-    $(".zoompro-wrap").on("beforeChange", function(
-        event,
-        slick,
-        currentSlide,
-        nextSlide
-    ) {
-        $.removeData(currentSlide, "elevateZoom");
-        $(".zoomContainer").remove();
-    });
-    $(".zoompro-wrap").on("afterChange", function() {
-        $(".zoompro-wrap .slick-current img").elevateZoom(zoomOptions);
-    });
-
-    /*--------------------------
-            Product Zoom
-    ---------------------------- */
-
-    var zoomOptions = {
-        zoomType: "inner",
-        cursor: "crosshair",
-        easing: true,
-        responsive: true,
-        zoomWindowWidth: 300,
-        zoomWindowHeight: 100,
-    };
-
-    $(".zoompro-wrap-2").slick({
-        asNavFor: ".product-dec-slider-3",
-        slidesToShow: 1,
-        arrows: false,
-        dots: false,
-        fade: true,
-    });
-    $(".product-dec-slider-3").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        dots: false,
-        infinite: true,
-        loop: true,
-        vertical: true,
-        asNavFor: ".zoompro-wrap-2",
-        focusOnSelect: true
-    });
-    $(".zoompro-wrap-2 .slick-current img").elevateZoom(zoomOptions);
-    $(".zoompro-wrap-2").on("beforeChange", function(
-        event,
-        slick,
-        currentSlide,
-        nextSlide
-    ) {
-        $.removeData(currentSlide, "elevateZoom");
-        $(".zoomContainer").remove();
-    });
-    $(".zoompro-wrap-2").on("afterChange", function() {
-        $(".zoompro-wrap-2 .slick-current img").elevateZoom(zoomOptions);
-    });
-
-    /*------------------------------
-            popular Category Slider
-    -----------------------------------*/
-
-    $('.single-product-slider-active').slick({
-        infinite: true,
-        slidesToShow: 4,
-        arrows: true,
-        slidesToScroll: 1,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        cssEase: 'linear',
-        dots: false,
-        responsive: [{
-                breakpoint: 1200,
-                Settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1
+            slide: function (event, ui) {
+                if ( "$" + ui.values[0] =="$" + ui.values[1]) {
+                    return false;
                 }
-            },
-            {
-                breakpoint: 992,
-                Settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
+              
+                $("#min_price").val("$" + ui.values[0]);
+                $("#max_price").val("$" + ui.values[1]);
+            }
+        });
+
+        $("#min_price").val("$" + $("#slider-range").slider("values", 0));
+        $("#max_price").val("$" + $("#slider-range").slider("values", 1));
+
+    });
+
+
+/*------------------------------------------------------------------------------*/
+/* 12. menu-vertical
+/*------------------------------------------------------------------------------*/
+
+     $('.menu-vertical > li.parent-plus > a, .menu-vertical > li.parent > a').on('click', function(e){
+        if ( 0 < $(this).next(".plus-menu, .megamenu").length ) {
+          e.preventDefault();
+        }
+        if ( 0 == $(this).next(".plus-menu, .megamenu").length ) {
+          return;
+        }
+        if ( $(this).hasClass('open') ) {
+          $(this).removeClass('open').next(".plus-menu, .megamenu").slideUp(300);
+          return;
+        }
+        $(this).parents(".menu-vertical").find("> li.parent-plus > a, .menu-vertical > li.parent > a").removeClass('open');
+        $(this).parents(".menu-vertical").find(".plus-menu, .megamenu").not(":hidden").slideUp(300);
+        $(this).addClass('open').next(".plus-menu, .megamenu").slideDown(300);
+    });
+
+
+    $(".header").each(function(){  
+        $(".cat_menu_container > a.cat_menu", this).on("click", function(e){
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            $(".header .cat_menu_list").toggleClass("on");
+            $(this).toggleClass("on-cat_menu");
+
+            $(document).on('click', function closeMenu (e){
+
+                if($('.header .cat_menu_list').has(e.target).length === 0){
+                    $('.header .cat_menu_list').removeClass('on');
+                } else {
+                    $(document).on('click', closeMenu);
                 }
-            },
-            {
-                breakpoint: 767,
-                Settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 479,
-                Settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-        ]
-    });
-    /*---------------------------
-       Blog Gallery Slider
-    ------------------------------ */
+            });
 
-    $('.blog-gallery').slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        prevArrow: '<span class="prev"><i class="ion-ios-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="ion-ios-arrow-right"></i></span>',
-        speed: 800,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    });
+            $(".close-side").on("click", function(e){
+                e.preventDefault();
+                $('.header .cat_menu_list').removeClass('on');
+            });  
 
-    /*-------------------------------
-        Create an account toggle
-    ---------------------------------*/
-    $(".checkout-toggle2").on("click", function() {
-        $(".open-toggle2").slideToggle(1000);
-    });
-
-    $(".checkout-toggle").on("click", function() {
-        $(".open-toggle").slideToggle(1000);
+        });
     });
 
 
+/*------------------------------------------------------------------------------*/
+/* 13. create_account
+/*------------------------------------------------------------------------------*/
+    $("#create_account :checkbox").on('click dblclick', function(evt) {
+        console.log(evt.type);
+        if ($(this).is(":checked")) {
+            $('.collapse').slideDown('fast');
+        } else {
+            $('.collapse').slideUp('fast');
+        }
+    });
 
+
+/*------------------------------------------------------------------------------*/
+/* 14. payment_methods
+/*------------------------------------------------------------------------------*/
+    $(".payment-detail").hide();
+    $(':input[type="radio"]').on('change', function() {
+        $(".payment-detail").slideUp();
+        $(this).parent('label').next('div').slideToggle(this.checked);
+    });
+
+/*------------------------------------------------------------------------------*/
+/* 15. Back to top
+/*------------------------------------------------------------------------------*/
+
+// ===== Scroll to Top ==== 
+jQuery('#totop').hide();
+
+jQuery(window).scroll(function() {
+    "use strict";
+    if (jQuery(this).scrollTop() >= 100) {        // If page is scrolled more than 50px
+        jQuery('#totop').fadeIn(200);    // Fade in the arrow
+        jQuery('#totop').addClass('top-visible');
+    } else {
+        jQuery('#totop').fadeOut(200);   // Else fade out the arrow
+        jQuery('#totop').removeClass('top-visible');
+    }
 });
+
+jQuery('#totop').on('click', function() {      // When arrow is clicked
+    jQuery('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+    return false;
+});
+
+   
+ $(function() {
+
+    });
+
+})(jQuery);

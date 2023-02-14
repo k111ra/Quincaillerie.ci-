@@ -1,3200 +1,2985 @@
 @extends('layouts.layout')
 @section('content')
+    @include('partials.slider')
 
 
-    <!-- Slider Start -->
-    <div class="slider-area slider-dots-style-3">
-        <div class="hero-slider-wrapper">
-            <!-- Single Slider  -->
-            <div class="single-slide slider-height-3 bg-img d-flex"
-                data-bg-image="assets/images/slider-image/sample-7.jpg">
-                <div class="container align-self-center">
-                    <div class="slider-content-1 slider-animated-1 text-left">
-                        <h1 class="animated color-black">
-                            Full HD 180-Degree
-                            <br />
-                            Wifi-Camera
-                        </h1>
-                        <p class="animated color-gray">DCS-934L day & night wifi camera.</p>
-                        <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slider  -->
-            <div class="single-slide slider-height-3 bg-img d-flex"
-                data-bg-image="assets/images/slider-image/sample-8.jpg">
-                <div class="container align-self-center">
-                    <div class="slider-content-1 slider-animated-2 text-left ">
-                        <h1 class="animated color-black">
-                            Xbox One Pro <br />
-                            Wireless Controller
-                        </h1>
-                        <p class="animated color-gray">Revolution Pro Controller.</p>
-                        <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slider  -->
-            <div class="single-slide slider-height-3 bg-img d-flex"
-                data-bg-image="assets/images/slider-image/sample-9.jpg">
-                <div class="container align-self-center">
-                    <div class="slider-content-1 slider-animated-3 text-left">
-                        <h1 class="animated color-black">
-                            Bobovr Z4 Virtual <br />
-                            Reality 3D Glasses
-                        </h1>
-                        <p class="animated color-gray">Virtual reality through a new lens</p>
-                        <a href="shop-4-column.html" class="shop-btn animated">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slider  -->
-        </div>
-    </div>
-    <!-- Slider End -->
-    <!-- Banner Area Start -->
-    <div class="banner-area mt-50px mb-20px ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="banner-wrapper">
-                        <a href="shop-4-column.html"><img src="assets/images/banner-image/11.jpg" alt="" /></a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="banner-wrapper">
-                        <a href="shop-4-column.html"><img src="assets/images/banner-image/12.jpg" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner Area End -->
+    <!--site-main start-->
+    <div class="site-main">
 
-    <!-- Arrivals Area Start -->
-    <div class="arrival-area mt-20px mb-20px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h2>New Arrivals</h2>
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs sub-category">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#tab-1">Home Audio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Headphones</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Cameras</a>
-                            </li>
-                        </ul>
-                        <!-- Nav tabs -->
-                    </div>
-                </div>
-            </div>
-            <!-- tab content -->
-            <div class="tab-content">
-                <!-- First-Tab -->
-                <div id="tab-1" class="tab-pane active fade">
-                    <!-- Arrivel slider start -->
-                    <div class="arrival-slider-wrapper slider-nav-style-1">
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/11.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/12.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/13.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Naham WiFi HD 1080P</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/14.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/15.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Sony WH-CH700N</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/16.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/17.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Polk Audio T30
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/18.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/20.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/21.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">TCL 49S5 49” 4K Ultra
-                                                HD</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <!-- Arrivel slider end -->
-                </div>
-                <!-- First-Tab -->
-                <!-- Second-Tab -->
-                <div id="tab-2" class="tab-pane fade">
-                    <!-- Arrivel slider start -->
-                    <div class="arrival-slider-wrapper slider-nav-style-1">
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/11.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/12.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/13.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Naham WiFi HD 1080P</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/14.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/15.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Sony WH-CH700N</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/16.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/17.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Polk Audio T30
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/18.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/20.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/21.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">TCL 49S5 49” 4K Ultra
-                                                HD</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <!-- Arrivel slider end -->
-                </div>
-                <!-- Second-Tab -->
-                <!-- Third-Tab -->
-                <div id="tab-3" class="tab-pane fade">
-                    <!-- Arrivel slider start -->
-                    <div class="arrival-slider-wrapper slider-nav-style-1">
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/11.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/12.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/13.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Naham WiFi HD 1080P</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/14.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/15.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Sony WH-CH700N</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/16.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/17.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Polk Audio T30
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/18.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/20.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/21.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">TCL 49S5 49” 4K Ultra
-                                                HD</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <!-- Arrivel slider end -->
-                </div>
-                <!-- Third-Tab -->
-            </div>
-            <!-- tab content end-->
-        </div>
-    </div>
-    <!-- Arrivals Area End -->
-    <!-- category Area Start -->
-    <div class="popular-categories-area popular-categories-area-2  bg-light-gray pt-50px pb-50px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h2 class="section-heading">Popular Categories</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="popular-category-slider-wrapper slider-nav-style-2">
-                <!-- single-item -->
-                <div class="single-slider-item">
-                    <div class="thumb-category">
-                        <a href="single-product.html">
-                            <img src="assets/images/popular-image/2-1.jpg" alt="product-image.jpg" />
-                        </a>
-                    </div>
-                    <div class="category-discript">
-                        <h4>Phones & Accessories</h4>
-                        <ul>
-                            <li><a href="#">Hot Categories</a></li>
-                            <li><a href="#">Outerwear & Jackets</a></li>
-                            <li><a href="#">Weddings & Events</a></li>
-                            <li><a href="#">Bottoms</a></li>
-                            <li><a href="#">Tops & Sets</a></li>
-                        </ul>
-                        <a href="shop-4-column.html" class="view-all-btn">View All</a>
-                    </div>
-                </div>
-                <!-- single-item -->
-                <div class="single-slider-item">
-                    <div class="thumb-category">
-                        <a href="single-product.html">
-                            <img src="assets/images/popular-image/2-2.jpg" alt="product-image.jpg" />
-                        </a>
-                    </div>
-                    <div class="category-discript">
-                        <h4>Home Audio</h4>
-                        <ul>
-                            <li><a href="#">Skirts</a></li>
-                            <li><a href="#">Leggings</a></li>
-                            <li><a href="#">Jeans</a></li>
-                            <li><a href="#">Pants & Capris</a></li>
-                            <li><a href="#">Shorts</a></li>
-                        </ul>
-                        <a href="shop-4-column.html" class="view-all-btn">View All</a>
-                    </div>
-                </div>
-                <!-- single-item -->
-                <div class="single-slider-item">
-                    <div class="thumb-category">
-                        <a href="single-product.html">
-                            <img src="assets/images/popular-image/2-3.jpg" alt="product-image.jpg" />
-                        </a>
-                    </div>
-                    <div class="category-discript">
-                        <h4>Audio & Video</h4>
-                        <ul>
-                            <li><a href="#">Accessories & Parts</a></li>
-                            <li><a href="#">Audio & Video</a></li>
-                            <li><a href="#">Camera & Photo</a></li>
-                            <li><a href="#">Portable Audio & Video</a></li>
-                            <li><a href="#">Smart Electronics</a></li>
-                        </ul>
-                        <a href="shop-4-column.html" class="view-all-btn">View All</a>
-                    </div>
-                </div>
-                <!-- single-item -->
-                <div class="single-slider-item">
-                    <div class="thumb-category">
-                        <a href="single-product.html">
-                            <img src="assets/images/popular-image/2-4.jpg" alt="product-image.jpg" />
-                        </a>
-                    </div>
-                    <div class="category-discript">
-                        <h4>Cameras</h4>
-                        <ul>
-                            <li><a href="#">Televisions</a></li>
-                            <li><a href="#">TV Receivers</a></li>
-                            <li><a href="#">Projectors</a></li>
-                            <li><a href="#">Audio Amplifier Boards</a></li>
-                            <li><a href="#">TV Sticks</a></li>
-                        </ul>
-                        <a href="shop-4-column.html" class="view-all-btn">View All</a>
-                    </div>
-                </div>
-                <!-- single-item -->
-                <div class="single-slider-item">
-                    <div class="thumb-category">
-                        <a href="single-product.html">
-                            <img src="assets/images/popular-image/2-1.jpg" alt="product-image.jpg" />
-                        </a>
-                    </div>
-                    <div class="category-discript">
-                        <h4>Television & Video</h4>
-                        <ul>
-                            <li><a href="#">Wearable Devices</a></li>
-                            <li><a href="#">Handheld Game Players</a></li>
-                            <li><a href="#">Game Controllers</a></li>
-                            <li><a href="#">Joysticks</a></li>
-                            <li><a href="#">Stickers</a></li>
-                        </ul>
-                        <a href="shop-4-column.html" class="view-all-btn">View All</a>
-                    </div>
-                </div>
-                <!-- single-item end-->
-            </div>
-        </div>
-    </div>
-    <!-- category Area End -->
-    <!-- Static Area Start -->
-    <div class="static-area mtb-50px">
-        <div class="container">
-            <div class="static-area-wrap">
+        <!-- banner-top-section -->
+        <section class="banner-top-section pt-10 res-991-pt-0 clearfix">
+            <div class="container">
                 <div class="row">
-                    <!-- Static Single Item Start -->
-                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6 mb-md-30px mb-lm-30px">
-                        <div class="single-static">
-                            <img src="assets/images/icons/static-icons-1.png" alt="" class="img-responsive" />
-                            <div class="single-static-meta">
-                                <h4>Free Shipping</h4>
-                                <p>On all orders over $75.00</p>
-                            </div>
-                        </div>
+                    <div class="col-sm-6">
+                        <!-- banner-image -->
+                        <div class="banner-image pt-30">
+                            <a href="#"><img class="img-fluid" src="images/banner-six.jpg" alt=""></a>
+                        </div><!-- banner-image end -->
                     </div>
-                    <!-- Static Single Item End -->
-                    <!-- Static Single Item Start -->
-                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6 mb-md-30px mb-lm-30px">
-                        <div class="single-static">
-                            <img src="assets/images/icons/static-icons-2.png" alt="" class="img-responsive" />
-                            <div class="single-static-meta">
-                                <h4>Free Returns</h4>
-                                <p>Returns are free within 9 days</p>
-                            </div>
-                        </div>
+                    <div class="col-sm-6">
+                        <!-- banner-image -->
+                        <div class="banner-image pt-30">
+                            <a href="#"><img class="img-fluid" src="images/banner-seven.jpg" alt=""></a>
+                        </div><!-- banner-image end -->
                     </div>
-                    <!-- Static Single Item End -->
-                    <!-- Static Single Item Start -->
-                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6 mb-sm-30px">
-                        <div class="single-static">
-                            <img src="assets/images/icons/static-icons-3.png" alt="" class="img-responsive" />
-                            <div class="single-static-meta">
-                                <h4>100% Payment Secure</h4>
-                                <p>Your payment are safe with us.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Static Single Item End -->
-                    <!-- Static Single Item Start -->
-                    <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
-                        <div class="single-static">
-                            <img src="assets/images/icons/static-icons-4.png" alt="" class="img-responsive" />
-                            <div class="single-static-meta">
-                                <h4>Support 24/7</h4>
-                                <p>Contact us 24 hours a day</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Static Single Item End -->
-                </div>
+                </div><!-- row end -->
             </div>
-        </div>
-    </div>
-    <!-- Static Area End -->
-    <!-- Feature Area Start -->
-    <div class="feature-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title">
-                                <h2>Featured Products</h2>
+        </section>
+        <!-- banner-top-section end -->
+
+
+        <!-- sidebar -->
+        <div class="sidebar ttm-sidebar-left pt-40 pb-40 clearfix">
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-3 widget-area sidebar-left">
+                        <aside class="widget widget-text">
+                            <h3 class="widget-title">Special Offers</h3>
+                            <div class="ttm_info_widget">
+                                <span>Handyman Tools</span>
+                                <div class="title">
+                                    <h3>Limited Time <strong>Offers!</strong></h3>
+                                </div>
+                                <div class="content">
+                                    <p>It’s All Power You Need!</p>
+                                    <h4>Up To <strong>35%</strong> Off!</h4>
+                                </div>
+                                <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline"
+                                    href="#">Shopping Now!</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="feature-slider-wrapper slider-nav-style-1">
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center mb-30px">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
+                        </aside>
+                        <aside class="widget products top-rated-products">
+                            <h3 class="widget-title">Featured Products</h3>
+                            <ul class="product-list-widget product">
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-09.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Hammer Drill</h2>
                                         </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
+                                        <span class="price">
+                                            <span class="product-Price-amount">
+                                                <span class="product-Price-currencySymbol">$</span>77.00
+                                            </span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-02.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Impact Wrench</h2>
                                         </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
+                                        <span class="price">
+                                            <ins><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>110.00
+                                                </span>
+                                            </ins>
+                                            <del><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>123.00
+                                                </span>
+                                            </del>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-08.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve
-                                                Madden</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center mb-30px">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Tape Measure</h2>
                                         </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
+                                        <span class="price">
+                                            <span class="product-Price-amount">
+                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                            </span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-06.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/11.jpg" alt="" />
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Circular Saw</h2>
                                         </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <span class="price">
+                                            <ins><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>124.00
+                                                </span>
+                                            </ins>
+                                            <del><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>111.00
+                                                </span>
+                                            </del>
+                                        </span>
                                     </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center mb-30px">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/12.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/13.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Naham WiFi HD 1080P</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/14.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/15.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Sony WH-CH700N</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center mb-30px">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/16.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/17.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>GRAPHIC CORNER</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Polk Audio T30
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/18.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center mb-30px">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/20.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/21.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">TCL 49S5 49” 4K Ultra
-                                                HD</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-                <!-- Feature Area End -->
-                <div class="col-lg-4 col-md-4 mt-lm-30px">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title">
-                                <h2>Hot Deals</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hot-deal-slider-wrapper slider-nav-style-1">
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/4.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/5.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">TCL 49S5 49” 4K Ultra
-                                                HD</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$21.51</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="availability-list in-stock">Availability: <span>300 In Stock</span>
-                                    </div>
-                                    <div class="clockdiv">
-                                        <div data-countdown="2021/12/01"></div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                        <div class="add-to-link">
-                                            <ul>
-                                                <li>
-                                                    <a class="quick_view" href="#" data-link-action="quickview"
-                                                        title="Quick view" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        <i class="lnr lnr-magnifier"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" title="Add to Wishlist"><i
-                                                            class="lnr lnr-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" title="Add to compare"><i
-                                                            class="lnr lnr-sync"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="product-flag">
-                                        <li class="new">-12%</li>
-                                    </ul>
-                                    <div class="product-decs">
-                                        <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                        <h2><a href="single-product.html" class="product-link">Polk Audio T30
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$21.51</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="availability-list in-stock">Availability: <span>300 In Stock</span>
-                                    </div>
-                                    <div class="clockdiv">
-                                        <div data-countdown="2021/12/01"></div>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <a href="#" class="add-to-curt" title="Add to cart">Add to cart</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Featured Area End -->
-    <!-- Best sell Area Start -->
-    <div class="best-sell-area mt-20px mt-lm-30px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h2>Best Sellers</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="best-sell-area-wrapper slider-nav-style-1 slider-nav-style-4">
-                <div class="single-slider-item">
-                    <!-- Single Item -->
-                    <article class="list-product text-center">
-                        <div class="product-inner">
-                            <div class="img-block">
-                                <a href="single-product.html" class="thumbnail">
-                                    <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                    <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                </a>
-                                <div class="add-to-link">
-                                    <ul>
-                                        <li>
-                                            <a class="quick_view" href="#" data-link-action="quickview"
-                                                title="Quick view" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="lnr lnr-magnifier"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" title="Add to Wishlist"><i
-                                                    class="lnr lnr-heart"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html" title="Add to compare"><i
-                                                    class="lnr lnr-sync"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-decs">
-                                <a class="inner-link" href="shop-4-column.html"><span>Graphic Corner</span></a>
-                                <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a></h2>
-                                <div class="availability-list in-stock">Availability: <span>900 In Stock</span></div>
-                                <p>Android 8.1 (Oreo), Hisilicon Kirin 710 (12 nm), Octa-core (4x2.2 GHz Cortex-A73
-                                    &amp; 4x1.7 GHz Cortex-A53), Mali-G51 MP4</p>
-                                <div class="pricing-meta">
-                                    <ul>
-                                        <li class="current-price">$29.51</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="single-slider-item">
-                    <!-- Single Item -->
-                    <article class="list-product text-center">
-                        <div class="product-inner">
-                            <div class="img-block">
-                                <a href="single-product.html" class="thumbnail">
-                                    <img class="first-img" src="assets/images/product-image/15.jpg" alt="" />
-                                    <img class="second-img" src="assets/images/product-image/16.jpg" alt="" />
-                                </a>
-                                <div class="add-to-link">
-                                    <ul>
-                                        <li>
-                                            <a class="quick_view" href="#" data-link-action="quickview"
-                                                title="Quick view" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="lnr lnr-magnifier"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" title="Add to Wishlist"><i
-                                                    class="lnr lnr-heart"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html" title="Add to compare"><i
-                                                    class="lnr lnr-sync"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <ul class="product-flag">
-                                <li class="new">-12%</li>
+                                </li>
                             </ul>
-                            <div class="product-decs">
-                                <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                <h2><a href="single-product.html" class="product-link">Polk Audio T30 Speaker</a></h2>
-                                <div class="availability-list in-stock">Availability: <span>1200 In Stock</span></div>
-                                <p>Dimensions (W x H x D): TV without stand: 43.7" x 25.3" x 3", TV with stand: 43.7" x
-                                    27.7" x 8.5"</p>
-                                <div class="pricing-meta">
-                                    <ul>
-                                        <li class="old-price">$21.51</li>
-                                        <li class="current-price">$21.51</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="single-slider-item">
-                    <!-- Single Item -->
-                    <article class="list-product text-center">
-                        <div class="product-inner">
-                            <div class="img-block">
-                                <a href="single-product.html" class="thumbnail">
-                                    <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                    <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                </a>
-                                <div class="add-to-link">
-                                    <ul>
-                                        <li>
-                                            <a class="quick_view" href="#" data-link-action="quickview"
-                                                title="Quick view" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="lnr lnr-magnifier"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" title="Add to Wishlist"><i
-                                                    class="lnr lnr-heart"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html" title="Add to compare"><i
-                                                    class="lnr lnr-sync"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-decs">
-                                <a class="inner-link" href="shop-4-column.html"><span>Graphic Corner</span></a>
-                                <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a></h2>
-                                <div class="availability-list in-stock">Availability: <span>900 In Stock</span></div>
-                                <p>Android 8.1 (Oreo), Hisilicon Kirin 710 (12 nm), Octa-core (4x2.2 GHz Cortex-A73
-                                    &amp; 4x1.7 GHz Cortex-A53), Mali-G51 MP4</p>
-                                <div class="pricing-meta">
-                                    <ul>
-                                        <li class="current-price">$29.51</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="single-slider-item">
-                    <!-- Single Item -->
-                    <article class="list-product text-center">
-                        <div class="product-inner">
-                            <div class="img-block">
-                                <a href="single-product.html" class="thumbnail">
-                                    <img class="first-img" src="assets/images/product-image/15.jpg" alt="" />
-                                    <img class="second-img" src="assets/images/product-image/16.jpg" alt="" />
-                                </a>
-                                <div class="add-to-link">
-                                    <ul>
-                                        <li>
-                                            <a class="quick_view" href="#" data-link-action="quickview"
-                                                title="Quick view" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="lnr lnr-magnifier"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" title="Add to Wishlist"><i
-                                                    class="lnr lnr-heart"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html" title="Add to compare"><i
-                                                    class="lnr lnr-sync"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <ul class="product-flag">
-                                <li class="new">-12%</li>
+                        </aside>
+                        <aside class="widget widget-testimonial">
+                            <h3 class="widget-title">Testimonial</h3>
+                            <!-- wrap-testimonial -->
+                            <!-- testimonial_slick_slider -->
+                            <div class="testimonial_slick_slider"
+                                data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "arrows":false, "dots":true, "autoplay":false, "infinite":true}'>
+                                <!-- testimonials -->
+                                <div class="testimonials ttm-testimonial-box-view-style2">
+                                    <div class="testimonial-content">
+                                        <blockquote class="ttm-testimonial-text">Satisfied customer is the best
+                                            source of advertise &shy;ment, & I'm one of those custom satisfied.
+                                        </blockquote>
+                                        <div class="testimonial-avatar">
+                                            <div class="testimonial-img">
+                                                <img class="img-fluid" src="images/testimonial/01.jpg"
+                                                    alt="testimonial-img">
+                                            </div>
+                                            <div class="testimonial-caption">
+                                                <h5>Leax May</h5>
+                                                <label>Web Canst</label>
+                                                <div class="star-ratings">
+                                                    <ul class="rating">
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- testimonials end -->
+                                <!-- testimonials -->
+                                <div class="testimonials ttm-testimonial-box-view-style2">
+                                    <div class="testimonial-content">
+                                        <blockquote class="ttm-testimonial-text">Satisfied customer is the best
+                                            source of advertise &shy;ment, & I'm one of those custom satisfied.
+                                        </blockquote>
+                                        <div class="testimonial-avatar">
+                                            <div class="testimonial-img">
+                                                <img class="img-fluid" src="images/testimonial/02.jpg"
+                                                    alt="testimonial-img">
+                                            </div>
+                                            <div class="testimonial-caption">
+                                                <h5>Alan Sears</h5>
+                                                <label>Web Canst</label>
+                                                <div class="star-ratings">
+                                                    <ul class="rating">
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- testimonials end -->
+                                <!-- testimonials -->
+                                <div class="testimonials ttm-testimonial-box-view-style2">
+                                    <div class="testimonial-content">
+                                        <blockquote class="ttm-testimonial-text">Satisfied customer is the best
+                                            source of advertise &shy;ment, & I'm one of those custom satisfied.
+                                        </blockquote>
+                                        <div class="testimonial-avatar">
+                                            <div class="testimonial-img">
+                                                <img class="img-fluid" src="images/testimonial/03.jpg"
+                                                    alt="testimonial-img">
+                                            </div>
+                                            <div class="testimonial-caption">
+                                                <h5>Alex Jones</h5>
+                                                <label>Web Canst</label>
+                                                <div class="star-ratings">
+                                                    <ul class="rating">
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- testimonials end -->
+                            </div><!-- wrap-testimonial end-->
+                        </aside>
+                        <aside class="widget products top-rated-products">
+                            <h3 class="widget-title">Featured Products</h3>
+                            <ul class="product-list-widget product">
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-10.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Rotary Hammer</h2>
+                                        </a>
+                                        <span class="price">
+                                            <span class="product-Price-amount">
+                                                <span class="product-Price-currencySymbol">$</span>80.00
+                                            </span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-02.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Impact Wrench</h2>
+                                        </a>
+                                        <span class="price">
+                                            <ins><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>110.00
+                                                </span>
+                                            </ins>
+                                            <del><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>123.00
+                                                </span>
+                                            </del>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-08.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Tape Measure</h2>
+                                        </a>
+                                        <span class="price">
+                                            <span class="product-Price-amount">
+                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                            </span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/product/pro-front-06.png" alt=""></a>
+                                    <div class="product-content-box">
+                                        <div class="star-ratings">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <a class="product-title" href="product-layout1.html">
+                                            <h2>Circular Saw</h2>
+                                        </a>
+                                        <span class="price">
+                                            <ins><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>124.00
+                                                </span>
+                                            </ins>
+                                            <del><span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">$</span>111.00
+                                                </span>
+                                            </del>
+                                        </span>
+                                    </div>
+                                </li>
                             </ul>
-                            <div class="product-decs">
-                                <a class="inner-link" href="shop-4-column.html"><span>STUDIO DESIGN</span></a>
-                                <h2><a href="single-product.html" class="product-link">Polk Audio T30 Speaker</a></h2>
-                                <div class="availability-list in-stock">Availability: <span>1200 In Stock</span></div>
-                                <p>Dimensions (W x H x D): TV without stand: 43.7" x 25.3" x 3", TV with stand: 43.7" x
-                                    27.7" x 8.5"</p>
-                                <div class="pricing-meta">
-                                    <ul>
-                                        <li class="old-price">$21.51</li>
-                                        <li class="current-price">$21.51</li>
+                        </aside>
+                        <aside class="widget widget_media_image banner-image">
+                            <a href="#"><img class="img-fluid" src="images/widget-banner-one.jpg"
+                                    alt="widget-banner"></a>
+                        </aside>
+                        <aside class="widget widget_media_image banner-image">
+                            <a href="#"><img class="img-fluid" src="images/widget-banner-two.jpg"
+                                    alt="widget-banner"></a>
+                        </aside>
+                    </div>
+                    <div class="col-lg-9 content-area">
+                        <div class="products products-fitter">
+                            <div class="ttm-tabs">
+                                <div class="content-sec-head-style">
+                                    <div class="content-area-sec-title">
+                                        <h5>Our Top Selling Products</h5>
+                                    </div>
+                                    <ul class="tabs text-right">
+                                        <li class="tab active"><a href="#">New Product</a></li>
+                                        <li class="tab"><a href="#">Special</a></li>
+                                        <li class="tab"><a href="#">Onsale</a></li>
                                     </ul>
                                 </div>
+                                <div class="content-tab">
+                                    <div class="content-inner">
+                                        <div class="products row">
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-09.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-09.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Hammer Drill</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>77.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-05.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-05.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Folding Hex Key Set</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>62.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <div class="onsale">Sale!</div>
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-02.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-02.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Impact Wrench</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>110.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>123.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-08.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-08.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Tape Measure</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-01.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-01.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Reel Fiberglass Tape</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>40.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="onsale">Sale!</div>
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-06.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-06.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Circular Saw</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>124.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>111.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-03.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-03.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Demolition Breaker</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>38.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <div class="onsale">Sale!</div>
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-04.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-04.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Cordless Drywall Cutter</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>99.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>82.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                        </div>
+                                    </div>
+                                    <!-- content-inner -->
+                                    <div class="content-inner">
+                                        <div class="products row">
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-01.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-01.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Reel Fiberglass Tape</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>40.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <div class="onsale">Sale!</div>
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-02.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-02.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Impact Wrench</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>110.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>123.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-03.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-03.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Demolition Breaker</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>38.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <div class="onsale">Sale!</div>
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-04.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-04.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Cordless Drywall Cutter</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>99.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>82.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-05.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-05.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Folding Hex Key Set</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>62.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="onsale">Sale!</div>
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-06.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-06.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Circular Saw</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>124.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>111.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-07.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-07.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Impact Driver Kit</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>149.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-08.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-08.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Tape Measure</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                        </div>
+                                    </div><!-- content-inner end -->
+                                    <!-- content-inner -->
+                                    <div class="content-inner">
+                                        <div class="products row">
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-05.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-05.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Folding Hex Key Set</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>62.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <div class="onsale">Sale!</div>
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-02.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-02.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Impact Wrench</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>110.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>123.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-07.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-07.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Impact Driver Kit</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>149.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-08.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-08.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Tape Measure</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-01.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-01.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Reel Fiberglass Tape</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>40.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-03.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-03.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Demolition Breaker</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>38.00
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <div class="onsale">Sale!</div>
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-04.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-04.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Cordless Drywall Cutter</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>99.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>82.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                            <!-- product -->
+                                            <div class="product col-md-3 col-sm-6 col-xs-12">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="onsale">Sale!</div>
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="images/product/pro-front-06.png" alt="">
+                                                            <img class="img-fluid pro-image-back"
+                                                                src="images/product/pro-back-06.png" alt="">
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>Circular Saw</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <ins><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>124.00
+                                                                </span>
+                                                            </ins>
+                                                            <del><span class="product-Price-amount">
+                                                                    <span
+                                                                        class="product-Price-currencySymbol">$</span>111.00
+                                                                </span>
+                                                            </del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                        </div>
+                                    </div><!-- content-inner end -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!-- banner-image -->
+                                    <div class="banner-image mb-30 mt-5">
+                                        <a href="#"><img class="img-fluid" src="images/banner-eight.jpg"
+                                                alt=""></a>
+                                    </div><!-- banner-image end -->
+                                </div>
+                            </div>
+                            <div class="row no-gutters ttm-bgcolor-grey border mb-25">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <!-- featured-icon-box -->
+                                    <div class="featured-icon-box style3 text-center">
+                                        <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                                            <i class="themifyicon ti-truck"></i>
+                                        </div>
+                                        <div class="featured-content">
+                                            <div class="featured-title">
+                                                <h5>Fast &amp; Free Shopping</h5>
+                                            </div>
+                                            <div class="featured-desc">
+                                                <p>All Order Over $199</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- featured-icon-box end-->
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <!-- featured-icon-box -->
+                                    <div class="featured-icon-box style3 text-center">
+                                        <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                                            <i class="themifyicon ti-reload"></i>
+                                        </div>
+                                        <div class="featured-content">
+                                            <div class="featured-title">
+                                                <h5>100% Money Back</h5>
+                                            </div>
+                                            <div class="featured-desc">
+                                                <p>30 Days Money Return</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- featured-icon-box end-->
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <!-- featured-icon-box -->
+                                    <div class="featured-icon-box style3 text-center">
+                                        <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                                            <i class="themifyicon ti-comments"></i>
+                                        </div>
+                                        <div class="featured-content">
+                                            <div class="featured-title">
+                                                <h5>Support 24/7 Days</h5>
+                                            </div>
+                                            <div class="featured-desc">
+                                                <p>Hot Line: +123 456 789</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- featured-icon-box end-->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="content-sec-head-style">
+                                        <div class="content-area-sec-title">
+                                            <h5>Best Sellers</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <!-- slick_slider -->
+                                    <div class="pro_slick_slider"
+                                        data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-09.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-09.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Hammer Drill</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>77.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-10.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-10.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Rotary Hammer</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>80.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-01.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-01.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Reel Fiberglass Tape</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>40.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <div class="onsale">Sale!</div>
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-02.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-02.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Impact Wrench</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <ins><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>110.00
+                                                            </span>
+                                                        </ins>
+                                                        <del><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>123.00
+                                                            </span>
+                                                        </del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-03.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-03.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Demolition Breaker</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>38.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <div class="onsale">Sale!</div>
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-04.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-04.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Cordless Drywall Cutter</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <ins><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>99.00
+                                                            </span>
+                                                        </ins>
+                                                        <del><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>82.00
+                                                            </span>
+                                                        </del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-05.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-05.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Folding Hex Key Set</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>62.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="onsale">Sale!</div>
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-06.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-06.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Circular Saw</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <ins><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>124.00
+                                                            </span>
+                                                        </ins>
+                                                        <del><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>111.00
+                                                            </span>
+                                                        </del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-07.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-07.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Impact Driver Kit</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>149.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-08.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-08.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Tape Measure</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>24.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="content-sec-head-style">
+                                        <div class="content-area-sec-title">
+                                            <h5>Specials</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <!-- slick_slider -->
+                                    <div class="pro_slick_slider"
+                                        data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-10.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-10.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Rotary Hammer</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>80.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-01.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-01.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Reel Fiberglass Tape</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>40.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <div class="onsale">Sale!</div>
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-02.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-02.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Impact Wrench</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <ins><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>110.00
+                                                            </span>
+                                                        </ins>
+                                                        <del><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>123.00
+                                                            </span>
+                                                        </del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-09.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-09.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Hammer Drill</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>77.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-03.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-03.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Demolition Breaker</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>38.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-07.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-07.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Impact Driver Kit</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>149.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <div class="onsale">Sale!</div>
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-04.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-04.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Cordless Drywall Cutter</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <ins><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>99.00
+                                                            </span>
+                                                        </ins>
+                                                        <del><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>82.00
+                                                            </span>
+                                                        </del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-05.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-05.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Folding Hex Key Set</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>62.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="onsale">Sale!</div>
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-06.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-06.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Circular Saw</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <ins><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>124.00
+                                                            </span>
+                                                        </ins>
+                                                        <del><span class="product-Price-amount">
+                                                                <span class="product-Price-currencySymbol">$</span>111.00
+                                                            </span>
+                                                        </del>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="images/product/pro-front-08.png" alt="">
+                                                        <img class="img-fluid pro-image-back"
+                                                            src="images/product/pro-back-08.png" alt="">
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>Tape Measure</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            <span class="product-Price-currencySymbol">$</span>24.00
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- banner-image -->
+                                    <div class="banner-image mb-30">
+                                        <a href="#"><img class="img-fluid" src="images/banner-nine.jpg"
+                                                alt=""></a>
+                                    </div><!-- banner-image end -->
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- banner-image -->
+                                    <div class="banner-image mb-30">
+                                        <a href="#"><img class="img-fluid" src="images/banner-ten.jpg"
+                                                alt=""></a>
+                                    </div><!-- banner-image end -->
+                                </div>
+                            </div>
+                            <div class="row mb-35 res-991-mb-15">
+                                <div class="col-lg-12">
+                                    <div class="content-sec-head-style">
+                                        <div class="content-area-sec-title">
+                                            <h5>Our Latest News & Events</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <!-- slick_slider -->
+                                    <div class="slick_slider"
+                                        data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "arrows":false, "autoplay":true}'>
+                                        <!-- featured-imagebox-post -->
+                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                            <div class="ttm-post-featured-outer">
+                                                <div class="ttm-post-thumbnail featured-thumbnail">
+                                                    <img class="img-fluid" src="images/blog/01.jpg" alt="">
+                                                    <div class="ttm-box-post-date">
+                                                        <span class="ttm-entry-date">
+                                                            <time class="entry-date"
+                                                                datetime="2019-07-28T07:07:55+00:00">28<span
+                                                                    class="entry-month">Jul</span></time>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content featured-content-post">
+                                                <div class="post-meta">
+                                                    <span class="ttm-meta-line byline"><i
+                                                            class="fa fa-user"></i>Admin</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
+                                                        Education</span>
+                                                </div>
+                                                <div class="post-title featured-title">
+                                                    <h5><a href="blog-single.html">Danger of Having High Water
+                                                            Pressure</a></h5>
+                                                </div>
+                                            </div>
+                                        </div><!-- featured-imagebox-post end -->
+                                        <!-- featured-imagebox-post -->
+                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                            <div class="ttm-post-featured-outer">
+                                                <div class="ttm-post-thumbnail featured-thumbnail">
+                                                    <img class="img-fluid" src="images/blog/02.jpg" alt="">
+                                                    <div class="ttm-box-post-date">
+                                                        <span class="ttm-entry-date">
+                                                            <time class="entry-date"
+                                                                datetime="2019-08-10T07:07:55+00:00">10<span
+                                                                    class="entry-month">Aug</span></time>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content featured-content-post">
+                                                <div class="post-meta">
+                                                    <span class="ttm-meta-line byline"><i
+                                                            class="fa fa-user"></i>Admin</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
+                                                        Education</span>
+                                                </div>
+                                                <div class="post-title featured-title">
+                                                    <h5><a href="blog-single.html">The Most Common Painting
+                                                            Mistakes</a></h5>
+                                                </div>
+                                            </div>
+                                        </div><!-- featured-imagebox-post end -->
+                                        <!-- featured-imagebox-post -->
+                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                            <div class="ttm-post-featured-outer">
+                                                <div class="ttm-post-thumbnail featured-thumbnail">
+                                                    <img class="img-fluid" src="images/blog/03.jpg" alt="">
+                                                    <div class="ttm-box-post-date">
+                                                        <span class="ttm-entry-date">
+                                                            <time class="entry-date"
+                                                                datetime="2019-08-21T07:07:55+00:00">21<span
+                                                                    class="entry-month">Aug</span></time>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content featured-content-post">
+                                                <div class="post-meta">
+                                                    <span class="ttm-meta-line byline"><i
+                                                            class="fa fa-user"></i>Admin</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
+                                                        Education</span>
+                                                </div>
+                                                <div class="post-title featured-title">
+                                                    <h5><a href="blog-single.html">Choosing Roofing Material for
+                                                            Home</a></h5>
+                                                </div>
+                                            </div>
+                                        </div><!-- featured-imagebox-post end -->
+                                        <!-- featured-imagebox-post -->
+                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                            <div class="ttm-post-featured-outer">
+                                                <div class="ttm-post-thumbnail featured-thumbnail">
+                                                    <img class="img-fluid" src="images/blog/04.jpg" alt="">
+                                                    <div class="ttm-box-post-date">
+                                                        <span class="ttm-entry-date">
+                                                            <time class="entry-date"
+                                                                datetime="2019-08-26T07:07:55+00:00">26<span
+                                                                    class="entry-month">Aug</span></time>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content featured-content-post">
+                                                <div class="post-meta">
+                                                    <span class="ttm-meta-line byline"><i
+                                                            class="fa fa-user"></i>Admin</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
+                                                        Education</span>
+                                                </div>
+                                                <div class="post-title featured-title">
+                                                    <h5><a href="blog-single.html">Equipping Researchers in the
+                                                            Developing.</a></h5>
+                                                </div>
+                                            </div>
+                                        </div><!-- featured-imagebox-post end-->
+                                        <!-- featured-imagebox-post -->
+                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                            <div class="ttm-post-featured-outer">
+                                                <div class="ttm-post-thumbnail featured-thumbnail">
+                                                    <img class="img-fluid" src="images/blog/05.jpg" alt="">
+                                                    <div class="ttm-box-post-date">
+                                                        <span class="ttm-entry-date">
+                                                            <time class="entry-date"
+                                                                datetime="2019-09-06T07:07:55+00:00">06<span
+                                                                    class="entry-month">Sep</span></time>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content featured-content-post">
+                                                <div class="post-meta">
+                                                    <span class="ttm-meta-line byline"><i
+                                                            class="fa fa-user"></i>Admin</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
+                                                        Education</span>
+                                                </div>
+                                                <div class="post-title featured-title">
+                                                    <h5><a href="blog-single.html">Simple Steps for Replacing old
+                                                            Tiling</a></h5>
+                                                </div>
+                                            </div>
+                                        </div><!-- featured-imagebox-post end-->
+                                        <!-- featured-imagebox-post -->
+                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                            <div class="ttm-post-featured-outer">
+                                                <div class="ttm-post-thumbnail featured-thumbnail">
+                                                    <img class="img-fluid" src="images/blog/06.jpg" alt="">
+                                                    <div class="ttm-box-post-date">
+                                                        <span class="ttm-entry-date">
+                                                            <time class="entry-date"
+                                                                datetime="2019-09-12T07:07:55+00:00">12<span
+                                                                    class="entry-month">Sep</span></time>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content featured-content-post">
+                                                <div class="post-meta">
+                                                    <span class="ttm-meta-line byline"><i
+                                                            class="fa fa-user"></i>Admin</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
+                                                        Education</span>
+                                                </div>
+                                                <div class="post-title featured-title">
+                                                    <h5><a href="blog-single.html">Got a Leaking? Hire an
+                                                            experienced Plumber</a></h5>
+                                                </div>
+                                            </div>
+                                        </div><!-- featured-imagebox-post end-->
+                                    </div><!-- slick_slider end -->
+                                </div>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </div><!-- row end -->
             </div>
         </div>
+        <!-- sidebar end -->
+
     </div>
-    <!-- Best sell Area End -->
-    <!-- Brand area start -->
-    <div class="brand-area mt-30px mb-50px">
-        <div class="container">
-            <div class="brand-slider">
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/1.png" alt="" /></a>
-                </div>
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/2.png" alt="" /></a>
-                </div>
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/3.png" alt="" /></a>
-                </div>
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/4.png" alt="" /></a>
-                </div>
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/5.png" alt="" /></a>
-                </div>
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/1.png" alt="" /></a>
-                </div>
-                <div class="brand-slider-item">
-                    <a href="#"><img class=" img-responsive" src="assets/images/brand-logo/2.png" alt="" /></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Brand area end -->
-    <!-- Catogery slider area Start-->
-    <div class="category-slider-area mb-20px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-md-30px mb-lm-30px">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title">
-                                <h2>Home Audio</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-slider-wraper slider-nav-style-1">
-
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/19.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/20.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/13.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/14.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/11.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/12.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve Madden
-                                                Cale 6</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-md-30px mb-lm-30px">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title">
-                                <h2>Headphones</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-slider-wraper slider-nav-style-1">
-
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve Madden
-                                                Cale 6</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/19.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/20.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/13.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/14.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/11.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/12.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title">
-                                <h2>Television & Video</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-slider-wraper slider-nav-style-1 ">
-
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/19.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/20.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Silicon Sleeping
-                                                Earbuds</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/13.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/14.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Numkuda USB 2.0
-                                                Gamepad</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/11.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/12.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Edifier H840
-                                                Audiophile</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="slider-single-item">
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/6.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/7.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">SoundBox Pro Portable</a>
-                                        </h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/10.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/19.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Madden by Steve Madden
-                                                Cale 6</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Single Item -->
-                            <article class="list-product text-center">
-                                <div class="product-inner">
-                                    <div class="img-block">
-                                        <a href="single-product.html" class="thumbnail">
-                                            <img class="first-img" src="assets/images/product-image/8.jpg" alt="" />
-                                            <img class="second-img" src="assets/images/product-image/9.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-decs">
-                                        <h2><a href="single-product.html" class="product-link">Wireless Stereo
-                                                Speaker</a></h2>
-                                        <div class="pricing-meta">
-                                            <ul>
-                                                <li class="old-price">$23.90</li>
-                                                <li class="current-price">$21.51</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Catogery slider area End-->
-    <!-- News letter area -->
-    <div class="news-letter-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-4 mb-md-30px mb-lm-30px">
-                    <div class="title-newsletter">
-                        <h2>Sign Up For Newsletters</h2>
-                        <p class="des">Be the First to Know. Sign up for newsletter today !</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-8">
-                    <div id="mc_embed_signup" class="subscribe-form">
-                        <form id="mc-embedded-subscribe-form" class="validate" novalidate="" target="_blank"
-                            name="mc-embedded-subscribe-form" method="post"
-                            action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef">
-                            <div id="mc_embed_signup_scroll" class="mc-form">
-                                <input class="email" type="email" required="" placeholder="Enter your email here.."
-                                    name="EMAIL" value="" />
-                                <div class="mc-news" aria-hidden="true">
-                                    <input type="text" value="" tabindex="-1"
-                                        name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" />
-                                </div>
-                                <div class="clear">
-                                    <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe"
-                                        value="Sign Up" />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- News letter area  End -->
-    
+    <!--site-main end-->
 @endsection

@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col d-md-flex flex-row">
-                    <div class="top_bar_contact_item">Winter-Season Sale Up To <span
-                            class="ttm-textcolor-highlight"> 25% OFF </span> Use Coupne Code <div
+                    <div class="top_bar_contact_item">Soldes jusqu'à <span
+                            class="ttm-textcolor-highlight"> 25% </span> Utiliser le code promo <div
                             class="coupen_code ttm-textcolor-highlight">“SALEON”</div>
                     </div>
                     <div class="top_bar_content ml-auto">
@@ -13,20 +13,21 @@
                             <div><a href="#">Wishlist (0)</a></div>
                             <div class="top_bar_menu">
                                 <ul class="top_bar_dropdown">
-                                    <li><a href="#" data-toggle="dropdown">$ Currency</a>
+                                    <li><a href="#" data-toggle="dropdown">Monnais</a>
                                         <ul>
+                                            <li><a href="#">F CFA</a></li>
                                             <li><a href="#">EUR €</a></li>
                                             <li><a href="#">USD $</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#" data-toggle="dropdown"><img src="images/flag.jpg"
-                                                alt="img"> Language</a>
+                                    <li><a href="#" data-toggle="dropdown"><img src="{{ asset('assets/images/flag.jpg') }}"
+                                                alt="img"> Langue</a>
                                         <ul>
                                             <li><a href="#"><span class="mr-2"><img
-                                                            src="images/English-icon.jpg"
+                                                            src="{{ asset('assets/images/English-icon.jpg') }}"
                                                             alt="img"></span>English</a></li>
                                             <li><a href="#"><span class="mr-2"><img
-                                                            src="images/French-icon.jpg"
+                                                            src="{{ asset('assets/images/French-icon.jpg') }}"
                                                             alt="img"></span>French</a></li>
                                         </ul>
                                     </li>
@@ -45,7 +46,7 @@
                     <!-- site-branding -->
                     <div class="site-branding">
                         <a class="home-link" href="index.html" title="Fixfellow" rel="home">
-                            <img id="logo-img" class="img-center" src="images/white-logo.png"
+                            <img id="logo-img" class="img-center" width="250px" src="{{ asset('assets/images/white-logo.png') }}"
                                 alt="logo-img">
                         </a>
                     </div><!-- site-branding end -->
@@ -62,7 +63,7 @@
                                     <div class="categories-block">
                                         <select id="search_category" name="search_category"
                                             class="form-control">
-                                            <option value="all">All Categories</option>
+                                            <option value="all">Toutes catégories</option>
                                             <option value="Categories 1">Categories 1</option>
                                             <option value="Categories 2">Categories 2</option>
                                             <option value="Categories 3">Categories 3</option>
@@ -86,17 +87,17 @@
                                     <i class="fa fa-user"></i>
                                 </div>
                                 <div class="account_content">
-                                    <div class="account_text"><a href="#">Sign In</a></div>
+                                    <div class="account_text"><a href="#">S'identifier</a></div>
                                 </div>
                             </div>
                             <div class="account_extra dropdown_link" data-toggle="dropdown">Account</div>
                             <aside class="widget_account dropdown_content">
                                 <div class="widget_account_content">
                                     <ul>
-                                        <li><i class="fa fa-sign-in mr-2"></i><a href="login.html">Login</a>
+                                        <li><i class="fa fa-sign-in mr-2"></i><a href="login.html">Connexion</a>
                                         </li>
                                         <li><i class="fa fa-sign-in mr-2"></i><a
-                                                href="register.html">Register</a></li>
+                                                href="register.html">S'enregitrer</a></li>
                                     </ul>
                                 </div>
                             </aside>
@@ -109,8 +110,8 @@
                                     <div class="cart_count">02</div>
                                 </div>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="#">My Cart</a></div>
-                                    <div class="cart_price">$257.00</div>
+                                    <div class="cart_text"><a href="#">Mon Panier</a></div>
+                                    <div class="cart_price">257.000</div>
                                 </div>
                             </div>
                             <aside class="widget_shopping_cart dropdown_content">
@@ -120,18 +121,18 @@
                                                 src="images/product/pro-front-02.png" class="cart-thumb"
                                                 alt="" /></a>
                                         <h6><a href="#">Impact Wrench</a></h6>
-                                        <p>2x - <span class="price">$220.00</span></p>
+                                        <p>2x - <span class="price">220.000</span></p>
                                     </li>
                                     <li>
                                         <a href="#" class="photo"><img
                                                 src="images/product/pro-front-03.png" class="cart-thumb"
                                                 alt="" /></a>
                                         <h6><a href="#">Demolition Breaker</a></h6>
-                                        <p>1x - <span class="price">$38.00</span></p>
+                                        <p>1x - <span class="price">38.000</span></p>
                                     </li>
                                     <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $257.00</span>
-                                        <a href="cart.html" class="btn btn-default btn-cart">Cart</a>
+                                        <span class="pull-right"><strong>Total</strong>: 257.000</span>
+                                        <a href="cart.html" class="btn btn-default btn-cart">Panier</a>
                                     </li>
                                 </ul>
                             </aside>
@@ -153,7 +154,7 @@
                                 <a href="#" class="cat_menu d-flex flex-row align-items-center">
                                     <div class="cat_icon"><i class="fa fa-bars"></i></div>
                                     <div class="cat_text">
-                                        <h4>All Categories</h4>
+                                        <h4>Toutes catégories</h4>
                                     </div>
                                 </a>
                                 <ul class="cat_menu_list menu-vertical">
@@ -289,7 +290,7 @@
                                             <a href="#" class="mega-menu-link">Pages</a>
                                             <ul class="mega-submenu">
                                                 <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="login.html">Connexion</a></li>
                                                 <li><a href="register.html">Register</a></li>
                                                 <li><a href="contact.html">Contact Us</a></li>
                                                 <li><a href="error.html">Error Page</a></li>
@@ -320,7 +321,7 @@
                                                                     <li><a href="cart.html">Cart</a></li>
                                                                     <li><a href="checkout.html">Checkout</a>
                                                                     </li>
-                                                                    <li><a href="login.html">Account/Login</a>
+                                                                    <li><a href="login.html">Compte/Connexion</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>

@@ -71,14 +71,14 @@
                     <div class="widget widget_text">
                         <ul class="widget_info_text">
                             <li><i class="fa fa-envelope-o"></i><strong>Email US</strong> <br>
-                                Info@example.com</li>
+                                Info@quincaillerie.ci</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                     <div class="widget widget_text">
                         <ul class="widget_info_text">
-                            <li><i class="fa fa-phone"></i><strong>Call Us</strong> <br> +123-456-7890 / 91
+                            <li><i class="fa fa-phone"></i><strong>Appelez-nous</strong> <br> +225 05 94 77 56 90 <br> +225 07 47 10 45 13
                             </li>
                         </ul>
                     </div>
@@ -96,42 +96,40 @@
                     <div class="widget widget_text pr-25 clearfix">
                         <h3 class="widget-title">About Us</h3>
                         <div class="textwidget widget-text">
-                            <p class="pb-10">Lorem Ipsum is simp dummy text of the printing and Lorem Ipsum
-                                is simp dummy text of the printing and types etting industry. Lorem Ipsum
-                                hatypes.</p>
+                            <p class="pb-10">Quincaillerie.ci est une entreprise ivoirienne spécialisée dans la vente de produits de quincaillerie, de bricolage et d'équipements de sécurité. Leur catalogue de produits comprend une large gamme d'articles allant des outils à main, aux machines électriques, en passant par les équipements de protection individuelle, les serrures et quincaillerie de porte, les produits de plomberie et d'électricité, les équipements pour la construction et bien plus encore...</p>
                             <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                href="#" title="">Read More</a>
+                                href="#" title="">Voir plus</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                     <div class="widget widget_nav_menu clearfix">
-                        <h3 class="widget-title">Our Company</h3>
+                        <h3 class="widget-title">Notre Compagnie</h3>
                         <ul class="menu-footer-quick-links">
-                            <li><a href="#">Delivery</a>
+                            <li><a href="#">Livraison</a>
                             </li>
-                            <li><a href="#">Legal Notice</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Secure Payments</a></li>
-                            <li><a href="#">Stores</a></li>
+                            <li><a href="#">Mention légale</a></li>
+                            <li><a href="#">À propos de nous</a></li>
+                            <li><a href="#">Paiements sécurisés</a></li>
+                            <li><a href="#">Magasins</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                     <div class="widget widget_nav_menu clearfix">
-                        <h3 class="widget-title">Products</h3>
+                        <h3 class="widget-title">Produits</h3>
                         <ul class="menu-footer-quick-links">
-                            <li><a href="#">Price Drops</a></li>
-                            <li><a href="#">New Products</a></li>
-                            <li><a href="#">Best Sales</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Prix bas</a></li>
+                            <li><a href="#">Nouveaux produits</a></li>
+                            <li><a href="#">Les meilleures ventes</a></li>
+                            <li><a href="#">Contactez-nous</a></li>
+                            <li><a href="#">Plan du site</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                     <div class="widget contact_map clearfix">
-                        <h3 class="widget-title">Our Stores</h3>
+                        <h3 class="widget-title">Nos magasins</h3>
                         <div class="footer_map mb-30 mt-5">
                             <img src="images/footer_map.png" alt="">
                         </div>
@@ -148,18 +146,18 @@
         <div class="container">
             <div class="row copyright">
                 <div class="col-md-12 col-lg-6 ttm-footer2-left">
-                    <span>Copyright © 2019 Fixfellow Theme by <a
-                            href="https://themetechmount.com/">ThemetechMount</a></span>
+                    <span>Copyright © 2023  <a
+                            href="https://www.linkedin.com/in/sidik-slims-80698b67/">TechArtisan</a></span>
                 </div>
                 <div class="col-md-12 col-lg-6 ttm-footer2-right">
                     <div class="supported_card-block">
                         <ul>
-                            <li><img src="images/supported_card/card-1.png" alt="maestro"></li>
-                            <li><img src="images/supported_card/card-2.png" alt="paypal"></li>
-                            <li><img src="images/supported_card/card-3.png" alt="western union"></li>
-                            <li><img src="images/supported_card/card-4.png" alt="visa"></li>
-                            <li><img src="images/supported_card/card-5.png" alt="cirrus"></li>
-                            <li><img src="images/supported_card/card-6.png" alt="ebay"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/om.jpg') }}" alt="Orange Money"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/card-2.png') }}" alt="paypal"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/card-3.png') }}" alt="western union"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/card-4.png') }}" alt="visa"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/mtn-momo.png') }}" alt="Mtn"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/wave.jpg') }}" alt="wave"></li>
                         </ul>
                     </div>
                 </div>

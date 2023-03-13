@@ -13,13 +13,13 @@
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="images/banner-six.jpg" alt=""></a>
+                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-six.jpg") }}" alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="images/banner-seven.jpg" alt=""></a>
+                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-seven.jpg") }}" alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
                 </div><!-- row end -->
@@ -53,7 +53,7 @@
                             <h3 class="widget-title">Featured Products</h3>
                             <ul class="product-list-widget product">
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-09.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-09.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -75,7 +75,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-02.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-02.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -102,7 +102,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-08.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-08.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">

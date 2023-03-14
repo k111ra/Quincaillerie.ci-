@@ -124,7 +124,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-06.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-06.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -166,7 +166,7 @@
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
-                                                <img class="img-fluid" src="images/testimonial/01.jpg"
+                                                <img class="img-fluid" src="{{ ('assets/images/testimonial/01.jpg') }}"
                                                     alt="testimonial-img">
                                             </div>
                                             <div class="testimonial-caption">
@@ -193,7 +193,7 @@
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
-                                                <img class="img-fluid" src="images/testimonial/02.jpg"
+                                                <img class="img-fluid" src="{{ ("assets/images/testimonial/02.jpg") }}"
                                                     alt="testimonial-img">
                                             </div>
                                             <div class="testimonial-caption">
@@ -220,7 +220,7 @@
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
-                                                <img class="img-fluid" src="images/testimonial/03.jpg"
+                                                <img class="img-fluid" src="{{ ("assets/images/testimonial/03.jpg") }}"
                                                     alt="testimonial-img">
                                             </div>
                                             <div class="testimonial-caption">
@@ -245,7 +245,7 @@
                             <h3 class="widget-title">Featured Products</h3>
                             <ul class="product-list-widget product">
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-10.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-10.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -267,7 +267,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-02.png" alt=""></a>
+                                    <a href="#"><img src="{{ ('assets/images/product/pro-front-02.png') }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -294,7 +294,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-08.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-08.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -316,7 +316,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/product/pro-front-06.png" alt=""></a>
+                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-06.png") }}" alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -345,11 +345,11 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="images/widget-banner-one.jpg"
+                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/widget-banner-one.jpg") }}"
                                     alt="widget-banner"></a>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="images/widget-banner-two.jpg"
+                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/widget-banner-two.jpg") }}"
                                     alt="widget-banner"></a>
                         </aside>
                     </div>
@@ -376,9 +376,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-09.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-09.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-09.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-09.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -426,9 +426,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-05.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-05.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -477,9 +477,9 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Sale!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-02.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-02.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -534,9 +534,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-08.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-08.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -584,9 +584,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-01.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-01.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -635,9 +635,9 @@
                                                         <div class="onsale">Sale!</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-06.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-06.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -692,9 +692,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-03.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-03.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"

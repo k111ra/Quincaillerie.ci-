@@ -743,9 +743,9 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Sale!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-04.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-04.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -805,9 +805,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-01.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-01.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -856,9 +856,9 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Sale!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-02.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-02.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -913,9 +913,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-03.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-03.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -964,9 +964,9 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Sale!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-04.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-04.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1021,9 +1021,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-05.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-05.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1072,9 +1072,9 @@
                                                         <div class="onsale">Sale!</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-06.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-06.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1129,9 +1129,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-07.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-07.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1179,9 +1179,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-08.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-08.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1234,9 +1234,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-05.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-05.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1285,9 +1285,9 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Sale!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-02.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-02.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1342,9 +1342,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-07.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-07.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1392,9 +1392,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-08.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-08.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1442,9 +1442,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-01.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-01.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1492,9 +1492,9 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-03.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-03.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1543,9 +1543,9 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Sale!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-04.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-04.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1601,9 +1601,9 @@
                                                         <div class="onsale">Sale!</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="images/product/pro-front-06.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="images/product/pro-back-06.png" alt="">
+                                                                src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1659,7 +1659,7 @@
                                 <div class="col-sm-12">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30 mt-5">
-                                        <a href="#"><img class="img-fluid" src="images/banner-eight.jpg"
+                                        <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-eight.jpg") }}"
                                                 alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
@@ -1733,9 +1733,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-09.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-09.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-09.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-09.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1783,9 +1783,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-10.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-10.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-10.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-10.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1833,9 +1833,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-01.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-01.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1884,9 +1884,9 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Sale!</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-02.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-02.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1939,9 +1939,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-03.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-03.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1990,9 +1990,9 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Sale!</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-04.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-04.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2045,9 +2045,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-05.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-05.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2096,9 +2096,9 @@
                                                     <div class="onsale">Sale!</div>
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-06.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-06.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2151,9 +2151,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-07.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-07.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2201,9 +2201,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-08.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-08.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2266,9 +2266,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-10.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-10.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-10.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-10.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2316,7 +2316,7 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-01.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
                                                             src="images/product/pro-back-01.png" alt="">
                                                     </div>
@@ -2367,9 +2367,9 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Sale!</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-02.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-02.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2422,9 +2422,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-09.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-09.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-09.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-09.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2472,9 +2472,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-03.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-03.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2522,9 +2522,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-07.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-07.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2573,9 +2573,9 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Sale!</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-04.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-04.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2628,9 +2628,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-05.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-05.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2679,9 +2679,9 @@
                                                     <div class="onsale">Sale!</div>
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-06.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-06.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2734,9 +2734,9 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-08.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-08.png" alt="">
+                                                            src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2784,14 +2784,14 @@
                                 <div class="col-sm-6">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30">
-                                        <a href="#"><img class="img-fluid" src="images/banner-nine.jpg"
+                                        <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-nine.jpg") }}"
                                                 alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                                 <div class="col-sm-6">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30">
-                                        <a href="#"><img class="img-fluid" src="images/banner-ten.jpg"
+                                        <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-ten.jpg") }}"
                                                 alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
@@ -2812,7 +2812,7 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="images/blog/01.jpg" alt="">
+                                                    <img class="img-fluid" src="{{ ("assets/images/blog/01.jpg") }}" alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2839,7 +2839,7 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="images/blog/02.jpg" alt="">
+                                                    <img class="img-fluid" src="{{ ("assetsimages/blog/02.jpg") }}" alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2866,7 +2866,7 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="images/blog/03.jpg" alt="">
+                                                    <img class="img-fluid" src="{{ ("assets/images/blog/03.jpg") }}" alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2893,7 +2893,7 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="images/blog/04.jpg" alt="">
+                                                    <img class="img-fluid" src="{{ ("assets/images/blog/04.jpg") }}" alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2920,7 +2920,7 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="images/blog/05.jpg" alt="">
+                                                    <img class="img-fluid" src="{{ ("assets/images/blog/05.jpg") }}" alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2947,7 +2947,7 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="images/blog/06.jpg" alt="">
+                                                    <img class="img-fluid" src="{{ ("assets/images/blog/06.jpg") }}" alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"

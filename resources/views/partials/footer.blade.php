@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 widget-area">
                     <div class="widget ttm-footer-cta-wrapper">
-                        <h5>Join Our Newsletter Now!</h5>
+                        <h5>Rejoignez notre newsletter maintenant!</h5>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-5 widget-area m-auto">
@@ -15,10 +15,10 @@
                             <div class="mailchimp-inputbox clearfix" id="subscribe-content">
                                 <p>
                                     <i class="fa fa-envelope-o"></i>
-                                    <input type="email" name="email" placeholder="Your Email Add.."
+                                    <input type="email" name="email" placeholder="Ajouter Votre e-mail..."
                                         required="">
                                 </p>
-                                <p><input type="submit" value="SUBMIT"></p>
+                                <p><input type="submit" value="Envoyer"></p>
                             </div>
                             <div id="subscribe-msg"></div>
                         </form>
@@ -54,7 +54,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 widget-area m-auto">
                     <div class="widget">
                         <div class="footer-logo">
-                            <img id="footer-logo-img" class="img-center" src="images/footer-logo.png"
+                            <img id="footer-logo-img" class="img-center" src="{{ ("assets/images/white-logo.png") }}" width="200px"
                                 alt="">
                         </div>
                     </div>
@@ -62,15 +62,14 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 widget-area">
                     <div class="widget widget_text ml-40">
                         <ul class="widget_info_text">
-                            <li><i class="fa fa-map-marker"></i><strong>Our Main Branch</strong> <br> NewYork
-                                City,United States</li>
+                            <li><i class="fa fa-map-marker"></i><strong>Notre succursale principale</strong> <br> Abidjan, Riviera V, Route ABATTA</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                     <div class="widget widget_text">
                         <ul class="widget_info_text">
-                            <li><i class="fa fa-envelope-o"></i><strong>Email US</strong> <br>
+                            <li><i class="fa fa-envelope-o"></i><strong>Email</strong> <br>
                                 Info@quincaillerie.ci</li>
                         </ul>
                     </div>

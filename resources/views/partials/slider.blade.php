@@ -8,7 +8,7 @@
                 data-description="">
 
                 <!-- MAIN IMAGE -->
-                <img src="images/slides/slider-mainbg-002.jpg" alt="" data-bgposition="center center"
+                <img src="{{ ("assets/images/slides/slider-mainbg-002.jpg") }}" alt="" data-bgposition="center center"
                     data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
                 <!-- LAYERS -->
@@ -25,8 +25,8 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="600"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    data-type="text" data-responsive_offset="on">Hardest <strong class="ttm-textcolor-highlight">
-                        Hitting</strong>
+                    data-type="text" data-responsive_offset="on">La plus dure <strong class="ttm-textcolor-highlight">
+                        Frappe de</strong>
                 </div>
 
                 <!-- LAYER NR. 2 -->
@@ -41,7 +41,7 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="800"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    data-type="text" data-responsive_offset="on">HAMMERS.
+                    data-type="text" data-responsive_offset="on">MARTEAUX.
                 </div>
 
                 <!-- LAYER NR. 3 -->
@@ -56,8 +56,8 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1000"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    data-type="text" data-responsive_offset="on">Longest Lasting <strong
-                        class="ttm-textcolor-highlight">Bits.</strong>
+                    data-type="text" data-responsive_offset="on">La plus longue durée <strong
+                        class="ttm-textcolor-highlight">Morceaux.</strong>
                 </div>
 
 
@@ -76,19 +76,18 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1200"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[15,15,14,14]"
                     data-paddingright="[30,30,22,22]" data-paddingbottom="[14,14,12,12]"
-                    data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">SHOP
-                    NOW!<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
+                    data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">Achetez Maintenant!<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
                 </a>
 
             </li>
 
             <!-- SLIDE  -->
             <li data-index="rs-7" data-transition="fade" data-slotamount="1" data-easein="default"
-                data-easeout="default" data-masterspeed="1500" data-thumb="images/slides/slider-mainbg-004.jpg"
+                data-easeout="default" data-masterspeed="1500" data-thumb="{{ ("images/slides/slider-mainbg-004.jpg") }}"
                 data-rotate="0" data-saveperformance="off" data-title="Slide" data-description="">
 
                 <!-- MAIN IMAGE -->
-                <img src="images/slides/slider-mainbg-004.jpg" alt="" data-bgposition="center center"
+                <img src="{{ ("assets/images/slides/slider-mainbg-004.jpg") }}" alt="" data-bgposition="center center"
                     data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
                 <!-- LAYERS -->
@@ -105,7 +104,7 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="600"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    data-type="text" data-responsive_offset="on">Selected 5 PC and
+                    data-type="text" data-responsive_offset="on">Sélection de 5 kits
 
                 </div>
 
@@ -121,8 +120,8 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="800"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    data-type="text" data-responsive_offset="on">Above <strong class="ttm-textcolor-highlight">
-                        Brushless</strong>
+                    data-type="text" data-responsive_offset="on">combinés <strong class="ttm-textcolor-highlight">
+                        sans balais</strong>
                 </div>
 
                 <!-- LAYER NR. 3-->
@@ -137,7 +136,7 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1000"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    data-type="text" data-responsive_offset="on">Combo Kits
+                    data-type="text" data-responsive_offset="on">pour PC et plus
                 </div>
 
                 <!-- LAYER NR. 4 -->
@@ -155,8 +154,8 @@
                     data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1200"
                     data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[15,15,14,14]"
                     data-paddingright="[30,30,22,22]" data-paddingbottom="[14,14,12,12]"
-                    data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">SHOP
-                    NOW!<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
+                    data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">Achetez
+                    Maintenant!<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
                 </a>
             </li>
         </ul>

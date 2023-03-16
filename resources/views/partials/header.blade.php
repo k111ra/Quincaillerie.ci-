@@ -6,14 +6,14 @@
                 <div class="col d-md-flex flex-row">
                     <div class="top_bar_contact_item">Soldes jusqu'à <span
                             class="ttm-textcolor-highlight"> 25% </span> Utiliser le code promo <div
-                            class="coupen_code ttm-textcolor-highlight">“SALEON”</div>
+                            class="coupen_code ttm-textcolor-highlight">“quin2023”</div>
                     </div>
                     <div class="top_bar_content ml-auto">
                         <div class="top_bar_user">
-                            <div><a href="#">Wishlist (0)</a></div>
+                            <div><a href="#">Favoris (0)</a></div>
                             <div class="top_bar_menu">
                                 <ul class="top_bar_dropdown">
-                                    <li><a href="#" data-toggle="dropdown">Monnais</a>
+                                    <li><a href="#" data-toggle="dropdown">Monais</a>
                                         <ul>
                                             <li><a href="#">F CFA</a></li>
                                             <li><a href="#">EUR €</a></li>
@@ -45,7 +45,7 @@
                 <div class="col-lg-3 col-sm-3 col-3 order-1">
                     <!-- site-branding -->
                     <div class="site-branding">
-                        <a class="home-link" href="index.html" title="Fixfellow" rel="home">
+                        <a class="home-link" href="/" title="Quincaillerie.ci" rel="home">
                             <img id="logo-img" class="img-center" width="250px" src="{{ asset('assets/images/white-logo.png') }}"
                                 alt="logo-img">
                         </a>
@@ -59,7 +59,7 @@
                                 <form id="searchbox" method="get" action="#">
                                     <input class="search_query form-control" type="text"
                                         id="search_query_top" name="s"
-                                        placeholder="Search For Shopping...." value="">
+                                        placeholder="Rechercher des achats..." value="">
                                     <div class="categories-block">
                                         <select id="search_category" name="search_category"
                                             class="form-control">
@@ -90,7 +90,7 @@
                                     <div class="account_text"><a href="#">S'identifier</a></div>
                                 </div>
                             </div>
-                            <div class="account_extra dropdown_link" data-toggle="dropdown">Account</div>
+                            <div class="account_extra dropdown_link" data-toggle="dropdown">Compte</div>
                             <aside class="widget_account dropdown_content">
                                 <div class="widget_account_content">
                                     <ul>
@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="#">Mon Panier</a></div>
-                                    <div class="cart_price">257.000</div>
+                                    <div class="cart_price">257.000F CFA</div>
                                 </div>
                             </div>
                             <aside class="widget_shopping_cart dropdown_content">
@@ -121,17 +121,17 @@
                                                 src="images/product/pro-front-02.png" class="cart-thumb"
                                                 alt="" /></a>
                                         <h6><a href="#">Impact Wrench</a></h6>
-                                        <p>2x - <span class="price">220.000</span></p>
+                                        <p>2x - <span class="price">220.000</span>F CFA</p>
                                     </li>
                                     <li>
                                         <a href="#" class="photo"><img
                                                 src="images/product/pro-front-03.png" class="cart-thumb"
                                                 alt="" /></a>
                                         <h6><a href="#">Demolition Breaker</a></h6>
-                                        <p>1x - <span class="price">38.000</span></p>
+                                        <p>1x - <span class="price">38.000</span>F CFA</p>
                                     </li>
                                     <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: 257.000</span>
+                                        <span class="pull-right"><strong>Total</strong>: 257.000 F CFA</span>
                                         <a href="cart.html" class="btn btn-default btn-cart">Panier</a>
                                     </li>
                                 </ul>
@@ -161,40 +161,40 @@
                                     <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
                                     </li>
                                     <li class="parent">
-                                        <a href="#">Toolbox</a>
+                                        <a href="#">Boîte à outils</a>
                                         <div class="sub-menu megamenu column3">
                                             <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Materials</a>
+                                                <li class="title"><a href="#">Matériel</a>
                                                     <div class="sub-menu">
                                                         <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Miter Box</a></li>
-                                                            <li><a href="#">Scraper</a></li>
-                                                            <li><a href="#">Screwdriver</a></li>
-                                                            <li><a href="#">Glass Cutter</a></li>
+                                                            <li><a href="#">Boîte à onglets</a></li>
+                                                            <li><a href="#">Grattoir</a></li>
+                                                            <li><a href="#">Tournevis</a></li>
+                                                            <li><a href="#">Coupe-verre</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Accessories</a>
+                                                <li class="title"><a href="#">Accessoires</a>
                                                     <div class="sub-menu">
                                                         <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Hacksaw</a></li>
-                                                            <li><a href="#">Pitchfork</a></li>
-                                                            <li><a href="#">Circular Saw</a></li>
-                                                            <li><a href="#">Hex Wrench</a></li>
+                                                            <li><a href="#">Scie à métaux</a></li>
+                                                            <li><a href="#">Fourche</a></li>
+                                                            <li><a href="#">Scie circulaire</a></li>
+                                                            <li><a href="#">Clé hexagonale</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Cutting Tools‎ </a>
+                                                <li class="title"><a href="#">Outils de coupe‎ </a>
                                                     <div class="sub-menu">
                                                         <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Axes‎</a></li>
-                                                            <li><a href="#">Scissors</a></li>
-                                                            <li><a href="#">Saws‎</a></li>
-                                                            <li><a href="#">Knives</a></li>
+                                                            <li><a href="#">Haches‎</a></li>
+                                                            <li><a href="#">Ciseaux</a></li>
+                                                            <li><a href="#">Scies‎</a></li>
+                                                            <li><a href="#">Des couteaux</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
@@ -202,55 +202,55 @@
                                         </div>
                                     </li>
                                     <li class="parent">
-                                        <a href="#">Hand Tool</a>
+                                        <a href="#">Outil à main</a>
                                         <div class="sub-menu megamenu column3">
                                             <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Gas Equipment</a>
+                                                <li class="title"><a href="#">Équipement à gaz</a>
                                                     <div class="sub-menu">
                                                         <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Dust Collector</a></li>
-                                                            <li><a href="#">Heat Guns</a></li>
-                                                            <li><a href="#">Impact Drivers</a></li>
+                                                            <li><a href="#">Collecteur de poussière</a></li>
+                                                            <li><a href="#">Pistolets à air chaud</a></li>
+                                                            <li><a href="#">Facteurs d'impact</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Cordless Tools</a>
+                                                <li class="title"><a href="#">Outils sans fil</a>
                                                     <div class="sub-menu">
                                                         <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Bare Tools</a></li>
-                                                            <li><a href="#">Grinders</a></li>
-                                                            <li><a href="#">Impact Drivers</a></li>
+                                                            <li><a href="#">Outils nus</a></li>
+                                                            <li><a href="#">Broyeurs</a></li>
+                                                            <li><a href="#">Facteurs d'impact</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Air Tools</a>
+                                                <li class="title"><a href="#">Outils pneumatiques</a>
                                                     <div class="sub-menu">
                                                         <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Air Hoses</a></li>
-                                                            <li><a href="#">Chipping Hammers</a></li>
-                                                            <li><a href="#">Compressors</a></li>
+                                                            <li><a href="#">Tuyaux pneumatiques</a></li>
+                                                            <li><a href="#">Marteaux à piquer</a></li>
+                                                            <li><a href="#">Compresseurs</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="#">Cutter Wood</a></li>
-                                    <li><a href="#">Power Tools</a></li>
-                                    <li><a href="#">Saw Map</a></li>
-                                    <li><a href="#">Electric Tools</a></li>
-                                    <li><a href="#">Collapsible</a></li>
-                                    <li><a href="#">Corded Planer</a></li>
-                                    <li class="parent-plus"><a href="#">More Categories</a>
+                                    <li><a href="#">Bois de coupe</a></li>
+                                    <li><a href="#">Outils électroportatifs</a></li>
+                                    <li><a href="#">Carte de scie</a></li>
+                                    <li><a href="#">Outils électriques</a></li>
+                                    <li><a href="#">Pliante</a></li>
+                                    <li><a href="#">Rabot filaire</a></li>
+                                    <li class="parent-plus"><a href="#">Plus de catégories</a>
                                         <div class="plus-menu">
                                             <ul class="list-unstyled">
-                                                <li><a href="#">Hacksaw</a></li>
-                                                <li><a href="#">Post Hole</a></li>
-                                                <li><a href="#">Tool Belt</a></li>
+                                                <li><a href="#">Scie à métaux</a></li>
+                                                <li><a href="#">Trou de poteau</a></li>
+                                                <li><a href="#">Ceinture à outils</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -267,8 +267,8 @@
                                 <nav class="menu menu-mobile" id="menu">
                                     <ul class="nav" data-in="fadeInDown" data-out="fadeOutUp">
                                         <li class="mega-menu-item active">
-                                            <a href="#" class="mega-menu-link">Home</a>
-                                            <ul class="mega-submenu">
+                                            <a href="#" class="mega-menu-link">Accueil</a>
+                                            {{-- <ul class="mega-submenu">
                                                 <li><a href="index.html">Sample Homepage 1</a></li>
                                                 <li><a href="home-2.html">Sample Homepage 2</a></li>
                                                 <li><a href="home-3.html">Sample Homepage 3</a></li>
@@ -284,22 +284,22 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
+                                            </ul> --}}
                                         </li>
                                         <li class="mega-menu-item">
-                                            <a href="#" class="mega-menu-link">Pages</a>
-                                            <ul class="mega-submenu">
+                                            <a href="#" class="mega-menu-link">Services</a>
+                                            {{-- <ul class="mega-submenu">
                                                 <li><a href="about-us.html">About Us</a></li>
                                                 <li><a href="login.html">Connexion</a></li>
                                                 <li><a href="register.html">Register</a></li>
                                                 <li><a href="contact.html">Contact Us</a></li>
                                                 <li><a href="error.html">Error Page</a></li>
-                                            </ul>
+                                            </ul> --}}
                                         </li>
                                         <li class="mega-menu-item megamenu-fw">
-                                            <a href="#" class="mega-menu-link">Shop</a>
+                                            <a href="#" class="mega-menu-link">Boutiques</a>
                                             <ul class="mega-submenu megamenu-content" role="menu">
-                                                <li>
+                                                {{-- <li>
                                                     <div class="row">
                                                         <div class="col-menu col-md-3">
                                                             <h6 class="title">Shop Page Layout</h6>
@@ -351,26 +351,26 @@
                                                             </div>
                                                         </div><!-- end col-3 -->
                                                     </div><!-- end row -->
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </li>
                                         <li class="mega-menu-item">
                                             <a href="#" class="mega-menu-link">Blog</a>
-                                            <ul class="mega-submenu">
+                                            {{-- <ul class="mega-submenu">
                                                 <li class=""><a href="blog.html">Blog Classic</a></li>
                                                 <li class=""><a href="blog-grid.html">Blog Grid</a></li>
                                                 <li class=""><a href="blog-single.html">Single Blog
                                                         View</a></li>
-                                            </ul>
+                                            </ul> --}}
                                         </li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="contact.html">Contactez-nous</a></li>
                                     </ul>
                                 </nav>
                             </div><!-- site-navigation end-->
                             <div
                                 class="user_zone_block d-flex flex-row align-items-center justify-content-end ml-auto">
                                 <div class="icon"><i class="fa fa-gift"></i></div>
-                                <h6 class="text">New User Zone</h6>
+                                <h6 class="text">Nouvelle zone utilisateur</h6>
                             </div>
                         </div>
                     </div>

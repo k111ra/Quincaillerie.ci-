@@ -120,14 +120,14 @@
                                         <a href="#" class="photo"><img
                                                 src="images/product/pro-front-02.png" class="cart-thumb"
                                                 alt="" /></a>
-                                        <h6><a href="#">Impact Wrench</a></h6>
+                                        <h6><a href="#">Clé à chocs</a></h6>
                                         <p>2x - <span class="price">220.000</span>F CFA</p>
                                     </li>
                                     <li>
                                         <a href="#" class="photo"><img
                                                 src="images/product/pro-front-03.png" class="cart-thumb"
                                                 alt="" /></a>
-                                        <h6><a href="#">Demolition Breaker</a></h6>
+                                        <h6><a href="#">Briseur de démolition</a></h6>
                                         <p>1x - <span class="price">38.000</span>F CFA</p>
                                     </li>
                                     <li class="total">

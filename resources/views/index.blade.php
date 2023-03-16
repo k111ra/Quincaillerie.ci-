@@ -35,22 +35,22 @@
                 <div class="row">
                     <div class="col-lg-3 widget-area sidebar-left">
                         <aside class="widget widget-text">
-                            <h3 class="widget-title">Special Offers</h3>
+                            <h3 class="widget-title">Offres spéciales</h3>
                             <div class="ttm_info_widget">
-                                <span>Handyman Tools</span>
+                                <span>Outils de bricoleur</span>
                                 <div class="title">
-                                    <h3>Limited Time <strong>Offers!</strong></h3>
+                                    <h3>Offres <strong>limitée!</strong></h3>
                                 </div>
                                 <div class="content">
-                                    <p>It’s All Power You Need!</p>
-                                    <h4>Up To <strong>35%</strong> Off!</h4>
+                                    <p>C'est toute la puissance dont vous avez besoin!</p>
+                                    <h4>Jusqu'à <strong>35%</strong> de reduction !</h4>
                                 </div>
                                 <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline"
-                                    href="#">Shopping Now!</a>
+                                    href="#">Acheter maintenant!</a>
                             </div>
                         </aside>
                         <aside class="widget products top-rated-products">
-                            <h3 class="widget-title">Featured Products</h3>
+                            <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
                                 <li>
                                     <a href="#"><img src="{{ ("assets/images/product/pro-front-09.png") }}" alt=""></a>
@@ -65,11 +65,11 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Hammer Drill</h2>
+                                            <h2>Marteau perforateur</h2>
                                         </a>
                                         <span class="price">
                                             <span class="product-Price-amount">
-                                                <span class="product-Price-currencySymbol">$</span>77.00
+                                                <span class="product-Price-currencySymbol">15 000</span> F CFA
                                             </span>
                                         </span>
                                     </div>
@@ -87,15 +87,15 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Impact Wrench</h2>
+                                            <h2>Clé à chocs</h2>
                                         </a>
                                         <span class="price">
                                             <ins><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>110.00
+                                                    <span class="product-Price-currencySymbol">110.000</span>F CFA
                                                 </span>
                                             </ins>
                                             <del><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>123.00
+                                                    <span class="product-Price-currencySymbol">123.000</span>F CFA
                                                 </span>
                                             </del>
                                         </span>
@@ -114,11 +114,12 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Tape Measure</h2>
+                                            <h2>Mètre à ruban</h2>
                                         </a>
                                         <span class="price">
                                             <span class="product-Price-amount">
-                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                24.000
+                                                <span class="product-Price-currencySymbol">F CFA</span>
                                             </span>
                                         </span>
                                     </div>
@@ -136,15 +137,15 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Circular Saw</h2>
+                                            <h2>Scie circulaire</h2>
                                         </a>
                                         <span class="price">
                                             <ins><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>124.00
+                                                    124.000<span class="product-Price-currencySymbol">F CFA</span>
                                                 </span>
                                             </ins>
                                             <del><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>111.00
+                                                    111.000<span class="product-Price-currencySymbol">F CFA</span>
                                                 </span>
                                             </del>
                                         </span>
@@ -153,7 +154,7 @@
                             </ul>
                         </aside>
                         <aside class="widget widget-testimonial">
-                            <h3 class="widget-title">Testimonial</h3>
+                            <h3 class="widget-title">Avis</h3>
                             <!-- wrap-testimonial -->
                             <!-- testimonial_slick_slider -->
                             <div class="testimonial_slick_slider"
@@ -161,8 +162,7 @@
                                 <!-- testimonials -->
                                 <div class="testimonials ttm-testimonial-box-view-style2">
                                     <div class="testimonial-content">
-                                        <blockquote class="ttm-testimonial-text">Satisfied customer is the best
-                                            source of advertise &shy;ment, & I'm one of those custom satisfied.
+                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source de publicité et je suis l'un de ceux qui sont satisfaits.
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
@@ -188,8 +188,7 @@
                                 <!-- testimonials -->
                                 <div class="testimonials ttm-testimonial-box-view-style2">
                                     <div class="testimonial-content">
-                                        <blockquote class="ttm-testimonial-text">Satisfied customer is the best
-                                            source of advertise &shy;ment, & I'm one of those custom satisfied.
+                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source de publicité et je suis l'un de ceux qui sont satisfaits.
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
@@ -215,8 +214,7 @@
                                 <!-- testimonials -->
                                 <div class="testimonials ttm-testimonial-box-view-style2">
                                     <div class="testimonial-content">
-                                        <blockquote class="ttm-testimonial-text">Satisfied customer is the best
-                                            source of advertise &shy;ment, & I'm one of those custom satisfied.
+                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source de publicité et je suis l'un de ceux qui sont satisfaits.
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
@@ -242,7 +240,7 @@
                             </div><!-- wrap-testimonial end-->
                         </aside>
                         <aside class="widget products top-rated-products">
-                            <h3 class="widget-title">Featured Products</h3>
+                            <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
                                 <li>
                                     <a href="#"><img src="{{ ("assets/images/product/pro-front-10.png") }}" alt=""></a>
@@ -257,11 +255,11 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Rotary Hammer</h2>
+                                            <h2>Marteau rotatif</h2>
                                         </a>
                                         <span class="price">
                                             <span class="product-Price-amount">
-                                                <span class="product-Price-currencySymbol">$</span>80.00
+                                                80.000 <span class="product-Price-currencySymbol">F CFA</span>
                                             </span>
                                         </span>
                                     </div>
@@ -279,15 +277,15 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Impact Wrench</h2>
+                                            <h2>Clé à chocs</h2>
                                         </a>
                                         <span class="price">
                                             <ins><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>110.00
+                                                    110.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                 </span>
                                             </ins>
                                             <del><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>123.00
+                                                    123.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                 </span>
                                             </del>
                                         </span>
@@ -306,11 +304,11 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Tape Measure</h2>
+                                            <h2>Mètre à ruban</h2>
                                         </a>
                                         <span class="price">
                                             <span class="product-Price-amount">
-                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>
                                             </span>
                                         </span>
                                     </div>
@@ -328,15 +326,15 @@
                                             </ul>
                                         </div>
                                         <a class="product-title" href="product-layout1.html">
-                                            <h2>Circular Saw</h2>
+                                            <h2>Scie circulaire</h2>
                                         </a>
                                         <span class="price">
                                             <ins><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>124.00
+                                                    124.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                 </span>
                                             </ins>
                                             <del><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">$</span>111.00
+                                                    111.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                 </span>
                                             </del>
                                         </span>
@@ -358,12 +356,12 @@
                             <div class="ttm-tabs">
                                 <div class="content-sec-head-style">
                                     <div class="content-area-sec-title">
-                                        <h5>Our Top Selling Products</h5>
+                                        <h5>Nos produits les plus vendus</h5>
                                     </div>
                                     <ul class="tabs text-right">
-                                        <li class="tab active"><a href="#">New Product</a></li>
-                                        <li class="tab"><a href="#">Special</a></li>
-                                        <li class="tab"><a href="#">Onsale</a></li>
+                                        <li class="tab active"><a href="#">Nouveau produit</a></li>
+                                        <li class="tab"><a href="#">Spécial</a></li>
+                                        <li class="tab"><a href="#">En soldes</a></li>
                                     </ul>
                                 </div>
                                 <div class="content-tab">
@@ -400,7 +398,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Hammer Drill</h2>
+                                                            <h2>Marteau perforateur</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -413,7 +411,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>77.00
+                                                                77.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -450,7 +448,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Folding Hex Key Set</h2>
+                                                            <h2>Jeu de clés hexagonales pliantes</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -463,7 +461,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>62.00
+                                                                62.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -475,7 +473,7 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <div class="onsale">Sale!</div>
+                                                            <div class="onsale">Vente!</div>
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
@@ -501,7 +499,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Impact Wrench</h2>
+                                                            <h2>Clé à chocs</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -514,13 +512,12 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>110.00
+                                                                    110.000 <span                                 class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>123.00
+                                                                    123.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -558,7 +555,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Tape Measure</h2>
+                                                            <h2>Mètre à ruban</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -571,7 +568,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                               24.000  <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -608,7 +605,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Reel Fiberglass Tape</h2>
+                                                            <h2>Bobine de ruban en fibre de verre</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -621,7 +618,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>40.00
+                                                                40.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -632,7 +629,7 @@
                                                 <div class="product-box">
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Vente!</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
@@ -659,7 +656,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Circular Saw</h2>
+                                                            <h2>Scie circulaire</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -672,13 +669,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>124.00
+                                                                    124.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>111.00
+                                                                    111.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -716,7 +713,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Demolition Breaker</h2>
+                                                            <h2>Briseur & démolition</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -729,7 +726,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>38.00
+                                                                38.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -741,7 +738,7 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <div class="onsale">Sale!</div>
+                                                            <div class="onsale">Vente!</div>
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
@@ -767,7 +764,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Cordless Drywall Cutter</h2>
+                                                            <h2>Coupe-cloison sèche sans fil</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -780,13 +777,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>99.00
+                                                                    99.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>82.00
+                                                                    82.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -829,7 +826,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Reel Fiberglass Tape</h2>
+                                                            <h2>Bobine de ruban en fibre de verre </h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -842,7 +839,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>40.00
+                                                                40.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -854,7 +851,7 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <div class="onsale">Sale!</div>
+                                                            <div class="onsale">Vente!</div>
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
@@ -880,7 +877,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Impact Wrench</h2>
+                                                            <h2>Clé à chocs</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -893,13 +890,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>110.00
+                                                                    110.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>123.00
+                                                                    123.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -937,7 +934,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Demolition Breaker</h2>
+                                                            <h2>Briseur et démolition</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -950,7 +947,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>38.00
+                                                                38.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -962,7 +959,7 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <div class="onsale">Sale!</div>
+                                                            <div class="onsale">Solde!</div>
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
@@ -988,7 +985,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Cordless Drywall Cutter</h2>
+                                                            <h2>Coupe-cloison sèche sans fil</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1001,13 +998,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>99.00
+                                                                    99.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>82.00
+                                                                    82.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1045,7 +1042,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Folding Hex Key Set</h2>
+                                                            <h2>Jeu de clés hexagonales pliantes</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1058,7 +1055,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>62.00
+                                                                62.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1069,7 +1066,7 @@
                                                 <div class="product-box">
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Solde</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
@@ -1096,7 +1093,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Circular Saw</h2>
+                                                            <h2>Scie circulaire</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1109,13 +1106,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>124.00
+                                                                    124.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>111.00
+                                                                    111.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1153,7 +1150,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Impact Driver Kit</h2>
+                                                            <h2>Kit de pilote d'impact</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1166,7 +1163,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>149.00
+                                                                149.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1203,7 +1200,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Tape Measure</h2>
+                                                            <h2>Mètre à ruban</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1216,7 +1213,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1258,7 +1255,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Folding Hex Key Set</h2>
+                                                            <h2>Jeu de clés hexagonales pliantes</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1271,7 +1268,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>62.00
+                                                                62.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1283,7 +1280,7 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <div class="onsale">Sale!</div>
+                                                            <div class="onsale">Solde</div>
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
@@ -1309,7 +1306,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Impact Wrench</h2>
+                                                            <h2>Clé à chocs</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1322,13 +1319,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>110.00
+                                                                    110.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>123.00
+                                                                    123.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1366,7 +1363,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Impact Driver Kit</h2>
+                                                            <h2>Kit de pilote d'impact</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1379,7 +1376,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>149.00
+                                                                149.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1416,7 +1413,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Tape Measure</h2>
+                                                            <h2>Mètre à ruban</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1429,7 +1426,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>24.00
+                                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1466,7 +1463,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Reel Fiberglass Tape</h2>
+                                                            <h2>Bobine de ruban en fibre de verre</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1479,7 +1476,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>40.00
+                                                                40.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1516,7 +1513,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Demolition Breaker</h2>
+                                                            <h2>Briseur de démolition</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1529,7 +1526,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>38.00
+                                                                38.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1541,7 +1538,7 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <div class="onsale">Sale!</div>
+                                                            <div class="onsale">Solde</div>
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                             <img class="img-fluid pro-image-back"
@@ -1567,7 +1564,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Cordless Drywall Cutter</h2>
+                                                            <h2>Coupe-cloison sèche sans fil</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1580,13 +1577,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>99.00
+                                                                    99.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>82.00
+                                                                    82.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1598,7 +1595,7 @@
                                                 <div class="product-box">
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Solde</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
                                                                 src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
@@ -1625,7 +1622,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>Circular Saw</h2>
+                                                            <h2>Scie circulaire</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -1638,13 +1635,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>124.00
+                                                                    124.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>111.00
+                                                                    111.000 <span
+                                                                    class="product-Price-currencySymbol">F CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1673,10 +1670,10 @@
                                         </div>
                                         <div class="featured-content">
                                             <div class="featured-title">
-                                                <h5>Fast &amp; Free Shopping</h5>
+                                                <h5>Rapide &amp; Shopping gratuit</h5>
                                             </div>
                                             <div class="featured-desc">
-                                                <p>All Order Over $199</p>
+                                                <p>Toute commande supérieure à 100.000 F CFA</p>
                                             </div>
                                         </div>
                                     </div><!-- featured-icon-box end-->
@@ -1689,10 +1686,10 @@
                                         </div>
                                         <div class="featured-content">
                                             <div class="featured-title">
-                                                <h5>100% Money Back</h5>
+                                                <h5>100% Remboursement</h5>
                                             </div>
                                             <div class="featured-desc">
-                                                <p>30 Days Money Return</p>
+                                                <p>30 jours Cash Back</p>
                                             </div>
                                         </div>
                                     </div><!-- featured-icon-box end-->
@@ -1705,10 +1702,10 @@
                                         </div>
                                         <div class="featured-content">
                                             <div class="featured-title">
-                                                <h5>Support 24/7 Days</h5>
+                                                <h5>Assistance 24h/24 et 7j/7</h5>
                                             </div>
                                             <div class="featured-desc">
-                                                <p>Hot Line: +123 456 789</p>
+                                                <p>Ligne directe: +225 0747104513</p>
                                             </div>
                                         </div>
                                     </div><!-- featured-icon-box end-->
@@ -1718,7 +1715,7 @@
                                 <div class="col-lg-12">
                                     <div class="content-sec-head-style">
                                         <div class="content-area-sec-title">
-                                            <h5>Best Sellers</h5>
+                                            <h5>Meilleures ventes</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -1757,7 +1754,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Hammer Drill</h2>
+                                                        <h2>Marteau perforateur</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -1770,7 +1767,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>77.00
+                                                            77.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -1807,7 +1804,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Rotary Hammer</h2>
+                                                        <h2>Marteau rotatif</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -1820,7 +1817,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>80.00
+                                                            80.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -1857,7 +1854,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Reel Fiberglass Tape</h2>
+                                                        <h2>Bobine de ruban en fibre de verre</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -1870,7 +1867,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>40.00
+                                                            40.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -1882,7 +1879,7 @@
                                                 <!-- product-box-inner -->
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
                                                             src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
@@ -1908,7 +1905,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Impact Wrench</h2>
+                                                        <h2>Clé à chocs</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -1921,11 +1918,11 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>110.00
+                                                                110.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>123.00
+                                                                123.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -1963,7 +1960,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Demolition Breaker</h2>
+                                                        <h2>Briseur de démolition</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -1976,7 +1973,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>38.00
+                                                            38.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -1988,7 +1985,7 @@
                                                 <!-- product-box-inner -->
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
                                                             src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
@@ -2014,7 +2011,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Cordless Drywall Cutter</h2>
+                                                        <h2>Coupe-cloison sèche sans fil</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2027,11 +2024,11 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>99.00
+                                                                99.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>82.00
+                                                                82.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2069,7 +2066,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Folding Hex Key Set</h2>
+                                                        <h2>Jeu de clés hexagonales pliantes</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2082,7 +2079,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>62.00
+                                                            62.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2093,7 +2090,7 @@
                                             <div class="product-box">
                                                 <!-- product-box-inner -->
                                                 <div class="product-box-inner">
-                                                    <div class="onsale">Sale!</div>
+                                                    <div class="onsale">Solde</div>
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
                                                             src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
@@ -2120,7 +2117,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Circular Saw</h2>
+                                                        <h2>Scie circulaire</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2133,11 +2130,11 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>124.00
+                                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>1
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>111.00
+                                                                111.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2175,7 +2172,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Impact Driver Kit</h2>
+                                                        <h2>Kit de pilote d'impact</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2188,7 +2185,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>149.00
+                                                            149.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2225,7 +2222,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Tape Measure</h2>
+                                                        <h2>Mètre à ruban</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2238,7 +2235,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>24.00
+                                                            24.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2290,7 +2287,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Rotary Hammer</h2>
+                                                        <h2>Marteau rotatif</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2303,7 +2300,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>80.00
+                                                            80.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2340,7 +2337,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Reel Fiberglass Tape</h2>
+                                                        <h2>Bobine de ruban en fibre de verre</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2353,7 +2350,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>40.00
+                                                            40.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2365,7 +2362,7 @@
                                                 <!-- product-box-inner -->
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
                                                             src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
@@ -2391,7 +2388,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Impact Wrench</h2>
+                                                        <h2>Clé à chocs</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2404,11 +2401,11 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>110.00
+                                                                110.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>123.00
+                                                                123.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2446,7 +2443,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Hammer Drill</h2>
+                                                        <h2>Marteau perforateur</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2459,7 +2456,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>77.00
+                                                            77.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2496,7 +2493,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Demolition Breaker</h2>
+                                                        <h2>Briseur de démolition</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2509,7 +2506,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>38.00
+                                                            38.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2546,7 +2543,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Impact Driver Kit</h2>
+                                                        <h2>Kit de pilote d'impact</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2559,7 +2556,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>149.00
+                                                            149.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2571,7 +2568,7 @@
                                                 <!-- product-box-inner -->
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
-                                                        <div class="onsale">Sale!</div>
+                                                        <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
                                                             src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
                                                         <img class="img-fluid pro-image-back"
@@ -2597,7 +2594,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Cordless Drywall Cutter</h2>
+                                                        <h2>Coupe-cloison sèche sans fil</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2610,11 +2607,11 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>99.00
+                                                                99.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>82.00
+                                                                82.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2652,7 +2649,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Folding Hex Key Set</h2>
+                                                        <h2>Jeu de clés hexagonales pliantes</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2665,7 +2662,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>62.00
+                                                            62.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2676,7 +2673,7 @@
                                             <div class="product-box">
                                                 <!-- product-box-inner -->
                                                 <div class="product-box-inner">
-                                                    <div class="onsale">Sale!</div>
+                                                    <div class="onsale">Solde</div>
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
                                                             src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
@@ -2703,7 +2700,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Circular Saw</h2>
+                                                        <h2>Scie circulaire</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2716,11 +2713,11 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>124.00
+                                                                124.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>111.00
+                                                                111.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2758,7 +2755,7 @@
                                                 </div><!-- product-box-inner end -->
                                                 <div class="product-content-box">
                                                     <a class="product-title" href="product-layout1.html">
-                                                        <h2>Tape Measure</h2>
+                                                        <h2>Mètre à ruban</h2>
                                                     </a>
                                                     <div class="star-ratings">
                                                         <ul class="rating">
@@ -2771,7 +2768,7 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            <span class="product-Price-currencySymbol">$</span>24.00
+                                                            24.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2800,7 +2797,7 @@
                                 <div class="col-lg-12">
                                     <div class="content-sec-head-style">
                                         <div class="content-area-sec-title">
-                                            <h5>Our Latest News & Events</h5>
+                                            <h5>Nos dernières nouvelles et événements</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -2826,12 +2823,10 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
-                                                        Education</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Danger of Having High Water
-                                                            Pressure</a></h5>
+                                                    <h5><a href="blog-single.html">Danger d'avoir une pression d'eau élevée</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end -->
@@ -2853,12 +2848,10 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
-                                                        Education</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">The Most Common Painting
-                                                            Mistakes</a></h5>
+                                                    <h5><a href="blog-single.html">Les erreurs de peinture les plus courantes</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end -->
@@ -2880,12 +2873,11 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
-                                                        Education</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Choosing Roofing Material for
-                                                            Home</a></h5>
+                                                    <h5><a href="blog-single.html">Choisir un matériau de toiture pour
+                                                        Maison</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end -->
@@ -2907,12 +2899,10 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
-                                                        Education</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Equipping Researchers in the
-                                                            Developing.</a></h5>
+                                                    <h5><a href="blog-single.html">Équiper les chercheurs dans le développement.</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end-->
@@ -2934,12 +2924,11 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
-                                                        Education</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Chiucation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Simple Steps for Replacing old
-                                                            Tiling</a></h5>
+                                                    <h5><a href="blog-single.html">Étapes simples pour remplacer l'ancien
+                                                        Carrelage </a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end-->
@@ -2961,12 +2950,11 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Child
-                                                        Education</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>education des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Got a Leaking? Hire an
-                                                            experienced Plumber</a></h5>
+                                                    <h5><a href="blog-single.html">Vous avez une fuite ? Embauchez un
+                                                        plombier expérimenté</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end-->

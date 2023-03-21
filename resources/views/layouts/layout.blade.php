@@ -10,10 +10,13 @@
     <meta name="description" content="Ecommerce &raquo; HTML Template" />
     <meta name="author" content="https://www.themetechmount.com/" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Fixfellow &#8211; Tools Store Ecommerce Html Template</title>
+    <title>Quincaillerie - Accueil</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />

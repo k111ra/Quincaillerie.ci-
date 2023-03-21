@@ -94,10 +94,10 @@
                             <aside class="widget_account dropdown_content">
                                 <div class="widget_account_content">
                                     <ul>
-                                        <li><i class="fa fa-sign-in mr-2"></i><a href="login.html">Connexion</a>
+                                        <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('login') }}">Connexion</a>
                                         </li>
-                                        <li><i class="fa fa-sign-in mr-2"></i><a
-                                                href="register.html">S'enregitrer</a></li>
+                                        <li>
+                                            <i class="fa fa-sign-in mr-2"></i><a href="{{ route('register') }}">S'enregitrer</a></li>
                                     </ul>
                                 </div>
                             </aside>

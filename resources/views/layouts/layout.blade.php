@@ -16,7 +16,7 @@
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />

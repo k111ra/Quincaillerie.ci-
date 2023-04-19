@@ -6,9 +6,33 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Ecommerce &raquo; HTML Template" />
-    <meta name="author" content="https://www.themetechmount.com/" />
+    <meta name="keywords" content="Quincaillerie
+    Outillage,
+    Matériel de construction,
+    Bricolage,
+    Outils électriques,
+    Accessoires de plomberie,
+    Visserie,
+    Fixation,
+    Peinture,
+    Jardinage,
+    Électricité,
+    Plomberie,
+    Chauffage,
+    Ventilation,
+    Équipement de protection individuelle (EPI),
+    Sécurité,
+    Aménagement intérieur,
+    Aménagement extérieur,
+    Matériaux de construction,
+    Soudure,
+    Colle,
+    Adhésif,
+    Luminaire,
+    Menuiserie,
+    Quincaillerie générale," />
+    <meta name="description" content="Quincaillerie.ci est une entreprise ivoirienne spécialisée dans la vente de produits de quincaillerie, de bricolage et d'équipements de sécurité. Leur catalogue de produits comprend une large gamme d'articles allant des outils à main, aux machines électriques, en passant par les équipements de protection individuelle, les serrures et quincaillerie de porte, les produits de plomberie et d'électricité, les équipements pour la construction et bien plus encore..." />
+    <meta name="author" content="Sidik Slims" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Quincaillerie - Accueil</title>
     <!-- CSRF Token -->
@@ -65,7 +89,7 @@
 
 
         <!--newsletter_popup_wrap start-->
-        @include('partials.newletter_pop_up')
+        {{-- @include('partials.newletter_pop_up') --}}
         <!--newsletter_popup_wrap end-->
 
 

@@ -1,40 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="❴❴ session()->get('locale') ?? app()->getLocale() ❵❵">
 
 <!-- Mirrored from themetechmount.com/html/fixfellow/header-style-02.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Feb 2023 10:58:19 GMT -->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Quincaillerie
-    Outillage,
-    Matériel de construction,
-    Bricolage,
-    Outils électriques,
-    Accessoires de plomberie,
-    Visserie,
-    Fixation,
-    Peinture,
-    Jardinage,
-    Électricité,
-    Plomberie,
-    Chauffage,
-    Ventilation,
-    Équipement de protection individuelle (EPI),
-    Sécurité,
-    Aménagement intérieur,
-    Aménagement extérieur,
-    Matériaux de construction,
-    Soudure,
-    Colle,
-    Adhésif,
-    Luminaire,
-    Menuiserie,
-    Quincaillerie générale," />
+    <meta name="keywords" content="Quincaillerie, Outillage,  Matériel de construction,    Bricolage,    Outils électriques, Accessoires de plomberie, Visserie, Fixation, Peinture, Jardinage, Électricité, Plomberie, Chauffage, Ventilation,
+    Équipement de protection individuelle (EPI), Sécurité, Aménagement intérieur, Aménagement extérieur, Matériaux de construction, Soudure, Colle, Adhésif, Luminaire, Menuiserie, Quincaillerie générale," />
     <meta name="description" content="Quincaillerie.ci est une entreprise ivoirienne spécialisée dans la vente de produits de quincaillerie, de bricolage et d'équipements de sécurité. Leur catalogue de produits comprend une large gamme d'articles allant des outils à main, aux machines électriques, en passant par les équipements de protection individuelle, les serrures et quincaillerie de porte, les produits de plomberie et d'électricité, les équipements pour la construction et bien plus encore..." />
     <meta name="author" content="Sidik Slims" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Quincaillerie - Accueil</title>
+    <title>Quincaillerie - @yield('title')</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -43,42 +20,42 @@
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/bootstrap.min.css') }}" />
 
     <!-- animate -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/animate.css') }}" />
 
     <!-- fontawesome -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/font-awesome.css') }}" />
 
     <!-- themify -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/themify-icons.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/themify-icons.css') }}" />
 
     <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/slick.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/slick-theme.css') }}">
 
     <!-- REVOLUTION LAYERS STYLES -->
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution/css/layers.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/revolution/css/layers.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution/css/settings.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/revolution/css/settings.css') }}">
 
     <!-- magnific-popup -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/magnific-popup.css') }}" />
 
     <!-- megamenu -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/megamenu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/megamenu.css') }}">
 
     <!-- shortcodes -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/shortcodes.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/shortcodes.css') }}" />
 
     <!-- main -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/main.css') }}" />
 
     <!-- responsive -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/responsive.css') }}" />
 
 </head>
 
@@ -126,37 +103,37 @@
                                         <ul class="thumbnails easyzoom-gallery-slider"
                                             data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":true, "infinite":true, "vertical":true}'>
                                             <li>
-                                                <a href="images/product/pro-01-plus.png"
-                                                    data-standard="images/product/pro-01-plus.png">
-                                                    <img class="img-fluid" src="images/product/pro-01-plus.png"
+                                                <a href="{{ asset('front/assets/images/product/pro-01-plus.png') }}"
+                                                    data-standard="{{ asset('front/images/product/pro-01-plus.png') }}">
+                                                    <img class="img-fluid" src="{{ asset('images/product/pro-01-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="images/product/pro-02-plus.png"
-                                                    data-standard="images/product/pro-02-plus.png">
-                                                    <img class="img-fluid" src="images/product/pro-02-plus.png"
+                                                <a href="{{ ('front/assetsimages/product/pro-02-plus.png') }}"
+                                                    data-standard="{{ ('front/assets/images/product/pro-02-plus.png') }}">
+                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-02-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="images/product/pro-03-plus.png"
-                                                    data-standard="images/product/pro-03-plus.png">
-                                                    <img class="img-fluid" src="images/product/pro-03-plus.png"
+                                                <a href="{{ asset('front/assets/images/product/pro-03-plus.png') }}"
+                                                    data-standard="{{ asset('front/assets/images/product/pro-03-plus.png') }}">
+                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-03-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="images/product/pro-04-plus.png"
-                                                    data-standard="images/product/pro-04-plus.png">
-                                                    <img class="img-fluid" src="images/product/pro-04-plus.png"
+                                                <a href="{{ asset('front/assets/images/product/pro-04-plus.png') }}"
+                                                    data-standard="{{ asset('front/assets/images/product/pro-04-plus.png') }}">
+                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-04-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="images/product/pro-05-plus.png"
-                                                    data-standard="images/product/pro-05-plus.png">
-                                                    <img class="img-fluid" src="images/product/pro-05-plus.png"
+                                                <a href="{{ asset('front/assets/images/product/pro-05-plus.png') }}"
+                                                    data-standard="{{ asset('front/assets/images/product/pro-05-plus.png') }}">
+                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-05-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
@@ -167,8 +144,8 @@
                                     <div class="pl-35 res-767-pl-15">
                                         <div
                                             class="easyzoom easyzoom-model easyzoom--overlay easyzoom--with-thumbnails">
-                                            <a href="images/product/pro-01-plus.png">
-                                                <img class="img-fluid" src="images/product/pro-01-plus.png"
+                                            <a href="{{ asset('front/assets/images/product/pro-01-plus.png') }}">
+                                                <img class="img-fluid" src="{{ asset('images/product/pro-01-plus.png') }}"
                                                     alt="" />
                                             </a>
                                         </div>
@@ -277,34 +254,34 @@
 
     <!-- Javascript -->
 
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/tether.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.easing.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-waypoints.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-validate.js') }}"></script>
-    <script src="{{ asset('assets/js/numinate.min.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/price_range_script.js') }}"></script>
-    <script src="{{ asset('assets/js/easyzoom.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('front/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/tether.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/jquery.easing.js') }}"></script>
+    <script src="{{ asset('front/assets/js/jquery-waypoints.js') }}"></script>
+    <script src="{{ asset('front/assets/js/jquery-validate.js') }}"></script>
+    <script src="{{ asset('front/assets/js/numinate.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/slick.js') }}"></script>
+    <script src="{{ asset('front/assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/price_range_script.js') }}"></script>
+    <script src="{{ asset('front/assets/js/easyzoom.js') }}"></script>
+    <script src="{{ asset('front/assets/js/main.js') }}"></script>
 
     <!-- Revolution Slider -->
-    <script src="{{ asset('assets/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/slider.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/slider.js') }}"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
 
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
-    <script src="{{ asset('assets/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
     <!-- Javascript end-->
 
 </body>

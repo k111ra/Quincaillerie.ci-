@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Accueil')
 @section('content')
     @include('partials.slider')
 
@@ -13,13 +14,15 @@
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-six.jpg") }}" alt=""></a>
+                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/banner-six.jpg' }}"
+                                    alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-seven.jpg") }}" alt=""></a>
+                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/banner-seven.jpg' }}"
+                                    alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
                 </div><!-- row end -->
@@ -45,15 +48,16 @@
                                     <p>C'est toute la puissance dont vous avez besoin!</p>
                                     <h4>Jusqu'à <strong>35%</strong> de reduction !</h4>
                                 </div>
-                                <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline"
-                                    href="#">Acheter maintenant!</a>
+                                <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline" href="#">Acheter
+                                    maintenant!</a>
                             </div>
                         </aside>
                         <aside class="widget products top-rated-products">
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-09.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-09.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -75,7 +79,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-02.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -102,7 +107,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-08.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -125,7 +131,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-06.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -162,11 +169,12 @@
                                 <!-- testimonials -->
                                 <div class="testimonials ttm-testimonial-box-view-style2">
                                     <div class="testimonial-content">
-                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source de publicité et je suis l'un de ceux qui sont satisfaits.
+                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source
+                                            de publicité et je suis l'un de ceux qui sont satisfaits.
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
-                                                <img class="img-fluid" src="{{ ('assets/images/testimonial/01.jpg') }}"
+                                                <img class="img-fluid" src="{{ 'assets/images/testimonial/01.jpg' }}"
                                                     alt="testimonial-img">
                                             </div>
                                             <div class="testimonial-caption">
@@ -188,11 +196,12 @@
                                 <!-- testimonials -->
                                 <div class="testimonials ttm-testimonial-box-view-style2">
                                     <div class="testimonial-content">
-                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source de publicité et je suis l'un de ceux qui sont satisfaits.
+                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source
+                                            de publicité et je suis l'un de ceux qui sont satisfaits.
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
-                                                <img class="img-fluid" src="{{ ("assets/images/testimonial/02.jpg") }}"
+                                                <img class="img-fluid" src="{{ 'assets/images/testimonial/02.jpg' }}"
                                                     alt="testimonial-img">
                                             </div>
                                             <div class="testimonial-caption">
@@ -214,11 +223,12 @@
                                 <!-- testimonials -->
                                 <div class="testimonials ttm-testimonial-box-view-style2">
                                     <div class="testimonial-content">
-                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source de publicité et je suis l'un de ceux qui sont satisfaits.
+                                        <blockquote class="ttm-testimonial-text">Un client satisfait est la meilleur source
+                                            de publicité et je suis l'un de ceux qui sont satisfaits.
                                         </blockquote>
                                         <div class="testimonial-avatar">
                                             <div class="testimonial-img">
-                                                <img class="img-fluid" src="{{ ("assets/images/testimonial/03.jpg") }}"
+                                                <img class="img-fluid" src="{{ 'assets/images/testimonial/03.jpg' }}"
                                                     alt="testimonial-img">
                                             </div>
                                             <div class="testimonial-caption">
@@ -243,7 +253,8 @@
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-10.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-10.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -265,7 +276,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ ('assets/images/product/pro-front-02.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -292,7 +304,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-08.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -314,7 +327,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ ("assets/images/product/pro-front-06.png") }}" alt=""></a>
+                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                            alt=""></a>
                                     <div class="product-content-box">
                                         <div class="star-ratings">
                                             <ul class="rating">
@@ -343,11 +357,11 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/widget-banner-one.jpg") }}"
+                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/widget-banner-one.jpg' }}"
                                     alt="widget-banner"></a>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="{{ ("assets/images/widget-banner-two.jpg") }}"
+                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/widget-banner-two.jpg' }}"
                                     alt="widget-banner"></a>
                         </aside>
                     </div>
@@ -374,9 +388,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-09.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-09.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-09.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-09.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -411,7 +427,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                77.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                77.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -424,9 +441,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-05.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-05.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -461,7 +480,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                62.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                62.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -475,9 +495,11 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Vente!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-02.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -512,12 +534,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    110.000 <span                                 class="product-Price-currencySymbol">F CFA</span>
+                                                                    110.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    123.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    123.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -531,9 +554,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-08.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -568,7 +593,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                               24.000  <span class="product-Price-currencySymbol">F CFA</span>
+                                                                24.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -581,9 +607,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-01.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-01.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -618,7 +646,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                40.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                40.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -632,9 +661,11 @@
                                                         <div class="onsale">Vente!</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-06.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -669,13 +700,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    124.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    124.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    111.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    111.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -689,9 +720,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-03.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-03.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -726,7 +759,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                38.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                38.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -740,9 +774,11 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Vente!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-04.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-04.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -777,13 +813,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    99.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    99.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    82.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    82.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -802,9 +838,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-01.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-01.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -839,7 +877,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                40.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                40.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -853,9 +892,11 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Vente!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-02.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -890,13 +931,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    110.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    110.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    123.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    123.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -910,9 +951,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-03.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-03.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -947,7 +990,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                38.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                38.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -961,9 +1005,11 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Solde!</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-04.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-04.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -998,13 +1044,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    99.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    99.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    82.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    82.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1018,9 +1064,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-05.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-05.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1055,7 +1103,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                62.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                62.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1069,9 +1118,11 @@
                                                         <div class="onsale">Solde</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-06.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1106,13 +1157,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    124.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    124.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    111.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    111.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1126,9 +1177,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-07.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-07.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1163,7 +1216,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                149.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                149.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1176,9 +1230,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-08.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1213,7 +1269,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                24.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1231,9 +1288,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-05.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-05.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1268,7 +1327,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                62.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                62.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1282,9 +1342,11 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Solde</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-02.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1319,13 +1381,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    110.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    110.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    123.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    123.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1339,9 +1401,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-07.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-07.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1376,7 +1440,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                149.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                149.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1389,9 +1454,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-08.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1426,7 +1493,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                24.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1439,9 +1507,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-01.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-01.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1476,7 +1546,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                40.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                40.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1489,9 +1560,11 @@
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-03.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-03.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1526,7 +1599,8 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                38.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                38.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -1540,9 +1614,11 @@
                                                         <div class="product-image-box">
                                                             <div class="onsale">Solde</div>
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-04.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-04.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1577,13 +1653,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    99.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    99.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    82.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    82.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1598,9 +1674,11 @@
                                                         <div class="onsale">Solde</div>
                                                         <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                                                alt="">
                                                             <img class="img-fluid pro-image-back"
-                                                                src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
+                                                                src="{{ 'assets/images/product/pro-back-06.png' }}"
+                                                                alt="">
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -1635,13 +1713,13 @@
                                                         </div>
                                                         <span class="price">
                                                             <ins><span class="product-Price-amount">
-                                                                    124.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    124.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </ins>
                                                             <del><span class="product-Price-amount">
-                                                                    111.000 <span
-                                                                    class="product-Price-currencySymbol">F CFA</span>
+                                                                    111.000 <span class="product-Price-currencySymbol">F
+                                                                        CFA</span>
                                                                 </span>
                                                             </del>
                                                         </span>
@@ -1656,8 +1734,8 @@
                                 <div class="col-sm-12">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30 mt-5">
-                                        <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-eight.jpg") }}"
-                                                alt=""></a>
+                                        <a href="#"><img class="img-fluid"
+                                                src="{{ 'assets/images/banner-eight.jpg' }}" alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                             </div>
@@ -1730,9 +1808,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-09.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-09.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-09.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-09.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1780,9 +1860,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-10.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-10.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-10.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-10.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1830,9 +1912,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-01.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-01.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-01.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1881,9 +1965,11 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-02.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1918,11 +2004,13 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                110.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                110.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                123.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                123.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -1936,9 +2024,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-03.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-03.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -1987,9 +2077,11 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-04.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-04.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2024,11 +2116,13 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                99.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                99.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                82.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                82.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2042,9 +2136,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-05.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-05.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2093,9 +2189,11 @@
                                                     <div class="onsale">Solde</div>
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-06.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2130,11 +2228,13 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>1
+                                                                24.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>1
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                111.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                111.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2148,9 +2248,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-07.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-07.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2185,7 +2287,8 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            149.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                            149.000 <span class="product-Price-currencySymbol">F
+                                                                CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2198,9 +2301,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-08.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2263,9 +2368,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-10.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-10.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-10.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-10.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2313,7 +2420,8 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-01.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-01.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
                                                             src="images/product/pro-back-01.png" alt="">
                                                     </div>
@@ -2364,9 +2472,11 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-02.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-02.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-02.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-02.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2401,11 +2511,13 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                110.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                110.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                123.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                123.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2419,9 +2531,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-09.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-09.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-09.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-09.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2469,9 +2583,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-03.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-03.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-03.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-03.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2519,9 +2635,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-07.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-07.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-07.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-07.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2556,7 +2674,8 @@
                                                     </div>
                                                     <span class="price">
                                                         <span class="product-Price-amount">
-                                                            149.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                            149.000 <span class="product-Price-currencySymbol">F
+                                                                CFA</span>
                                                         </span>
                                                     </span>
                                                 </div>
@@ -2570,9 +2689,11 @@
                                                     <div class="product-image-box">
                                                         <div class="onsale">Solde</div>
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-04.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-04.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-04.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-04.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2607,11 +2728,13 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                99.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                99.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                82.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                82.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2625,9 +2748,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-05.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-05.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-05.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-05.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2676,9 +2801,11 @@
                                                     <div class="onsale">Solde</div>
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-06.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-06.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-06.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-06.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2713,11 +2840,13 @@
                                                     </div>
                                                     <span class="price">
                                                         <ins><span class="product-Price-amount">
-                                                                124.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                124.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </ins>
                                                         <del><span class="product-Price-amount">
-                                                                111.000 <span class="product-Price-currencySymbol">F CFA</span>
+                                                                111.000 <span class="product-Price-currencySymbol">F
+                                                                    CFA</span>
                                                             </span>
                                                         </del>
                                                     </span>
@@ -2731,9 +2860,11 @@
                                                 <div class="product-box-inner">
                                                     <div class="product-image-box">
                                                         <img class="img-fluid pro-image-front"
-                                                            src="{{ ("assets/images/product/pro-front-08.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-front-08.png' }}"
+                                                            alt="">
                                                         <img class="img-fluid pro-image-back"
-                                                            src="{{ ("assets/images/product/pro-back-08.png") }}" alt="">
+                                                            src="{{ 'assets/images/product/pro-back-08.png' }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="product-btn-links-wrapper">
                                                         <div class="product-btn"><a href="#"
@@ -2781,15 +2912,15 @@
                                 <div class="col-sm-6">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30">
-                                        <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-nine.jpg") }}"
-                                                alt=""></a>
+                                        <a href="#"><img class="img-fluid"
+                                                src="{{ 'assets/images/banner-nine.jpg' }}" alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                                 <div class="col-sm-6">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30">
-                                        <a href="#"><img class="img-fluid" src="{{ ("assets/images/banner-ten.jpg") }}"
-                                                alt=""></a>
+                                        <a href="#"><img class="img-fluid"
+                                                src="{{ 'assets/images/banner-ten.jpg' }}" alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                             </div>
@@ -2809,7 +2940,8 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ ("assets/images/blog/01.jpg") }}" alt="">
+                                                    <img class="img-fluid" src="{{ 'assets/images/blog/01.jpg' }}"
+                                                        alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2823,10 +2955,12 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i
+                                                            class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Danger d'avoir une pression d'eau élevée</a></h5>
+                                                    <h5><a href="blog-single.html">Danger d'avoir une pression d'eau
+                                                            élevée</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end -->
@@ -2834,7 +2968,8 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ ("assetsimages/blog/02.jpg") }}" alt="">
+                                                    <img class="img-fluid" src="{{ 'assetsimages/blog/02.jpg' }}"
+                                                        alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2848,10 +2983,12 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i
+                                                            class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Les erreurs de peinture les plus courantes</a></h5>
+                                                    <h5><a href="blog-single.html">Les erreurs de peinture les plus
+                                                            courantes</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end -->
@@ -2859,7 +2996,8 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ ("assets/images/blog/03.jpg") }}" alt="">
+                                                    <img class="img-fluid" src="{{ 'assets/images/blog/03.jpg' }}"
+                                                        alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2873,11 +3011,12 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i
+                                                            class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
                                                     <h5><a href="blog-single.html">Choisir un matériau de toiture pour
-                                                        Maison</a></h5>
+                                                            Maison</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end -->
@@ -2885,7 +3024,8 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ ("assets/images/blog/04.jpg") }}" alt="">
+                                                    <img class="img-fluid" src="{{ 'assets/images/blog/04.jpg' }}"
+                                                        alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2899,10 +3039,12 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Éducation des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i
+                                                            class="fa fa-tag"></i>Éducation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Équiper les chercheurs dans le développement.</a></h5>
+                                                    <h5><a href="blog-single.html">Équiper les chercheurs dans le
+                                                            développement.</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end-->
@@ -2910,7 +3052,8 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ ("assets/images/blog/05.jpg") }}" alt="">
+                                                    <img class="img-fluid" src="{{ 'assets/images/blog/05.jpg' }}"
+                                                        alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2924,11 +3067,12 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>Chiucation des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i
+                                                            class="fa fa-tag"></i>Chiucation des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
                                                     <h5><a href="blog-single.html">Étapes simples pour remplacer l'ancien
-                                                        Carrelage </a></h5>
+                                                            Carrelage </a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end-->
@@ -2936,7 +3080,8 @@
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">
                                                 <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ ("assets/images/blog/06.jpg") }}" alt="">
+                                                    <img class="img-fluid" src="{{ 'assets/images/blog/06.jpg' }}"
+                                                        alt="">
                                                     <div class="ttm-box-post-date">
                                                         <span class="ttm-entry-date">
                                                             <time class="entry-date"
@@ -2950,11 +3095,12 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>education des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i
+                                                            class="fa fa-tag"></i>education des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
                                                     <h5><a href="blog-single.html">Vous avez une fuite ? Embauchez un
-                                                        plombier expérimenté</a></h5>
+                                                            plombier expérimenté</a></h5>
                                                 </div>
                                             </div>
                                         </div><!-- featured-imagebox-post end-->

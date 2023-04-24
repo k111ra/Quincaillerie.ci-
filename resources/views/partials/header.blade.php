@@ -64,9 +64,10 @@
                                         <select id="search_category" name="search_category"
                                             class="form-control">
                                             <option value="all">Toutes catégories</option>
-                                            <option value="Categories 1">Categories 1</option>
-                                            <option value="Categories 2">Categories 2</option>
-                                            <option value="Categories 3">Categories 3</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                            @endforeach
+
                                         </select>
                                     </div>
                                     <button type="submit" name="submit_search"
@@ -97,7 +98,8 @@
                                         <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('login') }}">Connexion</a>
                                         </li>
                                         <li>
-                                            <i class="fa fa-sign-in mr-2"></i><a href="{{ route('register') }}">S'enregitrer</a></li>
+                                            {{-- <i class="fa fa-sign-in mr-2"></i><a href="{{ route('register') }}">S'enregitrer</a> --}}
+                                          </li>
                                     </ul>
                                 </div>
                             </aside>
@@ -160,91 +162,31 @@
                                 <ul class="cat_menu_list menu-vertical">
                                     <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
                                     </li>
+                                    @foreach ($categories as $category)
                                     <li class="parent">
-                                        <a href="#">Boîte à outils</a>
-                                        <div class="sub-menu megamenu column3">
-                                            <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Matériel</a>
-                                                    <div class="sub-menu">
-                                                        <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Boîte à onglets</a></li>
-                                                            <li><a href="#">Grattoir</a></li>
-                                                            <li><a href="#">Tournevis</a></li>
-                                                            <li><a href="#">Coupe-verre</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Accessoires</a>
-                                                    <div class="sub-menu">
-                                                        <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Scie à métaux</a></li>
-                                                            <li><a href="#">Fourche</a></li>
-                                                            <li><a href="#">Scie circulaire</a></li>
-                                                            <li><a href="#">Clé hexagonale</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Outils de coupe‎ </a>
-                                                    <div class="sub-menu">
-                                                        <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Haches‎</a></li>
-                                                            <li><a href="#">Ciseaux</a></li>
-                                                            <li><a href="#">Scies‎</a></li>
-                                                            <li><a href="#">Des couteaux</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="parent">
-                                        <a href="#">Outil à main</a>
-                                        <div class="sub-menu megamenu column3">
-                                            <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Équipement à gaz</a>
-                                                    <div class="sub-menu">
-                                                        <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Collecteur de poussière</a></li>
-                                                            <li><a href="#">Pistolets à air chaud</a></li>
-                                                            <li><a href="#">Facteurs d'impact</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Outils sans fil</a>
-                                                    <div class="sub-menu">
-                                                        <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Outils nus</a></li>
-                                                            <li><a href="#">Broyeurs</a></li>
-                                                            <li><a href="#">Facteurs d'impact</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="list-unstyled childs_1">
-                                                <li class="title"><a href="#">Outils pneumatiques</a>
-                                                    <div class="sub-menu">
-                                                        <ul class="list-unstyled childs_2">
-                                                            <li><a href="#">Tuyaux pneumatiques</a></li>
-                                                            <li><a href="#">Marteaux à piquer</a></li>
-                                                            <li><a href="#">Compresseurs</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Bois de coupe</a></li>
-                                    <li><a href="#">Outils électroportatifs</a></li>
-                                    <li><a href="#">Carte de scie</a></li>
-                                    <li><a href="#">Outils électriques</a></li>
-                                    <li><a href="#">Pliante</a></li>
-                                    <li><a href="#">Rabot filaire</a></li>
+                                      <a href="#">{{ $category->name }}</a>
+                                      <div class="sub-menu megamenu column3">
+                                        @foreach($category->children as $child)
+
+                                          <ul class="list-unstyled childs_1">
+                                              <li class="title"><a href="#">{{ $child->name }}</a>
+                                                  <div class="sub-menu">
+                                                      <ul class="list-unstyled childs_2">
+                                                          <li><a href="#">Boîte à onglets</a></li>
+                                                          <li><a href="#">Grattoir</a></li>
+                                                          <li><a href="#">Tournevis</a></li>
+                                                          <li><a href="#">Coupe-verre</a></li>
+                                                      </ul>
+                                                  </div>
+                                              </li>
+                                          </ul>
+                                        @endforeach
+                                      </div>
+                                  </li>
+                                    @endforeach
+
+
+
                                     <li class="parent-plus"><a href="#">Plus de catégories</a>
                                         <div class="plus-menu">
                                             <ul class="list-unstyled">

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,11 +23,17 @@ $controller_path = 'App\Http\Controllers';
 
 // Main Page Route
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
+Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
+
 
 Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
 
 Route::middleware(['auth'])->group(function () {
   $controller_path = 'App\Http\Controllers';
+
+  Route::get('/home',[UserController::class, 'index'])->name('user.dashboard');
+
 
   // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
@@ -97,6 +105,15 @@ Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tab
 // custom auth
 Route::middleware(['auth', 'admin'])->group(function () {
   $controller_path = 'App\Http\Controllers';
+
+  // define routes for carrousels
+
+  Route::get('/carousel', [CarouselController::class, 'index'])->name('admin.slider.index');
+  Route::post('/carousel/store', [CarouselController::class, 'store'])->name('admin.slider.store');
+  Route::get('/admin/slider/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.slider.edit');
+  Route::post('/admin/slider/{carousel}/update', [CarouselController::class, 'update'])->name('admin.slider.update');
+  Route::post('/admin/slider/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('admin.slider.destroy');
+
 
   // Define routes for admin users
   // Route::get('/home', $controller_path . '\dashboard\Analytics@index')->name('admin.dashboard');

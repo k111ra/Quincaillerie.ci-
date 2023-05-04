@@ -13,6 +13,12 @@
       "slug": "dashboard-analytics"
     },
     {
+      "url": "/carousel",
+      "name": "carousel",
+      "icon": "menu-icon tf-icons bx bx-category",
+      "slug": "dashboard-analytics"
+    },
+    {
       "name": "Layouts",
       "icon": "menu-icon tf-icons bx bx-layout",
       "slug": "layouts",

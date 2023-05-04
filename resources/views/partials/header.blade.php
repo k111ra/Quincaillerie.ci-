@@ -20,14 +20,14 @@
                                             <li><a href="#">USD $</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#" data-toggle="dropdown"><img src="{{ asset('assets/images/flag.jpg') }}"
+                                    <li><a href="#" data-toggle="dropdown"><img src="{{ asset('front/assets/images/flag.jpg') }}"
                                                 alt="img"> Langue</a>
                                         <ul>
                                             <li><a href="#"><span class="mr-2"><img
-                                                            src="{{ asset('assets/images/English-icon.jpg') }}"
+                                                            src="{{ asset('front/assets/images/English-icon.jpg') }}"
                                                             alt="img"></span>English</a></li>
                                             <li><a href="#"><span class="mr-2"><img
-                                                            src="{{ asset('assets/images/French-icon.jpg') }}"
+                                                            src="{{ asset('front/assets/images/French-icon.jpg') }}"
                                                             alt="img"></span>French</a></li>
                                         </ul>
                                     </li>
@@ -46,7 +46,7 @@
                     <!-- site-branding -->
                     <div class="site-branding">
                         <a class="home-link" href="/" title="Quincaillerie.ci" rel="home">
-                            <img id="logo-img" class="img-center" width="250px" src="{{ asset('assets/images/white-logo.png') }}"
+                            <img id="logo-img" class="img-center" width="250px" src="{{ asset('front/assets/images/white-logo.png') }}"
                                 alt="logo-img">
                         </a>
                     </div><!-- site-branding end -->
@@ -64,9 +64,9 @@
                                         <select id="search_category" name="search_category"
                                             class="form-control">
                                             <option value="all">Toutes catégories</option>
-                                            @foreach ($categories as $category)
+                                            {{-- @foreach ($categories as $category)
                                             <option value="{{ $category->name }}">{{ $category->name }}</option>
-                                            @endforeach
+                                            @endforeach --}}
 
                                         </select>
                                     </div>
@@ -95,7 +95,7 @@
                             <aside class="widget_account dropdown_content">
                                 <div class="widget_account_content">
                                     <ul>
-                                        <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('login') }}">Connexion</a>
+                                        <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('user.login') }}">Connexion</a>
                                         </li>
                                         <li>
                                             {{-- <i class="fa fa-sign-in mr-2"></i><a href="{{ route('register') }}">S'enregitrer</a> --}}
@@ -109,25 +109,25 @@
                                 data-toggle="dropdown">
                                 <div class="cart_icon">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <div class="cart_count">02</div>
+                                    <div class="cart_count">00</div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="#">Mon Panier</a></div>
-                                    <div class="cart_price">257.000F CFA</div>
+                                    <div class="cart_price">0F CFA</div>
                                 </div>
                             </div>
                             <aside class="widget_shopping_cart dropdown_content">
                                 <ul class="cart-list">
                                     <li>
                                         <a href="#" class="photo"><img
-                                                src="images/product/pro-front-02.png" class="cart-thumb"
+                                                src="{{ ('front/assets/images/product/pro-front-02.png') }}" class="cart-thumb"
                                                 alt="" /></a>
                                         <h6><a href="#">Clé à chocs</a></h6>
                                         <p>2x - <span class="price">220.000</span>F CFA</p>
                                     </li>
                                     <li>
                                         <a href="#" class="photo"><img
-                                                src="images/product/pro-front-03.png" class="cart-thumb"
+                                                src="{{ ('front/assets/images/product/pro-front-03.png') }}" class="cart-thumb"
                                                 alt="" /></a>
                                         <h6><a href="#">Briseur de démolition</a></h6>
                                         <p>1x - <span class="price">38.000</span>F CFA</p>

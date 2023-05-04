@@ -1,5 +1,5 @@
 <!-- START REVOLUTION SLIDER -->
-<div id="rev_slider_5_2_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery">
+{{-- <div id="rev_slider_5_2_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery">
 
     <div id="rev_slider_5_2" class="rev_slider fullwidthabanner" data-version="5.4.8">
         <ul>
@@ -161,5 +161,33 @@
         </ul>
         <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
     </div>
-</div>
+</div> --}}
 <!-- END REVOLUTION SLIDER -->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        @foreach ($carousels as $index => $carousel)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}"
+                class="{{ $loop->first ? 'active' : '' }}"></li>
+        @endforeach
+    </ol>
+    <div class="carousel-inner">
+        @foreach ($carousels as $index => $carousel)
+            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                <img class="d-block w-100" src="{{ asset('storage/' . $carousel->image) }}" alt="Slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ $carousel->title }}</h5>
+                    <p style="color: black;">{{ $carousel->description }}</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

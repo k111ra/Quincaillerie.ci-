@@ -14,15 +14,15 @@
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/banner-six.jpg' }}"
+                            <a href="#"><img class="img-fluid" src="{{ asset('front/assets/images/afficher-ici.png') }}"
                                     alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/banner-seven.jpg' }}"
-                                    alt=""></a>
+                            <a href="#"><img class="img-fluid"
+                                    src="{{ asset('front/assets/images/afficher-ici.png') }}" alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
                 </div><!-- row end -->
@@ -55,109 +55,34 @@
                         <aside class="widget products top-rated-products">
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-09.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Marteau perforateur</h2>
-                                        </a>
-                                        <span class="price">
-                                            <span class="product-Price-amount">
-                                                <span class="product-Price-currencySymbol">15 000</span> F CFA
+                                @foreach ($produitsPopulaires as $product)
+                                    <li>
+                                        <a href="#"><img src="{{ asset('storage/' . $product->image) }}"
+                                                alt=""></a>
+                                        <div class="product-content-box">
+                                            <div class="star-ratings">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a class="product-title" href="product-layout1.html">
+                                                <h2>{{ $product->nom }}</h2>
+                                            </a>
+                                            <span class="price">
+                                                <span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">{{ $product->prix }}</span> F
+                                                    CFA
+                                                </span>
                                             </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
                                         </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Clé à chocs</h2>
-                                        </a>
-                                        <span class="price">
-                                            <ins><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">110.000</span>F CFA
-                                                </span>
-                                            </ins>
-                                            <del><span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">123.000</span>F CFA
-                                                </span>
-                                            </del>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Mètre à ruban</h2>
-                                        </a>
-                                        <span class="price">
-                                            <span class="product-Price-amount">
-                                                24.000
-                                                <span class="product-Price-currencySymbol">F CFA</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Scie circulaire</h2>
-                                        </a>
-                                        <span class="price">
-                                            <ins><span class="product-Price-amount">
-                                                    124.000<span class="product-Price-currencySymbol">F CFA</span>
-                                                </span>
-                                            </ins>
-                                            <del><span class="product-Price-amount">
-                                                    111.000<span class="product-Price-currencySymbol">F CFA</span>
-                                                </span>
-                                            </del>
-                                        </span>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
+
+
                             </ul>
                         </aside>
                         <aside class="widget widget-testimonial">
@@ -252,116 +177,44 @@
                         <aside class="widget products top-rated-products">
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-10.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Marteau rotatif</h2>
-                                        </a>
-                                        <span class="price">
-                                            <span class="product-Price-amount">
-                                                80.000 <span class="product-Price-currencySymbol">F CFA</span>
+
+                                @foreach ($produitsPopulaires as $product)
+                                    <li>
+                                        <a href="#"><img src="{{ asset('storage/' . $product->image) }}"
+                                                alt=""></a>
+                                        <div class="product-content-box">
+                                            <div class="star-ratings">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a class="product-title" href="product-layout1.html">
+                                                <h2>{{ $product->nom }}</h2>
+                                            </a>
+                                            <span class="price">
+                                                <span class="product-Price-amount">
+                                                    <span class="product-Price-currencySymbol">{{ $product->prix }}</span>
+                                                    F
+                                                    CFA
+                                                </span>
                                             </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
                                         </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Clé à chocs</h2>
-                                        </a>
-                                        <span class="price">
-                                            <ins><span class="product-Price-amount">
-                                                    110.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                </span>
-                                            </ins>
-                                            <del><span class="product-Price-amount">
-                                                    123.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                </span>
-                                            </del>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Mètre à ruban</h2>
-                                        </a>
-                                        <span class="price">
-                                            <span class="product-Price-amount">
-                                                24.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                            alt=""></a>
-                                    <div class="product-content-box">
-                                        <div class="star-ratings">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <a class="product-title" href="product-layout1.html">
-                                            <h2>Scie circulaire</h2>
-                                        </a>
-                                        <span class="price">
-                                            <ins><span class="product-Price-amount">
-                                                    124.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                </span>
-                                            </ins>
-                                            <del><span class="product-Price-amount">
-                                                    111.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                </span>
-                                            </del>
-                                        </span>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
+
+
                             </ul>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/widget-banner-one.jpg' }}"
+                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/side-banner1.png' }}"
                                     alt="widget-banner"></a>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="{{ 'assets/images/widget-banner-two.jpg' }}"
+                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/side-banner1.png' }}"
                                     alt="widget-banner"></a>
                         </aside>
                     </div>
@@ -373,1361 +226,27 @@
                                         <h5>Nos produits les plus vendus</h5>
                                     </div>
                                     <ul class="tabs text-right">
-                                        <li class="tab active"><a href="#">Nouveau produit</a></li>
-                                        <li class="tab"><a href="#">Spécial</a></li>
-                                        <li class="tab"><a href="#">En soldes</a></li>
+                                        @foreach ($bestseller->children as $best)
+                                            <li class="tab"><a href="#{{ $best->slug }}">{{ $best->name }}</a>
+                                            </li>
+                                        @endforeach
+
                                     </ul>
                                 </div>
                                 <div class="content-tab">
-                                    <div class="content-inner">
-                                        <div class="products row">
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-09.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-09.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Marteau perforateur</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                77.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-05.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-05.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Jeu de clés hexagonales pliantes</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                62.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <div class="onsale">Vente!</div>
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-02.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Clé à chocs</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    110.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    123.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-08.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Mètre à ruban</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-01.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-01.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Bobine de ruban en fibre de verre</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                40.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="onsale">Vente!</div>
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-06.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Scie circulaire</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    124.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    111.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-03.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-03.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Briseur & démolition</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                38.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <div class="onsale">Vente!</div>
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-04.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-04.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Coupe-cloison sèche sans fil</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    99.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    82.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
+                                    @foreach ($bestseller->children as $best)
+                                        <div class="content-inner">
+                                            <div class="products row">
+                                                @foreach ($products as $product)
+                                                    @if ($product->categorie_id == $best->id)
+                                                        @include('partials.product')
+                                                    @endif
+                                                @endforeach
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- content-inner -->
-                                    <div class="content-inner">
-                                        <div class="products row">
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-01.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-01.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Bobine de ruban en fibre de verre </h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                40.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <div class="onsale">Vente!</div>
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-02.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Clé à chocs</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    110.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    123.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-03.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-03.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Briseur et démolition</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                38.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <div class="onsale">Solde!</div>
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-04.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-04.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Coupe-cloison sèche sans fil</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    99.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    82.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-05.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-05.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Jeu de clés hexagonales pliantes</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                62.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="onsale">Solde</div>
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-06.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Scie circulaire</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    124.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    111.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-07.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-07.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Kit de pilote d'impact</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                149.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-08.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Mètre à ruban</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                        </div>
-                                    </div><!-- content-inner end -->
-                                    <!-- content-inner -->
-                                    <div class="content-inner">
-                                        <div class="products row">
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-05.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-05.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Jeu de clés hexagonales pliantes</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                62.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <div class="onsale">Solde</div>
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-02.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Clé à chocs</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    110.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    123.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-07.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-07.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Kit de pilote d'impact</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                149.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-08.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Mètre à ruban</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-01.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-01.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Bobine de ruban en fibre de verre</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                40.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-03.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-03.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Briseur de démolition</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                38.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="product-image-box">
-                                                            <div class="onsale">Solde</div>
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-04.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-04.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Coupe-cloison sèche sans fil</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    99.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    82.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                            <!-- product -->
-                                            <div class="product col-md-3 col-sm-6 col-xs-12">
-                                                <div class="product-box">
-                                                    <!-- product-box-inner -->
-                                                    <div class="product-box-inner">
-                                                        <div class="onsale">Solde</div>
-                                                        <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                                                alt="">
-                                                            <img class="img-fluid pro-image-back"
-                                                                src="{{ 'assets/images/product/pro-back-06.png' }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="product-btn-links-wrapper">
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="add-to-cart-btn tooltip-top"
-                                                                    data-tooltip="Add To Cart"><i
-                                                                        class="ti ti-shopping-cart"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                    data-tooltip="Quick View"><i
-                                                                        class="ti ti-search"></i></a>
-                                                            </div>
-                                                            <div class="product-btn"><a href="#"
-                                                                    class="wishlist-btn tooltip-top"
-                                                                    data-tooltip="Add To Wishlist"><i
-                                                                        class="ti ti-heart"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- product-box-inner end -->
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Scie circulaire</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    124.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    111.000 <span class="product-Price-currencySymbol">F
-                                                                        CFA</span>
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- product end -->
-                                        </div>
-                                    </div><!-- content-inner end -->
+                                    @endforeach
+
+
                                 </div>
                             </div>
                             <div class="row">
@@ -1735,7 +254,7 @@
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30 mt-5">
                                         <a href="#"><img class="img-fluid"
-                                                src="{{ 'assets/images/banner-eight.jpg' }}" alt=""></a>
+                                                src="{{ 'front/assets/images/banner-eight.jpg' }}" alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                             </div>
@@ -1793,566 +312,6 @@
                                 <div class="col-lg-12">
                                     <div class="content-sec-head-style">
                                         <div class="content-area-sec-title">
-                                            <h5>Meilleures ventes</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <!-- slick_slider -->
-                                    <div class="pro_slick_slider"
-                                        data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-09.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-09.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Marteau perforateur</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            77.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-10.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-10.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Marteau rotatif</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            80.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-01.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-01.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Bobine de ruban en fibre de verre</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            40.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <div class="onsale">Solde</div>
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-02.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Clé à chocs</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <ins><span class="product-Price-amount">
-                                                                110.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </ins>
-                                                        <del><span class="product-Price-amount">
-                                                                123.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </del>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-03.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-03.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Briseur de démolition</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            38.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <div class="onsale">Solde</div>
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-04.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-04.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Coupe-cloison sèche sans fil</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <ins><span class="product-Price-amount">
-                                                                99.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </ins>
-                                                        <del><span class="product-Price-amount">
-                                                                82.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </del>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-05.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-05.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Jeu de clés hexagonales pliantes</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            62.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="onsale">Solde</div>
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-06.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Scie circulaire</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <ins><span class="product-Price-amount">
-                                                                24.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>1
-                                                            </span>
-                                                        </ins>
-                                                        <del><span class="product-Price-amount">
-                                                                111.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </del>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-07.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-07.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Kit de pilote d'impact</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            149.000 <span class="product-Price-currencySymbol">F
-                                                                CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-08.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Mètre à ruban</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            24.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="content-sec-head-style">
-                                        <div class="content-area-sec-title">
                                             <h5>Specials</h5>
                                         </div>
                                     </div>
@@ -2361,566 +320,147 @@
                                     <!-- slick_slider -->
                                     <div class="pro_slick_slider"
                                         data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-10.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-10.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
+                                        @foreach ($produitsSpecial as $special)
+                                            <!-- product -->
+                                            <div class="product">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
+                                                            <img class="img-fluid pro-image-front"
+                                                                src="{{ asset('storage/' . $special->image) }}"
+                                                                alt="">
+                                                            {{-- <img class="img-fluid pro-image-back"
+                                                          src="{{ 'assets/images/product/pro-back-09.png' }}"
+                                                          alt=""> --}}
                                                         </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart"><i
+                                                                        class="ti ti-shopping-cart"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View"><i
+                                                                        class="ti ti-search"></i></a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
                                                         </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title" href="product-layout1.html">
+                                                            <h2>{{ $special->nom }}</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
                                                         </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Marteau rotatif</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            80.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-01.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-01.png" alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Bobine de ruban en fibre de verre</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            40.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <div class="onsale">Solde</div>
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-02.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-02.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Clé à chocs</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <ins><span class="product-Price-amount">
-                                                                110.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
+                                                        <span class="price">
+                                                            <span class="product-Price-amount">
+                                                                {{ number_format($special->prix, 0, ',', ' ') . 'F cfa' }}
                                                             </span>
-                                                        </ins>
-                                                        <del><span class="product-Price-amount">
-                                                                123.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </del>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-09.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-09.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Marteau perforateur</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            77.000 <span class="product-Price-currencySymbol">F CFA</span>
                                                         </span>
-                                                    </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-03.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-03.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Briseur de démolition</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            38.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-07.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-07.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Kit de pilote d'impact</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            149.000 <span class="product-Price-currencySymbol">F
-                                                                CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <div class="onsale">Solde</div>
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-04.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-04.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Coupe-cloison sèche sans fil</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <ins><span class="product-Price-amount">
-                                                                99.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </ins>
-                                                        <del><span class="product-Price-amount">
-                                                                82.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </del>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-05.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-05.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Jeu de clés hexagonales pliantes</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            62.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="onsale">Solde</div>
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-06.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-06.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Scie circulaire</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <ins><span class="product-Price-amount">
-                                                                124.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </ins>
-                                                        <del><span class="product-Price-amount">
-                                                                111.000 <span class="product-Price-currencySymbol">F
-                                                                    CFA</span>
-                                                            </span>
-                                                        </del>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ 'assets/images/product/pro-front-08.png' }}"
-                                                            alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="{{ 'assets/images/product/pro-back-08.png' }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>Mètre à ruban</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            24.000 <span class="product-Price-currencySymbol">F CFA</span>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
+                                            </div><!-- product end -->
+                                        @endforeach
+
+
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-12">
+                                <div class="content-sec-head-style">
+                                    <div class="content-area-sec-title">
+                                        <h5>En Solde</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <!-- slick_slider -->
+                                <div class="pro_slick_slider"
+                                    data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
+                                    @foreach ($produitsSolde as $solde)
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <!-- product-box-inner -->
+                                                <div class="product-box-inner">
+                                                    <div class="product-image-box">
+                                                        <img class="img-fluid pro-image-front"
+                                                            src="{{ asset('storage/' . $solde->image) }}"
+                                                            alt="">
+
+                                                    </div>
+                                                    <div class="product-btn-links-wrapper">
+                                                        <div class="product-btn"><a href="#"
+                                                                class="add-to-cart-btn tooltip-top"
+                                                                data-tooltip="Add To Cart"><i
+                                                                    class="ti ti-shopping-cart"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                data-tooltip="Quick View"><i
+                                                                    class="ti ti-search"></i></a>
+                                                        </div>
+                                                        <div class="product-btn"><a href="#"
+                                                                class="wishlist-btn tooltip-top"
+                                                                data-tooltip="Add To Wishlist"><i
+                                                                    class="ti ti-heart"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- product-box-inner end -->
+                                                <div class="product-content-box">
+                                                    <a class="product-title" href="product-layout1.html">
+                                                        <h2>{{ $solde->nom }}</h2>
+                                                    </a>
+                                                    <div class="star-ratings">
+                                                        <ul class="rating">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                            <li><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="price">
+                                                        <span class="product-Price-amount">
+                                                            {{ number_format($solde->prix, 0, ',', ' ') . 'F cfa' }}
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div><!-- product end -->
+                                    @endforeach
+
+                                </div>
+                            </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30">
                                         <a href="#"><img class="img-fluid"
-                                                src="{{ 'assets/images/banner-nine.jpg' }}" alt=""></a>
+                                                src="{{ 'front/assets/images/banner-nine.jpg' }}" alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                                 <div class="col-sm-6">
                                     <!-- banner-image -->
                                     <div class="banner-image mb-30">
                                         <a href="#"><img class="img-fluid"
-                                                src="{{ 'assets/images/banner-ten.jpg' }}" alt=""></a>
+                                                src="{{ 'front/assets/images/banner-ten.jpg' }}" alt=""></a>
                                     </div><!-- banner-image end -->
                                 </div>
                             </div>
@@ -2963,7 +503,8 @@
                                                             élevée</a></h5>
                                                 </div>
                                             </div>
-                                        </div><!-- featured-imagebox-post end -->
+                                        </div>
+                                        <!-- featured-imagebox-post end -->
                                         <!-- featured-imagebox-post -->
                                         <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
                                             <div class="ttm-post-featured-outer">

@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +31,7 @@ Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.l
 Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
 
 
-Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::middleware(['auth'])->group(function () {
   $controller_path = 'App\Http\Controllers';
@@ -111,7 +115,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
   Route::get('/carousel', [CarouselController::class, 'index'])->name('admin.slider.index');
   Route::post('/carousel/store', [CarouselController::class, 'store'])->name('admin.slider.store');
   Route::get('/admin/slider/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.slider.edit');
-  Route::post('/admin/slider/{carousel}/update', [CarouselController::class, 'update'])->name('admin.slider.update');
+  Route::match(['PUT', 'PATCH'], '/admin/slider/{id}', [CarouselController::class, 'update'])->name('admin.slider.update');
   Route::post('/admin/slider/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('admin.slider.destroy');
 
 
@@ -130,7 +134,28 @@ Route::middleware(['auth', 'admin'])->group(function () {
   Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
 
 
-  // Route::resource('admin/categories', 'CategoryController');
+// route to define product
+
+Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
+Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+Route::put('products/{products}', [ProductController::class, 'update'])->name('admin.products.update');
+Route::post('products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+// route to define tags
+
+Route::post('/admin/tags', [TagController::class, 'store'])->name('admin.tags.store');
+Route::get('/admin/tags', [TagController::class, 'index'])->name('admin.tags.index');
+Route::get('/admin/tags/create', [TagController::class, 'create'])->name('admin.tags.create');
+Route::get('/admin/tags/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+Route::put('/admin/tags/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
+Route::post('/admin/tags/{tag}/destroy', [TagController::class, 'destroy'])->name('admin.tags.destroy');
+
+// blog
+Route::get('admin/posts', [PostController::class, 'index'])->name('admin.blogs.index');
+Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
+Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
 
 
 });

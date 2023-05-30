@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col">
             <div class="card">
                 <div class="card-header">Modifier la catégorie</div>
 
@@ -24,7 +24,7 @@
                             <label for="description">Description</label>
                             <textarea class="form-control" name="description" id="description" rows="3" required>{{ $category->description }}</textarea>
                         </div>
-
+                        <br>
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </form>
                 </div>

@@ -107,7 +107,7 @@
                             @csrf
                             <div class="form-group">
                                 <i class="fa fa-envelope-o"></i>
-                                <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -116,7 +116,7 @@
                                 @enderror                            </div>
                             <div class="form-group">
                                 <i class="fa fa-lock"></i>
-                                <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Mot de passe">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

@@ -34,6 +34,7 @@ $containerNav = 'container-fluid';
                       <thead>
                           <tr>
                               <th>Nom</th>
+                              <th>Slug</th>
                               <th>Description</th>
                               <th>Catégorie parent</th>
                               <th>Action</th>
@@ -43,6 +44,7 @@ $containerNav = 'container-fluid';
                           @foreach ($categories as $category)
                               <tr>
                                   <td>{{ $category->name }}</td>
+                                  <td>{{ $category->slug }}</td>
                                   <td>{{ $category->description }}</td>
                                   <td>
                                       @if ($category->parent)
@@ -74,6 +76,7 @@ $containerNav = 'container-fluid';
                               <label for="name">Nom</label>
                               <input type="text" class="form-control" name="name" id="name" required>
                           </div>
+
 
                           <div class="form-group">
                               <label for="description">Description</label>

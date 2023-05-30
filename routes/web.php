@@ -114,7 +114,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
   Route::get('/carousel', [CarouselController::class, 'index'])->name('admin.slider.index');
   Route::post('/carousel/store', [CarouselController::class, 'store'])->name('admin.slider.store');
-  Route::get('/slider/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.slider.edit');
+  Route::get('/admin/slider/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.slider.edit');
   Route::match(['PUT', 'PATCH'], '/admin/slider/{id}', [CarouselController::class, 'update'])->name('admin.slider.update');
   Route::post('/admin/slider/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('admin.slider.destroy');
 

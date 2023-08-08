@@ -1,10 +1,47 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/home",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard-analytics"
+    },
+    {
+      "menuHeader": "Gestion du contenu"
+    },
+    {
+      "name": "Produits",
+      "icon": "menu-icon tf-icons bx bx-layout",
+      "slug": "Produis",
+      "submenu": [
+        {
+          "url": "/categories",
+          "name": "Categorie",
+          "slug": "Categorie"
+        },
+        {
+          "url": "/admin/tags",
+          "name": "tags",
+          "slug": "tags"
+        },
+        {
+          "url": "/products",
+          "name": "products",
+          "slug": "products"
+        }
+      ]
+    },
+    {
+      "url": "/carousel",
+      "name": "carousel",
+      "icon": "menu-icon tf-icons bx bx-category",
+      "slug": "carousel"
+    },
+    {
+      "url": "/admin/posts",
+      "name": "Blogs",
+      "icon": "menu-icon tf-icons bx bx-category",
+      "slug": "Blogs"
     },
     {
       "name": "Layouts",

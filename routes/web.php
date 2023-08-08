@@ -1,5 +1,15 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginPageController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,13 +22,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 $controller_path = 'App\Http\Controllers';
 
-// Main Page Route
-Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 
-// layout
+// Main Page Route
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
+Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
+
+
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+Route::middleware(['auth'])->group(function () {
+  $controller_path = 'App\Http\Controllers';
+
+  Route::get('/home',[UserController::class, 'index'])->name('user.dashboard');
+
+
+  // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
 Route::get('/layouts/without-navbar', $controller_path . '\layouts\WithoutNavbar@index')->name('layouts-without-navbar');
 Route::get('/layouts/fluid', $controller_path . '\layouts\Fluid@index')->name('layouts-fluid');
@@ -78,3 +99,72 @@ Route::get('/form/layouts-horizontal', $controller_path . '\form_layouts\Horizon
 
 // tables
 Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
+
+  // Define routes for regular users
+  Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
+  Route::get('/user/profile', [UserController::class, 'index'])->name('user.profile');
+  // Define other user routes here...
+});
+
+// custom auth
+Route::middleware(['auth', 'admin'])->group(function () {
+  $controller_path = 'App\Http\Controllers';
+
+  // define routes for carrousels
+
+  Route::get('/carousel', [CarouselController::class, 'index'])->name('admin.slider.index');
+  Route::post('/carousel/store', [CarouselController::class, 'store'])->name('admin.slider.store');
+  Route::get('/slider/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.slider.edit');
+  Route::match(['PUT', 'PATCH'], '/admin/slider/{id}', [CarouselController::class, 'update'])->name('admin.slider.update');
+  Route::post('/admin/slider/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('admin.slider.destroy');
+
+
+  // Define routes for admin users
+  // Route::get('/home', $controller_path . '\dashboard\Analytics@index')->name('admin.dashboard');
+  Route::get('/home',[UserController::class, 'index'])->name('admin.dashboard');
+
+  // Route::get('/admin/dashboard', [UserController::class, 'index'])->name('admin.dashboard');
+  Route::get('/admin/users', [UserController::class, 'users'])->name('admin.users');
+  // Define other admin routes here...
+  Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
+  Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+  Route::post('/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+  Route::get('/categories/{category}/edit',[CategoryController::class, 'edit'])->name('admin.categories.edit');
+  Route::post('/categories/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+  Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+
+
+// route to define product
+
+Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
+Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+Route::put('products/{products}', [ProductController::class, 'update'])->name('admin.products.update');
+Route::post('products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+// route to define tags
+
+Route::post('/admin/tags', [TagController::class, 'store'])->name('admin.tags.store');
+Route::get('/admin/tags', [TagController::class, 'index'])->name('admin.tags.index');
+Route::get('/admin/tags/create', [TagController::class, 'create'])->name('admin.tags.create');
+Route::get('/admin/tags/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+Route::put('/admin/tags/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
+Route::post('/admin/tags/{tag}/destroy', [TagController::class, 'destroy'])->name('admin.tags.destroy');
+
+// blog
+Route::get('admin/posts', [PostController::class, 'index'])->name('admin.blogs.index');
+Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
+Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
+
+
+});
+
+Auth::routes();
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

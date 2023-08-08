@@ -16,7 +16,7 @@ $navbarDetached = ($navbarDetached ?? '');
       <!--  Brand demo (display only for navbar-full and hide on below xl) -->
       @if(isset($navbarFull))
       <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-        <a href="{{url('/')}}" class="app-brand-link gap-2">
+        <a href="{{url('/admin')}}" class="app-brand-link gap-2">
           <span class="app-brand-logo demo">
             @include('_partials.macros',["width"=>25,"withbg"=>'#696cff'])
           </span>
@@ -91,7 +91,7 @@ $navbarDetached = ($navbarDetached ?? '');
               <li>
                 <a class="dropdown-item" href="javascript:void(0);">
                   <span class="d-flex align-items-center align-middle">
-                    <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                    <i class="flex-shrink-0 bx bx-credit-card me-2 pe-1"></i>
                     <span class="flex-grow-1 align-middle">Billing</span>
                     <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
                   </span>

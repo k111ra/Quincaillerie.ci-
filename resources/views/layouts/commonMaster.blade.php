@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>@yield('title') | Sneat - HTML Laravel Free Admin Template </title>
+  <title>@yield('title') | Quincaillerie.ci - Panel Admin </title>
   <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
   <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}">
   <!-- laravel CRUD token -->
@@ -29,9 +29,9 @@
   <!--/ Layout Content -->
 
   {{-- remove while creating package --}}
-  <div class="buy-now">
+  {{-- <div class="buy-now">
     <a href="{{config('variables.productPage')}}" target="_blank" class="btn btn-danger btn-buy-now">Upgrade To Pro</a>
-  </div>
+  </div> --}}
   {{-- remove while creating package end --}}
 
   <!-- Include Scripts -->

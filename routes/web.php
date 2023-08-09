@@ -163,8 +163,5 @@ Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.
 Auth::routes();
 
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

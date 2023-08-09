@@ -220,6 +220,8 @@
                     </div>
                     <div class="col-lg-9 content-area">
                         <div class="products products-fitter">
+                          @isset($bestseller)
+
                             <div class="ttm-tabs">
                                 <div class="content-sec-head-style">
                                     <div class="content-area-sec-title">
@@ -249,6 +251,10 @@
 
                                 </div>
                             </div>
+                            @else
+                            Il n'y a rien ici pour le moment !
+                            @endisset
+
                             <div class="row">
                                 <div class="col-sm-12">
                                     <!-- banner-image -->

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
@@ -36,7 +37,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
   $controller_path = 'App\Http\Controllers';
 
-  Route::get('/home',[UserController::class, 'index'])->name('user.dashboard');
+  Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
 
 
   // layout
@@ -100,10 +101,7 @@ Route::get('/form/layouts-horizontal', $controller_path . '\form_layouts\Horizon
 // tables
 Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
 
-  // Define routes for regular users
-  Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
-  Route::get('/user/profile', [UserController::class, 'index'])->name('user.profile');
-  // Define other user routes here...
+
 });
 
 // custom auth
@@ -121,10 +119,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
   // Define routes for admin users
   // Route::get('/home', $controller_path . '\dashboard\Analytics@index')->name('admin.dashboard');
-  Route::get('/home',[UserController::class, 'index'])->name('admin.dashboard');
+  Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-  // Route::get('/admin/dashboard', [UserController::class, 'index'])->name('admin.dashboard');
-  Route::get('/admin/users', [UserController::class, 'users'])->name('admin.users');
+  Route::get('/admin/users', [LoginController::class, 'users'])->name('admin.users');
   // Define other admin routes here...
   Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
   Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');

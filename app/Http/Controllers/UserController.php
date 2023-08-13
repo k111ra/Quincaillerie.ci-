@@ -2,33 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class UserController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function dashboard()
     {
-        $this->middleware('auth');
-    }
+      $categories = Category::with('parent')->get();
+      $parents = Category::pluck('name', 'id')->prepend('None', '');
+      return view('user.dashboard')->with([
+        'categories' => $categories,
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        if (Auth::user()->isAdmin()) {
-            return view('admin.dashboard');
-        } else {
-            return view('user.dashboard');
-        }
+      ]);
     }
 }

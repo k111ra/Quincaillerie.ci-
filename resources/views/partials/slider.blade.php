@@ -164,7 +164,7 @@
 </div> --}}
 <!-- END REVOLUTION SLIDER -->
 
-{{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-ride="carousel" data-interval="5000" data-pause="hover">
     <ol class="carousel-indicators">
         @foreach ($carousels as $index => $carousel)
             <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}"
@@ -190,4 +190,4 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div> --}}
+</div>

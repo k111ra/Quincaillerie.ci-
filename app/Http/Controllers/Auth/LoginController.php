@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Role;
 
 
 class LoginController extends Controller
@@ -24,6 +25,11 @@ class LoginController extends Controller
 
   use AuthenticatesUsers;
 
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
   /**
    * Where to redirect users after login.
    *
@@ -31,25 +37,12 @@ class LoginController extends Controller
    */
   protected function redirectTo()
   {
-      if (Auth::user()->hasRole('admin')) {
-          return route('admin.dashboard');
-      }
-
-      return route('user.dashboard');
-  }
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-    $this->redirectTo = route('user.dashboard'); // Redirection par défaut pour les utilisateurs non-admin
-
-    if (Auth::check() && Auth::user()->hasRole('admin')) {
-      $this->redirectTo = route('admin.dashboard'); // Redirection pour les utilisateurs admin
+    if (Auth::user()->role == 'admin') {
+      return route('admin.dashboard');
     }
 
-    $this->middleware('guest')->except('logout');
+ return route('user.dashboard');
   }
+
+
 }

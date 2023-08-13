@@ -7,19 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = ['nom', 'description', 'prix', 'image'];
+  protected $fillable = ['nom', 'description', 'prix', 'image'];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'categorie_id');
-    }
+  public function category()
+  {
+    return $this->belongsTo(Category::class);
+  }
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class, 'product_tags');
-    }
+
+  public function tags()
+  {
+    return $this->belongsToMany(Tag::class, 'product_tags');
+  }
 
 
 }

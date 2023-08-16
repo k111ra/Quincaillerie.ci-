@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\PostController;
@@ -30,6 +31,7 @@ $controller_path = 'App\Http\Controllers';
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
 Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
+Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
 
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');

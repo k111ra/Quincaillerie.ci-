@@ -45,8 +45,9 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
+        $categories = Category::all();
         $parents = Category::pluck('name', 'id')->prepend('None', '');
-        return view('admin.categories.edit', compact('category', 'parents'));
+        return view('admin.categories.edit', compact('category', 'parents','categories'));
     }
 
     public function update(Request $request, Category $category)

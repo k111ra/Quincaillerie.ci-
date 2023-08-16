@@ -305,7 +305,7 @@
                                                         View</a></li>
                                             </ul> --}}
                                         </li>
-                                        <li><a href="contact.html">Contactez-nous</a></li>
+                                        <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
                                     </ul>
                                 </nav>
                             </div><!-- site-navigation end-->

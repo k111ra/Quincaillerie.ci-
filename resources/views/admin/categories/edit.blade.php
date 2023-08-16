@@ -24,6 +24,15 @@
                             <label for="description">Description</label>
                             <textarea class="form-control" name="description" id="description" rows="3" required>{{ $category->description }}</textarea>
                         </div>
+                        <div class="form-group">
+                          <label for="parent">Categorie Supperieur</label>
+                          <select name="parent_id" id="parent" class="form-control">
+                            <option value="{{ $category->parent->id }}">{{ $category->parent->name }}</option>
+                            @foreach ($categories as $categorie)
+                            <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                            @endforeach
+                          </select>
+                      </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </form>

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactPageController;
@@ -32,10 +34,9 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
 Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
 Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
-
-
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-
+// Route::get('/register/create', [UserController::class, 'register'])->name('register.create');
+// Route::post('/register', [RegisterController::class,'create'])->name('register');
 Route::middleware(['auth'])->group(function () {
   $controller_path = 'App\Http\Controllers';
 

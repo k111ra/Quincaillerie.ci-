@@ -4,9 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col d-md-flex flex-row">
-                    <div class="top_bar_contact_item">Soldes jusqu'à <span
-                            class="ttm-textcolor-highlight"> 25% </span> Utiliser le code promo <div
-                            class="coupen_code ttm-textcolor-highlight">“quin2023”</div>
+                    <div class="top_bar_contact_item">Soldes jusqu'à <span class="ttm-textcolor-highlight"> 25% </span>
+                        Utiliser le code promo <div class="coupen_code ttm-textcolor-highlight">“quin2023”</div>
                     </div>
                     <div class="top_bar_content ml-auto">
                         <div class="top_bar_user">
@@ -20,8 +19,9 @@
                                             <li><a href="#">USD $</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#" data-toggle="dropdown"><img src="{{ asset('front/assets/images/flag.jpg') }}"
-                                                alt="img"> Langue</a>
+                                    <li><a href="#" data-toggle="dropdown"><img
+                                                src="{{ asset('front/assets/images/flag.jpg') }}" alt="img">
+                                            Langue</a>
                                         <ul>
                                             <li><a href="#"><span class="mr-2"><img
                                                             src="{{ asset('front/assets/images/English-icon.jpg') }}"
@@ -46,8 +46,8 @@
                     <!-- site-branding -->
                     <div class="site-branding">
                         <a class="home-link" href="/" title="Quincaillerie.ci" rel="home">
-                            <img id="logo-img" class="img-center" width="250px" src="{{ asset('front/assets/images/white-logo.png') }}"
-                                alt="logo-img">
+                            <img id="logo-img" class="img-center" width="250px"
+                                src="{{ asset('front/assets/images/white-logo.png') }}" alt="logo-img">
                         </a>
                     </div><!-- site-branding end -->
                 </div>
@@ -57,12 +57,10 @@
                         <div class="header_search_content">
                             <div id="search_block_top" class="search_block_top">
                                 <form id="searchbox" method="get" action="#">
-                                    <input class="search_query form-control" type="text"
-                                        id="search_query_top" name="s"
-                                        placeholder="Rechercher des achats..." value="">
+                                    <input class="search_query form-control" type="text" id="search_query_top"
+                                        name="s" placeholder="Rechercher des achats..." value="">
                                     <div class="categories-block">
-                                        <select id="search_category" name="search_category"
-                                            class="form-control">
+                                        <select id="search_category" name="search_category" class="form-control">
                                             <option value="all">Toutes catégories</option>
                                             {{-- @foreach ($categories as $category)
                                             <option value="{{ $category->name }}">{{ $category->name }}</option>
@@ -70,8 +68,7 @@
 
                                         </select>
                                     </div>
-                                    <button type="submit" name="submit_search"
-                                        class="btn btn-default button-search"><i
+                                    <button type="submit" name="submit_search" class="btn btn-default button-search"><i
                                             class="fa fa-search"></i></button>
                                 </form>
                             </div>
@@ -82,28 +79,47 @@
                 <div class="col-lg-3 col-9 order-lg-3 order-2 text-lg-left text-right">
                     <!-- header_extra -->
                     <div class="header_extra d-flex flex-row align-items-center justify-content-end">
-                        <div class="account dropdown">
-                            <div class="d-flex flex-row align-items-center justify-content-start">
-                                <div class="account_icon">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="account_content">
-                                    <div class="account_text"><a href="#">S'identifier</a></div>
-                                </div>
-                            </div>
-                            <div class="account_extra dropdown_link" data-toggle="dropdown">Compte</div>
-                            <aside class="widget_account dropdown_content">
-                                <div class="widget_account_content">
-                                    <ul>
-                                        <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('user.login') }}">Connexion</a>
-                                        </li>
-                                        <li>
-                                            {{-- <i class="fa fa-sign-in mr-2"></i><a href="{{ route('register') }}">S'enregitrer</a> --}}
-                                          </li>
-                                    </ul>
-                                </div>
-                            </aside>
-                        </div>
+                        <ul class="navbar-nav ms-auto">
+                            <!-- Authentication Links -->
+                            @guest
+                                @if (Route::has('user.login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('user.login') }}">{{ __('Connexion') }}</a>
+                                    </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('S\'inscrire') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown">
+                                    <div class="account_extra dropdown_link" data-toggle="dropdown">{{ Auth::user()->name }}
+                                    </div>
+                                    <aside class="widget_account dropdown_content">
+                                        <div class="widget_account_content">
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault();
+                                                   document.getElementById('logout-form').submit();">
+                                                        {{ __('Déconnexion') }}
+                                                    </a>
+                                                </li>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                                {{-- <li><i class="fa fa-sign-in mr-2"></i><a href="#">{{ __('Compte') }}</a></li> --}}
+
+                                            </ul>
+                                        </div>
+                                    </aside>
+
+                                </li>
+                            @endguest
+                        </ul>
                         <div class="cart dropdown">
                             <div class="dropdown_link d-flex flex-row align-items-center justify-content-end"
                                 data-toggle="dropdown">
@@ -120,15 +136,15 @@
                                 <ul class="cart-list">
                                     <li>
                                         <a href="#" class="photo"><img
-                                                src="{{ ('front/assets/images/product/pro-front-02.png') }}" class="cart-thumb"
-                                                alt="" /></a>
+                                                src="{{ 'front/assets/images/product/pro-front-02.png' }}"
+                                                class="cart-thumb" alt="" /></a>
                                         <h6><a href="#">Clé à chocs</a></h6>
                                         <p>2x - <span class="price">220.000</span>F CFA</p>
                                     </li>
                                     <li>
                                         <a href="#" class="photo"><img
-                                                src="{{ ('front/assets/images/product/pro-front-03.png') }}" class="cart-thumb"
-                                                alt="" /></a>
+                                                src="{{ 'front/assets/images/product/pro-front-03.png' }}"
+                                                class="cart-thumb" alt="" /></a>
                                         <h6><a href="#">Briseur de démolition</a></h6>
                                         <p>1x - <span class="price">38.000</span>F CFA</p>
                                     </li>
@@ -162,30 +178,30 @@
                                 <ul class="cat_menu_list menu-vertical">
                                     <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
                                     </li>
-                                    @foreach ($categories as $category)
-                                    <li class="parent">
-                                      <a href="#">{{ $category->name }}</a>
-                                      <div class="sub-menu megamenu column3">
-                                        @foreach($category->children as $child)
-
-                                          <ul class="list-unstyled childs_1">
-                                              <li class="title"><a href="#">{{ $child->name }}</a>
-                                                  <div class="sub-menu">
-                                                      <ul class="list-unstyled childs_2">
-                                                          <li><a href="#">Boîte à onglets</a></li>
-                                                          <li><a href="#">Grattoir</a></li>
-                                                          <li><a href="#">Tournevis</a></li>
-                                                          <li><a href="#">Coupe-verre</a></li>
-                                                      </ul>
+                                    {{-- @foreach ($categories as $category)
+                                          <li class="parent">
+                                              <a href="#">{{ $category->name }}</a>
+                                              @if ($category->children->count() > 0)
+                                                  <div class="sub-menu megamenu column3">
+                                                      @foreach ($category->children as $child)
+                                                          <ul class="list-unstyled childs_1">
+                                                              <li class="title"><a href="#">{{ $child->name }}</a>
+                                                                  @if ($child->products->count() > 0)
+                                                                      <div class="sub-menu">
+                                                                          <ul class="list-unstyled childs_2">
+                                                                              @foreach ($child->products as $product)
+                                                                                  <li><a href="#">{{ $product->name }}</a></li>
+                                                                              @endforeach
+                                                                          </ul>
+                                                                      </div>
+                                                                  @endif
+                                                              </li>
+                                                          </ul>
+                                                      @endforeach
                                                   </div>
-                                              </li>
-                                          </ul>
-                                        @endforeach
-                                      </div>
-                                  </li>
-                                    @endforeach
-
-
+                                              @endif
+                                          </li>
+                                      @endforeach --}}
 
                                     <li class="parent-plus"><a href="#">Plus de catégories</a>
                                         <div class="plus-menu">

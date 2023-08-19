@@ -16,4 +16,14 @@ class UserController extends Controller
 
       ]);
     }
+
+    public function register(){
+      $categories = Category::with('parent')->get();
+      $parents = Category::pluck('name', 'id')->prepend('None', '');
+      return view('auth.register')->with(
+        [
+          'categories' => $categories,
+          'parents' => $parents
+        ]);
+    }
 }

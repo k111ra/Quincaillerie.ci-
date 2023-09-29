@@ -51,8 +51,8 @@ class ProductController extends Controller
 
 
     // Enregistrer l'image si elle existe
-    $path = $request->file('image')->store('storage/images/product');
-    $product->image = str_replace('storage/', '', $path);
+    $path = $request->file('image')->store('images/product');
+    $product->image = str_replace('public/', '', $path);
 
     // Enregistrer le produit dans la base de données
     $product->save();
@@ -61,9 +61,9 @@ class ProductController extends Controller
     if (isset($validatedData['tags'])) {
       $product->tags()->attach($validatedData['tags']);
     }
-    dd($request->file('image'));
+    // dd($request->file('image'));
     // Rediriger vers la page de détails du produit
-    // return redirect()->route('admin.products.index', ['product' => $product->id]);
+    return redirect()->route('admin.products.index', ['product' => $product->id]);
   }
 
   public function show(Product $product)

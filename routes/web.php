@@ -141,7 +141,7 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('admi
 Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
 Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
 Route::put('products/{products}', [ProductController::class, 'update'])->name('admin.products.update');
-Route::post('products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+Route::delete('products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
 // route to define tags
 

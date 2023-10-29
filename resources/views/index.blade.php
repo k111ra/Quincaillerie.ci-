@@ -14,7 +14,7 @@
                     <div class="col-sm-6">
                         <!-- banner-image -->
                         <div class="banner-image pt-30">
-                            <a href="#"><img class="img-fluid" src="{{ asset('front/assets/images/afficher-ici.png') }}"
+                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/banner-seven.jpg' }}"
                                     alt=""></a>
                         </div><!-- banner-image end -->
                     </div>
@@ -210,7 +210,7 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/side-banner1.png' }}"
+                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/widget-banner-one.jpg' }}"
                                     alt="widget-banner"></a>
                         </aside>
                         <aside class="widget widget_media_image banner-image">

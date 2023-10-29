@@ -174,7 +174,7 @@
     <div class="carousel-inner">
         @foreach ($carousels as $index => $carousel)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <img class="d-block w-100" src="{{ asset('storage/' . $carousel->image) }}" alt="Slide">
+              <img class="d-block w-100" src="{{ asset('storage/' . $carousel->image) }}" alt="{{ $carousel->title }}">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>{{ $carousel->title }}</h5>
                     <p style="color: black;">{{ $carousel->description }}</p>

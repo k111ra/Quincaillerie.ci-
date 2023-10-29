@@ -178,36 +178,40 @@
                                 <ul class="cat_menu_list menu-vertical">
                                     <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
                                     </li>
-                                    {{-- @foreach ($categories as $category)
-                                          <li class="parent">
-                                              <a href="#">{{ $category->name }}</a>
-                                              @if ($category->children->count() > 0)
-                                                  <div class="sub-menu megamenu column3">
-                                                      @foreach ($category->children as $child)
-                                                          <ul class="list-unstyled childs_1">
-                                                              <li class="title"><a href="#">{{ $child->name }}</a>
-                                                                  @if ($child->products->count() > 0)
-                                                                      <div class="sub-menu">
-                                                                          <ul class="list-unstyled childs_2">
-                                                                              @foreach ($child->products as $product)
-                                                                                  <li><a href="#">{{ $product->name }}</a></li>
-                                                                              @endforeach
-                                                                          </ul>
-                                                                      </div>
-                                                                  @endif
-                                                              </li>
-                                                          </ul>
-                                                      @endforeach
-                                                  </div>
-                                              @endif
-                                          </li>
-                                      @endforeach --}}
+                                    @foreach ($categories as $category)
+                                        <li class="parent">
+
+                                            <a href="{{ route('categories.shop', $category) }}">{{ $category->name }}</a>
+                                            @if ($category->children->count() > 0)
+                                                <div class="sub-menu megamenu column3">
+                                                    @foreach ($category->children as $child)
+                                                        <ul class="list-unstyled childs_1">
+                                                            <li class="title"><a
+                                                                    href="{{ route('categories.shop', $child) }}">{{ $child->name }}</a>
+                                                                @if ($child->products->count() > 0)
+                                                                    <div class="sub-menu">
+                                                                        <ul class="list-unstyled childs_2">
+                                                                            @foreach ($child->products as $product)
+                                                                                <li><a
+                                                                                        href="#">{{ $product->name }}</a>
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                @endif
+                                                            </li>
+                                                        </ul>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                        </li>
+                                    @endforeach
 
                                     <li class="parent-plus"><a href="#">Plus de catégories</a>
                                         <div class="plus-menu">
                                             <ul class="list-unstyled">
                                                 <li><a href="#">Scie à métaux</a></li>
-                                                <li><a href="#">Trou de poteau</a></li>
+                                                 <li><a href="#">Trou de poteau</a></li>
                                                 <li><a href="#">Ceinture à outils</a></li>
                                             </ul>
                                         </div>

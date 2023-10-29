@@ -26,7 +26,6 @@
                         <th scope="row">{{ $product->id }}</th>
                         <td>{{ $product->nom }}</td>
                         <td><img src="{{ asset('storage/' . $product->image) }}" width="100" alt="{{ $product->nom }}"></td>
-                      </td>
                         <td>
                           <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Modifier</a>
 

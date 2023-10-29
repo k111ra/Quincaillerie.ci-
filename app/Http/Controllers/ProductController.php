@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Categorie;
 use App\Models\Category;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -25,7 +26,6 @@ class ProductController extends Controller
     $tags = Tag::all();
     return view('admin.products.create', compact('categories', 'tags'));
   }
-
   public function store(Request $request)
   {
     // Valider les données du formulaire
@@ -49,10 +49,11 @@ class ProductController extends Controller
     $product->categorie_id = $validatedData['categorie_id'];
     $product->slug = Str::slug($validatedData['nom']);
 
-
-    // Enregistrer l'image si elle existe
-    $path = $request->file('image')->store('images/product');
-    $product->image = str_replace('public/', '', $path);
+    // Stocker l'image si elle existe
+    if ($request->hasFile('image')) {
+      $path = $request->file('image')->store('public/images/product');
+      $product->image = str_replace('public/', '', $path);
+    }
 
     // Enregistrer le produit dans la base de données
     $product->save();
@@ -61,10 +62,11 @@ class ProductController extends Controller
     if (isset($validatedData['tags'])) {
       $product->tags()->attach($validatedData['tags']);
     }
-    // dd($request->file('image'));
-    // Rediriger vers la page de détails du produit
+
     return redirect()->route('admin.products.index', ['product' => $product->id]);
   }
+
+
 
   public function show(Product $product)
   {
@@ -73,19 +75,54 @@ class ProductController extends Controller
 
   public function edit($id)
   {
-      $product = Product::findOrFail($id);
-      $categories = Category::all();
-      $tags = Tag::all();
-      $productTags = $product->tags->pluck('id')->toArray();
+    $product = Product::findOrFail($id);
+    $categories = Category::all();
+    $tags = Tag::all();
+    $productTags = $product->tags->pluck('id')->toArray();
 
-      return view('admin.products.edit', compact('product', 'categories', 'tags', 'productTags'));
+    return view('admin.products.edit', compact('product', 'categories', 'tags', 'productTags'));
   }
 
 
   public function update(Request $request, Product $product)
   {
-      $product->update($request->all());
-      return redirect()->route('admin.products.index')->with('success', 'Category updated successfully');
+      // Valider les données du formulaire
+      $validatedData = $request->validate([
+          'nom' => 'required|max:255',
+          'description' => 'required',
+          'prix' => 'required|numeric',
+          'quantite' => 'required|numeric',
+          'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+          'categorie_id' => 'required|exists:categories,id',
+          'tags' => 'nullable|array',
+          'tags.*' => 'exists:tags,id',
+      ]);
+
+      // Mettre à jour les propriétés du produit avec les données validées
+      $product->nom = $validatedData['nom'];
+      $product->description = $validatedData['description'];
+      $product->prix = $validatedData['prix'];
+      $product->quantite = $validatedData['quantite'];
+      $product->categorie_id = $validatedData['categorie_id'];
+
+      // Mettre à jour l'image si elle existe
+      if ($request->hasFile('image')) {
+          $path = $request->file('image')->store('public/images/product');
+          $product->image = str_replace('public/', '', $path);
+      }
+
+      // Enregistrer les modifications dans la base de données
+      $product->save();
+
+      // Mettre à jour les tags liés au produit
+      if (isset($validatedData['tags'])) {
+          $product->tags()->sync($validatedData['tags']);
+      } else {
+          // Si aucun tag n'est sélectionné, supprimer tous les tags existants
+          $product->tags()->detach();
+      }
+
+      return redirect()->route('admin.products.index')->with('success', 'Product updated successfully');
   }
 
 

@@ -181,13 +181,13 @@
                                     @foreach ($categories as $category)
                                         <li class="parent">
 
-                                            <a href="{{ route('categories.shop', $category) }}">{{ $category->name }}</a>
+                                            <a href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
                                             @if ($category->children->count() > 0)
                                                 <div class="sub-menu megamenu column3">
                                                     @foreach ($category->children as $child)
                                                         <ul class="list-unstyled childs_1">
                                                             <li class="title"><a
-                                                                    href="{{ route('categories.shop', $child) }}">{{ $child->name }}</a>
+                                                                    href="{{ route('shop', $child->slug) }}">{{ $child->name }}</a>
                                                                 @if ($child->products->count() > 0)
                                                                     <div class="sub-menu">
                                                                         <ul class="list-unstyled childs_2">

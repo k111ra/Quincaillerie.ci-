@@ -41,17 +41,17 @@ class CategoryController extends Controller
     return redirect()->route('admin.categories.index')->with('success', 'Category created successfully');
   }
 
-  public function show(Category $category)
-  {
-    $categories = Category::with('parent')->get();
-    $parents = Category::pluck('name', 'id')->prepend('None', '');
+  // public function show(Category $category)
+  // {
+  //   $categories = Category::with('parent')->get();
+  //   $parents = Category::pluck('name', 'id')->prepend('None', '');
 
-    return view('shop', [
-      'parents' => $parents,
-      'categories' => $categories,
-      'category' => $category
-    ]);
-  }
+  //   return view('shop', [
+  //     'parents' => $parents,
+  //     'categories' => $categories,
+  //     'category' => $category
+  //   ]);
+  // }
 
 
   public function edit(Category $category)

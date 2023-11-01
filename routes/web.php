@@ -11,6 +11,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -35,13 +36,13 @@ Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.l
 Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
 Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
 // Route::get('/register/create', [UserController::class, 'register'])->name('register.create');
 // Route::post('/register', [RegisterController::class,'create'])->name('register');
 Route::middleware(['auth'])->group(function () {
   $controller_path = 'App\Http\Controllers';
 
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-  Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.shop');
 
 
 

@@ -150,7 +150,7 @@
                                     </li>
                                     <li class="total">
                                         <span class="pull-right"><strong>Total</strong>: 257.000 F CFA</span>
-                                        <a href="cart.html" class="btn btn-default btn-cart">Panier</a>
+                                        <a href="/cart" class="btn btn-default btn-cart">Panier</a>
                                     </li>
                                 </ul>
                             </aside>

@@ -10,8 +10,7 @@
                     alt=""> --}}
             </div>
             <div class="product-btn-links-wrapper">
-                <div class="product-btn"><a href="#" class="add-to-cart-btn tooltip-top"
-                        data-tooltip="Add To Cart"><i class="ti ti-shopping-cart"></i></a>
+                <div class="product-btn"><a href="/add-to-cart/{{ $product->id }}" class="add-to-cart-btn tooltip-top" data-tooltip="Add To Cart" data-product-id="{{ $product->id }}"><i class="ti ti-shopping-cart"></i></a>
                 </div>
                 <div class="product-btn"><a href="#" class="quick-view-btn js-show-modal1 tooltip-top"
                         data-tooltip="Quick View"><i class="ti ti-search"></i></a>
@@ -22,7 +21,7 @@
             </div>
         </div><!-- product-box-inner end -->
         <div class="product-content-box">
-            <a class="product-title" href="product-layout1.html">
+            <a class="product-title" href="{{ url('product/'. $product->slug) }}">
                 <h2>{{ $product->nom }}</h2>
             </a>
             <div class="star-ratings">
@@ -44,3 +43,4 @@
     </div>
 </div>
 <!-- product end -->
+

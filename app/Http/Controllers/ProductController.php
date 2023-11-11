@@ -86,43 +86,43 @@ class ProductController extends Controller
 
   public function update(Request $request, Product $product)
   {
-      // Valider les données du formulaire
-      $validatedData = $request->validate([
-          'nom' => 'required|max:255',
-          'description' => 'required',
-          'prix' => 'required|numeric',
-          'quantite' => 'required|numeric',
-          'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-          'categorie_id' => 'required|exists:categories,id',
-          'tags' => 'nullable|array',
-          'tags.*' => 'exists:tags,id',
-      ]);
+    // Valider les données du formulaire
+    $validatedData = $request->validate([
+      'nom' => 'required|max:255',
+      'description' => 'required',
+      'prix' => 'required|numeric',
+      'quantite' => 'required|numeric',
+      'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+      'categorie_id' => 'required|exists:categories,id',
+      'tags' => 'nullable|array',
+      'tags.*' => 'exists:tags,id',
+    ]);
 
-      // Mettre à jour les propriétés du produit avec les données validées
-      $product->nom = $validatedData['nom'];
-      $product->description = $validatedData['description'];
-      $product->prix = $validatedData['prix'];
-      $product->quantite = $validatedData['quantite'];
-      $product->categorie_id = $validatedData['categorie_id'];
+    // Mettre à jour les propriétés du produit avec les données validées
+    $product->nom = $validatedData['nom'];
+    $product->description = $validatedData['description'];
+    $product->prix = $validatedData['prix'];
+    $product->quantite = $validatedData['quantite'];
+    $product->categorie_id = $validatedData['categorie_id'];
 
-      // Mettre à jour l'image si elle existe
-      if ($request->hasFile('image')) {
-          $path = $request->file('image')->store('public/images/product');
-          $product->image = str_replace('public/', '', $path);
-      }
+    // Mettre à jour l'image si elle existe
+    if ($request->hasFile('image')) {
+      $path = $request->file('image')->store('public/images/product');
+      $product->image = str_replace('public/', '', $path);
+    }
 
-      // Enregistrer les modifications dans la base de données
-      $product->save();
+    // Enregistrer les modifications dans la base de données
+    $product->save();
 
-      // Mettre à jour les tags liés au produit
-      if (isset($validatedData['tags'])) {
-          $product->tags()->sync($validatedData['tags']);
-      } else {
-          // Si aucun tag n'est sélectionné, supprimer tous les tags existants
-          $product->tags()->detach();
-      }
+    // Mettre à jour les tags liés au produit
+    if (isset($validatedData['tags'])) {
+      $product->tags()->sync($validatedData['tags']);
+    } else {
+      // Si aucun tag n'est sélectionné, supprimer tous les tags existants
+      $product->tags()->detach();
+    }
 
-      return redirect()->route('admin.products.index')->with('success', 'Product updated successfully');
+    return redirect()->route('admin.products.index')->with('success', 'Product updated successfully');
   }
 
 
@@ -140,4 +140,20 @@ class ProductController extends Controller
     // Redirection vers la liste des produits avec un message flash
     return redirect()->route('admin.products.index')->with('success', 'Le produit a été supprimé.');
   }
+
+  public function singleProduct($slug)
+  {
+    $product = Product::where('slug', $slug)->first();
+    $categories = Category::with('parent')->get();
+    $parents = Category::pluck('name', 'id')->prepend('None', '');
+
+    return view('product', compact('product', 'categories'));
+  }
+
+
+
+
+
+
+
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\IndexController;
@@ -37,12 +38,23 @@ Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.logi
 Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
+Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name('product');
+// Ajouter au panier
+Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.addToCart');
+
+
+
 // Route::get('/register/create', [UserController::class, 'register'])->name('register.create');
 // Route::post('/register', [RegisterController::class,'create'])->name('register');
 Route::middleware(['auth'])->group(function () {
   $controller_path = 'App\Http\Controllers';
 
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+  // Afficher le panier
+  Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+  Route::get('/cart/remove/{productId}', [CartController::class, 'remove'])->name('cart.remove');
+
+
 
 
 

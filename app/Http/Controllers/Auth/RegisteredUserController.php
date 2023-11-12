@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
     $categories = Category::with('parent')->get();
     $parents = Category::pluck('name', 'id')->prepend('None', '');
 
-    return view('auth.register', compact('categories', 'parents'));
+    return view('auth.register')->with('categories', $categories);
   }
   /**
    * Handle an incoming registration request.

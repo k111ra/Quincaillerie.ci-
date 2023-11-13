@@ -8,98 +8,113 @@ use App\Models\Product;
 
 class CartController extends Controller
 {
-  public function showCart(Request $request)
-  {
-    $categories = Category::with('parent')->get();
-    $parents = Category::pluck('name', 'id')->prepend('None', '');
+    public function showCart(Request $request)
+    {
+        // Votre logique pour récupérer les catégories
 
-    // Get the current cart from the session
-    $cart = $request->session()->get('cart', []);
+        $categories = Category::with('parent')->get();
+        $parents = Category::pluck('name', 'id')->prepend('None', '');
 
-    // Get the details of products in the cart
-    $cartDetails = [];
-    foreach ($cart as $productId => $quantity) {
-      $product = Product::find($productId);
-      if ($product) {
-        $cartDetails[] = [
-          'product' => $product,
-          'quantity' => $quantity,
-          'total' => floatval($product->prix) * floatval($quantity),
-          'image' => $product->image,
-          'slug' => $product->slug,
-          'nom' => $product->nom,
-          'prix' => $product->prix,
-          'id' => $product->id,
-          // Add this line to include the 'image' key
-        ];
-      }
+        // Récupérez le panier actuel depuis la session
+        $cart = $request->session()->get('cart', []);
+
+        // Récupérez les détails des produits dans le panier
+        $cartDetails = [];
+        foreach ($cart as $productId => $quantity) {
+            $product = Product::find($productId);
+            if ($product) {
+                $cartDetails[] = [
+                    'product' => $product,
+                    'quantity' => $quantity,
+                    'total' => floatval($product->prix) * floatval($quantity),
+                    'image' => $product->image,
+                    'slug' => $product->slug,
+                    'nom' => $product->nom,
+                    'prix' => $product->prix,
+                ];
+            }
+        }
+
+        // Passez les variables à la vue
+        return view('cart.show', [
+            'categories' => $categories,
+            'cart' => $cart,
+            'cartDetails' => $cartDetails
+        ]);
     }
 
-    // Pass the variables to the view
-    return view('cart.show', [
-      'categories' => $categories,
-      'cart' => $cart,
-      'cartDetails' => $cartDetails
-    ]);
-  }
+    public function addToCart($id)
+    {
+        // Votre logique pour ajouter un produit au panier
 
-  public function addToCart($id)
-  {
-    $product = Product::find($id);
+        $product = Product::find($id);
 
-    if (!$product) {
-      abort(404);
+        if (!$product) {
+            abort(404);
+        }
+
+        // Récupérez le panier actuel depuis la session
+        $cart = session()->get('cart', []);
+
+        // Vérifiez si le produit est déjà dans le panier
+        if (isset($cart[$product->id])) {
+            // Si le produit est dans le panier, incrémentez la quantité
+            $cart[$product->id]['quantity']++;
+        } else {
+            // Si le produit n'est pas dans le panier, ajoutez-le
+            $cart[$product->id] = [
+                'id' => $product->id,
+                'nom' => $product->nom,
+                'prix' => $product->prix,
+                'quantity' => 1,
+            ];
+        }
+
+        // Stockez le panier mis à jour dans la session
+        session(['cart' => $cart]);
+
+        return redirect()->route('cart.show')->with('success', 'Produit ajouté au panier avec succès');
     }
 
-    // Get the current cart from the session
-    $cart = session()->get('cart', []);
+    public function remove($productId)
+    {
+        // Votre logique pour supprimer un produit du panier
 
-    // Check if the product is already in the cart
-    if (isset($cart[$product->id])) {
-      // If the product is in the cart, increment the quantity
-      $cart[$product->id]['quantity']++;
-    } else {
-      // If the product is not in the cart, add it
-      $cart[$product->id] = [
-        'id' => $product->id,
-        'nom' => $product->nom,
-        'prix' => $product->prix,
-        'quantity' => 1,
-        // Initial quantity
-        // Add other necessary product details
-      ];
+        $cart = session()->get('cart', []);
+
+        // Recherchez l'index du produit dans le panier
+        $productIndex = array_search($productId, array_column($cart, 'id'));
+
+        // Supprimez le produit s'il est trouvé
+        if ($productIndex !== false) {
+            unset($cart[$productIndex]);
+        }
+
+        // Mettez à jour la session avec le panier modifié
+        session()->put('cart', $cart);
+
+        // Redirigez l'utilisateur vers la page du panier ou une autre page
+        return redirect()->route('cart.show')->with('success', 'Produit supprimé du panier');
     }
 
-    // Store the updated cart in the session
-    session(['cart' => $cart]);
+    public function update(Request $request)
+    {
+        // Votre logique pour mettre à jour la quantité d'un produit dans le panier
 
-    return redirect()->route('cart.show')->with('success', 'Product added to cart successfully');
-  }
+        $productId = $request->input('productId');
+        $quantity = $request->input('quantity');
 
-  public function remove($productId)
-  {
-      // Logique pour supprimer le produit du panier
-      // Utilisez la session ou le mécanisme de stockage que vous utilisez pour le panier
+        // Récupérez le panier actuel depuis la session
+        $cart = $request->session()->get('cart', []);
 
-      // Exemple avec la session
-      $cart = session()->get('cart', []);
+        // Mettez à jour la quantité du produit dans le panier
+        if (isset($cart[$productId])) {
+            $cart[$productId]['quantity'] = $quantity;
+        }
 
-      // Recherchez l'index du produit dans le panier
-      foreach ($cart as $index => $item) {
-          if ($item['id'] == $productId) {
-              // Supprimez le produit si trouvé
-              unset($cart[$index]);
-              break; // Sortez de la boucle une fois que le produit est supprimé
-          }
-      }
+        // Mettez à jour la session avec le panier modifié
+        $request->session()->put('cart', $cart);
 
-      // Mettez à jour la session avec le panier modifié
-      session()->put('cart', $cart);
-
-      // Redirigez l'utilisateur vers la page du panier ou une autre page
-      return redirect()->route('cart.show')->with('success', 'Produit supprimé du panier');
-  }
-
-
-
+        return response()->json(['message' => 'Panier mis à jour avec succès']);
+    }
 }

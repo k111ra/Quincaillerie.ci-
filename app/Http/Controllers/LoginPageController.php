@@ -9,7 +9,10 @@ class LoginPageController extends Controller
 {
     public function admin()
     {
-      return View('admin.login');
+      $categories = Category::with('children')
+        ->whereNull('parent_id') // récupérer seulement les catégories qui n'ont pas de parent
+        ->get();
+      return View('admin.login')->with('categories', $categories);
     }
     /**
      * Display a listing of the resource.

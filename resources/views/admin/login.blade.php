@@ -1,88 +1,97 @@
-@extends('layouts/blankLayout')
-
-@section('title', 'Login Basic - Pages')
-
-@section('page-style')
-    <!-- Page -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/page-auth.css') }}">
-@endsection
+@extends('layouts.layout')
 
 @section('content')
-    <div class="container-xxl">
-        <div class="authentication-wrapper authentication-basic container-p-y">
-            <div class="authentication-inner">
-                <!-- Register -->
-                <div class="card">
-                    <div class="card-body">
-                        <!-- Logo -->
-                        <div class="app-brand justify-content-center">
-                            <a href="{{ url('/') }}" class="app-brand-link gap-2">
-                                <span class="app-brand-logo demo">@include('_partials.macros', ['width' => 25, 'withbg' => '#696cff'])</span>
-                                <span
-                                    class="app-brand-text demo text-body fw-bolder">{{ config('variables.templateName') }}</span>
-                            </a>
-                        </div>
-                        <!-- /Logo -->
-                        <h4 class="mb-2">Welcome to {{ config('variables.templateName') }}! 👋</h4>
-                        <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-                        <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
+ <!--page start-->
+ <div class="page">
+
+      <!-- page-title -->
+    <div class="ttm-page-title-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="page-title-heading">
+                            <h1 class="title">Connexion</h1>
+                        </div>
+                        <div class="breadcrumb-wrapper">
+                            <span class="mr-1"><i class="ti ti-home"></i></span>
+                            <a title="Homepage" href="index.html">Accueil</a>
+                            <span class="ttm-bread-sep">&nbsp;/&nbsp;</span>
+                            <span class="ttm-textcolor-skincolor">Connexion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- page-title end-->
+
+<!--site-main start-->
+<div class="site-main">
+
+    <!--login-section-->
+    <section class="login-section bg-img2 clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 ml-auto mr-auto">
+                    <div class="wrap-login">
+                        <form method="POST" action="{{ route('login') }}" id="loginForm">
                             @csrf
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email or Username</label>
-                                <input type="text" class="form-control @error('password') is-invalid @enderror"
-                                    id="email" name="email" placeholder="Enter your email or username"
-                                    autofocus>
+                            <div class="form-group">
+                                <i class="fa fa-envelope-o"></i>
+                                <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-lock"></i>
+                                <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror                            </div>
+                            {{-- <div class="pt-5">
+                                <h6 class="font-weight-normal">OR</h6>
                             </div>
-                            <div class="mb-3 form-password-toggle">
-                                <div class="d-flex justify-content-between">
-                                    <label class="form-label" for="password">Password</label>
-                                    <a href="{{ url('auth/forgot-password-basic') }}">
-                                        <small>Forgot Password?</small>
-                                    </a>
-                                </div>
-                                <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" name="password"
-                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                        aria-describedby="password" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
+                            <div class="login-social-buttons">
+                                <button id="login-with-facebook" data-network="Facebook" class="social-account-button facebook-button">
+                                    <i class="ti ti-facebook">
+                                    </i>
+                                    <span>Facebook</span>
+                                </button>
+                                &nbsp;&nbsp;
+                                <button id="login-with-google" data-network="google" class="social-account-button google-button">
+                                    <i class="ti ti-google">
+                                    </i>
+                                    <span>Google</span>
+                                </button>
+                            </div> --}}
+                            <div class="form-group">
+                                <button id="login-button" type="submit" class="button action-button expand-center mb-15">
+                                    <span class="label">Connexion</span>
+                                    <span class="spinner"></span>
+                                </button>
                             </div>
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="remember-me">
-                                    <label class="form-check-label" for="remember-me">
-                                        Remember Me
-                                    </label>
+                            <div class="form-group d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center justify-content-start">
+                                    <input type="checkbox" {{ old('remember') ? 'checked' : '' }}> <span class="ttm-textcolor-darkgrey">Souviens-toi de moi</span>
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                                <div class="d-flex flex-row align-items-center justify-content-end">
+                                    <a href="{{ route('password.request') }}" id="forgot-password-link" class="forgot-password-link"><u>Mot de passe oublié?</u></a>
+                                </div>
                             </div>
                         </form>
-
-                        <p class="text-center">
-                            <span>New on our platform?</span>
-                            <a href="{{ url('auth/register-basic') }}">
-                                <span>Create an account</span>
-                            </a>
-                        </p>
                     </div>
                 </div>
             </div>
-            <!-- /Register -->
         </div>
-    </div>
-    </div>
+    </section><!--login-section end-->
+
+</div><!--site-main end-->
+
 @endsection

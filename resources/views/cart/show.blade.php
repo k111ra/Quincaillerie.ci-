@@ -245,10 +245,6 @@
            }
        });
    </script>
-
-
-
-
     <style>
         #cart-update-alert {
             position: fixed;

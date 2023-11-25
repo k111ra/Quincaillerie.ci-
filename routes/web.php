@@ -54,7 +54,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
   Route::get('/cart/remove/{productId}', [CartController::class, 'remove'])->name('cart.remove');
   Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
-  Route::post('/cart/clear', 'CartController@clear')->name('cart.clear');
+  Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 
 
 

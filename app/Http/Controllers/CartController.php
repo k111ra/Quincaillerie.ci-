@@ -11,7 +11,6 @@ class CartController extends Controller
     public function showCart(Request $request)
     {
         // Votre logique pour récupérer les catégories
-
         $categories = Category::with('parent')->get();
         $parents = Category::pluck('name', 'id')->prepend('None', '');
 
@@ -22,6 +21,7 @@ class CartController extends Controller
         $cartDetails = [];
         foreach ($cart as $productId => $quantity) {
             $product = Product::find($productId);
+
             if ($product) {
                 $cartDetails[] = [
                     'product' => $product,
@@ -31,6 +31,7 @@ class CartController extends Controller
                     'slug' => $product->slug,
                     'nom' => $product->nom,
                     'prix' => $product->prix,
+                    'id' => $product->id,
                 ];
             }
         }
@@ -46,7 +47,6 @@ class CartController extends Controller
     public function addToCart($id)
     {
         // Votre logique pour ajouter un produit au panier
-
         $product = Product::find($id);
 
         if (!$product) {
@@ -79,7 +79,6 @@ class CartController extends Controller
     public function remove($productId)
     {
         // Votre logique pour supprimer un produit du panier
-
         $cart = session()->get('cart', []);
 
         // Recherchez l'index du produit dans le panier
@@ -99,8 +98,6 @@ class CartController extends Controller
 
     public function update(Request $request)
     {
-        // Votre logique pour mettre à jour la quantité d'un produit dans le panier
-
         $productId = $request->input('productId');
         $quantity = $request->input('quantity');
 
@@ -115,6 +112,16 @@ class CartController extends Controller
         // Mettez à jour la session avec le panier modifié
         $request->session()->put('cart', $cart);
 
-        return response()->json(['message' => 'Panier mis à jour avec succès']);
+        // Redirigez l'utilisateur vers la page du panier avec un message de succès
+        return redirect()->route('cart.show')->with('success', 'Panier mis à jour avec succès');
+    }
+
+    public function clearCart(Request $request)
+    {
+        // Supprimez complètement le panier de la session
+        $request->session()->forget('cart');
+
+        // Redirigez l'utilisateur vers la page du panier ou une autre page
+        return redirect()->route('cart.show')->with('success', 'Panier vidé avec succès');
     }
 }

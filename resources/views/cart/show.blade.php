@@ -31,8 +31,11 @@
             <div class="container">
                 <!-- Ligne -->
                 <div class="row">
-                    <div id="cart-update-alert" style="display: none;" class="alert alert-success" role="alert"></div>
-
+                    @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="col-lg-12">
                         @if ($cart && count($cart) > 0)
 
@@ -50,10 +53,9 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($cartDetails as $cartItem)
-                                        <tr class="cart_item">
+                                        <tr class="cart_item" data-product-id="{{ $cartItem['id'] }}">
                                             <td class="product-thumbnail">
-                                                <a
-                                                    href="{{ isset($cartItem['slug']) ? url('product/' . $cartItem['slug']) : '#' }}">
+                                                <a href="{{ isset($cartItem['slug']) ? url('product/' . $cartItem['slug']) : '#' }}">
                                                     <img class="img-fluid"
                                                         src="{{ asset('storage/' . $cartItem['image']) }}"
                                                         alt="image-produit">
@@ -75,8 +77,6 @@
                                                         value="{{ is_numeric($cartItem['quantity']) ? $cartItem['quantity'] : '' }}"
                                                         data-product-id="{{ $cartItem['id'] ?? '' }}" name="quantity-number"
                                                         class="qty" size="4">
-
-
                                                     <span class="inc quantity-button">+</span>
                                                     <span class="dec quantity-button">-</span>
                                                 </div>
@@ -90,11 +90,9 @@
                                             <td class="product-remove">
                                                 <a href="{{ isset($cartItem['id']) ? route('cart.remove', ['productId' => $cartItem['id']]) : '#' }}"
                                                     class="remove">×</a>
-
                                             </td>
                                         </tr>
                                     @endforeach
-
 
                                     <tr>
                                         <td colspan="6" class="actions">
@@ -103,17 +101,16 @@
                                                     href="{{ url('/') }}">
                                                     <i class="ti ti-arrow-left"></i>Retour à la boutique
                                                 </a>
-
                                             </div>
                                             <form id="update-cart-form" method="post" action="{{ route('cart.update') }}">
                                                 @csrf
-                                                <button type="button"
-                                                    class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-left ttm-btn-color-skincolor"
-                                                    onclick="updateCart()">
+                                                <button type="submit"
+                                                    class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-left ttm-btn-color-skincolor">
                                                     <i class="ti ti-reload"></i>Mettre à jour
                                                 </button>
                                             </form>
 
+                                            <br>
 
                                             <form method="post" action="{{ route('cart.clear') }}">
                                                 @csrf
@@ -122,7 +119,6 @@
                                                     <i class="ti ti-close"></i>Tout effacer
                                                 </button>
                                             </form>
-
                                         </td>
                                     </tr>
                                 </tbody>
@@ -193,58 +189,63 @@
 
     </div><!-- Fin du site-main -->
 
-    <!-- Ajoutez cette ligne dans votre vue pour rediriger vers la page du panier -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        // Placez ce script dans la section de script de votre vue
         function redirectToCart() {
             window.location.href = '{{ route('cart.show') }}';
         }
+
+        function submitUpdateForm() {
+            document.getElementById('update-cart-form').submit();
+        }
+
+        $(document).ready(function () {
+            $('.qty').on('change', function () {
+                var quantity = $(this).val();
+                var productId = $(this).data('product-id');
+                updateTotal(productId, quantity);
+            });
+
+            function updateTotal(productId, quantity) {
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route('cart.update') }}',
+                    data: {
+                        productId: productId,
+                        quantity: quantity,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (data) {
+                        // Vous pouvez commenter ou retirer la ligne suivante si vous ne voulez pas afficher d'alerte
+                        alert(data.message);
+
+                        // Ajoutez le code pour mettre à jour le total sur la page
+                        updateTotalOnPage(productId, quantity);
+
+                        // Soumettez le formulaire pour mettre à jour le panier côté serveur
+                        submitUpdateForm();
+                    },
+                    error: function (error) {
+                        console.error('Une erreur s\'est produite', error);
+                    }
+                });
+            }
+
+            function updateTotalOnPage(productId, quantity) {
+                // Trouvez la ligne du panier correspondant au produit
+                var cartItemRow = $('.cart_item[data-product-id="' + productId + '"]');
+
+                // Vérifiez si la ligne existe
+                if (cartItemRow.length > 0) {
+                    // Mettez à jour le total sur la page en utilisant la nouvelle quantité
+                    var pricePerUnit = parseFloat(cartItemRow.find('.product-price span').text().replace(' F CFA', ''));
+                    var newTotal = pricePerUnit * quantity;
+                    cartItemRow.find('.product-subtotal span').text(newTotal.toFixed(2) + ' F CFA');
+                }
+            }
+        });
     </script>
-   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   <script>
-       $(document).ready(function () {
-           $('.qty').on('change', function () {
-               var quantity = $(this).val();
-               var productId = $(this).data('product-id');
-               updateTotal(productId, quantity);
-           });
 
-           function updateTotal(productId, quantity) {
-               $.ajax({
-                   type: 'POST',
-                   url: '{{ route('cart.update') }}',
-                   data: {
-                       productId: productId,
-                       quantity: quantity,
-                       _token: '{{ csrf_token() }}'
-                   },
-                   success: function (data) {
-                       // Vous pouvez commenter ou retirer la ligne suivante si vous ne voulez pas afficher d'alerte
-                       alert(data.message);
-
-                       // Ajoutez le code pour mettre à jour le total sur la page
-                       updateTotalOnPage(productId, quantity);
-                   },
-                   error: function (error) {
-                       console.error('Une erreur s\'est produite', error);
-                   }
-               });
-           }
-
-           function updateTotalOnPage(productId, quantity) {
-               // Trouvez la ligne du panier correspondant au produit
-               var cartItemRow = $('.cart_item[data-product-id="' + productId + '"]');
-
-               // Vérifiez si la ligne existe
-               if (cartItemRow.length > 0) {
-                   // Mettez à jour le total sur la page en utilisant la nouvelle quantité
-                   var pricePerUnit = parseFloat(cartItemRow.find('.product-price span').text());
-                   var newTotal = pricePerUnit * quantity;
-                   cartItemRow.find('.product-subtotal span').text(newTotal.toFixed(2) + ' F CFA');
-               }
-           }
-       });
-   </script>
     <style>
         #cart-update-alert {
             position: fixed;
@@ -253,7 +254,5 @@
             z-index: 1000;
         }
     </style>
-
-
 
 @endsection

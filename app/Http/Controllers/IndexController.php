@@ -30,6 +30,11 @@ class IndexController extends Controller
     return view('index', compact('categories', 'carousels', 'products', 'produitsPopulaires', 'produitsBestseller', 'produitsSpecial', 'produitsSolde', 'bestseller'));
   }
 
+  public function confidenciel(){
+    $categories = Category::with('children')->whereNull('parent_id')->get();
+    return view('confidenciel', compact('categories'));
+  }
+
 
 
 

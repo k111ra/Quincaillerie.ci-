@@ -110,7 +110,7 @@
                             <li><a href="#">Mention légale</a></li>
                             <li><a href="#">À propos de nous</a></li>
                             <li><a href="#">Paiements sécurisés</a></li>
-                            <li><a href="#">Magasins</a></li>
+                            <li><a href="/confidenciel">Regle de confidencialité</a></li>
                         </ul>
                     </div>
                 </div>

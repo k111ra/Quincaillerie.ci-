@@ -42,6 +42,8 @@ Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name
 // Ajouter au panier
 Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
+Route::get('/confidenciel', [IndexController::class, 'confidenciel']);
+
 
 
 // Route::get('/register/create', [UserController::class, 'register'])->name('register.create');

@@ -11,11 +11,11 @@
     },
     {
       "name": "Produits",
-      "icon": "menu-icon tf-icons bx bx-layout",
+      "icon": "menu-icon tf-icons bx bxs-shopping-bags",
       "slug": "Produis",
       "submenu": [
         {
-          "url": "/categories",
+          "url": "/admin/categories",
           "name": "Categorie",
           "slug": "Categorie"
         },
@@ -25,23 +25,45 @@
           "slug": "tags"
         },
         {
-          "url": "/products",
+          "url": "/admin/products",
           "name": "products",
           "slug": "products"
         }
       ]
     },
     {
-      "url": "/carousel",
+      "url": "/admin/carousel",
       "name": "carousel",
-      "icon": "menu-icon tf-icons bx bx-category",
+      "icon": "menu-icon tf-icons bx bxs-slideshow",
       "slug": "carousel"
     },
     {
       "url": "/admin/posts",
       "name": "Blogs",
-      "icon": "menu-icon tf-icons bx bx-category",
+      "icon": "menu-icon tf-icons bx bx-happy-heart-eyes",
       "slug": "Blogs"
+    },
+    {
+      "name": "Services",
+      "icon": "menu-icon tf-icons bx bx-buildings",
+      "slug": "Produis",
+      "submenu": [
+        {
+          "url": "/admin/services",
+          "name": "Services",
+          "slug": "Services"
+        },
+        {
+          "url": "/admin/tags",
+          "name": "tags",
+          "slug": "tags"
+        },
+        {
+          "url": "/admin/products",
+          "name": "products",
+          "slug": "products"
+        }
+      ]
     },
     {
       "name": "Layouts",

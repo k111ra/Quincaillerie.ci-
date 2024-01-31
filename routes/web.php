@@ -12,57 +12,28 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 $controller_path = 'App\Http\Controllers';
 
-
-// Main Page Route
+// Routes publiques
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
-Route::get('/user/login', [LoginPageController::class, 'user'])->name('user.login');
 Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
 Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name('product');
-// Ajouter au panier
-Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.addToCart');
-
-Route::get('/confidenciel', [IndexController::class, 'confidenciel']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
 
 
 
-// Route::get('/register/create', [UserController::class, 'register'])->name('register.create');
-// Route::post('/register', [RegisterController::class,'create'])->name('register');
-Route::middleware(['auth'])->group(function () {
-  $controller_path = 'App\Http\Controllers';
-
-  Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-  // Afficher le panier
-  Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
-  Route::get('/cart/remove/{productId}', [CartController::class, 'remove'])->name('cart.remove');
-  Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
-  Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
-
-
-
-
-
-
+// Routes nécessitant une authentification
+Route::middleware(['auth'])->group(function () use ($controller_path) {
   // layout
   Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
   Route::get('/layouts/without-navbar', $controller_path . '\layouts\WithoutNavbar@index')->name('layouts-without-navbar');
@@ -125,64 +96,69 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
 
 
-});
 
-// custom auth
-Route::middleware(['auth', 'admin'])->group(function () {
-  $controller_path = 'App\Http\Controllers';
+    Route::prefix('admin')->group(function () {
+        // Routes pour l'administration
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/users', [LoginController::class, 'users'])->name('admin.users');
 
-  // define routes for carrousels
+        // Routes pour les catégories
+        Route::prefix('categories')->group(function () {
+            Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
+            Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+            Route::post('/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+            Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+            Route::post('/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+            Route::put('/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+        });
 
-  Route::get('/carousel', [CarouselController::class, 'index'])->name('admin.slider.index');
-  Route::post('/carousel/store', [CarouselController::class, 'store'])->name('admin.slider.store');
-  Route::get('/admin/slider/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.slider.edit');
-  Route::match(['PUT', 'PATCH'], '/admin/slider/{id}', [CarouselController::class, 'update'])->name('admin.slider.update');
-  Route::post('/admin/slider/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('admin.slider.destroy');
+        // ... Autres routes d'administration
+
+        // Routes pour les produits
+        Route::prefix('products')->group(function ()  {
+            Route::get('/', [ProductController::class, 'index'])->name('admin.products.index');
+            Route::get('/create', [ProductController::class, 'create'])->name('admin.products.create');
+            Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+            Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+            Route::put('/{product}', [ProductController::class, 'update'])->name('admin.products.update');
+            Route::delete('/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+        });
+
+        // ... Autres routes d'administration
+
+        // Routes pour les tags
+        Route::prefix('tags')->group(function ()  {
+            Route::post('/', [TagController::class, 'store'])->name('admin.tags.store');
+            Route::get('/', [TagController::class, 'index'])->name('admin.tags.index');
+            Route::get('/create', [TagController::class, 'create'])->name('admin.tags.create');
+            Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+            Route::put('/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
+            Route::post('/{tag}/destroy', [TagController::class, 'destroy'])->name('admin.tags.destroy');
+        });
+
+        // ... Autres routes d'administration
+
+        // Routes pour les articles de blog
+        Route::prefix('posts')->group(function (){
+            Route::get('/', [PostController::class, 'index'])->name('admin.blogs.index');
+            Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
+            Route::post('/store', [PostController::class, 'store'])->name('admin.posts.store');
+        });
+
+        // Routes pour les services
+        // Route::prefix('services')->group(function () use ($controller_path) {
+            Route::get('/services', [ServiceController::class, 'create'])->name('admin.services.create');
+            Route::post('/store', [ServiceController::class, 'store'])->name('admin.services.store');
+            Route::get('/{service}/edit', [ServiceController::class, 'edit'])->name('admin.services.edit');
+            Route::delete('/{service}', [ServiceController::class, 'destroy'])->name('admin.services.destroy');
+            Route::put('/services/{id}', [ServiceController::class, 'update'])->name('admin.services.update');
+
+        // });
 
 
-  // Define routes for admin users
-  // Route::get('/home', $controller_path . '\dashboard\Analytics@index')->name('admin.dashboard');
-  Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    });
 
-  Route::get('/admin/users', [LoginController::class, 'users'])->name('admin.users');
-  // Define other admin routes here...
-  Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
-  Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-  Route::post('/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-  Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-  Route::post('/categories/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
-  Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
-
-
-
-  // route to define product
-
-  Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
-  Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
-  Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
-  Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
-  Route::put('products/{product}', [ProductController::class, 'update'])->name('admin.products.update');
-  Route::delete('products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
-
-  // route to define tags
-
-  Route::post('/admin/tags', [TagController::class, 'store'])->name('admin.tags.store');
-  Route::get('/admin/tags', [TagController::class, 'index'])->name('admin.tags.index');
-  Route::get('/admin/tags/create', [TagController::class, 'create'])->name('admin.tags.create');
-  Route::get('/admin/tags/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
-  Route::put('/admin/tags/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
-  Route::post('/admin/tags/{tag}/destroy', [TagController::class, 'destroy'])->name('admin.tags.destroy');
-
-  // blog
-  Route::get('admin/posts', [PostController::class, 'index'])->name('admin.blogs.index');
-  Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
-  Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
-
-
+    // ... Autres routes middleware auth
 });
 
 Auth::routes();
-
-
-
-

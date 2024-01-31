@@ -178,7 +178,7 @@
                                 <ul class="cat_menu_list menu-vertical">
                                     <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
                                     </li>
-                                    @foreach ($categories as $category)
+                                    {{-- @foreach ($categories as $category)
                                         <li class="parent">
 
                                             <a href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
@@ -205,13 +205,13 @@
                                                 </div>
                                             @endif
                                         </li>
-                                    @endforeach
+                                    @endforeach --}}
 
                                     <li class="parent-plus"><a href="#">Plus de catégories</a>
                                         <div class="plus-menu">
                                             <ul class="list-unstyled">
                                                 <li><a href="#">Scie à métaux</a></li>
-                                                 <li><a href="#">Trou de poteau</a></li>
+                                                <li><a href="#">Trou de poteau</a></li>
                                                 <li><a href="#">Ceinture à outils</a></li>
                                             </ul>
                                         </div>
@@ -228,36 +228,10 @@
                                 <!-- menu -->
                                 <nav class="menu menu-mobile" id="menu">
                                     <ul class="nav" data-in="fadeInDown" data-out="fadeOutUp">
-                                        <li class="mega-menu-item active">
-                                            <a href="#" class="mega-menu-link">Accueil</a>
-                                            {{-- <ul class="mega-submenu">
-                                                <li><a href="index.html">Sample Homepage 1</a></li>
-                                                <li><a href="home-2.html">Sample Homepage 2</a></li>
-                                                <li><a href="home-3.html">Sample Homepage 3</a></li>
-                                                <li class="mega-menu-item">
-                                                    <a href="#" class="mega-menu-link">Header Styles</a>
-                                                    <ul class="mega-submenu">
-                                                        <li><a href="index.html">Header Style 01</a></li>
-                                                        <li class="active"><a target="_blank"
-                                                                href="header-style-02.html">Header Style 02</a>
-                                                        </li>
-                                                        <li><a target="_blank"
-                                                                href="header-style-03.html">Header Style 03</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul> --}}
-                                        </li>
-                                        <li class="mega-menu-item">
-                                            <a href="#" class="mega-menu-link">Services</a>
-                                            {{-- <ul class="mega-submenu">
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="login.html">Connexion</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="contact.html">Contact Us</a></li>
-                                                <li><a href="error.html">Error Page</a></li>
-                                            </ul> --}}
-                                        </li>
+                                        <li><a href="{{ url('/') }}">Accueil</a></li>
+
+                                        <li><a href="{{ url('/services') }}">Services</a></li>
+
                                         <li class="mega-menu-item megamenu-fw">
                                             <a href="#" class="mega-menu-link">Boutiques</a>
                                             <ul class="mega-submenu megamenu-content" role="menu">
@@ -318,12 +292,7 @@
                                         </li>
                                         <li class="mega-menu-item">
                                             <a href="#" class="mega-menu-link">Blog</a>
-                                            {{-- <ul class="mega-submenu">
-                                                <li class=""><a href="blog.html">Blog Classic</a></li>
-                                                <li class=""><a href="blog-grid.html">Blog Grid</a></li>
-                                                <li class=""><a href="blog-single.html">Single Blog
-                                                        View</a></li>
-                                            </ul> --}}
+
                                         </li>
                                         <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
                                     </ul>

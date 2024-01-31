@@ -88,7 +88,7 @@
                                                 </span>
                                             </td>
                                             <td class="product-remove">
-                                                <a href="{{ isset($cartItem['id']) ? route('cart.remove', ['productId' => $cartItem['id']]) : '#' }}"
+                                                <a href="{{ isset($cartItem['id']) ? route('cart.remove', ['id' => $cartItem['id']]) : '#' }}"
                                                     class="remove">×</a>
                                             </td>
                                         </tr>
@@ -190,69 +190,7 @@
     </div><!-- Fin du site-main -->
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        function redirectToCart() {
-            window.location.href = '{{ route('cart.show') }}';
-        }
 
-        function submitUpdateForm() {
-            document.getElementById('update-cart-form').submit();
-        }
 
-        $(document).ready(function () {
-            $('.qty').on('change', function () {
-                var quantity = $(this).val();
-                var productId = $(this).data('product-id');
-                updateTotal(productId, quantity);
-            });
-
-            function updateTotal(productId, quantity) {
-                $.ajax({
-                    type: 'POST',
-                    url: '{{ route('cart.update') }}',
-                    data: {
-                        productId: productId,
-                        quantity: quantity,
-                        _token: '{{ csrf_token() }}'
-                    },
-                    success: function (data) {
-                        // Vous pouvez commenter ou retirer la ligne suivante si vous ne voulez pas afficher d'alerte
-                        alert(data.message);
-
-                        // Ajoutez le code pour mettre à jour le total sur la page
-                        updateTotalOnPage(productId, quantity);
-
-                        // Soumettez le formulaire pour mettre à jour le panier côté serveur
-                        submitUpdateForm();
-                    },
-                    error: function (error) {
-                        console.error('Une erreur s\'est produite', error);
-                    }
-                });
-            }
-
-            function updateTotalOnPage(productId, quantity) {
-                // Trouvez la ligne du panier correspondant au produit
-                var cartItemRow = $('.cart_item[data-product-id="' + productId + '"]');
-
-                // Vérifiez si la ligne existe
-                if (cartItemRow.length > 0) {
-                    // Mettez à jour le total sur la page en utilisant la nouvelle quantité
-                    var pricePerUnit = parseFloat(cartItemRow.find('.product-price span').text().replace(' F CFA', ''));
-                    var newTotal = pricePerUnit * quantity;
-                    cartItemRow.find('.product-subtotal span').text(newTotal.toFixed(2) + ' F CFA');
-                }
-            }
-        });
-    </script>
-
-    <style>
-        #cart-update-alert {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-    </style>
 
 @endsection

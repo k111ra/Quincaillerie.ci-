@@ -470,6 +470,7 @@ a:hover, .ttm-textcolor-white a:hover,
 .ttm-single-product-details .compare:hover,
 #site-header-menu #site-navigation .menu ul > li:hover > a,
 #site-header-menu #site-navigation .menu ul li.active > a {
+    text-decoration: none;
     color: #2457aa;
 }
 
@@ -681,6 +682,10 @@ ul.ttm_contact_widget_wrapper li,
 .ttm-bgcolor-darkgrey .social-icons.circle li>a,
 .ttm-bgcolor-skincolor .social-icons.circle li>a{
   color: #fff;
+}
+a {
+  text-decoration: none
+
 }
 
 .ttm-bgcolor-darkgrey .section-title h5,

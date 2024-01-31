@@ -76,13 +76,13 @@ class CartController extends Controller
         return redirect()->route('cart.show')->with('success', 'Produit ajouté au panier avec succès');
     }
 
-    public function remove($productId)
+    public function remove($id)
     {
         // Votre logique pour supprimer un produit du panier
         $cart = session()->get('cart', []);
 
         // Recherchez l'index du produit dans le panier
-        $productIndex = array_search($productId, array_column($cart, 'id'));
+        $productIndex = array_search($id, array_column($cart, 'id'));
 
         // Supprimez le produit s'il est trouvé
         if ($productIndex !== false) {

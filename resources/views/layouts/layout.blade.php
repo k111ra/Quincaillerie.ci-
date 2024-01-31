@@ -6,9 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Quincaillerie, Outillage,  Matériel de construction,    Bricolage,    Outils électriques, Accessoires de plomberie, Visserie, Fixation, Peinture, Jardinage, Électricité, Plomberie, Chauffage, Ventilation,
-    Équipement de protection individuelle (EPI), Sécurité, Aménagement intérieur, Aménagement extérieur, Matériaux de construction, Soudure, Colle, Adhésif, Luminaire, Menuiserie, Quincaillerie générale," />
-    <meta name="description" content="Quincaillerie.ci est une entreprise ivoirienne spécialisée dans la vente de produits de quincaillerie, de bricolage et d'équipements de sécurité. Leur catalogue de produits comprend une large gamme d'articles allant des outils à main, aux machines électriques, en passant par les équipements de protection individuelle, les serrures et quincaillerie de porte, les produits de plomberie et d'électricité, les équipements pour la construction et bien plus encore..." />
+    <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
+    <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}">
     <meta name="author" content="Sidik Slims" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Quincaillerie - @yield('title')</title>
@@ -22,7 +21,7 @@
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/bootstrap.min.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- animate -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/animate.css') }}" />
@@ -58,6 +57,8 @@
 
     <!-- responsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/responsive.css') }}" />
+    <link rel="icon" href="{{ asset('front/assets/images/favicon.ico') }}" type="image/x-icon">
+
 
 </head>
 
@@ -258,7 +259,7 @@
 
     <script src="{{ asset('front/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/js/tether.min.js') }}"></script>
-    <script src="{{ asset('front/assets/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="{{ asset('front/assets/js/jquery.easing.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery-waypoints.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery-validate.js') }}"></script>

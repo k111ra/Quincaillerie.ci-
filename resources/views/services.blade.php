@@ -41,7 +41,7 @@
                                             @foreach ($service->images as $index => $image)
                                                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('storage/' . $image->path) }}" class="d-block w-100"
-                                                        alt="Image {{ $index }}">
+                                                        alt="Image {{ $index }}" style="width: 800px; height: 600px;object-fit: cover;">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -80,7 +80,7 @@
                                         <div class="ttm-blogbox-desc-footer">
                                             <div class="ttm-blogbox-footer-readmore">
                                                 <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-black"
-                                                    href="#" title="">Read More <i
+                                                    href="{{ route('services.show', $service->slug) }}" title="">Voir Plus <i
                                                         class="ti ti-angle-double-right"></i></a>
                                             </div>
                                         </div>

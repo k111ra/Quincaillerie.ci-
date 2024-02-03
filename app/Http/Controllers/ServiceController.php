@@ -99,9 +99,16 @@ class ServiceController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show($slug)
   {
-    //
+    $service = Service::where('slug', $slug)->first();
+
+  //   if (!$service) {
+  //     // Handle the case where the service with the given slug is not found, e.g., show a 404 page.
+  //     abort(404);
+  // }
+
+    return view('single-service', compact('service'));
   }
 
   /**

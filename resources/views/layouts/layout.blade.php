@@ -19,7 +19,8 @@
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
+    <!-- Facebook -->
+    <meta name="facebook-domain-verification" content="i78f42vrfi1go3v13c2e9ncgl5o7cd" />
     <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/bootstrap.min.css') }}"/>
 

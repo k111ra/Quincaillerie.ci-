@@ -25,6 +25,7 @@ $controller_path = 'App\Http\Controllers';
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
 Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name('product');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
@@ -152,6 +153,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
             Route::get('/{service}/edit', [ServiceController::class, 'edit'])->name('admin.services.edit');
             Route::delete('/{service}', [ServiceController::class, 'destroy'])->name('admin.services.destroy');
             Route::put('/services/{id}', [ServiceController::class, 'update'])->name('admin.services.update');
+
 
         // });
 

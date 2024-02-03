@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '$service->title')
+@section('title', $service->title)
 @section('content')
 
     <!-- page-title -->

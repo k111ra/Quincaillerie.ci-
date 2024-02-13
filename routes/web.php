@@ -8,6 +8,7 @@ use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactPageController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\PostController;
@@ -35,6 +36,8 @@ Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.l
 
 // Routes nécessitant une authentification
 Route::middleware(['auth'])->group(function () use ($controller_path) {
+  Route::get('/dashboard', [HomeController::class, 'index'])->name('user.dashboard');
+
   // layout
   Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
   Route::get('/layouts/without-navbar', $controller_path . '\layouts\WithoutNavbar@index')->name('layouts-without-navbar');

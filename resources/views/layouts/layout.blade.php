@@ -6,7 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
+    <meta name="description"
+        content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
     <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}">
     <meta name="author" content="Sidik Slims" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -14,7 +15,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4238780729755314"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />
@@ -22,7 +23,7 @@
     <!-- Facebook -->
     <meta name="facebook-domain-verification" content="i78f42vrfi1go3v13c2e9ncgl5o7cd" />
     <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/bootstrap.min.css') }}" />
 
     <!-- animate -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/animate.css') }}" />
@@ -109,35 +110,40 @@
                                             <li>
                                                 <a href="{{ asset('front/assets/images/product/pro-01-plus.png') }}"
                                                     data-standard="{{ asset('front/images/product/pro-01-plus.png') }}">
-                                                    <img class="img-fluid" src="{{ asset('images/product/pro-01-plus.png') }}"
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('images/product/pro-01-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ ('front/assetsimages/product/pro-02-plus.png') }}"
-                                                    data-standard="{{ ('front/assets/images/product/pro-02-plus.png') }}">
-                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-02-plus.png') }}"
+                                                <a href="{{ 'front/assetsimages/product/pro-02-plus.png' }}"
+                                                    data-standard="{{ 'front/assets/images/product/pro-02-plus.png' }}">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('front/assets/images/product/pro-02-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="{{ asset('front/assets/images/product/pro-03-plus.png') }}"
                                                     data-standard="{{ asset('front/assets/images/product/pro-03-plus.png') }}">
-                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-03-plus.png') }}"
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('front/assets/images/product/pro-03-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="{{ asset('front/assets/images/product/pro-04-plus.png') }}"
                                                     data-standard="{{ asset('front/assets/images/product/pro-04-plus.png') }}">
-                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-04-plus.png') }}"
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('front/assets/images/product/pro-04-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="{{ asset('front/assets/images/product/pro-05-plus.png') }}"
                                                     data-standard="{{ asset('front/assets/images/product/pro-05-plus.png') }}">
-                                                    <img class="img-fluid" src="{{ asset('front/assets/images/product/pro-05-plus.png') }}"
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('front/assets/images/product/pro-05-plus.png') }}"
                                                         alt="" />
                                                 </a>
                                             </li>
@@ -149,7 +155,8 @@
                                         <div
                                             class="easyzoom easyzoom-model easyzoom--overlay easyzoom--with-thumbnails">
                                             <a href="{{ asset('front/assets/images/product/pro-01-plus.png') }}">
-                                                <img class="img-fluid" src="{{ asset('images/product/pro-01-plus.png') }}"
+                                                <img class="img-fluid"
+                                                    src="{{ asset('images/product/pro-01-plus.png') }}"
                                                     alt="" />
                                             </a>
                                         </div>
@@ -168,10 +175,10 @@
                                     <a href="#"><i class="ti ti-linkedin"></i></a>
                                 </div>
                                 <div class="comments-notes clearfix">
-                                    &nbsp;&nbsp;<a href="javascript:void(0)" class="review-link"
-                                        rel="nofollow">(No review)</a>
-                                    &nbsp;&nbsp;<a href="javascript:void(0)" class="review-link"
-                                        rel="nofollow">Write to Review</a>
+                                    &nbsp;&nbsp;<a href="javascript:void(0)" class="review-link" rel="nofollow">(No
+                                        review)</a>
+                                    &nbsp;&nbsp;<a href="javascript:void(0)" class="review-link" rel="nofollow">Write
+                                        to Review</a>
                                     <div class="product-rating clearfix">
                                         <ul class="star-rating clearfix">
                                             <li><i class="fa fa-star-o"></i></li>
@@ -200,8 +207,7 @@
                                 <div class="mt-30 mb-35">
                                     <div class="quantity">
                                         <label>Quantity: </label>
-                                        <input type="text" value="1" name="quantity-number"
-                                            class="qty">
+                                        <input type="text" value="1" name="quantity-number" class="qty">
                                         <span class="inc quantity-button">+</span>
                                         <span class="dec quantity-button">-</span>
                                     </div>
@@ -258,9 +264,16 @@
 
     <!-- Javascript -->
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
     <script src="{{ asset('front/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/js/tether.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <script src="{{ asset('front/assets/js/jquery.easing.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery-waypoints.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery-validate.js') }}"></script>

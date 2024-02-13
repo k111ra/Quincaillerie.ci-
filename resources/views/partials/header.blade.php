@@ -80,11 +80,12 @@
                     <!-- header_extra -->
                     <div class="header_extra d-flex flex-row align-items-center justify-content-end">
                         <ul class="navbar-nav ms-auto">
+
                             <!-- Authentication Links -->
                             @guest
-                                @if (Route::has('user.login'))
+                                @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="" href="{{ route('user.login') }}">{{ __('Connexion') }}</a>
+                                        <a class="" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     </li>
                                 @endif
 

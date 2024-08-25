@@ -56,20 +56,13 @@
                         <!-- header_search -->
                         <div class="header_search_content">
                             <div id="search_block_top" class="search_block_top">
-                                <form id="searchbox" method="get" action="#">
+                                <form id="searchbox" method="GET" action="{{ route('search') }}">
                                     <input class="search_query form-control" type="text" id="search_query_top"
-                                        name="s" placeholder="Rechercher des achats..." value="">
-                                    <div class="categories-block">
-                                        <select id="search_category" name="search_category" class="form-control">
-                                            <option value="all">Toutes catégories</option>
-                                            {{-- @foreach ($categories as $category)
-                                            <option value="{{ $category->name }}">{{ $category->name }}</option>
-                                            @endforeach --}}
-
-                                        </select>
-                                    </div>
-                                    <button type="submit" name="submit_search" class="btn btn-default button-search"><i
-                                            class="fa fa-search"></i></button>
+                                        name="query" placeholder="Rechercher des achats..."
+                                        value="{{ request('query') }}">
+                                    <button type="submit" class="btn btn-default button-search">
+                                        <i class="fa fa-search"></i>
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -96,7 +89,8 @@
                                 @endif
                             @else
                                 <li class="nav-item dropdown">
-                                    <div class="account_extra dropdown_link" data-toggle="dropdown">{{ Auth::user()->name }}
+                                    <div class="account_extra dropdown_link" data-toggle="dropdown">
+                                        {{ Auth::user()->name }}
                                     </div>
                                     <aside class="widget_account dropdown_content">
                                         <div class="widget_account_content">
@@ -179,7 +173,7 @@
                                 <ul class="cat_menu_list menu-vertical">
                                     <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
                                     </li>
-                                    {{-- @foreach ($categories as $category)
+                                    @foreach ($categories as $category)
                                         <li class="parent">
 
                                             <a href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
@@ -206,7 +200,7 @@
                                                 </div>
                                             @endif
                                         </li>
-                                    @endforeach --}}
+                                    @endforeach
 
                                     <li class="parent-plus"><a href="#">Plus de catégories</a>
                                         <div class="plus-menu">

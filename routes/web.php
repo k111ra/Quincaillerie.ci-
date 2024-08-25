@@ -13,6 +13,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TagController;
@@ -31,6 +32,7 @@ Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
 Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name('product');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 
 
@@ -112,7 +114,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
             Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
             Route::post('/store', [CategoryController::class, 'store'])->name('admin.categories.store');
             Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-            Route::post('/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+            Route::delete('/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
             Route::put('/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
         });
 

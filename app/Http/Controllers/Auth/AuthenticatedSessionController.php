@@ -18,9 +18,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-
-
-        return view('auth.login');
+      $categories = Category::with('children')
+      ->whereNull('parent_id') // récupérer seulement les catégories qui n'ont pas de parent
+      ->get();
+        return view('auth.login')->with('categories');
     }
 
     /**

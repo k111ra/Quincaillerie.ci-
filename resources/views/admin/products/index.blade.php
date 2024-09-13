@@ -25,15 +25,26 @@
                     <tr>
                         <th scope="row">{{ $product->id }}</th>
                         <td>{{ $product->nom }}</td>
-                        <td><img src="{{ asset('storage/' . $product->image) }}" width="100" alt="{{ $product->nom }}"></td>
+                        {{-- <td><img src="{{ asset('storage/' . $product->image) }}" width="100" alt="{{ $product->nom }}"></td> --}}
                         <td>
-                          <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Modifier</a>
+                            @if ($product->images && json_decode($product->images))
+                                @foreach (json_decode($product->images) as $image)
+                                    <img src="{{ asset('storage/' . $image) }}" alt="{{ $product->nom }}" width="100">
+                                @endforeach
+                            @else
+                                <p>Aucune image disponible</p>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="{{ route('admin.products.edit', $product->id) }}"
+                                class="btn btn-sm btn-primary">Modifier</a>
 
-                          <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE') <!-- Utilisez DELETE au lieu de POST -->
-                            <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
-                        </form>
+                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
+                                class="d-inline">
+                                @csrf
+                                @method('DELETE') <!-- Utilisez DELETE au lieu de POST -->
+                                <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                            </form>
 
 
 

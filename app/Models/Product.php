@@ -12,15 +12,18 @@ class Product extends Model
   use HasFactory;
 
   protected static function boot()
-    {
-        parent::boot();
+  {
+    parent::boot();
 
-        static::saving(function ($model) {
-            $model->slug = Str::slug($model->nom);
-        });
-    }
+    static::saving(function ($model) {
+      $model->slug = Str::slug($model->nom);
+    });
+  }
 
-  protected $fillable = ['nom', 'description', 'prix', 'image'];
+  protected $fillable = ['nom', 'description', 'prix'];
+  protected $casts = [
+    'images' => 'array',  // Indiquer que la colonne 'images' est un tableau
+  ];
 
   // Dans le modèle 'Product'
   public function category()
@@ -35,6 +38,4 @@ class Product extends Model
   {
     return $this->belongsToMany(Tag::class, 'product_tags');
   }
-
-
 }

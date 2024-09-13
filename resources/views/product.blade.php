@@ -40,13 +40,17 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 ml-auto mr-auto">
                                         <div class="product-gallery easyzoom-product-gallery clearfix">
+                                            @php
+                                                $images = json_decode($product->images);
+                                            @endphp
+
                                             <div class="product-look-preview-plus left">
                                                 <div class="pr-35 res-767-pr-15">
                                                     <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+
                                                         <a href="{{ url('product/' . $product->slug) }}">
                                                             <img class="img-fluid"
-                                                                src="{{ asset('storage/' . $product->image) }}"
-                                                                alt="" />
+                                                                src="{{ asset('storage/' . $images[0]) }}" alt="" />
                                                         </a>
                                                     </div>
                                                 </div>
@@ -55,41 +59,20 @@
                                                 <div class="mt-35 mb-35">
                                                     <ul class="thumbnails easyzoom-gallery-slider"
                                                         data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":true, "infinite":true, "vertical":true}'>
-                                                        <li>
-                                                            <a href="images/product/pro-01-plus.png"
-                                                                data-standard="images/product/pro-01-plus.png">
-                                                                <img class="img-fluid" src="images/product/pro-01-plus.png"
-                                                                    alt="" />
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="images/product/pro-02-plus.png"
-                                                                data-standard="images/product/pro-02-plus.png">
-                                                                <img class="img-fluid" src="images/product/pro-02-plus.png"
-                                                                    alt="" />
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="images/product/pro-03-plus.png"
-                                                                data-standard="images/product/pro-03-plus.png">
-                                                                <img class="img-fluid" src="images/product/pro-03-plus.png"
-                                                                    alt="" />
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="images/product/pro-04-plus.png"
-                                                                data-standard="images/product/pro-04-plus.png">
-                                                                <img class="img-fluid" src="images/product/pro-04-plus.png"
-                                                                    alt="" />
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="images/product/pro-05-plus.png"
-                                                                data-standard="images/product/pro-05-plus.png">
-                                                                <img class="img-fluid" src="images/product/pro-05-plus.png"
-                                                                    alt="" />
-                                                            </a>
-                                                        </li>
+                                                        @if ($product->images && json_decode($product->images))
+                                                            @foreach (json_decode($product->images) as $image)
+                                                                <li>
+                                                                    <a href="{{ asset('storage/' . $image) }}"
+                                                                        data-standard="{{ asset('storage/' . $image) }}">
+                                                                        <img class="img-fluid"
+                                                                            src="{{ asset('storage/' . $image) }}"
+                                                                            alt="{{ $product->nom }}" />
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        @else
+                                                            <p>Aucune image disponible</p>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </div>
@@ -134,26 +117,26 @@
                                                 </del>
                                             </span>
                                             {{-- <div class="product-details__short-description">Raising a heavy fur muff that covered the whole of her lower arm towards the viewer regor then turned to look out the window</div> --}}
-                                            <form action="{{ route('cart.update') }}" method="post">
-                                              @csrf
-                                            <div class="mt-15 mb-25">
+                                            {{-- <form action="{{ route('cart.update') }}" method="post"> --}}
+                                            <form action="" method="post">
+                                                @csrf
+                                                <div class="mt-15 mb-25">
 
                                                     <input type="hidden" name="productId" value="{{ $product->id }}">
                                                     <div class="quantity">
                                                         <label>Quantité: </label>
                                                         <input type="text" value="1" name="quantity"
-                                                            class="qty" value="{{ $productQuantity }}">
-                                                        <span class="inc quantity-button">+</span>
+                                                            {{-- class="qty" value="{{ $productQuantity }}"> --}} <span class="inc quantity-button">+</span>
                                                         <span class="dec quantity-button">-</span>
                                                     </div>
 
-                                            </div>
-                                            <div class="actions">
-                                                <div class="add-to-cart">
-                                                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                        href="/add-to-cart/{{ $product->id }}">Ajouter au panier</a>
                                                 </div>
-                                            </div>
+                                                <div class="actions">
+                                                    <div class="add-to-cart">
+                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                            href="/add-to-cart/{{ $product->id }}">Ajouter au panier</a>
+                                                    </div>
+                                                </div>
                                             </form>
                                             <div class="buttons">
                                                 <a href="#" rel="nofollow" data-product-id="24006456"

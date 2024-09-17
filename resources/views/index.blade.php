@@ -210,8 +210,8 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/widget-banner-one.jpg' }}"
-                                    alt="widget-banner"></a>
+                            <a href="#"><img class="img-fluid"
+                                    src="{{ 'front/assets/images/widget-banner-one.jpg' }}" alt="widget-banner"></a>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
                             <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/side-banner1.png' }}"
@@ -330,12 +330,100 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
+                                                            @php
+                                                                $images = json_decode($special->images);
+                                                            @endphp
+                                                            @if (!empty($images) && count($images) > 0)
+                                                                <img class="img-fluid pro-image-front"
+                                                                    src="{{ asset('storage/' . $images[0]) }}"
+                                                                    alt="">
+                                                                @if (isset($images[1]))
+                                                                    <img class="img-fluid pro-image-back"
+                                                                        src="{{ asset('storage/' . $images[1]) }}"
+                                                                        alt="">
+                                                                @endif
+                                                            @else
+                                                                <img class="img-fluid pro-image-front"
+                                                                    src="{{ asset('front/assets/images/default-image.png') }}"
+                                                                    alt="Default Image">
+                                                            @endif
+                                                        </div>
+                                                        <div class="product-btn-links-wrapper">
+                                                            <div class="product-btn">
+                                                                <a href="{{ url('product/' . $special->slug) }}"
+                                                                    class="add-to-cart-btn tooltip-top"
+                                                                    data-tooltip="Add To Cart">
+                                                                    <i class="ti ti-shopping-cart"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="product-btn">
+                                                                <a href="#"
+                                                                    class="quick-view-btn js-show-modal1 tooltip-top"
+                                                                    data-tooltip="Quick View">
+                                                                    <i class="ti ti-search"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="product-btn"><a href="#"
+                                                                    class="wishlist-btn tooltip-top"
+                                                                    data-tooltip="Add To Wishlist"><i
+                                                                        class="ti ti-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- product-box-inner end -->
+                                                    <div class="product-content-box">
+                                                        <a class="product-title"
+                                                            href="{{ url('product/' . $special->slug) }}">
+                                                            <h2>{{ $special->nom }}</h2>
+                                                        </a>
+                                                        <div class="star-ratings">
+                                                            <ul class="rating">
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                                <li><i class="fa fa-star-o"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">
+                                                            <a href="{{ url('product/' . $special->slug) }}">
+                                                                <span class="product-Price-amount">
+                                                                    {{ number_format($special->prix, 0, ',', ' ') . 'F cfa' }}
+                                                                </span>
+                                                            </a>
+
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- product end -->
+                                        @endforeach
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="content-sec-head-style">
+                                        <div class="content-area-sec-title">
+                                            <h5>En Solde</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <!-- slick_slider -->
+                                    <div class="pro_slick_slider"
+                                        data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
+                                        @foreach ($produitsSolde as $solde)
+                                            <!-- product -->
+                                            <div class="product">
+                                                <div class="product-box">
+                                                    <!-- product-box-inner -->
+                                                    <div class="product-box-inner">
+                                                        <div class="product-image-box">
                                                             <img class="img-fluid pro-image-front"
-                                                                src="{{ asset('storage/' . $special->image) }}"
+                                                                src="{{ asset('storage/' . $solde->image) }}"
                                                                 alt="">
-                                                            {{-- <img class="img-fluid pro-image-back"
-                                                          src="{{ 'assets/images/product/pro-back-09.png' }}"
-                                                          alt=""> --}}
+
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -357,7 +445,7 @@
                                                     </div><!-- product-box-inner end -->
                                                     <div class="product-content-box">
                                                         <a class="product-title" href="product-layout1.html">
-                                                            <h2>{{ $special->nom }}</h2>
+                                                            <h2>{{ $solde->nom }}</h2>
                                                         </a>
                                                         <div class="star-ratings">
                                                             <ul class="rating">
@@ -370,7 +458,7 @@
                                                         </div>
                                                         <span class="price">
                                                             <span class="product-Price-amount">
-                                                                {{ number_format($special->prix, 0, ',', ' ') . 'F cfa' }}
+                                                                {{ number_format($solde->prix, 0, ',', ' ') . 'F cfa' }}
                                                             </span>
                                                         </span>
                                                     </div>
@@ -378,77 +466,8 @@
                                             </div><!-- product end -->
                                         @endforeach
 
-
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-lg-12">
-                                <div class="content-sec-head-style">
-                                    <div class="content-area-sec-title">
-                                        <h5>En Solde</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <!-- slick_slider -->
-                                <div class="pro_slick_slider"
-                                    data-slick='{"slidesToShow": 4, "slidesToScroll": 4, "arrows":true, "autoplay":true}'>
-                                    @foreach ($produitsSolde as $solde)
-                                        <!-- product -->
-                                        <div class="product">
-                                            <div class="product-box">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="{{ asset('storage/' . $solde->image) }}"
-                                                            alt="">
-
-                                                    </div>
-                                                    <div class="product-btn-links-wrapper">
-                                                        <div class="product-btn"><a href="#"
-                                                                class="add-to-cart-btn tooltip-top"
-                                                                data-tooltip="Add To Cart"><i
-                                                                    class="ti ti-shopping-cart"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="quick-view-btn js-show-modal1 tooltip-top"
-                                                                data-tooltip="Quick View"><i
-                                                                    class="ti ti-search"></i></a>
-                                                        </div>
-                                                        <div class="product-btn"><a href="#"
-                                                                class="wishlist-btn tooltip-top"
-                                                                data-tooltip="Add To Wishlist"><i
-                                                                    class="ti ti-heart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                                <div class="product-content-box">
-                                                    <a class="product-title" href="product-layout1.html">
-                                                        <h2>{{ $solde->nom }}</h2>
-                                                    </a>
-                                                    <div class="star-ratings">
-                                                        <ul class="rating">
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                            <li><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <span class="price">
-                                                        <span class="product-Price-amount">
-                                                            {{ number_format($solde->prix, 0, ',', ' ') . 'F cfa' }}
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div><!-- product end -->
-                                    @endforeach
-
-                                </div>
-                            </div>
 
                             </div>
                             <div class="row">

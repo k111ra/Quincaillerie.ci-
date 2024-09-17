@@ -33,6 +33,11 @@ Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/cart/show', [CartController::class, 'ShowCart'])->name('cart');
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+
 
 
 
@@ -103,81 +108,76 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
 
 
 
-    Route::prefix('admin')->group(function () {
-        // Routes pour l'administration
-        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-        Route::get('/users', [LoginController::class, 'users'])->name('admin.users');
+  Route::prefix('admin')->group(function () {
+    // Routes pour l'administration
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/users', [LoginController::class, 'users'])->name('admin.users');
 
-        // Routes pour les catégories
-        Route::prefix('categories')->group(function () {
-            Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
-            Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-            Route::post('/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-            Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-            Route::delete('/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
-            Route::put('/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
-        });
-
-        // ... Autres routes d'administration
-
-        // Routes pour les produits
-        Route::prefix('products')->group(function ()  {
-            Route::get('/', [ProductController::class, 'index'])->name('admin.products.index');
-            Route::get('/create', [ProductController::class, 'create'])->name('admin.products.create');
-            Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
-            Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
-            Route::put('/{product}', [ProductController::class, 'update'])->name('admin.products.update');
-            Route::delete('/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
-        });
-
-        // ... Autres routes d'administration
-
-        // Routes pour les tags
-        Route::prefix('tags')->group(function ()  {
-            Route::post('/', [TagController::class, 'store'])->name('admin.tags.store');
-            Route::get('/', [TagController::class, 'index'])->name('admin.tags.index');
-            Route::get('/create', [TagController::class, 'create'])->name('admin.tags.create');
-            Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
-            Route::put('/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
-            Route::post('/{tag}/destroy', [TagController::class, 'destroy'])->name('admin.tags.destroy');
-        });
-
-        // ... Autres routes d'administration
-
-        // Routes pour les articles de blog
-        Route::prefix('posts')->group(function (){
-            Route::get('/', [PostController::class, 'index'])->name('admin.blogs.index');
-            Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
-            Route::post('/store', [PostController::class, 'store'])->name('admin.posts.store');
-        });
-
-        // Routes pour les services
-        // Route::prefix('services')->group(function () use ($controller_path) {
-            Route::get('/services', [ServiceController::class, 'create'])->name('admin.services.create');
-            Route::post('/store', [ServiceController::class, 'store'])->name('admin.services.store');
-            Route::get('/{service}/edit', [ServiceController::class, 'edit'])->name('admin.services.edit');
-            Route::delete('/{service}', [ServiceController::class, 'destroy'])->name('admin.services.destroy');
-            Route::put('/services/{id}', [ServiceController::class, 'update'])->name('admin.services.update');
-
-
-        // });
-
-        Route::prefix('carousel')->group(function ()  {
-          Route::post('/', [CarouselController::class, 'store'])->name('admin.carousel.store'); // Pour créer un carrousel
-          Route::get('/', [CarouselController::class, 'index'])->name('admin.carousel.index'); // Liste des carrousels
-          Route::get('/create', [CarouselController::class, 'create'])->name('admin.carousel.create'); // Formulaire de création
-          Route::get('/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.carousel.edit'); // Formulaire d'édition
-          Route::put('/{carousel}', [CarouselController::class, 'update'])->name('admin.carousel.update'); // Mise à jour d'un carrousel
-          Route::delete('/{carousel}', [CarouselController::class, 'destroy'])->name('admin.carousel.destroy'); // Suppression d'un carrousel
-      });
-
-
-
-
-
+    // Routes pour les catégories
+    Route::prefix('categories')->group(function () {
+      Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
+      Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+      Route::post('/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+      Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+      Route::delete('/{category}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+      Route::put('/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     });
 
-    // ... Autres routes middleware auth
+    // ... Autres routes d'administration
+
+    // Routes pour les produits
+    Route::prefix('products')->group(function () {
+      Route::get('/', [ProductController::class, 'index'])->name('admin.products.index');
+      Route::get('/create', [ProductController::class, 'create'])->name('admin.products.create');
+      Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+      Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+      Route::put('/{product}', [ProductController::class, 'update'])->name('admin.products.update');
+      Route::delete('/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+    });
+
+    // ... Autres routes d'administration
+
+    // Routes pour les tags
+    Route::prefix('tags')->group(function () {
+      Route::post('/', [TagController::class, 'store'])->name('admin.tags.store');
+      Route::get('/', [TagController::class, 'index'])->name('admin.tags.index');
+      Route::get('/create', [TagController::class, 'create'])->name('admin.tags.create');
+      Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+      Route::put('/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
+      Route::post('/{tag}/destroy', [TagController::class, 'destroy'])->name('admin.tags.destroy');
+    });
+
+    // ... Autres routes d'administration
+
+    // Routes pour les articles de blog
+    Route::prefix('posts')->group(function () {
+      Route::get('/', [PostController::class, 'index'])->name('admin.blogs.index');
+      Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
+      Route::post('/store', [PostController::class, 'store'])->name('admin.posts.store');
+    });
+
+    // Routes pour les services
+    // Route::prefix('services')->group(function () use ($controller_path) {
+    Route::get('/services', [ServiceController::class, 'create'])->name('admin.services.create');
+    Route::post('/store', [ServiceController::class, 'store'])->name('admin.services.store');
+    Route::get('/{service}/edit', [ServiceController::class, 'edit'])->name('admin.services.edit');
+    Route::delete('/{service}', [ServiceController::class, 'destroy'])->name('admin.services.destroy');
+    Route::put('/services/{id}', [ServiceController::class, 'update'])->name('admin.services.update');
+
+
+    // });
+
+    Route::prefix('carousel')->group(function () {
+      Route::post('/', [CarouselController::class, 'store'])->name('admin.carousel.store'); // Pour créer un carrousel
+      Route::get('/', [CarouselController::class, 'index'])->name('admin.carousel.index'); // Liste des carrousels
+      Route::get('/create', [CarouselController::class, 'create'])->name('admin.carousel.create'); // Formulaire de création
+      Route::get('/{carousel}/edit', [CarouselController::class, 'edit'])->name('admin.carousel.edit'); // Formulaire d'édition
+      Route::put('/{carousel}', [CarouselController::class, 'update'])->name('admin.carousel.update'); // Mise à jour d'un carrousel
+      Route::delete('/{carousel}', [CarouselController::class, 'destroy'])->name('admin.carousel.destroy'); // Suppression d'un carrousel
+    });
+  });
+
+  // ... Autres routes middleware auth
 });
 
 Auth::routes();

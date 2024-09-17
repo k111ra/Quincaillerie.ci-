@@ -44,17 +44,22 @@
                                                 $images = json_decode($product->images);
                                             @endphp
 
-                                            <div class="product-look-preview-plus left">
-                                                <div class="pr-35 res-767-pr-15">
-                                                    <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
-
-                                                        <a href="{{ url('product/' . $product->slug) }}">
-                                                            <img class="img-fluid"
-                                                                src="{{ asset('storage/' . $images[0]) }}" alt="" />
-                                                        </a>
+                                            @if ($images && count($images) > 0)
+                                                <div class="product-look-preview-plus left">
+                                                    <div class="pr-35 res-767-pr-15">
+                                                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+                                                            <a href="{{ asset('storage/' . $images[0]) }}">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('storage/' . $images[0]) }}"
+                                                                    alt="Image du produit" />
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @else
+                                                <p>Aucune image disponible pour ce produit.</p>
+                                            @endif
+
                                             <div class="product-look-views right">
                                                 <div class="mt-35 mb-35">
                                                     <ul class="thumbnails easyzoom-gallery-slider"
@@ -85,7 +90,7 @@
                                                 <span>Share :</span>
                                                 <a href="#"><i class="ti ti-facebook"></i></a>
                                                 <a href="#"><i class="ti ti-twitter-alt"></i></a>
-                                                <a href="#"><i class="ti ti-google"></i></a>
+                                                {{-- <a href="#"><i class="ti ti-google"></i></a> --}}
                                                 <a href="#"><i class="ti ti-linkedin"></i></a>
                                             </div>
                                             <div class="comments-notes clearfix">
@@ -93,48 +98,72 @@
                                                     rel="nofollow">(Aucun avis)</a>
                                                 &nbsp;&nbsp;<a href="javascript:void(0)" class="review-link"
                                                     rel="nofollow">Écrire pour évaluer</a>
-                                                <div class="product-rating clearfix">
+                                                {{-- <div class="product-rating clearfix">
                                                     <ul class="star-rating clearfix">
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
+                                                        @for ($i = 1; $i <= 5; $i++)
+                                                            <li>
+                                                                @if ($i <= round($product->averageRating()))
+                                                                    <!-- méthode fictive -->
+                                                                    <i class="fa fa-star"></i>
+                                                                @else
+                                                                    <i class="fa fa-star-o"></i>
+                                                                @endif
+                                                            </li>
+                                                        @endfor
                                                     </ul>
-                                                </div>
+                                                </div> --}}
+
                                             </div>
                                             <div class="product_in-stock"><i class="fa fa-check-circle"></i><span> en stock
                                                     Plus que 14 restants</span></div>
                                             <span class="price">
-                                                <ins><span class="product-Price-amount">
-                                                        {{ number_format($product->prix, 0, ',', ' ') . 'F cfa' }}
+                                                <ins>
+                                                    <span class="product-Price-amount">
+                                                        {{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}
                                                     </span>
                                                 </ins>
-                                                <del><span class="product-Price-amount">
-
-                                                        {{ number_format($product->prix, 0, ',', ' ') . 'F cfa' }}
-                                                    </span>
-                                                </del>
+                                                @if ($product->reduction)
+                                                    <!-- Si le produit a une réduction -->
+                                                    <del>
+                                                        <span class="product-Price-amount">
+                                                            {{ number_format($product->prix_original, 0, ',', ' ') . ' F CFA' }}
+                                                            <!-- prix original -->
+                                                        </span>
+                                                    </del>
+                                                @endif
                                             </span>
+
                                             {{-- <div class="product-details__short-description">Raising a heavy fur muff that covered the whole of her lower arm towards the viewer regor then turned to look out the window</div> --}}
                                             {{-- <form action="{{ route('cart.update') }}" method="post"> --}}
-                                            <form action="" method="post">
+                                            @if (session('success'))
+                                                <div class="alert alert-success mt-2">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @endif
+                                            <form action="{{ route('cart.add') }}" method="post">
                                                 @csrf
                                                 <div class="mt-15 mb-25">
 
-                                                    <input type="hidden" name="productId" value="{{ $product->id }}">
+                                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
                                                     <div class="quantity">
                                                         <label>Quantité: </label>
-                                                        <input type="text" value="1" name="quantity"
-                                                            {{-- class="qty" value="{{ $productQuantity }}"> --}} <span class="inc quantity-button">+</span>
+                                                        <input type="number" value="1" name="quantity" class="qty"
+                                                            min="1" max="{{ $product->quantite }}">
+                                                        <span class="inc quantity-button">+</span>
                                                         <span class="dec quantity-button">-</span>
                                                     </div>
+
 
                                                 </div>
                                                 <div class="actions">
                                                     <div class="add-to-cart">
-                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                            href="/add-to-cart/{{ $product->id }}">Ajouter au panier</a>
+                                                        <button type="submit"
+                                                            class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor">Ajouter
+                                                            au
+                                                            panier</button>
+
+                                                        {{-- <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                            href="{{ route('cart') }}">Ajouter au panier</a> --}}
                                                     </div>
                                                 </div>
                                             </form>

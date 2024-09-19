@@ -70,6 +70,7 @@
                     <!-- header_search end -->
                 </div>
                 <div class="col-lg-3 col-9 order-lg-3 order-2 text-lg-left text-right">
+
                     <!-- header_extra -->
                     <div class="header_extra d-flex flex-row align-items-center justify-content-end">
                         <ul class="navbar-nav ms-auto">
@@ -88,31 +89,39 @@
                                     </li>
                                 @endif
                             @else
-                                <li class="nav-item dropdown">
-                                    <div class="account_extra dropdown_link" data-toggle="dropdown">
-                                        {{ Auth::user()->name }}
+                                <div class="account dropdown">
+                                    <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="account_icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="account_content">
+                                            <div class="account_text"><a href="#"> {{ Auth::user()->name }}</a></div>
+                                        </div>
                                     </div>
+                                    <div class="account_extra dropdown_link" data-toggle="dropdown">Mon compte</div>
                                     <aside class="widget_account dropdown_content">
                                         <div class="widget_account_content">
                                             <ul>
+                                                <li><i class="fa fa-sign-in mr-2"></i><a
+                                                        href="{{ route('user.dashboard') }}">Compte</a></li>
                                                 <li>
-                                                    <a href="{{ route('logout') }}"
-                                                        onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                                        {{ __('Déconnexion') }}
-                                                    </a>
+                                                    <form action="{{ route('logout') }}" method="POST">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-link">Déconnexion</button>
+                                                    </form>
                                                 </li>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                    class="d-none">
-                                                    @csrf
-                                                </form>
-                                                {{-- <li><i class="fa fa-sign-in mr-2"></i><a href="#">{{ __('Compte') }}</a></li> --}}
-
                                             </ul>
+
                                         </div>
                                     </aside>
+                                </div>
+                                {{-- <li class="nav-item dropdown">
+                                    <div class="account_extra dropdown_link" data-toggle="dropdown">
+                                        {{ Auth::user()->name }}
+                                    </div>
 
-                                </li>
+
+                                </li> --}}
                             @endguest
                         </ul>
                         <div class="cart dropdown">

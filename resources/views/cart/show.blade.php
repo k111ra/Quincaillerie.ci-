@@ -159,7 +159,8 @@
                                                 F CFA</span></h5>
                                     </div>
                                     <div class="proceed-to-checkout">
-                                        <a href="#" class="checkout-button button">Passer à la caisse</a>
+                                        <a href="{{ route('checkout') }}" class="checkout-button button">Passer à
+                                            la caisse</a>
                                     </div>
                                 </div>
                             </div>

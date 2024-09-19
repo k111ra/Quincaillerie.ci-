@@ -7,7 +7,6 @@ use App\Models\Category;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -36,6 +35,7 @@ class RegisteredUserController extends Controller
 
     return view('auth.register')->with('categories', $categories);
   }
+
   /**
    * Handle an incoming registration request.
    *
@@ -56,13 +56,22 @@ class RegisteredUserController extends Controller
       'email.unique' => 'Cet email est déjà utilisé par un autre utilisateur.',
       'password.required' => 'Le champ "Mot de passe" est obligatoire.',
       'password.confirmed' => 'Les mots de passe ne correspondent pas.',
-      // Ajoutez d'autres messages d'erreur ici si nécessaire
     ]);
 
+    // Création de l'utilisateur
+    $user = User::create([
+      'name' => $request->name,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+    ]);
+
+    // Déclencher l'événement "Registered"
     event(new Registered($user));
 
+    // Authentification de l'utilisateur
     Auth::login($user);
 
+    // Rediriger vers la page d'accueil après l'inscription
     return redirect(RouteServiceProvider::HOME);
   }
 }

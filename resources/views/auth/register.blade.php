@@ -8,13 +8,13 @@
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="page-title-heading">
-                            <h1 class="title">Register</h1>
+                            <h1 class="title">S'inscrire</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span class="mr-1"><i class="ti ti-home"></i></span>
                             <a title="Homepage" href="index.html">Home</a>
                             <span class="ttm-bread-sep">&nbsp;/&nbsp;</span>
-                            <span class="ttm-textcolor-skincolor">Register</span>
+                            <span class="ttm-textcolor-skincolor">S'inscrire</span>
                         </div>
                     </div>
                 </div>
@@ -42,6 +42,10 @@
                                     <input type="email" name='email' placeholder="Email" />
                                 </div>
                                 <div class="form-group">
+                                    <i class="fa fa-phone"></i>
+                                    <input name="your-phone" type="text" value="" placeholder="Téléphone" />
+                                </div>
+                                <div class="form-group">
                                     <i class="fa fa-lock"></i>
                                     <input type="password" name='password' placeholder="Mot de passe" />
                                 </div>
@@ -50,10 +54,7 @@
                                     <input type="password" name='password_confirmation'
                                         placeholder="Confirmez le mot de passe" />
                                 </div>
-                                <div class="form-group">
-                                    <i class="fa fa-phone"></i>
-                                    <input name="your-phone" type="text" value="" placeholder="Téléphone" />
-                                </div>
+
                                 <div class="form-group">
                                     <button id="login-button" class="button action-button expand-center mb-15">
                                         <span class="label">Connexion</span>

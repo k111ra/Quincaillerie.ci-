@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
@@ -37,13 +38,17 @@ Route::get('/cart/show', [CartController::class, 'ShowCart'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
+// Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout.process');
 
 
 
 
 // Routes nécessitant une authentification
 Route::middleware(['auth'])->group(function () use ($controller_path) {
-  Route::get('/dashboard', [HomeController::class, 'index'])->name('user.dashboard');
+  Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+  Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+  Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
 
   // layout
   Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
@@ -108,10 +113,10 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
 
 
 
-  Route::prefix('admin')->group(function () {
+  Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     // Routes pour l'administration
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/users', [LoginController::class, 'users'])->name('admin.users');
+    // Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    // Route::get('/users', [LoginController::class, 'users'])->name('admin.users');
 
     // Routes pour les catégories
     Route::prefix('categories')->group(function () {

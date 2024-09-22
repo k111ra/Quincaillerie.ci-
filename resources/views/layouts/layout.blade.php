@@ -20,6 +20,8 @@
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Facebook -->
     <meta name="facebook-domain-verification" content="i78f42vrfi1go3v13c2e9ncgl5o7cd" />
     <!-- bootstrap -->
@@ -68,6 +70,17 @@
 
     <!--page start-->
     <div class="page">
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Félicitations',
+                    text: '{{ session('success') }}',
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+            </script>
+        @endif
 
 
         <!--newsletter_popup_wrap start-->

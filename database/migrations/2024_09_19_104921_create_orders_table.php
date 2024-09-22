@@ -15,12 +15,17 @@ return new class extends Migration
   {
     Schema::create('orders', function (Blueprint $table) {
       $table->id();
-      $table->foreignId('user_id')->constrained()->onDelete('cascade');  // ID de l'utilisateur
-      $table->string('shipping_address');  // Adresse de livraison
-      $table->string('shipping_method');   // Méthode de livraison (standard ou express)
-      $table->decimal('total_amount', 10, 2);  // Montant total de la commande
-      $table->string('status')->default('pending');  // Statut de la commande (ex: pending, processing, completed)
-      $table->timestamps();  // Timestamps: created_at et updated_at
+      $table->foreignId('user_id')->constrained()->onDelete('cascade');
+      $table->string('order_number')->unique();  // Numéro de commande unique
+      $table->string('shipping_address');
+      $table->string('shipping_method');
+      $table->decimal('total_amount', 10, 2);
+      $table->string('status')->default('pending');
+      $table->timestamps();
+
+      // Ajout d'index pour améliorer les performances
+      $table->index('user_id');
+      $table->index('status');
     });
   }
 

@@ -129,36 +129,49 @@
                                 data-toggle="dropdown">
                                 <div class="cart_icon">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <div class="cart_count">00</div>
+                                    <!-- Nombre d'articles dans le panier -->
+                                    <div class="cart_count">{{ session('cart') ? count(session('cart')) : '00' }}</div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="#">Mon Panier</a></div>
-                                    <div class="cart_price">0F CFA</div>
+                                    <!-- Prix total des articles dans le panier -->
+                                    <div class="cart_price">{{ session('cart_total', 0) }} F CFA</div>
                                 </div>
                             </div>
+
                             <aside class="widget_shopping_cart dropdown_content">
                                 <ul class="cart-list">
-                                    <li>
-                                        <a href="#" class="photo"><img
-                                                src="{{ 'front/assets/images/product/pro-front-02.png' }}"
-                                                class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Clé à chocs</a></h6>
-                                        <p>2x - <span class="price">220.000</span>F CFA</p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img
-                                                src="{{ 'front/assets/images/product/pro-front-03.png' }}"
-                                                class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Briseur de démolition</a></h6>
-                                        <p>1x - <span class="price">38.000</span>F CFA</p>
-                                    </li>
+                                    @if (session('cart'))
+                                        @foreach (session('cart') as $id => $details)
+                                            <li>
+                                                @php
+                                                    $image = $details['image']; // On récupère directement l'image stockée
+                                                @endphp
+                                                <a href="#" class="photo">
+                                                    <img src="{{ asset('storage/' . $image) }}" class="cart-thumb"
+                                                        alt="" />
+                                                </a>
+                                                <h6><a href="#">{{ $details['nom'] }}</a></h6>
+                                                <p>{{ $details['quantity'] }}x - <span
+                                                        class="price">{{ number_format($details['price'], 0) }}</span>
+                                                    F CFA</p>
+                                            </li>
+                                        @endforeach
+                                    @else
+                                        <li>
+                                            <p>Votre panier est vide</p>
+                                        </li>
+                                    @endif
                                     <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: 257.000 F CFA</span>
-                                        <a href="/cart" class="btn btn-default btn-cart">Panier</a>
+                                        <!-- Total dynamique du panier -->
+                                        <span class="pull-right"><strong>Total</strong>:
+                                            {{ number_format(session('cart_total', 0), 0) }} F CFA</span>
+                                        <a href="/cart/show" class="btn btn-default btn-cart">Panier</a>
                                     </li>
                                 </ul>
                             </aside>
                         </div>
+
                     </div>
                     <!-- header_extra end -->
                 </div>

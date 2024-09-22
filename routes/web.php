@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
   Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
+  Route::post('/checkout', [OrderController::class, 'store'])->name('checkout.store');
+
 
   // layout
   Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');

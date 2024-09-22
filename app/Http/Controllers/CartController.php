@@ -73,7 +73,7 @@ class CartController extends Controller
     session()->put('cart_total', $total);
 
     // Redirection avec un message de succès
-    return redirect()->route('cart')->with('success', 'Produit ajouté au panier avec succès !');
+    return redirect()->back()->with('success', 'Produit ajouté au panier avec succès !');
   }
 
 

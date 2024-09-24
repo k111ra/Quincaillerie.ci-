@@ -161,9 +161,13 @@
                                                             class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor">Ajouter
                                                             au
                                                             panier</button>
+                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                            href="{{ route('cart') }}">
+                                                            Allez au panier . <i class="fa fa-shopping-cart"></i>
+                                                        </a>
 
-                                                        {{-- <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                            href="{{ route('cart') }}">Ajouter au panier</a> --}}
+
+
                                                     </div>
                                                 </div>
                                             </form>

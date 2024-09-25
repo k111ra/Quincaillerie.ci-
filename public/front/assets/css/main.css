@@ -2858,7 +2858,7 @@ section.error-404 .page-content p { font-size: 16px; margin: 30px; }
 @media (max-width: 768px) {
   .header_extra {
       flex-direction: column; /* Forcer les éléments à se disposer en colonne */
-      align-items: flex-start; /* Aligner à gauche */
+      /* align-items: flex-start; Aligner à gauche */
   }
 
   .header_extra .navbar-nav {

@@ -158,17 +158,14 @@
                                                 <div class="actions">
                                                     <div class="add-to-cart">
                                                         <button type="submit"
-                                                            class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor">Ajouter
-                                                            au
-                                                            panier</button>
-                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                            href="{{ route('cart') }}">
-                                                            Allez au panier . <i class="fa fa-shopping-cart"></i>
-                                                        </a>
-
-
-
+                                                            class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor">Acheter</button>
                                                     </div>
+                                                    <br>
+                                                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                        href="{{ route('cart') }}">
+                                                        Allez au panier . <i class="fa fa-shopping-cart"></i>
+                                                    </a>
+
                                                 </div>
                                             </form>
                                             <div class="buttons">

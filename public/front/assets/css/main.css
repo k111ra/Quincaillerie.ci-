@@ -44,6 +44,8 @@
       - Contact_page
       - Error_page
 
+  14. Responsive
+
 **/
 
 
@@ -2842,3 +2844,29 @@ section.error-404 { padding: 150px 0; text-align: center; }
 section.error-404 .ttm-big-icon { font-size: 150px; }
 section.error-404 h1 { font-size: 80px; text-transform: uppercase; line-height: 100%; }
 section.error-404 .page-content p { font-size: 16px; margin: 30px; }
+
+/* ===============================================
+    14. Responsive
+------------------------*/
+
+@media (max-width: 768px) {
+  .cart.dropdown {
+      display: block !important; /* Forcer l'affichage */
+  }
+}
+
+@media (max-width: 768px) {
+  .header_extra {
+      flex-direction: column; /* Forcer les éléments à se disposer en colonne */
+      align-items: flex-start; /* Aligner à gauche */
+  }
+
+  .header_extra .navbar-nav {
+      margin-bottom: 10px; /* Ajouter un espacement entre le menu et le panier */
+  }
+
+  .header_extra .cart {
+      margin-top: 10px; /* Espacement supplémentaire pour le panier */
+  }
+}
+

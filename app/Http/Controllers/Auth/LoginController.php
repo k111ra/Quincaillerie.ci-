@@ -9,37 +9,35 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers;
+  use AuthenticatesUsers;
 
-    protected $redirectTo = '/';
+  protected $redirectTo = '/';
 
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+  public function __construct()
+  {
+    $this->middleware('guest')->except('logout');
+  }
+
+  public function login(Request $request)
+  {
+
+    $this->validate($request, [
+      'email' => 'required|email',
+      'password' => 'required',
+    ]);
+
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+      if (Auth::user()->role == 'admin') {
+        return redirect()->route('admin.dashboard');
+      }
+
+      return redirect()->route('user.dashboard');
     }
 
-    public function login(Request $request)
-    {
-
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->role == 'admin') {
-                return redirect()->route('admin.dashboard');
-            }
-
-            return redirect()->route('user.dashboard');
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
-    }
-
-
+    return back()->withErrors([
+      'email' => 'Verifiez votre email et le mot de passe',
+    ]);
+  }
 }

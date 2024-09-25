@@ -33,6 +33,12 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div>
+                                {{-- <a class="btn btn-primary" href="{{ route('cart') }}">
+                                    Voir le panier
+                                </a> --}}
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,11 +76,10 @@
                     <!-- header_search end -->
                 </div>
                 <div class="col-lg-3 col-9 order-lg-3 order-2 text-lg-left text-right">
-
                     <!-- header_extra -->
-                    <div class="header_extra d-flex flex-row align-items-center justify-content-end">
+                    <div
+                        class="header_extra d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-end">
                         <ul class="navbar-nav ms-auto">
-
                             <!-- Authentication Links -->
                             @guest
                                 @if (Route::has('login'))
@@ -111,20 +116,14 @@
                                                     </form>
                                                 </li>
                                             </ul>
-
                                         </div>
                                     </aside>
                                 </div>
-                                {{-- <li class="nav-item dropdown">
-                                    <div class="account_extra dropdown_link" data-toggle="dropdown">
-                                        {{ Auth::user()->name }}
-                                    </div>
-
-
-                                </li> --}}
                             @endguest
                         </ul>
-                        <div class="cart dropdown">
+
+                        <!-- Cart Section -->
+                        <div class="cart dropdown mt-2 mt-lg-0">
                             <div class="dropdown_link d-flex flex-row align-items-center justify-content-end"
                                 data-toggle="dropdown">
                                 <div class="cart_icon">
@@ -139,17 +138,15 @@
                                 </div>
                             </div>
 
-                            <aside class="widget_shopping_cart dropdown_content">
+                            <!-- Dropdown cart content -->
+                            <aside class="widget_shopping_cart dropdown_content" id="dropdownCartContent">
                                 <ul class="cart-list">
                                     @if (session('cart'))
                                         @foreach (session('cart') as $id => $details)
                                             <li>
-                                                @php
-                                                    $image = $details['image']; // On récupère directement l'image stockée
-                                                @endphp
                                                 <a href="#" class="photo">
-                                                    <img src="{{ asset('storage/' . $image) }}" class="cart-thumb"
-                                                        alt="" />
+                                                    <img src="{{ asset('storage/' . $details['image']) }}"
+                                                        class="cart-thumb" alt="" />
                                                 </a>
                                                 <h6><a href="#">{{ $details['nom'] }}</a></h6>
                                                 <p>{{ $details['quantity'] }}x - <span
@@ -171,13 +168,14 @@
                                 </ul>
                             </aside>
                         </div>
-
                     </div>
                     <!-- header_extra end -->
                 </div>
+
             </div>
         </div>
-    </div><!-- haeder-main end -->
+    </div>
+    <!-- haeder-main end -->
     <!-- site-header-menu -->
     <div id="site-header-menu" class="site-header-menu clearfix">
         <div class="site-header-menu-inner stickable-header">

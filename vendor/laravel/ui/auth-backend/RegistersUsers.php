@@ -2,7 +2,6 @@
 
 namespace Illuminate\Foundation\Auth;
 
-use App\Models\Category;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -19,9 +18,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-      $categories = Category::with('parent')->get();
-    $parents = Category::pluck('name', 'id')->prepend('None', '');
-        return view('auth.register')->with('categories', $categories);
+        return view('auth.register');
     }
 
     /**

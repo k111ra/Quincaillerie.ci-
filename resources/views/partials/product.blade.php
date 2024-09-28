@@ -107,10 +107,19 @@
                             <div class="product-look-preview-plus right">
                                 <div class="pl-35 res-767-pl-15">
                                     <div class="easyzoom easyzoom-model easyzoom--overlay easyzoom--with-thumbnails">
-                                        <a href="{{ asset('storage/' . $images[0]) }}">
+                                        {{-- <a href="{{ asset('storage/' . $images[0]) }}">
                                             <img class="img-fluid" src="{{ asset('storage/' . $images[0]) }}"
                                                 alt="Product Image" />
-                                        </a>
+                                        </a> --}}
+                                        @if (!empty($images) && is_array($images) && isset($images[0]))
+                                            <a href="{{ asset('storage/' . $images[0]) }}">
+                                                <img class="img-fluid" src="{{ asset('storage/' . $images[0]) }}"
+                                                    alt="Product Image" />
+                                            </a>
+                                        @else
+                                            <p>Aucune image disponible.</p>
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>

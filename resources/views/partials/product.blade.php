@@ -25,21 +25,24 @@
                 </div>
             </a>
 
-
+            <!-- Action Buttons -->
             <div class="product-btn-links-wrapper">
                 <div class="product-btn"><a href="/add-to-cart/{{ $product->id }}" class="add-to-cart-btn tooltip-top"
                         data-tooltip="Add To Cart" data-product-id="{{ $product->id }}"><i
                             class="ti ti-shopping-cart"></i></a>
                 </div>
-                <div class="product-btn"><a href="{{ url('product/' . $product->slug) }}"
-                        class="quick-view-btn js-show-modal1 tooltip-top" data-tooltip="Quick View"><i
-                            class="ti ti-search"></i></a>
+                <!-- Button to trigger the modal -->
+                <div class="product-btn">
+                    <a href="javascript:void(0)" class="quick-view-btn js-show-modal1 tooltip-top"
+                        data-tooltip="Quick View" data-product-id="{{ $product->id }}"><i class="ti ti-search"></i></a>
                 </div>
                 <div class="product-btn"><a href="#" class="wishlist-btn tooltip-top"
                         data-tooltip="Add To Wishlist"><i class="ti ti-heart"></i></a>
                 </div>
             </div>
         </div><!-- product-box-inner end -->
+
+        <!-- Product Information -->
         <div class="product-content-box">
             <a class="product-title" href="{{ url('product/' . $product->slug) }}">
                 <h2>{{ $product->nom }}</h2>
@@ -56,15 +59,111 @@
             <span class="price">
                 <a href="{{ url('product/' . $product->slug) }}">
                     <span class="product-Price-amount">
-                        {{ number_format($product->prix, 0, ',', ' ') . 'F cfa' }}
-
+                        {{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}
                     </span>
                 </a>
-
             </span>
         </div>
     </div>
 
+    <!-- Modal specific to each product -->
+    <div class="wrap-modal1 js-modal1 modal-product-{{ $product->id }}">
+        <div class="overlay-modal1 js-hide-modal1"></div>
+        <div class="container">
+            <div class="modal1-content">
+                <button class="close js-hide-modal1">
+                    <i class="fa fa-close"></i>
+                </button>
+                <div class="row ttm-single-product-details ttm-bgcolor-white">
+                    <div class="col-lg-6 col-md-6 col-sm-12 ml-auto mr-auto">
+                        <div class="product-gallery easyzoom-product-gallery">
+                            <div class="product-look-views left">
+                                <div class="mt-35 mb-35">
+                                    <ul class="thumbnails easyzoom-gallery-slider"
+                                        data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":true, "infinite":true, "vertical":true}'>
+                                        @if (!empty($images) && count($images) > 0)
+                                            @foreach ($images as $image)
+                                                <li>
+                                                    <a href="{{ asset('storage/' . $image) }}"
+                                                        data-standard="{{ asset('storage/' . $image) }}">
+                                                        <img class="img-fluid" src="{{ asset('storage/' . $image) }}"
+                                                            alt="Image produit" />
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        @else
+                                            <li>
+                                                <a href="{{ asset('front/assets/images/default-image.png') }}"
+                                                    data-standard="{{ asset('front/assets/images/default-image.png') }}">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('front/assets/images/default-image.png') }}"
+                                                        alt="Default Image" />
+                                                </a>
+                                            </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-look-preview-plus right">
+                                <div class="pl-35 res-767-pl-15">
+                                    <div class="easyzoom easyzoom-model easyzoom--overlay easyzoom--with-thumbnails">
+                                        <a href="{{ asset('storage/' . $images[0]) }}">
+                                            <img class="img-fluid" src="{{ asset('storage/' . $images[0]) }}"
+                                                alt="Product Image" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="summary entry-summary pl-30 res-991-pl-0 res-991-pt-40">
+                            <h2 class="product_title entry-title">{{ $product->nom }}</h2>
+                            <span class="price">
+                                <ins><span
+                                        class="product-Price-amount">{{ number_format($product->prix, 0, ',', ' ') }} F
+                                        CFA</span></ins>
+                            </span>
+                            <div class="product-details__short-description">{{ $product->description }}</div>
+                            <div class="mt-30 mb-35">
+                                <div class="quantity">
+                                    <label>Quantity: </label>
+                                    <input type="text" value="1" name="quantity-number" class="qty">
+                                    <span class="inc quantity-button">+</span>
+                                    <span class="dec quantity-button">-</span>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <div class="add-to-cart">
+                                    <a type="submit" href="{{ url('product/' . $product->slug) }}"
+                                        class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor">Acheter</a>
+                                </div>
+                                <br>
+                                <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                    href="{{ route('cart') }}">
+                                    Allez au panier . <i class="fa fa-shopping-cart"></i>
+                                </a>
+
+                            </div>
+                            <div class="buttons">
+                                <a href="#" rel="nofollow" data-product-id="{{ $product->id }}"
+                                    class="add_to_wishlist">
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                    <span class="wishlist-text">Favorie</span>
+                                </a>
+                                <a href="#" class="compare button" data-product_id="{{ $product->id }}"
+                                    rel="nofollow">
+                                    <i class="fa fa-expand" aria-hidden="true"></i>
+                                    <span class="compare-text">Comparer</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end -->
 
 </div>
 <!-- product end -->

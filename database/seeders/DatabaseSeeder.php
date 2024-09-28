@@ -7,16 +7,17 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-      $this->call(RolesTableSeeder::class);
-      $this->call(UserSeeder::class);
-    }
+  /**
+   * Seed the application's database.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    // Appel des seeders dans l'ordre
+    $this->call(PermissionSeeder::class);
+    $this->call(RoleSeeder::class);
+    $this->call(RolePermissionAssignmentSeeder::class);
+    $this->call(RolesAndUsersSeeder::class);
+  }
 }
-
-

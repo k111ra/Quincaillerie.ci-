@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Role; // Utilisez le modèle correct
+use Spatie\Permission\Models\Role; // Importer le modèle de Spatie
 use Illuminate\Database\Seeder;
 
 class RoleSeeder extends Seeder

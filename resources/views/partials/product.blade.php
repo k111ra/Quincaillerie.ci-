@@ -1,6 +1,5 @@
 <!-- product -->
 <div class="product col-md-3 col-sm-6 col-xs-12">
-
     <div class="product-box">
         <!-- product-box-inner -->
         <div class="product-box-inner">
@@ -13,7 +12,6 @@
                     @if (!empty($images) && count($images) > 0)
                         <img class="img-fluid pro-image-front" src="{{ asset('storage/' . $images[0]) }}"
                             alt="Image Front">
-
                         @if (isset($images[1]))
                             <img class="img-fluid pro-image-back" src="{{ asset('storage/' . $images[1]) }}"
                                 alt="Image Back">
@@ -27,17 +25,23 @@
 
             <!-- Action Buttons -->
             <div class="product-btn-links-wrapper">
-                <div class="product-btn"><a href="/add-to-cart/{{ $product->id }}" class="add-to-cart-btn tooltip-top"
-                        data-tooltip="Add To Cart" data-product-id="{{ $product->id }}"><i
-                            class="ti ti-shopping-cart"></i></a>
+                <div class="product-btn">
+                    <a href="/add-to-cart/{{ $product->id }}" class="add-to-cart-btn tooltip-top"
+                        data-tooltip="Add To Cart" data-product-id="{{ $product->id }}">
+                        <i class="ti ti-shopping-cart"></i>
+                    </a>
                 </div>
                 <!-- Button to trigger the modal -->
                 <div class="product-btn">
                     <a href="javascript:void(0)" class="quick-view-btn js-show-modal1 tooltip-top"
-                        data-tooltip="Quick View" data-product-id="{{ $product->id }}"><i class="ti ti-search"></i></a>
+                        data-tooltip="Quick View" data-product-id="{{ $product->id }}">
+                        <i class="ti ti-search"></i>
+                    </a>
                 </div>
-                <div class="product-btn"><a href="#" class="wishlist-btn tooltip-top"
-                        data-tooltip="Add To Wishlist"><i class="ti ti-heart"></i></a>
+                <div class="product-btn">
+                    <a href="#" class="wishlist-btn tooltip-top" data-tooltip="Add To Wishlist">
+                        <i class="ti ti-heart"></i>
+                    </a>
                 </div>
             </div>
         </div><!-- product-box-inner end -->
@@ -58,16 +62,15 @@
             </div>
             <span class="price">
                 <a href="{{ url('product/' . $product->slug) }}">
-                    <span class="product-Price-amount">
-                        {{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}
-                    </span>
+                    <span
+                        class="product-Price-amount">{{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}</span>
                 </a>
             </span>
         </div>
     </div>
 
     <!-- Modal specific to each product -->
-    <div class="wrap-modal1 js-modal1 modal-product-{{ $product->id }}">
+    <div class="wrap-modal1 js-modal1 modal-product-{{ $product->id }}" style="display: none;">
         <div class="overlay-modal1 js-hide-modal1"></div>
         <div class="container">
             <div class="modal1-content">
@@ -77,40 +80,9 @@
                 <div class="row ttm-single-product-details ttm-bgcolor-white">
                     <div class="col-lg-6 col-md-6 col-sm-12 ml-auto mr-auto">
                         <div class="product-gallery easyzoom-product-gallery">
-                            <div class="product-look-views left">
-                                <div class="mt-35 mb-35">
-                                    <ul class="thumbnails easyzoom-gallery-slider"
-                                        data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":true, "infinite":true, "vertical":true}'>
-                                        @if (!empty($images) && count($images) > 0)
-                                            @foreach ($images as $image)
-                                                <li>
-                                                    <a href="{{ asset('storage/' . $image) }}"
-                                                        data-standard="{{ asset('storage/' . $image) }}">
-                                                        <img class="img-fluid" src="{{ asset('storage/' . $image) }}"
-                                                            alt="Image produit" />
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        @else
-                                            <li>
-                                                <a href="{{ asset('front/assets/images/default-image.png') }}"
-                                                    data-standard="{{ asset('front/assets/images/default-image.png') }}">
-                                                    <img class="img-fluid"
-                                                        src="{{ asset('front/assets/images/default-image.png') }}"
-                                                        alt="Default Image" />
-                                                </a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                </div>
-                            </div>
                             <div class="product-look-preview-plus right">
                                 <div class="pl-35 res-767-pl-15">
-                                    <div class="easyzoom easyzoom-model easyzoom--overlay easyzoom--with-thumbnails">
-                                        {{-- <a href="{{ asset('storage/' . $images[0]) }}">
-                                            <img class="img-fluid" src="{{ asset('storage/' . $images[0]) }}"
-                                                alt="Product Image" />
-                                        </a> --}}
+                                    <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
                                         @if (!empty($images) && is_array($images) && isset($images[0]))
                                             <a href="{{ asset('storage/' . $images[0]) }}">
                                                 <img class="img-fluid" src="{{ asset('storage/' . $images[0]) }}"
@@ -119,7 +91,6 @@
                                         @else
                                             <p>Aucune image disponible.</p>
                                         @endif
-
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +107,7 @@
                             <div class="product-details__short-description">{{ $product->description }}</div>
                             <div class="mt-30 mb-35">
                                 <div class="quantity">
-                                    <label>Quantity: </label>
+                                    <label>Quantité: </label>
                                     <input type="text" value="1" name="quantity-number" class="qty">
                                     <span class="inc quantity-button">+</span>
                                     <span class="dec quantity-button">-</span>
@@ -152,7 +123,6 @@
                                     href="{{ route('cart') }}">
                                     Allez au panier . <i class="fa fa-shopping-cart"></i>
                                 </a>
-
                             </div>
                             <div class="buttons">
                                 <a href="#" rel="nofollow" data-product-id="{{ $product->id }}"

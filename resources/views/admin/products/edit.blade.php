@@ -30,6 +30,7 @@
                                     <textarea class="form-control" name="description" id="description" placeholder="{{ $product->description }}" required>{{ $product->description }}</textarea>
                                 </div>
 
+
                                 <div>
                                     <label for="prix" class="form-label">Prix :</label>
                                     <input type="number" class="form-control" name="prix" id="prix"
@@ -91,4 +92,8 @@
             </div>
         </div>
     </div>
+    <script>
+        CKEDITOR.replace('description');
+    </script>
+
 @endsection

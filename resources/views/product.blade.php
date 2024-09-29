@@ -271,7 +271,7 @@
                                 <div class="content-tab">
                                     <!-- content-inner -->
                                     <div class="content-inner">
-                                        {{ $product->description }}
+                                        {!! $product->description !!}
                                     </div>
                                     <!-- content-inner end-->
                                     <!-- content-inner -->

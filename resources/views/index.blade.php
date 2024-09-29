@@ -240,15 +240,16 @@
                                             <div class="products row">
                                                 @foreach ($products as $product)
                                                     @if ($product->categorie_id == $best->id)
-                                                        @include('partials.product')
+                                                        @include('partials.product', [
+                                                            'product' => $product,
+                                                        ])
                                                     @endif
                                                 @endforeach
                                             </div>
                                         </div>
                                     @endforeach
-
-
                                 </div>
+
                             </div>
 
 
@@ -680,3 +681,19 @@
     </div>
     <!--site-main end-->
 @endsection
+
+<script>
+    $(document).ready(function() {
+        // Ouvrir le modal lors du clic sur le bouton "Quick View"
+        $('.quick-view-btn').on('click', function() {
+            var productId = $(this).data('product-id');
+            $('.wrap-modal1').hide(); // Masquer toutes les modals
+            $('.modal-product-' + productId).show(); // Afficher la modal du produit spécifique
+        });
+
+        // Fermer le modal
+        $('.js-hide-modal1').on('click', function() {
+            $(this).closest('.wrap-modal1').hide(); // Masquer la modal
+        });
+    });
+</script>

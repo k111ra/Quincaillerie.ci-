@@ -27,9 +27,8 @@
                                 </div>
                                 <div>
                                     <label for="description" class="form-label">Description :</label>
-                                    <textarea class="form-control" name="description" id="description" placeholder="{{ $product->description }}" required>{{ $product->description }}</textarea>
+                                    <textarea class="form-control" name="description" id="description" required placeholder="">{{ $product->description }}</textarea>
                                 </div>
-
 
                                 <div>
                                     <label for="prix" class="form-label">Prix :</label>
@@ -93,7 +92,35 @@
         </div>
     </div>
     <script>
-        CKEDITOR.replace('description');
+        tinymce.init({
+            selector: 'textarea#description', // Changez ceci pour le sélecteur approprié
+            plugins: 'lists link image code', // Plugins à inclure
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code', // Toolbar
+            height: 300, // Hauteur de l'éditeur
+            image_title: true, // Permet d'ajouter un titre à l'image
+            automatic_uploads: true, // Téléchargement automatique d'images
+            file_picker_types: 'image', // Types de fichiers à sélectionner
+            file_picker_callback: function(callback, value, meta) {
+                if (meta.filetype === 'image') {
+                    var input = document.createElement('input');
+                    input.setAttribute('type', 'file');
+                    input.setAttribute('accept', 'image/*');
+                    input.onchange = function() {
+                        var file = this.files[0];
+                        var reader = new FileReader();
+                        reader.onload = function() {
+                            callback(reader.result, {
+                                alt: file.name
+                            });
+                        };
+                        reader.readAsDataURL(file);
+                    };
+                    input.click();
+                }
+            }
+        });
     </script>
+
+
 
 @endsection

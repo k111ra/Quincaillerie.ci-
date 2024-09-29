@@ -1,7 +1,8 @@
 <!-- laravel style -->
 <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
 <!-- Rich box text -->
-<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+<script src="https://cdn.tiny.cloud/1/y50ua2zxf7cak1xtqe864e2edy3cbx0h4tcenwqip3eizf3u/tinymce/7/tinymce.min.js"
+    referrerpolicy="origin"></script>
 
 
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->

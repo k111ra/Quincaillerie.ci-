@@ -10,6 +10,16 @@
 @section('content')
     <div class="container">
         <h1>Liste des produits</h1>
+        <!-- Affichage des messages de succès ou d'erreur -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @elseif (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <a href="{{ route('admin.products.create') }}" class="btn btn-primary mb-2">Ajouter un produit</a>
         <table class="table">
             <thead>

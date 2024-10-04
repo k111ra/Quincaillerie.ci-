@@ -85,7 +85,7 @@
 
                             </ul>
                         </aside>
-                        <aside class="widget widget-testimonial">
+                        {{-- <aside class="widget widget-testimonial">
                             <h3 class="widget-title">Avis</h3>
                             <!-- wrap-testimonial -->
                             <!-- testimonial_slick_slider -->
@@ -173,7 +173,7 @@
                                     </div>
                                 </div><!-- testimonials end -->
                             </div><!-- wrap-testimonial end-->
-                        </aside>
+                        </aside> --}}
                         <aside class="widget products top-rated-products">
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
@@ -210,8 +210,8 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
-                            <a href="#"><img class="img-fluid"
-                                    src="{{ 'front/assets/images/widget-banner-one.jpg' }}" alt="widget-banner"></a>
+                            <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/widget-banner-one.jpg' }}"
+                                    alt="widget-banner"></a>
                         </aside>
                         <aside class="widget widget_media_image banner-image">
                             <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/side-banner1.png' }}"

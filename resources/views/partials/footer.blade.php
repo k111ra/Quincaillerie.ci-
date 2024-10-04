@@ -27,18 +27,14 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 widget-area">
                     <div class="social-icons social-hover widget text-center">
                         <ul class="list-inline">
-                            <li class="social-facebook"><a class="tooltip-top" href="#"
-                                    data-tooltip="Facebook"><i class="fa fa-facebook"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-twitter"><a class="tooltip-top" href="#"
-                                    data-tooltip="Twitter"><i class="fa fa-twitter"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-gplus"><a class="tooltip-top" href="#"
-                                    data-tooltip="Google+"><i class="fa fa-google-plus"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-linkedin"><a class="tooltip-top" href="#"
-                                    data-tooltip="LinkedIn"><i class="fa fa-linkedin"
-                                        aria-hidden="true"></i></a></li>
+                            <li class="social-facebook"><a class="tooltip-top" href="#" data-tooltip="Facebook"><i
+                                        class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li class="social-twitter"><a class="tooltip-top" href="#" data-tooltip="Twitter"><i
+                                        class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li class="social-gplus"><a class="tooltip-top" href="#" data-tooltip="Google+"><i
+                                        class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li class="social-linkedin"><a class="tooltip-top" href="#" data-tooltip="LinkedIn"><i
+                                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,15 +50,16 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 widget-area m-auto">
                     <div class="widget">
                         <div class="footer-logo">
-                            <img id="footer-logo-img" class="img-center" src="{{ ("assets/images/white-logo.png") }}" width="200px"
-                                alt="">
+                            <img id="footer-logo-img" class="img-center"
+                                src="{{ asset('front/assets/images/white-logo.png') }}" width="200px" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 widget-area">
                     <div class="widget widget_text ml-40">
                         <ul class="widget_info_text">
-                            <li><i class="fa fa-map-marker"></i><strong>Notre succursale principale</strong> <br> Abidjan, Riviera V, Route ABATTA</li>
+                            <li><i class="fa fa-map-marker"></i><strong>Notre succursale principale</strong> <br>
+                                Abidjan, Riviera V, Route ABATTA</li>
                         </ul>
                     </div>
                 </div>
@@ -77,7 +74,8 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                     <div class="widget widget_text">
                         <ul class="widget_info_text">
-                            <li><i class="fa fa-phone"></i><strong>Appelez-nous</strong> <br> +225 05 94 77 56 90 <br> +225 07 47 10 45 13
+                            <li><i class="fa fa-phone"></i><strong>Appelez-nous</strong> <br> +225 05 94 77 56 90 <br>
+                                +225 07 47 10 45 13
                             </li>
                         </ul>
                     </div>
@@ -95,7 +93,12 @@
                     <div class="widget widget_text pr-25 clearfix">
                         <h3 class="widget-title">About Us</h3>
                         <div class="textwidget widget-text">
-                            <p class="pb-10">Quincaillerie.ci est une entreprise ivoirienne spécialisée dans la vente de produits de quincaillerie, de bricolage et d'équipements de sécurité. Leur catalogue de produits comprend une large gamme d'articles allant des outils à main, aux machines électriques, en passant par les équipements de protection individuelle, les serrures et quincaillerie de porte, les produits de plomberie et d'électricité, les équipements pour la construction et bien plus encore...</p>
+                            <p class="pb-10">Quincaillerie.ci est une entreprise ivoirienne spécialisée dans la vente
+                                de produits de quincaillerie, de bricolage et d'équipements de sécurité. Leur catalogue
+                                de produits comprend une large gamme d'articles allant des outils à main, aux machines
+                                électriques, en passant par les équipements de protection individuelle, les serrures et
+                                quincaillerie de porte, les produits de plomberie et d'électricité, les équipements pour
+                                la construction et bien plus encore...</p>
                             <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
                                 href="#" title="">Voir plus</a>
                         </div>
@@ -145,7 +148,7 @@
         <div class="container">
             <div class="row copyright">
                 <div class="col-md-12 col-lg-6 ttm-footer2-left">
-                    <span>Copyright © 2023  <a
+                    <span>Copyright © 2023 <a
                             href="https://www.linkedin.com/in/sidik-slims-80698b67/">TechArtisan</a></span>
                 </div>
                 <div class="col-md-12 col-lg-6 ttm-footer2-right">
@@ -153,9 +156,11 @@
                         <ul>
                             <li><img src="{{ asset('assets/images/supported_card/om.jpg') }}" alt="Orange Money"></li>
                             <li><img src="{{ asset('assets/images/supported_card/card-2.png') }}" alt="paypal"></li>
-                            <li><img src="{{ asset('assets/images/supported_card/card-3.png') }}" alt="western union"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/card-3.png') }}" alt="western union">
+                            </li>
                             <li><img src="{{ asset('assets/images/supported_card/card-4.png') }}" alt="visa"></li>
-                            <li><img src="{{ asset('assets/images/supported_card/mtn-momo.png') }}" alt="Mtn"></li>
+                            <li><img src="{{ asset('assets/images/supported_card/mtn-momo.png') }}" alt="Mtn">
+                            </li>
                             <li><img src="{{ asset('assets/images/supported_card/wave.jpg') }}" alt="wave"></li>
                         </ul>
                     </div>

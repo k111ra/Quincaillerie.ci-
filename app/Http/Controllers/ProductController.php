@@ -28,48 +28,59 @@ class ProductController extends Controller
   }
   public function store(Request $request)
   {
-    // Valider les données du formulaire
-    $validatedData = $request->validate([
+    $request->validate([
       'nom' => 'required|max:255',
       'description' => 'required',
       'prix' => 'required|numeric',
       'quantite' => 'required|numeric',
-      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Valider chaque image
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
-      'tags.*' => 'exists:tags,id'
+      'tags.*' => 'exists:tags,id',
     ]);
 
-    // Créer un nouveau produit avec les données du formulaire
-    $product = new Product;
-    $product->nom = $validatedData['nom'];
-    $product->description = $validatedData['description'];
-    $product->prix = $validatedData['prix'];
-    $product->quantite = $validatedData['quantite'];
-    $product->categorie_id = $validatedData['categorie_id'];
-    $product->slug = Str::slug($validatedData['nom']);
+    // Utilisation d'un bloc try-catch pour gérer les erreurs
+    try {
+      // Créer un nouveau produit avec les données du formulaire
+      $product = new Product;
+      $product->nom = $request->nom;
+      $product->description = $request->description;
+      $product->prix = $request->prix;
+      $product->quantite = $request->quantite;
+      $product->categorie_id = $request->categorie_id;
+      $product->slug = Str::slug($request->nom);
 
-    // Stocker les images si elles existent
-    $imagePaths = [];
-    if ($request->hasFile('images')) {
-      foreach ($request->file('images') as $image) {
-        // Stocker chaque image et ajouter le chemin dans le tableau
-        $path = $image->store('public/images/product');
-        $imagePaths[] = str_replace('public/', '', $path);
+      // Stocker les images si elles existent
+      $imagePaths = [];
+      if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+          // Stocker chaque image et ajouter le chemin dans le tableau
+          $path = $image->store('public/images/product');
+          $imagePaths[] = str_replace('public/', '', $path);
+        }
       }
-    }
 
-    // Enregistrer les chemins des images dans la colonne "images" en tant que JSON
-    $product->images = json_encode($imagePaths);
-    // Enregistrer les tags liés au produit
-    if (isset($validatedData['tags'])) {
-      $product->tags()->attach($validatedData['tags']);
-    }
-    // Enregistrer le produit dans la base de données
-    $product->save();
+      // Enregistrer les chemins des images dans la colonne "images" en tant que JSON
+      $product->images = json_encode($imagePaths);
 
-    return redirect()->route('admin.products.index', ['product' => $product->id]);
+      // Enregistrer le produit dans la base de données
+      $product->save();
+
+      // Enregistrer les tags liés au produit
+      if (isset($request['tags'])) {
+        $product->tags()->attach($request['tags']);
+      }
+
+
+      // Rediriger avec un message de succès
+      return redirect()->route('admin.products.index', ['product' => $product->id])
+        ->with('success', 'Produit créé avec succès.');
+    } catch (\Exception $e) {
+      // En cas d'erreur, rediriger avec un message d'erreur
+      return redirect()->back()->with('error', 'Erreur lors de la création du produit : ' . $e->getMessage());
+    }
   }
+
 
 
 

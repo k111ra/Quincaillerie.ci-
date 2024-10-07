@@ -13,6 +13,15 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Ajouter un nouveau produit') }}</div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <div class="card-body">
                         <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
@@ -26,6 +35,9 @@
                             <div>
                                 <label for="description" class="form-label">Description :</label>
                                 <textarea class="form-control" name="description" id="description" placeholder="Description du produit" required></textarea>
+                                @if ($errors->has('description'))
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
+                                @endif
                             </div>
 
                             <div>

@@ -48,7 +48,7 @@ Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
 Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-  Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
+  Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
   Route::post('/checkout', [OrderController::class, 'store'])->name('checkout.store');
 
 
@@ -115,10 +115,15 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
 
 
 
-  Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
-    // Routes pour l'administration
-    // Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    // Route::get('/users', [LoginController::class, 'users'])->name('admin.users');
+  Route::prefix('/admin')->middleware(['auth', 'role:admin'])->group(function () {
+
+    // Route pour afficher toutes les commandes
+    Route::get('/orders', [OrderController::class, 'indexAdmin'])->name('admin.orders.index');
+    Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('admin.orders.edit');
+    Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('admin.orders.destroy');
+    Route::put('/orders/{order}', [OrderController::class, 'update'])->name('admin.orders.update');
+
+
 
     // Routes pour les catégories
     Route::prefix('categories')->group(function () {

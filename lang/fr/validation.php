@@ -158,6 +158,9 @@ return [
     |
     */
 
-  'attributes' => [],
+  'attributes' => [
+    'shipping_address' => 'adresse de livraison',
+    'shipping_method' => 'méthode de livraison',
+  ],
 
 ];

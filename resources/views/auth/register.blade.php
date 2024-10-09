@@ -33,21 +33,44 @@
                         <div class="wrap-login">
                             <form action="{{ route('register') }}" method="POST" id="loginForm">
                                 @csrf
+                                <input type="hidden" name="role" value="user">
                                 <div class="form-group">
                                     <i class="fa fa-user"></i>
-                                    <input type="text" name='name' placeholder="Nom d'utilisateur" />
+                                    <input type="text" name='name' value="{{ old('name') }}"
+                                        placeholder="Nom d'utilisateur" />
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <i class="fa fa-envelope-o"></i>
-                                    <input type="email" name='email' placeholder="Email" />
+                                    <input type="email" name='email' value="{{ old('email') }}" placeholder="Email" />
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <i class="fa fa-phone"></i>
-                                    <input name="your-phone" type="text" value="" placeholder="Téléphone" />
+                                    <input name="tel" type="text" value="{{ old('tel') }}"
+                                        placeholder="Téléphone" />
+                                    @error('tel')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <i class="fa fa-lock"></i>
                                     <input type="password" name='password' placeholder="Mot de passe" />
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <i class="fa fa-lock"></i>
@@ -57,24 +80,11 @@
 
                                 <div class="form-group">
                                     <button id="login-button" class="button action-button expand-center mb-15">
-                                        <span class="label">Connexion</span>
+                                        <span class="label">S'inscrire</span>
                                         <span class="spinner"></span>
                                     </button>
                                 </div>
-                                <div class="form-group d-flex justify-content-between">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <input type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}> <span class="ttm-textcolor-darkgrey">Se
-                                            souvenir de moi</span>
-                                    </div>
-                                    @if (Route::has('password.request'))
-                                        <div class="d-flex flex-row align-items-center">
-                                            <a href="{{ route('password.request') }}" id="forgot-password-link"
-                                                class="forgot-password-link">Mot de passe <u>oublié</u></a>
-                                        </div>
-                                    @endif
 
-                                </div>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -90,7 +100,6 @@
                 </div>
             </div>
         </section><!--login-section end-->
-
 
     </div><!--site-main end-->
 @endsection

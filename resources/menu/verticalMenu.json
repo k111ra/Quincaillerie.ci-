@@ -44,6 +44,12 @@
       "slug": "Blogs"
     },
     {
+      "url": "/admin/orders",
+      "name": "Commandes",
+      "icon": "menu-icon tf-icons bx bx-happy-heart-eyes",
+      "slug": "Blogs"
+    },
+    {
       "name": "Services",
       "icon": "menu-icon tf-icons bx bx-buildings",
       "slug": "Produis",

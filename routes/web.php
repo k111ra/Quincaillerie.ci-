@@ -50,6 +50,9 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
   Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
   Route::post('/checkout', [OrderController::class, 'store'])->name('checkout.store');
+  Route::get('/order/{id}/devis', [OrderController::class, 'generateDevis'])->name('order.devis');
+  Route::get('/order/{id}/facture', [OrderController::class, 'generateFacture'])->name('order.facture');
+
 
 
   // layout
@@ -122,6 +125,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
     Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('admin.orders.edit');
     Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('admin.orders.destroy');
     Route::put('/orders/{order}', [OrderController::class, 'update'])->name('admin.orders.update');
+
 
 
 

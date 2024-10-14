@@ -2,7 +2,7 @@
 @section('title', 'Finalisez votre commande')
 @section('content')
 
-    <!-- page-title -->
+    <!-- Titre de la page -->
     <div class="ttm-page-title-row">
         <div class="container">
             <div class="row">
@@ -23,13 +23,14 @@
         </div>
     </div><!-- Fin du titre de la page -->
 
-    <!--site-main start-->
+    <!-- Contenu principal -->
     <div class="site-main">
 
-        <!-- checkout-section -->
+        <!-- Section de validation de commande -->
         <section class="checkout-section clearfix">
             <div class="container">
-                <!-- row -->
+
+                <!-- Affichage des messages -->
                 <div class="row">
                     @if (session('success'))
                         <div class="alert alert-success">
@@ -53,13 +54,13 @@
                         </div>
                     @endif
 
+                    <!-- Formulaire de validation de commande -->
                     <div class="col-lg-12">
-                        <!-- Formulaire de commande -->
                         <form id="checkout-form" name="checkout" method="post" class="checkout row"
                             action="{{ route('checkout.store') }}">
                             @csrf <!-- Protection contre les attaques CSRF -->
 
-                            <!-- Affichage des informations utilisateur -->
+                            <!-- Informations de l'utilisateur -->
                             <div class="col-lg-12">
                                 <div class="res-991-pt-50">
                                     <div>
@@ -69,30 +70,29 @@
                                 </div>
                             </div>
 
-                            <!-- Sélection de l'adresse de livraison -->
+                            <!-- Adresse de livraison -->
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="shipping_address">Adresse de livraison :</label>
                                     <input type="text" name="shipping_address" id="shipping_address"
                                         placeholder="Abidjan, Cocody..." required>
-                                    {{-- <select name="shipping_address" id="shipping_address" class="form-control" required>
-                                        <option value="">Sélectionnez une adresse</option>
-                                        <option value="adresse_1">Adresse 1, Ville, Pays</option>
-                                        <option value="adresse_2">Adresse 2, Ville, Pays</option>
-                                        <option value="nouvelle_adresse">Entrer une nouvelle adresse</option>
-                                    </select> --}}
                                 </div>
                             </div>
 
-                            <!-- Sélection du mode de livraison -->
+                            <!-- Méthode de livraison -->
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="shipping_method">Méthode de livraison :</label>
                                     <select name="shipping_method" id="shipping_method" class="form-control" required>
-                                        <option value="">Sélectionnez un mode de livraison</option>
-                                        <option value="standard">Livraison standard petit Objet (2 000)</option>
-                                        <option value="express">Livraison express (5 000 F CFA)</option>
+                                        <option value="standard">Livraison standard petit Objet (2 000 F CFA)</option>
+                                        <option value="tricycle">Livraison en tricycle (10 000 F CFA)</option>
+                                        <option value="utilitaire">Livraison véhicule utilitaire (15 000 F CFA)</option>
+                                        <option value="cargo">Livraison cargo (25 000 F CFA)</option>
                                     </select>
+                                    <p class="small-text">
+                                        NB : Les frais de livraison peuvent varier en fonction de la distance et de la
+                                        quantités.
+                                    </p>
                                 </div>
                             </div>
 
@@ -202,18 +202,28 @@
             });
         });
 
+        // Script pour mettre à jour le coût de la livraison et le total
         document.getElementById('shipping_method').addEventListener('change', function() {
             let shippingCost = 0;
             const method = this.value;
-            const subtotal = {{ $total }};
+            const subtotal = {{ $total }}; // Le sous-total actuel de la commande
 
-            if (method === 'express') {
-                shippingCost = 5000; // Exemple de coût pour livraison express
+            // Définir les coûts de livraison en fonction de la méthode choisie
+            if (method === 'tricycle') {
+                shippingCost = 10000;
+            } else if (method === 'utilitaire') {
+                shippingCost = 15000;
+            } else if (method === 'cargo') {
+                shippingCost = 25000;
+            } else {
+                shippingCost = 2000; // Coût pour livraison standard petit objet
             }
 
+            // Calculer le total avec les frais de livraison
             const total = subtotal + shippingCost;
-            document.getElementById('shipping_cost').innerText = shippingCost >
-                0 ? `${shippingCost.toLocaleString()} F CFA` : 'Gratuit';
+
+            // Mettre à jour les champs de coût de livraison et du total dans le récapitulatif
+            document.getElementById('shipping_cost').innerText = `${shippingCost.toLocaleString()} F CFA`;
             document.getElementById('order_total').innerText = `${total.toLocaleString()} F CFA`;
         });
     </script>

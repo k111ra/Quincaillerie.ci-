@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
+// use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -119,5 +121,23 @@ class OrderController extends Controller
     $order->save();
 
     return redirect()->route('admin.orders.index')->with('success', 'Commande mise à jour avec succès.');
+  }
+
+  public function generateDevis($id)
+  {
+    $order = Order::findOrFail($id);
+
+    $pdf = Pdf::loadView('pdf.devis', compact('order'));
+
+    return $pdf->download('devis_commande_' . $order->order_number . '.pdf');
+  }
+
+  public function generateFacture($id)
+  {
+    $order = Order::findOrFail($id);
+
+    $pdf = Pdf::loadView('pdf.facture', compact('order'));
+
+    return $pdf->download('facture_commande_' . $order->order_number . '.pdf');
   }
 }

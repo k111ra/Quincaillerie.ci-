@@ -5,11 +5,45 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                <h2>Modifier Commande #{{ $order->order_number }}</h2>
-                <h3>Client : {{ $order->user->name }}</h3>
-                <p>Email : {{ $order->user->email }}</p>
-                <p>Adresse de livraison : {{ $order->shipping_address }}</p>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h2>Modifier Commande #{{ $order->order_number }}</h2>
+                    <h3>Client : {{ $order->user->name }}</h3>
+                    <p>Téléphone: {{ $order->tel }}</p>
+                    <p>Email : {{ $order->user->email }}</p>
+                    <p>Adresse de livraison : {{ $order->shipping_address }}</p>
+                    <p>Méthode de livraison :
+                        @if ($order->shipping_method == 'standard')
+                            Livraison standard petit objet
+                        @elseif ($order->shipping_method == 'tricycle')
+                            Livraison en tricycle
+                        @elseif ($order->shipping_method == 'utilitaire')
+                            Livraison véhicule utilitaire
+                        @elseif ($order->shipping_method == 'cargo')
+                            Livraison cargo
+                        @else
+                            Non spécifiée
+                        @endif
+                    </p>
+                    <p>Tarif recommandé :
+                        @if ($order->shipping_method == 'standard')
+                            2 000 F CFA
+                        @elseif ($order->shipping_method == 'tricycle')
+                            10 000 F CFA
+                        @elseif ($order->shipping_method == 'utilitaire')
+                            15 000 F CFA
+                        @elseif ($order->shipping_method == 'cargo')
+                            25 000 F CFA
+                        @else
+                            0 F CFA
+                        @endif
+                    </p>
+                </div>
+                <div>
+                    <!-- Bouton pour imprimer un devis ou une facture -->
+                    <a href="{{ route('order.devis', $order->id) }}" class="btn btn-secondary mb-2">Télécharger Devis</a>
+                    <a href="{{ route('order.facture', $order->id) }}" class="btn btn-secondary mb-2">Télécharger Facture</a>
+                </div>
             </div>
             <div class="card-body">
                 <!-- Afficher les items de la commande -->

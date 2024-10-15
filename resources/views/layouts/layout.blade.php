@@ -12,6 +12,7 @@
     <meta name="author" content="Sidik Slims" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Quincaillerie - @yield('title')</title>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4238780729755314"
@@ -62,7 +63,18 @@
     <!-- responsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/responsive.css') }}" />
     <link rel="icon" href="{{ asset('front/assets/images/favicon.ico') }}" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M526GHSVY1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-M526GHSVY1');
+    </script>
 
 </head>
 

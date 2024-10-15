@@ -2,124 +2,172 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devis PR{{ $order->order_number }}</title>
+    <meta charset="utf-8" />
+    <title>Facture</title>
+
     <style>
-        body {
-            font-family: DejaVu Sans, sans-serif;
-            font-size: 12px;
-            color: #333;
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
         }
 
-        .container {
+        .invoice-box table {
             width: 100%;
-            margin: 0 auto;
+            line-height: inherit;
+            text-align: left;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
         }
 
-        th,
-        td {
-            padding: 8px;
-            border: 1px solid #ddd;
-        }
-
-        .header,
-        .footer {
-            margin-bottom: 20px;
-        }
-
-        .header h2,
-        .header p {
-            margin: 0;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 0;
-        }
-
-        .right {
+        .invoice-box table tr td:nth-child(2) {
             text-align: right;
         }
 
-        .center {
-            text-align: center;
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <table>
-                <tr>
-                    <td>
-                        <strong>ADM Service</strong><br>
-                        Riviera Palmeraie derrière la SODECI<br>
-                        PLANETKONCEPT<br>
-                        Abidjan Tél.: +225 0747104513<br>
-                        Email: info@quincaillerie.ci<br>
-                        Web: https://quincaillerie.ci
-                    </td>
-                    <td class="right">
-                        <strong>Devis PR{{ $order->order_number }}</strong><br>
-                        Date : {{ now()->format('d/m/Y') }}<br>
-                        Date de fin de validité : {{ now()->addDays(15)->format('d/m/Y') }}<br>
-                        Code client : {{ $order->user->id }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>Émetteur :</strong><br>
-                        ADM Service
-                    </td>
-                    <td>
-                        <strong>Adressé à :</strong><br>
-                        {{ $order->user->name }}<br>
-                        {{ $order->shipping_address }}
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="{{ public_path('images/logo.png') }}" style="width: 100%; max-width: 300px" />
+                            </td>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Désignation</th>
-                    <th class="center">TVA</th>
-                    <th class="center">P.U. HT</th>
-                    <th class="center">Qté</th>
-                    <th class="right">Total HT</th>
+                            <td>
+                                Facture #: {{ $order->order_number }}<br />
+                                Créée le: {{ now()->format('d/m/Y') }}<br />
+                                Due: {{ now()->addDays(30)->format('d/m/Y') }}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Quincaillerie.ci<br />
+                                Côte d'Ivoire, Abidjan, Cocody, Riviera 5<br />
+                            </td>
+
+                            <td>
+                                {{ $order->user->name }}<br />
+                                {{ $order->user->email }}<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Adresse de livraison :</strong><br />
+                                {{ $order->shipping_address }}<br />
+                            </td>
+
+                            <td>
+                                <strong>Méthode de livraison :</strong><br />
+                                {{ $order->shipping_method }}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="heading">
+                <td>Méthode de paiement</td>
+
+                <td>Détails</td>
+            </tr>
+
+            <tr class="details">
+                <td>Check</td>
+
+                <td>1000</td>
+            </tr>
+
+            <tr class="heading">
+                <td>Article</td>
+
+                <td>Prix</td>
+            </tr>
+
+            @foreach ($order->items as $item)
+                <tr class="item">
+                    <td>{{ $item->product->nom }}</td>
+
+                    <td>{{ number_format($item->price, 0) }} F CFA</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($order->items as $item)
-                    <tr>
-                        <td>{{ $item->product->nom }}</td>
-                        <td class="center">0%</td>
-                        <td class="center">{{ number_format($item->price, 2) }} F CFA</td>
-                        <td class="center">{{ $item->quantity }}</td>
-                        <td class="right">{{ number_format($item->price * $item->quantity, 2) }} F CFA</td>
-                    </tr>
-                @endforeach
-                <tr>
-                    <td>Livraison</td>
-                    <td class="center">0%</td>
-                    <td class="center">{{ number_format(80000, 2) }} F CFA</td>
-                    <td class="center">1</td>
-                    <td class="right">{{ number_format(80000, 2) }} F CFA</td>
-                </tr>
-            </tbody>
+            @endforeach
+
+            <tr class="total">
+                <td></td>
+
+                <td>Total: {{ number_format($order->total_amount, 0) }} F CFA</td>
+            </tr>
         </table>
-
-        <div class="footer">
-            <p><strong>Total HT : {{ number_format($order->total_amount + 80000, 2) }} F CFA</strong></p>
-        </div>
     </div>
 </body>
 

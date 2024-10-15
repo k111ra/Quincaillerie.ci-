@@ -125,18 +125,28 @@ class OrderController extends Controller
 
   public function generateDevis($id)
   {
-    $order = Order::findOrFail($id);
+    $order = Order::with('items.product')->findOrFail($id);
+    $seller = [
+      'name' => 'Sparksuite, Inc.',
+      'address' => '12345 Sunny Road',
+      'city' => 'Sunnyville, CA 12345'
+    ];
 
-    $pdf = Pdf::loadView('pdf.devis', compact('order'));
+    $pdf = Pdf::loadView('pdf.devis', compact('order', 'seller'));
 
     return $pdf->download('devis_commande_' . $order->order_number . '.pdf');
   }
 
   public function generateFacture($id)
   {
-    $order = Order::findOrFail($id);
+    $order = Order::with('items.product')->findOrFail($id);
+    $seller = [
+      'name' => 'Sparksuite, Inc.',
+      'address' => '12345 Sunny Road',
+      'city' => 'Sunnyville, CA 12345'
+    ];
 
-    $pdf = Pdf::loadView('pdf.facture', compact('order'));
+    $pdf = Pdf::loadView('pdf.facture', compact('order', 'seller'));
 
     return $pdf->download('facture_commande_' . $order->order_number . '.pdf');
   }

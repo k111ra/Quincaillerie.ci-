@@ -25,12 +25,22 @@
 
             <!-- Action Buttons -->
             <div class="product-btn-links-wrapper">
-                <div class="product-btn">
-                    <a href="/add-to-cart/{{ $product->id }}" class="add-to-cart-btn tooltip-top"
+                {{-- <div class="product-btn">
+                    <form action="{{ route('cart.add') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="add-to-cart-btn tooltip-top" data-tooltip="Add To Cart">
+                            <i class="ti ti-shopping-cart"></i>
+                        </button>
+                    </form>
+                </div> --}}
+                {{-- <div class="product-btn">
+                    <a href="{{ url('product/' . $product->slug) }}" class="add-to-cart-btn tooltip-top"
                         data-tooltip="Add To Cart" data-product-id="{{ $product->id }}">
                         <i class="ti ti-shopping-cart"></i>
                     </a>
-                </div>
+                </div> --}}
                 <!-- Button to trigger the modal -->
                 <div class="product-btn">
                     <a href="javascript:void(0)" class="quick-view-btn js-show-modal1 tooltip-top"
@@ -66,6 +76,14 @@
                         class="product-Price-amount">{{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}</span>
                 </a>
             </span>
+            <form action="{{ route('cart.add') }}" method="post">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="button action-button expand-center " data-tooltip="Ajouter au panier">
+                    Acheter
+                </button>
+            </form>
         </div>
     </div>
 

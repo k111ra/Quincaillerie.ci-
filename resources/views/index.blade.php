@@ -393,6 +393,17 @@
                                                             </a>
 
                                                         </span>
+                                                        <form action="{{ route('cart.add') }}" method="post">
+                                                            @csrf
+                                                            <input type="hidden" name="product_id"
+                                                                value="{{ $special->id }}">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                            <button type="submit"
+                                                                class="button action-button expand-center "
+                                                                data-tooltip="Ajouter au panier">
+                                                                Acheter
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div><!-- product end -->
@@ -681,7 +692,7 @@
     </div>
     <!--site-main end-->
 @endsection
-
+{{--
 <script>
     $(document).ready(function() {
         // Ouvrir le modal lors du clic sur le bouton "Quick View"
@@ -696,4 +707,4 @@
             $(this).closest('.wrap-modal1').hide(); // Masquer la modal
         });
     });
-</script>
+</script> --}}

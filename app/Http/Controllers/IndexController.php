@@ -11,26 +11,38 @@ class IndexController extends Controller
 {
   public function index()
   {
-      $categories = Category::with('children')->whereNull('parent_id')->get();
-      $carousels = Carousel::all();
-      $products = Product::all();
+    // Récupération des catégories principales avec leurs sous-catégories, triées aléatoirement
+    $categories = Category::with('children')
+      ->whereNull('parent_id')
+      ->inRandomOrder() // Mélanger les catégories
+      ->get();
 
-      $popularCategory = Category::where('slug', 'produits-populaires')->first();
-      $produitsPopulaires = $popularCategory ? Product::where('categorie_id', $popularCategory->id)->get() : collect();
+    // Récupération de tous les carrousels et produits
+    $carousels = Carousel::all();
+    $products = Product::all();
 
-      $bestseller = Category::where('slug', 'nos-produits-les-plus-vendus')->first();
-      $produitsBestseller = $bestseller ? Product::where('categorie_id', $bestseller->id)->get() : collect();
+    // Récupération des produits pour différentes catégories spécifiques
+    $produitsPopulaires = $this->getProductsByCategorySlug('produits-populaires');
+    $produitsBestseller = $this->getProductsByCategorySlug('nos-produits-les-plus-vendus');
+    $produitsSpecial = $this->getProductsByCategorySlug('specials');
+    $produitsSolde = $this->getProductsByCategorySlug('en-solde');
 
-      $specials = Category::where('slug', 'specials')->first();
-      $produitsSpecial = $specials ? Product::where('categorie_id', $specials->id)->get() : collect();
-
-      $enSolde = Category::where('slug', 'en-solde')->first();
-      $produitsSolde = $enSolde ? Product::where('categorie_id', $enSolde->id)->get() : collect();
-
-      // dd($produitsSolde);
-      return view('index', compact('categories', 'carousels', 'products', 'produitsPopulaires', 'produitsBestseller', 'produitsSpecial', 'produitsSolde', 'bestseller'));
+    // Retourner la vue avec les données compactées
+    return view('index', compact(
+      'categories',
+      'carousels',
+      'products',
+      'produitsPopulaires',
+      'produitsBestseller',
+      'produitsSpecial',
+      'produitsSolde'
+    ));
   }
 
-
-
+  // Fonction privée pour récupérer les produits en fonction du slug de la catégorie
+  private function getProductsByCategorySlug($slug)
+  {
+    $category = Category::where('slug', $slug)->first();
+    return $category ? Product::where('categorie_id', $category->id)->get() : collect();
+  }
 }

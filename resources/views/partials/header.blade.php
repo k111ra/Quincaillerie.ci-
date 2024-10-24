@@ -11,7 +11,7 @@
                         <div class="top_bar_user">
                             <div><a href="#">Favoris (0)</a></div>
                             <div class="top_bar_menu">
-                                <ul class="top_bar_dropdown">
+                                {{-- <ul class="top_bar_dropdown">
                                     <li><a href="#" data-toggle="dropdown">Monais</a>
                                         <ul>
                                             <li><a href="#">F CFA</a></li>
@@ -31,7 +31,7 @@
                                                             alt="img"></span>French</a></li>
                                         </ul>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                             <div>
                                 {{-- <a class="btn btn-primary" href="{{ route('cart') }}">
@@ -191,17 +191,16 @@
                                     </div>
                                 </a>
                                 <ul class="cat_menu_list menu-vertical">
-                                    <li><a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                                    </li>
-                                    @foreach ($categories as $category)
+                                    <li><a href="#" class="close-side"><i class="fa fa-times"></i></a></li>
+                                    @foreach ($categories->take(10) as $category)
                                         <li class="parent">
-
                                             <a href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
                                             @if ($category->children->count() > 0)
                                                 <div class="sub-menu megamenu column3">
                                                     @foreach ($category->children as $child)
                                                         <ul class="list-unstyled childs_1">
-                                                            <li class="title"><a
+                                                            <li class="title">
+                                                                <a
                                                                     href="{{ route('shop', $child->slug) }}">{{ $child->name }}</a>
                                                                 @if ($child->products->count() > 0)
                                                                     <div class="sub-menu">
@@ -221,18 +220,48 @@
                                             @endif
                                         </li>
                                     @endforeach
-
-                                    <li class="parent-plus"><a href="#">Plus de catégories</a>
-                                        <div class="plus-menu">
-                                            <ul class="list-unstyled">
-                                                <li><a href="#">Scie à métaux</a></li>
-                                                <li><a href="#">Trou de poteau</a></li>
-                                                <li><a href="#">Ceinture à outils</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    @if ($categories->count() > 10)
+                                        <li class="parent-plus"><a href="#" id="show-more">Plus de
+                                                catégories</a>
+                                            <div class="plus-menu" id="more-categories" style="display: none;">
+                                                <ul class="list-unstyled">
+                                                    @foreach ($categories->skip(10) as $category)
+                                                        <li class="parent">
+                                                            <a
+                                                                href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
+                                                            @if ($category->children->count() > 0)
+                                                                <div class="sub-menu megamenu column3">
+                                                                    @foreach ($category->children as $child)
+                                                                        <ul class="list-unstyled childs_1">
+                                                                            <li class="title">
+                                                                                <a
+                                                                                    href="{{ route('shop', $child->slug) }}">{{ $child->name }}</a>
+                                                                                @if ($child->products->count() > 0)
+                                                                                    <div class="sub-menu">
+                                                                                        <ul
+                                                                                            class="list-unstyled childs_2">
+                                                                                            @foreach ($child->products as $product)
+                                                                                                <li><a
+                                                                                                        href="#">{{ $product->name }}</a>
+                                                                                                </li>
+                                                                                            @endforeach
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                @endif
+                                                                            </li>
+                                                                        </ul>
+                                                                    @endforeach
+                                                                </div>
+                                                            @endif
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
+
                             <!--site-navigation -->
                             <div id="site-navigation" class="site-navigation">
                                 <div class="btn-show-menu-mobile menubar menubar--squeeze">
@@ -250,59 +279,37 @@
                                         <li class="mega-menu-item megamenu-fw">
                                             <a href="#" class="mega-menu-link">Boutiques</a>
                                             <ul class="mega-submenu megamenu-content" role="menu">
-                                                {{-- <li>
+                                                <li>
                                                     <div class="row">
-                                                        <div class="col-menu col-md-3">
-                                                            <h6 class="title">Shop Page Layout</h6>
-                                                            <div class="content">
-                                                                <ul class="menu-col">
-                                                                    <li><a href="shop.html">Shop Default</a>
-                                                                    </li>
-                                                                    <li><a href="left-sidebar.html">Shop Left
-                                                                            Sidebar</a></li>
-                                                                    <li><a href="right-sidebar.html">Shop Right
-                                                                            Sidebar</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div><!-- end col-3 -->
-                                                        <div class="col-menu col-md-3">
-                                                            <h6 class="title">Shop Pages</h6>
-                                                            <div class="content">
-                                                                <ul class="menu-col">
-                                                                    <li><a href="cart.html">Cart</a></li>
-                                                                    <li><a href="checkout.html">Checkout</a>
-                                                                    </li>
-                                                                    <li><a href="login.html">Compte/Connexion</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div><!-- end col-3 -->
-                                                        <div class="col-menu col-md-3">
-                                                            <h6 class="title">Shop Product Layout</h6>
-                                                            <div class="content">
-                                                                <ul class="menu-col">
-                                                                    <li><a href="product-layout1.html">Product
-                                                                            Layout 1</a></li>
-                                                                    <li><a href="product-layout2.html">Product
-                                                                            Layout 2</a></li>
-                                                                    <li><a href="product-layout3.html">Product
-                                                                            Layout 3</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
+                                                        @foreach ($categories as $category)
+                                                            <div class="col-menu col-md-3">
+                                                                <a class=""
+                                                                    href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
+
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        @foreach ($category->children as $child)
+                                                                            <li><a
+                                                                                    href="{{ route('shop', $child->slug) }}">{{ $child->name }}</a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                </div>
+                                                            </div><!-- end col-3 -->
+                                                        @endforeach
                                                         <div class="col-menu col-md-3">
                                                             <div class="content">
                                                                 <ul class="menu-col">
                                                                     <li><a href="shop.html">
                                                                             <img class="img-fluid"
-                                                                                src="images/menu-item-banner.jpg"
+                                                                                src="{{ asset('/front/assets/images/menu-item-banner.jpg') }}"
                                                                                 alt="bimg">
                                                                         </a></li>
                                                                 </ul>
                                                             </div>
                                                         </div><!-- end col-3 -->
                                                     </div><!-- end row -->
-                                                </li> --}}
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="mega-menu-item">
@@ -312,6 +319,45 @@
                                         <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
                                     </ul>
                                 </nav>
+                                {{-- <nav class="menu menu-mobile" id="menu">
+                                    <ul class="nav" data-in="fadeInDown" data-out="fadeOutUp">
+                                        <li><a href="{{ url('/') }}">Accueil</a></li>
+                                        <li><a href="{{ url('/services') }}">Services</a></li>
+                                        <li class="mega-menu-item megamenu-fw">
+                                            <a href="#" class="mega-menu-link">Boutiques</a>
+                                            <ul class="mega-submenu megamenu-content" role="menu">
+                                                <li>
+                                                    <div class="row">
+                                                        @foreach ($categories as $category)
+                                                            <div class="col-menu col-md-3">
+                                                                <h6 class="title">
+                                                                    <a
+                                                                        href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
+                                                                </h6>
+                                                                @if ($category->children->count() > 0)
+                                                                    <div class="content">
+                                                                        <ul class="menu-col">
+                                                                            @foreach ($category->children as $child)
+                                                                                <li><a
+                                                                                        href="{{ route('shop', $child->slug) }}">{{ $child->name }}</a>
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                @endif
+                                                            </div><!-- end col-3 -->
+                                                        @endforeach
+                                                    </div><!-- end row -->
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-item">
+                                            <a href="#" class="mega-menu-link">Blog</a>
+                                        </li>
+                                        <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
+                                    </ul>
+                                </nav> --}}
+
                             </div><!-- site-navigation end-->
                             <div
                                 class="user_zone_block d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -326,3 +372,14 @@
     </div>
     <!-- site-header-menu end -->
 </header>
+<script>
+    $(document).ready(function() {
+        $('#show-more').click(function() {
+            $('#more-categories').slideToggle();
+            $(this).text(function(i, text) {
+                return text === "Plus de catégories" ? "Moins de catégories" :
+                    "Plus de catégories";
+            });
+        });
+    });
+</script>

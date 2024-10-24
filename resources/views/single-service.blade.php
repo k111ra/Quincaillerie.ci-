@@ -36,41 +36,51 @@
                         <article class="post ttm-blog-classic clearfix">
                             <!-- post-featured-wrapper -->
                             <div class="ttm-post-featured-wrapper ttm-featured-wrapper">
-                              <div id="carousel{{ $service->id }}" class="carousel slide" data-bs-ride="carousel">
-                                  <div class="carousel-inner">
-                                      @foreach ($service->images as $index => $image)
-                                          <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                              <img src="{{ asset('storage/' . $image->path) }}" class="d-block w-100"
-                                                  alt="Image {{ $index }}" style="width: 800px; height: 600px;object-fit: cover;">
-                                          </div>
-                                      @endforeach
-                                  </div>
-                                  <button class="carousel-control-prev" type="button"
-                                      data-bs-target="#carousel{{ $service->id }}" data-bs-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Previous</span>
-                                  </button>
-                                  <button class="carousel-control-next" type="button"
-                                      data-bs-target="#carousel{{ $service->id }}" data-bs-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Next</span>
-                                  </button>
-                              </div>
-                              <div class="ttm-box-post-icon">
-                                  <i class="ti ti-gallery"></i>
-                              </div>
-                          </div><!-- post-featured-wrapper end -->
+                                <div id="carousel{{ $service->id }}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @foreach ($service->images as $index => $image)
+                                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                <img src="{{ asset('storage/' . $image->path) }}" class="d-block w-100"
+                                                    alt="Image {{ $index }}"
+                                                    style="width: 800px; height: 600px;object-fit: cover;">
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carousel{{ $service->id }}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carousel{{ $service->id }}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <div class="ttm-box-post-icon">
+                                    <i class="ti ti-gallery"></i>
+                                </div>
+                            </div><!-- post-featured-wrapper end -->
                             <!-- ttm-blog-classic-content -->
                             <div class="ttm-blog-classic-content">
                                 <div class="ttm-post-entry-header">
                                     <div class="post-meta">
-                                        <span class="post-meta-line"><a href="#" tabindex="0"><i
-                                                    class="fa fa-calendar"></i>January 16, 2019</a></span>
+                                        <span class="post-meta-line">
+                                            <a href="#" tabindex="0">
+                                                <i class="fa fa-calendar"></i>{{ $service->created_at->diffForHumans() }}
+                                            </a>
+                                        </span>
                                     </div>
-                                    <div class="post-meta">
+                                    {{-- <div class="post-meta">
                                         <span class="post-meta-line"><a href="#" tabindex="0"><i
                                                     class="fa fa-comment"></i>Comments</a></span>
-                                    </div>
+                                    </div> --}}
+                                </div>
+                                <div>
+                                    <H3>
+                                        {{ $service->title }}
+                                    </H3>
+
                                 </div>
                                 <div class="entry-content">
 
@@ -93,7 +103,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ttm-blog-classic-box-comment">
+                                    <div>
+                                        {!! $service->description !!}
+                                    </div>
+                                    {{-- <div class="ttm-blog-classic-box-comment">
                                         <div id="comments" class="comments-area">
                                             <h2 class="comments-title">3 Replies to “How much aspirin to take for stroke”
                                             </h2>
@@ -198,7 +211,7 @@
                                                 </form>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div><!-- ttm-blog-classic-content end -->
                         </article><!-- post end -->
@@ -218,16 +231,18 @@
                         <aside class="widget widget-categories">
                             <h3 class="widget-title">Categories</h3>
                             <ul>
-                                <li><a href="#">Carpentry</a><span>3</span></li>
-                                <li><a href="#">Electrical</a><span>3</span></li>
-                                <li><a href="#">Flooring</a><span>3</span></li>
-                                <li><a href="#">Home Maintenance</a><span>4</span></li>
-                                <li><a href="#">Industrial</a><span>3</span></li>
-                                <li><a href="#">Painting</a><span>2</span></li>
-                                <li><a href="#">Plumber</a><span>5</span></li>
+                                @foreach ($categories as $category)
+                                    <li>
+                                        <a href="{{ route('shop', $category->slug) }}">{{ $category->name }}</a>
+                                        <span>{{ $category->products ? $category->products->count() : 0 }}</span>
+                                        <!-- Utilisez la relation_count pour afficher le nombre -->
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </aside>
-                        <aside class="widget widget-recent-post">
+
+                        {{-- <aside class="widget widget-recent-post">
                             <h3 class="widget-title">Popular News</h3>
                             <ul class="widget-post ttm-recent-post-list">
                                 <li>
@@ -246,8 +261,8 @@
                                     <a href="#">Choosing Roofing Material for Home</a>
                                 </li>
                             </ul>
-                        </aside>
-                        <aside class="widget flicker-widget">
+                        </aside> --}}
+                        {{-- <aside class="widget flicker-widget">
                             <h3 class="widget-title">Flickr</h3>
                             <div class="ttm-flicker-widget-wrapper">
                                 <a href="#"><img src="images/flicker/01.jpg" alt="A photo on Flickr"
@@ -269,8 +284,8 @@
                                 <a href="#"><img src="images/flicker/09.jpg" alt="A photo on Flickr"
                                         title="themetech-three"></a>
                             </div>
-                        </aside>
-                        <aside class="widget widget-latest-tweets">
+                        </aside> --}}
+                        {{-- <aside class="widget widget-latest-tweets">
                             <h3 class="widget-title">Latest Tweets</h3>
                             <div class="latest-tweets">
                                 <ul>
@@ -298,7 +313,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </aside>
+                        </aside> --}}
                         <aside class="widget tagcloud-widget">
                             <h3 class="widget-title">Tags</h3>
                             <div class="tagcloud">

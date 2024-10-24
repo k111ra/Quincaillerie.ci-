@@ -103,10 +103,10 @@ class ServiceController extends Controller
   {
     $service = Service::where('slug', $slug)->first();
 
-  //   if (!$service) {
-  //     // Handle the case where the service with the given slug is not found, e.g., show a 404 page.
-  //     abort(404);
-  // }
+    //   if (!$service) {
+    //     // Handle the case where the service with the given slug is not found, e.g., show a 404 page.
+    //     abort(404);
+    // }
 
     return view('single-service', compact('service'));
   }
@@ -133,53 +133,14 @@ class ServiceController extends Controller
   public function update(Request $request, $id)
   {
     $service = Service::findOrFail($id);
-    $request->validate([
-      'title' => 'required|string|max:255',
-      'description' => 'required|string',
-      'categories_id' => 'required|exists:categories,id',
-      // Ajoutez ici d'autres champs si nécessaire
-    ]);
 
-    try {
-      $service->title = $request->input('title');
-      $service->description = $request->input('description');
-      $service->categories_id = $request->input('categories_id');
-      // Mettez à jour ici d'autres champs si nécessaire
+    $service->title = $request->input('title');
+    $service->description = $request->input('description');
+    $service->categories_id = $request->input('categories_id');
 
-      $service->save();
+    $service->save();
 
-      // Si des tags sont fournis, mettez à jour les tags du service
-      if ($request->has('tags')) {
-        $service->tags()->sync($request->input('tags'));
-      }
-
-      // Si des images sont fournies, mettez à jour les images du service
-      if ($request->hasFile('images')) {
-        // Supprimez d'abord les anciennes images
-        foreach ($service->images as $image) {
-          Storage::disk('public')->delete($image->path);
-          $image->delete();
-        }
-
-        // Ensuite, ajoutez les nouvelles images
-        foreach ($request->file('images') as $imageFile) {
-          $imagePath = $imageFile->store('images', 'public');
-
-          $image = new Image();
-          $image->path = $imagePath;
-          $image->service_id = $service->id;
-          $image->save();
-        }
-      }
-
-      dd($service);
-
-      // return redirect()->back()->with('success', 'Le service a été mis à jour avec succès.');
-    } catch (\Exception $e) {
-      dd($service);
-
-      // return redirect()->back()->with('error', 'Une erreur s\'est produite lors de la mise à jour du service.');
-    }
+    return redirect()->back()->with('success', 'Le service a été mis à jour avec succès.');
   }
 
 

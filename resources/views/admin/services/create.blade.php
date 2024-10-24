@@ -109,7 +109,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $service->title }}</h5>
-                            <p class="card-text">{{ $service->description }}</p>
+                            {{-- <p class="card-text">{!! $service->description !!}</p> --}}
                             <div class="d-flex justify-content-between">
                                 <!-- Bouton d'édition -->
                                 {{-- <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-warning"> --}}
@@ -143,9 +143,10 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          <form action="{{ route('admin.services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('PUT')
+                            <form action="{{ route('admin.services.update', $service->id) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
                                 <!-- Name -->
                                 <div class="mb-3">
                                     <label for="nameLarge" class="form-label">Titre :</label>
@@ -154,8 +155,20 @@
                                 </div>
                                 <!-- Description -->
                                 <div class="mb-3">
-                                    <label for="emailLarge" class="form-label">Description :</label>
-                                    <textarea id="emailLarge" name="description" class="form-control" placeholder="Enter Description" required>{{ $service->description }}</textarea>
+                                    <label for="description" class="form-label">Description :</label>
+                                    <textarea name="description" id="description" class="form-control" placeholder="Enter Description" required>{!! $service->description !!}</textarea>
+                                </div>
+                                <!-- Categorie -->
+                                <div class="mb-3">
+                                    <label for="categories_id" class="form-label">Catégorie :</label>
+                                    <select class="form-control" name="categories_id" id="categories_id" required>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}"
+                                                {{ $category->id === $service->categories_id ? 'selected' : '' }}>
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <!-- Section pour afficher les images actuelles -->
                                 <div class="mb-3">
@@ -174,8 +187,8 @@
 
                                 <!-- Move the form and submit button inside the modal body -->
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary"
-                                        data-bs-dismiss="modal">Fermer</button>
+                                    {{-- <button type="button" class="btn btn-outline-secondary"
+                                        data-bs-dismiss="modal">Fermer</button> --}}
                                     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
                                 </div>
                             </form>

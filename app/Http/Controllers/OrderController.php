@@ -150,4 +150,12 @@ class OrderController extends Controller
 
     return $pdf->download('facture_commande_' . $order->order_number . '.pdf');
   }
+  public function destroy(Order $order)
+  {
+    // Delete the order
+    $order->delete();
+
+    // Redirect with a success message
+    return redirect()->route('admin.orders.index')->with('success', 'Commande Supprimer.');
+  }
 }

@@ -66,15 +66,24 @@
                                 <div class="col-md-6 toolbar-right">
                                     <form class="products-ordering text-right" method="get">
                                         <div class="orderby">
-                                            <label>Sort by: </label>
-                                            <select name="orderby" class="select2-hidden-accessible">
-                                                <option value="menu_order" selected="selected">Sales High To low</option>
-                                                <option value="sortby">price: low to high</option>
-                                                <option value="sortby">price: high to low</option>
+                                            <label>Trier Par: </label>
+                                            <select name="orderby" onchange="this.form.submit()"
+                                                class="select2-hidden-accessible">
+                                                <option value="menu_order"
+                                                    {{ request('orderby') == 'menu_order' ? 'selected' : '' }}>defaut
+                                                </option>
+                                                <option value="price_low_high"
+                                                    {{ request('orderby') == 'price_low_high' ? 'selected' : '' }}>Prix: Du
+                                                    moin au plus</option>
+                                                <option value="price_high_low"
+                                                    {{ request('orderby') == 'price_high_low' ? 'selected' : '' }}>Prix: Du
+                                                    plus au moin</option>
+
                                             </select>
                                         </div>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                         <div class="tab-content" id="myTabContent">
@@ -82,167 +91,18 @@
                                 <div class="row">
                                     @foreach ($products as $product)
                                         <!-- product -->
-                                        @include('partials.product')
-
+                                        @include('partials.product', ['product' => $product])
                                         <!-- product end -->
                                     @endforeach
+                                </div>
+                            </div>
+                        </div>
 
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="list" role="tabpanel">
-                                <div class="product-list product res-991-pt-0">
-                                    <!-- product-box -->
-                                    <div class="product-box">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 col-sm-5">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-01.png" alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-01.png" alt="">
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                            </div>
-                                            <div class="col-lg-9 col-md-8 col-sm-7">
-                                                <div class="product-description">
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Reel Fiberglass Tape</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>40.00
-                                                            </span>
-                                                        </span>
-                                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random
-                                                            text. It has roots in a piece of looked up one of the more in
-                                                            classical Virginia, obscure Latin words.</p>
-                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-right ttm-btn-color-skincolor mt-15"
-                                                            href="#" title="">Add To Cart <i
-                                                                class="themifyicon ti-shopping-cart-full"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- product-box end -->
-                                    <!-- product-box -->
-                                    <div class="product-box">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-4">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <div class="onsale">Sale!</div>
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-04.png" alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-04.png" alt="">
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                            </div>
-                                            <div class="col-lg-9 col-md-8 col-sm-7">
-                                                <div class="product-description">
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Cordless Drywall Cutter</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <ins><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>99.00
-                                                                </span>
-                                                            </ins>
-                                                            <del><span class="product-Price-amount">
-                                                                    <span
-                                                                        class="product-Price-currencySymbol">$</span>82.00
-                                                                </span>
-                                                            </del>
-                                                        </span>
-                                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random
-                                                            text. It has roots in a piece of looked up one of the more in
-                                                            classical Virginia, obscure Latin words.</p>
-                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-right ttm-btn-color-skincolor mt-15"
-                                                            href="#" title="">Add To Cart <i
-                                                                class="themifyicon ti-shopping-cart-full"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- product-box end -->
-                                    <!-- product-box -->
-                                    <div class="product-box">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-4">
-                                                <!-- product-box-inner -->
-                                                <div class="product-box-inner">
-                                                    <div class="product-image-box">
-                                                        <img class="img-fluid pro-image-front"
-                                                            src="images/product/pro-front-03.png" alt="">
-                                                        <img class="img-fluid pro-image-back"
-                                                            src="images/product/pro-back-03.png" alt="">
-                                                    </div>
-                                                </div><!-- product-box-inner end -->
-                                            </div>
-                                            <div class="col-lg-9 col-md-8 col-sm-7">
-                                                <div class="product-description">
-                                                    <div class="product-content-box">
-                                                        <a class="product-title" href="product-layout1.html">
-                                                            <h2>Demolition Breaker</h2>
-                                                        </a>
-                                                        <div class="star-ratings">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <span class="price">
-                                                            <span class="product-Price-amount">
-                                                                <span class="product-Price-currencySymbol">$</span>38.00
-                                                            </span>
-                                                        </span>
-                                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random
-                                                            text. It has roots in a piece of looked up one of the more in
-                                                            classical Virginia, obscure Latin words.</p>
-                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-right ttm-btn-color-skincolor mt-15"
-                                                            href="#" title="">Add To Cart <i
-                                                                class="themifyicon ti-shopping-cart-full"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- product-box end -->
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Pagination -->
                         <div class="pagination-block res-991-mt-0">
-                            <span class="page-numbers current">1</span>
-                            <a class="page-numbers" href="#">2</a>
-                            <a class="page-numbers" href="#">3</a>
-                            <a class="next page-numbers" href="#"><i class="ti ti-arrow-right"></i></a>
+                            {{ $products->appends(request()->input())->links() }}
                         </div>
+
                     </div>
                 </div><!-- row end -->
             </div>

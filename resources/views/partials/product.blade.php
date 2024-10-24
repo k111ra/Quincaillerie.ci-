@@ -104,7 +104,8 @@
                                         @if (!empty($images) && is_array($images) && isset($images[0]))
                                             <a href="{{ asset('storage/' . $images[0]) }}">
                                                 <img class="img-fluid" src="{{ asset('storage/' . $images[0]) }}"
-                                                    alt="Product Image" />
+                                                    alt="{{ $product->nom }}"
+                                                    style="width: 265px; height: 265px;object-fit: cover;" />
                                             </a>
                                         @else
                                             <p>Aucune image disponible.</p>

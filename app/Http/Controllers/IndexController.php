@@ -23,6 +23,7 @@ class IndexController extends Controller
 
     // Récupération des produits pour différentes catégories spécifiques
     $produitsPopulaires = $this->getProductsByCategorySlug('produits-populaires');
+    $bestseller = Category::where('slug', 'nos-produits-les-plus-vendus')->first(); // Ajout de cette ligne
     $produitsBestseller = $this->getProductsByCategorySlug('nos-produits-les-plus-vendus');
     $produitsSpecial = $this->getProductsByCategorySlug('specials');
     $produitsSolde = $this->getProductsByCategorySlug('en-solde');
@@ -35,9 +36,11 @@ class IndexController extends Controller
       'produitsPopulaires',
       'produitsBestseller',
       'produitsSpecial',
-      'produitsSolde'
+      'produitsSolde',
+      'bestseller' // Ajout de la variable ici
     ));
   }
+
 
   // Fonction privée pour récupérer les produits en fonction du slug de la catégorie
   private function getProductsByCategorySlug($slug)

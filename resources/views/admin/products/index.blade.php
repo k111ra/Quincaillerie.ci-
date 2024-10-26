@@ -89,7 +89,7 @@
 
         <!-- Pagination -->
         <div class="d-flex justify-content-center mt-3">
-            {{ $products->appends(['search' => request('search')])->links() }}
+            {{ $products->appends(['search' => request('search')])->links('vendor.pagination.custom') }}
         </div>
     </div>
 @endsection

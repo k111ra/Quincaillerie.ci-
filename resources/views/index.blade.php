@@ -432,10 +432,23 @@
                                                     <!-- product-box-inner -->
                                                     <div class="product-box-inner">
                                                         <div class="product-image-box">
-                                                            <img class="img-fluid pro-image-front"
-                                                                src="{{ asset('storage/' . $solde->image) }}"
-                                                                alt="">
-
+                                                            @php
+                                                                $images = json_decode($solde->images);
+                                                            @endphp
+                                                            @if (!empty($images) && count($images) > 0)
+                                                                <img class="img-fluid pro-image-front"
+                                                                    src="{{ asset('storage/' . $images[0]) }}"
+                                                                    alt="">
+                                                                @if (isset($images[1]))
+                                                                    <img class="img-fluid pro-image-back"
+                                                                        src="{{ asset('storage/' . $images[1]) }}"
+                                                                        alt="">
+                                                                @endif
+                                                            @else
+                                                                <img class="img-fluid pro-image-front"
+                                                                    src="{{ asset('front/assets/images/default-image.png') }}"
+                                                                    alt="Default Image">
+                                                            @endif
                                                         </div>
                                                         <div class="product-btn-links-wrapper">
                                                             <div class="product-btn"><a href="#"
@@ -642,8 +655,8 @@
                                                 <div class="post-meta">
                                                     <span class="ttm-meta-line byline"><i
                                                             class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i
-                                                            class="fa fa-tag"></i>Chiucation des enfants</span>
+                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>ucation
+                                                        des enfants</span>
                                                 </div>
                                                 <div class="post-title featured-title">
                                                     <h5><a href="blog-single.html">Étapes simples pour remplacer l'ancien

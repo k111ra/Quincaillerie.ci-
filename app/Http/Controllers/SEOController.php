@@ -10,6 +10,7 @@ class SEOController extends Controller
   {
     // Liste des mots-clés
     $keywords = [
+      'Les meilleures quincailleries d\'Abidjan et de Côte d\'Ivoire',
       'meuble etagere salle de bain',
       'meuble salle de bain original',
       'quincaillerie de salle de bain',

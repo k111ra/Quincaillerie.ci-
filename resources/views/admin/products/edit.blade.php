@@ -82,6 +82,7 @@
                                     </select>
                                 </div>
 
+
                                 <br>
                                 <button type="submit" class="btn btn-primary">Modifier</button>
                             </div>
@@ -91,6 +92,16 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#tags').select2({
+                tags: true,
+                tokenSeparators: [',', ' '],
+                placeholder: "Sélectionnez ou ajoutez des tags",
+                allowClear: true
+            });
+        });
+    </script>
 
 
 @endsection

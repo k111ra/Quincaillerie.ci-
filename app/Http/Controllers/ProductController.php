@@ -14,11 +14,23 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
-    $products = Product::all();
-    return view('admin.products.index', compact('products'));
+    // Initialiser la requête de base pour les produits
+    $query = Product::query();
+
+    // Filtrer par recherche si un terme est fourni
+    if ($request->has('search') && $request->input('search') != '') {
+      $query->where('nom', 'like', '%' . $request->input('search') . '%');
+    }
+
+    // Pagination des résultats (par exemple, 10 produits par page)
+    $products = $query->paginate(10);
+
+    return view('admin.products.index', compact('products'))->with('search', $request->input('search'));
   }
+
+
 
   public function create()
   {
@@ -111,7 +123,7 @@ class ProductController extends Controller
       'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Valider plusieurs images
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
-      'tags.*' => 'exists:tags,id',
+      'tags.*' => 'string', // Permet les tags non numériques pour les nouveaux tags
     ]);
 
     // Mettre à jour les propriétés du produit avec les données validées
@@ -146,12 +158,22 @@ class ProductController extends Controller
     $product->save();
 
     // Mettre à jour les tags liés au produit
+    $tagIds = [];
     if (isset($validatedData['tags'])) {
-      $product->tags()->sync($validatedData['tags']);
-    } else {
-      // Si aucun tag n'est sélectionné, supprimer tous les tags existants
-      $product->tags()->detach();
+      foreach ($validatedData['tags'] as $tag) {
+        if (is_numeric($tag)) {
+          // Tag existant
+          $tagIds[] = $tag;
+        } else {
+          // Nouveau tag, on le crée
+          $newTag = Tag::firstOrCreate(['name' => $tag]);
+          $tagIds[] = $newTag->id;
+        }
+      }
     }
+
+    // Synchroniser les tags avec le produit
+    $product->tags()->sync($tagIds);
 
     return redirect()->route('admin.products.index')->with('success', 'Product updated successfully');
   }

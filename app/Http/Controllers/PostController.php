@@ -86,4 +86,47 @@ class PostController extends Controller
 
     return view('blogs.show', compact('post', 'recentPosts', 'categories'));
   }
+
+  public function edit($id)
+  {
+    $post = Post::with('user')->findOrFail($id);
+    // $tags = Tag::all();
+    return view('admin.blogs.edit', compact('post'));
+  }
+  public function update(Request $request, $id)
+  {
+    $validatedData = $request->validate([
+      'title' => 'required',
+      'details' => 'nullable',
+      'description' => 'required',
+      'image.*' => 'nullable|image',
+      // 'tags' => 'nullable|array',
+      // 'tags.*' => 'exists:tags,id',
+    ]);
+
+    $post = Post::findOrFail($id);
+
+    // Update fields
+    $post->title = $validatedData['title'];
+    $post->details = $validatedData['details'];
+    $post->description = $validatedData['description'];
+
+    // Handle image uploads if provided
+    if ($request->hasFile('image')) {
+      $images = [];
+      foreach ($request->file('image') as $imageFile) {
+        $path = $imageFile->store('public/images/posts');
+        $images[] = str_replace('public/', '', $path);
+      }
+      $post->image = json_encode($images);
+    }
+
+    // Save the post
+    $post->save();
+
+    // Sync tags
+    // $post->tags()->sync($validatedData['tags'] ?? []);
+
+    return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully');
+  }
 }

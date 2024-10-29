@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carousel;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,8 @@ class IndexController extends Controller
     $produitsSpecial = $this->getProductsByCategorySlug('specials');
     $produitsSolde = $this->getProductsByCategorySlug('en-solde');
 
+    $posts = Post::latest()->paginate(6);
+
     // Retourner la vue avec les données compactées
     return view('index', compact(
       'categories',
@@ -37,7 +40,8 @@ class IndexController extends Controller
       'produitsBestseller',
       'produitsSpecial',
       'produitsSolde',
-      'bestseller' // Ajout de la variable ici
+      'bestseller',
+      'posts'
     ));
   }
 

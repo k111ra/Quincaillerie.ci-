@@ -524,174 +524,54 @@
                                     <div class="slick_slider"
                                         data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "arrows":false, "autoplay":true}'>
                                         <!-- featured-imagebox-post -->
-                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
-                                            <div class="ttm-post-featured-outer">
-                                                <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ 'assets/images/blog/01.jpg' }}"
-                                                        alt="">
-                                                    <div class="ttm-box-post-date">
-                                                        <span class="ttm-entry-date">
-                                                            <time class="entry-date"
-                                                                datetime="2019-07-28T07:07:55+00:00">28<span
-                                                                    class="entry-month">Jul</span></time>
-                                                        </span>
+                                        @foreach ($posts as $post)
+                                            <!-- featured-imagebox-post -->
+                                            <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
+                                                <div class="ttm-post-featured-outer">
+                                                    <div class="ttm-post-thumbnail featured-thumbnail">
+                                                        <!-- Image du post -->
+                                                        @if ($post->image && json_decode($post->image))
+                                                            <img class="img-fluid"
+                                                                src="{{ asset('storage/' . json_decode($post->image)[0]) }}"
+                                                                alt="Image du post">
+                                                        @else
+                                                            <img class="img-fluid"
+                                                                src="{{ asset('assets/images/blog/default.jpg') }}"
+                                                                alt="Image par défaut">
+                                                        @endif
+                                                        <div class="ttm-box-post-date">
+                                                            <span class="ttm-entry-date">
+                                                                <time class="entry-date"
+                                                                    datetime="{{ $post->created_at->toDateString() }}">
+                                                                    {{ $post->created_at->format('d') }}
+                                                                    <span
+                                                                        class="entry-month">{{ $post->created_at->format('M') }}</span>
+                                                                </time>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="featured-content featured-content-post">
+                                                    <div class="post-meta">
+                                                        <span class="ttm-meta-line byline"><i
+                                                                class="fa fa-user"></i>{{ $post->user->name ?? 'Admin' }}</span>
+                                                        {{-- <span class="ttm-meta-line tag-link"><i
+                                                                class="fa fa-tag"></i>{{ $post->tags->pluck('name')->join(', ') }}</span> --}}
+                                                    </div>
+                                                    <div class="post-title featured-title">
+                                                        <h5>
+                                                            <a href="#">{{ $post->title }}</a>
+                                                            <a
+                                                                href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
+
+                                                        </h5>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="featured-content featured-content-post">
-                                                <div class="post-meta">
-                                                    <span class="ttm-meta-line byline"><i
-                                                            class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i
-                                                            class="fa fa-tag"></i>Éducation des enfants</span>
-                                                </div>
-                                                <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Danger d'avoir une pression d'eau
-                                                            élevée</a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            <!-- featured-imagebox-post end -->
+                                        @endforeach
                                         <!-- featured-imagebox-post end -->
-                                        <!-- featured-imagebox-post -->
-                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
-                                            <div class="ttm-post-featured-outer">
-                                                <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ 'assetsimages/blog/02.jpg' }}"
-                                                        alt="">
-                                                    <div class="ttm-box-post-date">
-                                                        <span class="ttm-entry-date">
-                                                            <time class="entry-date"
-                                                                datetime="2019-08-10T07:07:55+00:00">10<span
-                                                                    class="entry-month">Aug</span></time>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="featured-content featured-content-post">
-                                                <div class="post-meta">
-                                                    <span class="ttm-meta-line byline"><i
-                                                            class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i
-                                                            class="fa fa-tag"></i>Éducation des enfants</span>
-                                                </div>
-                                                <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Les erreurs de peinture les plus
-                                                            courantes</a></h5>
-                                                </div>
-                                            </div>
-                                        </div><!-- featured-imagebox-post end -->
-                                        <!-- featured-imagebox-post -->
-                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
-                                            <div class="ttm-post-featured-outer">
-                                                <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ 'assets/images/blog/03.jpg' }}"
-                                                        alt="">
-                                                    <div class="ttm-box-post-date">
-                                                        <span class="ttm-entry-date">
-                                                            <time class="entry-date"
-                                                                datetime="2019-08-21T07:07:55+00:00">21<span
-                                                                    class="entry-month">Aug</span></time>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="featured-content featured-content-post">
-                                                <div class="post-meta">
-                                                    <span class="ttm-meta-line byline"><i
-                                                            class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i
-                                                            class="fa fa-tag"></i>Éducation des enfants</span>
-                                                </div>
-                                                <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Choisir un matériau de toiture pour
-                                                            Maison</a></h5>
-                                                </div>
-                                            </div>
-                                        </div><!-- featured-imagebox-post end -->
-                                        <!-- featured-imagebox-post -->
-                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
-                                            <div class="ttm-post-featured-outer">
-                                                <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ 'assets/images/blog/04.jpg' }}"
-                                                        alt="">
-                                                    <div class="ttm-box-post-date">
-                                                        <span class="ttm-entry-date">
-                                                            <time class="entry-date"
-                                                                datetime="2019-08-26T07:07:55+00:00">26<span
-                                                                    class="entry-month">Aug</span></time>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="featured-content featured-content-post">
-                                                <div class="post-meta">
-                                                    <span class="ttm-meta-line byline"><i
-                                                            class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i
-                                                            class="fa fa-tag"></i>Éducation des enfants</span>
-                                                </div>
-                                                <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Équiper les chercheurs dans le
-                                                            développement.</a></h5>
-                                                </div>
-                                            </div>
-                                        </div><!-- featured-imagebox-post end-->
-                                        <!-- featured-imagebox-post -->
-                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
-                                            <div class="ttm-post-featured-outer">
-                                                <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ 'assets/images/blog/05.jpg' }}"
-                                                        alt="">
-                                                    <div class="ttm-box-post-date">
-                                                        <span class="ttm-entry-date">
-                                                            <time class="entry-date"
-                                                                datetime="2019-09-06T07:07:55+00:00">06<span
-                                                                    class="entry-month">Sep</span></time>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="featured-content featured-content-post">
-                                                <div class="post-meta">
-                                                    <span class="ttm-meta-line byline"><i
-                                                            class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i class="fa fa-tag"></i>ucation
-                                                        des enfants</span>
-                                                </div>
-                                                <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Étapes simples pour remplacer l'ancien
-                                                            Carrelage </a></h5>
-                                                </div>
-                                            </div>
-                                        </div><!-- featured-imagebox-post end-->
-                                        <!-- featured-imagebox-post -->
-                                        <div class="featured-imagebox featured-imagebox-post ttm-box-view-top-image">
-                                            <div class="ttm-post-featured-outer">
-                                                <div class="ttm-post-thumbnail featured-thumbnail">
-                                                    <img class="img-fluid" src="{{ 'assets/images/blog/06.jpg' }}"
-                                                        alt="">
-                                                    <div class="ttm-box-post-date">
-                                                        <span class="ttm-entry-date">
-                                                            <time class="entry-date"
-                                                                datetime="2019-09-12T07:07:55+00:00">12<span
-                                                                    class="entry-month">Sep</span></time>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="featured-content featured-content-post">
-                                                <div class="post-meta">
-                                                    <span class="ttm-meta-line byline"><i
-                                                            class="fa fa-user"></i>Admin</span>
-                                                    <span class="ttm-meta-line tag-link"><i
-                                                            class="fa fa-tag"></i>education des enfants</span>
-                                                </div>
-                                                <div class="post-title featured-title">
-                                                    <h5><a href="blog-single.html">Vous avez une fuite ? Embauchez un
-                                                            plombier expérimenté</a></h5>
-                                                </div>
-                                            </div>
-                                        </div><!-- featured-imagebox-post end-->
+
                                     </div><!-- slick_slider end -->
                                 </div>
                             </div>

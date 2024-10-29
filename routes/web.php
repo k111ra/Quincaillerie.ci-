@@ -39,6 +39,8 @@ Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add')
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+
 // Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout.process');
 
 
@@ -167,9 +169,13 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
 
     // Routes pour les articles de blog
     Route::prefix('posts')->group(function () {
-      Route::get('/', [PostController::class, 'index'])->name('admin.blogs.index');
+      Route::get('/', [PostController::class, 'index'])->name('admin.posts.index');
       Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
       Route::post('/store', [PostController::class, 'store'])->name('admin.posts.store');
+      Route::get('/{post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+      Route::put('/{post}', [PostController::class, 'update'])->name('admin.posts.update');
+      Route::delete('/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
+      Route::get('/{post}', [PostController::class, 'show'])->name('admin.posts.show');
     });
 
     // Routes pour les services

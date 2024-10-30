@@ -76,12 +76,28 @@
                                         <div class="ttm-social-share-title">Share This Post:</div>
                                         <div class="social-icons circle">
                                             <ul>
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                <li>
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}"
+                                                        target="_blank" rel="noopener noreferrer">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($post->title) }}"
+                                                        target="_blank" rel="noopener noreferrer">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(request()->fullUrl()) }}"
+                                                        target="_blank" rel="noopener noreferrer">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </article>

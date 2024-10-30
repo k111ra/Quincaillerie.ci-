@@ -34,7 +34,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
                         <p class="card-text">{!! \Illuminate\Support\Str::limit($post->description, 100) !!}</p>
-                        <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-info btn-sm">Voir plus</a>
+                        <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-info btn-sm">Voir plus</a>
                         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning btn-sm">Modifier</a>
                         <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" style="display:inline;">
                             @csrf

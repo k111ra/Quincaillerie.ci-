@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class PostController extends Controller
 {
@@ -42,9 +44,11 @@ class PostController extends Controller
       'details' => 'required',
       'description' => 'required',
       'image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+      // 'tags' => 'nullable|array', // Allow multiple tags
+      // 'tags.*' => 'string|max:255' // Each tag is a string
     ]);
 
-    // Gestion des images multiples
+    // Handle multiple images
     $imagePaths = [];
     if ($request->hasFile('image')) {
       foreach ($request->file('image') as $imageFile) {
@@ -53,19 +57,24 @@ class PostController extends Controller
       $validatedData['image'] = json_encode($imagePaths);
     }
 
-    // Ajouter l'ID de l'utilisateur authentifié
+    // Add the authenticated user's ID
     $validatedData['user_id'] = auth()->id();
 
-    // Créer le post
+    // Automatically generate a unique slug based on the title
+    $validatedData['slug'] = $this->generateUniqueSlug($validatedData['title']);
+
+    // Create the post
     $post = Post::create($validatedData);
 
-    // // Gérer les tags : nouveaux et existants
+    // Handle tags: existing and new
     // $tagIds = [];
     // if ($request->tags) {
     //   foreach ($request->tags as $tag) {
     //     if (is_numeric($tag)) {
+    //       // If the tag is an existing tag ID, add it to the list
     //       $tagIds[] = $tag;
     //     } else {
+    //       // Otherwise, create a new tag or find an existing one by name
     //       $newTag = Tag::firstOrCreate(['name' => $tag]);
     //       $tagIds[] = $newTag->id;
     //     }
@@ -76,15 +85,22 @@ class PostController extends Controller
     return redirect()->route('admin.posts.index')->with('success', 'Post created successfully');
   }
 
-  public function show($id)
+  // Helper method to generate a unique slug
+  private function generateUniqueSlug($title)
   {
-    $post = Post::with('user')->findOrFail($id);
-    // $post = Post::with('tags', 'user')->findOrFail($id); // Include relationships
+    $slug = Str::slug($title);
+    $count = Post::where('slug', 'LIKE', "{$slug}%")->count();
+    return $count ? "{$slug}-{$count}" : $slug;
+  }
 
-    $recentPosts = Post::latest()->limit(3)->get();      // Get 3 recent posts for the sidebar
-    $categories = Category::all();                       // Assuming you have a Category model
 
-    return view('blogs.show', compact('post', 'recentPosts', 'categories'));
+  public function show($slug)
+  {
+    $post = Post::where('slug', $slug)->with('tags', 'user')->firstOrFail();
+    $recentPosts = Post::latest()->limit(3)->get();
+    $categories = Category::all();
+
+    return view('posts.show', compact('post', 'recentPosts', 'categories'));
   }
 
   public function edit($id)
@@ -128,5 +144,12 @@ class PostController extends Controller
     // $post->tags()->sync($validatedData['tags'] ?? []);
 
     return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully');
+  }
+  public function destroy($id)
+  {
+    $post = Post::findOrFail($id);
+    $post->delete();
+
+    return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully');
   }
 }

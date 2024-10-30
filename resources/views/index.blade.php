@@ -560,9 +560,8 @@
                                                     </div>
                                                     <div class="post-title featured-title">
                                                         <h5>
-                                                            <a href="#">{{ $post->title }}</a>
                                                             <a
-                                                                href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
+                                                                href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a>
 
                                                         </h5>
                                                     </div>

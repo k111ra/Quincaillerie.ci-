@@ -4,19 +4,36 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 
 class Post extends Model
 {
   use HasFactory;
 
-  // Définir les colonnes qui peuvent être attribuées en masse
-  protected $fillable = [
-    'title',
-    'details',
-    'description',
-    'image',
-    'user_id'
-  ];
+  protected $fillable = ['title', 'slug', 'details', 'description', 'image', 'user_id'];
+
+  public static function boot()
+  {
+    parent::boot();
+
+    static::creating(function ($post) {
+      $post->slug = self::createSlug($post->title);
+    });
+
+    static::updating(function ($post) {
+      if ($post->isDirty('title')) {
+        $post->slug = self::createSlug($post->title);
+      }
+    });
+  }
+
+  private static function createSlug($title)
+  {
+    $slug = Str::slug($title);
+    $count = Post::where('slug', 'LIKE', "{$slug}%")->count();
+    return $count ? "{$slug}-{$count}" : $slug;
+  }
 
   // Relation avec le modèle User
   public function user()

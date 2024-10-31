@@ -13,7 +13,7 @@
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span class="mr-1"><i class="ti ti-home"></i></span>
-                            <a title="Homepage" href="index.html">Home</a>
+                            <a title="Homepage" href="/">Accueil</a>
                             <span class="ttm-bread-sep">&nbsp;/&nbsp;</span>
                             <span class="ttm-textcolor-skincolor">{{ $service->title }}</span>
                         </div>

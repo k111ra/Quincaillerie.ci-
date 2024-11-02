@@ -70,15 +70,15 @@
                                                     <li><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
-                                            <a class="product-title" href="product-layout1.html">
+                                            <a class="product-title" href="{{ url('product/' . $product->slug) }}">
                                                 <h2>{{ $product->nom }}</h2>
                                             </a>
                                             <span class="price">
                                                 <span class="product-Price-amount">
-                                                    <span class="product-Price-currencySymbol">{{ $product->prix }}</span> F
-                                                    CFA
+                                                    <span
+                                                        class="product-Price-currencySymbol">{{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}
+                                                    </span>
                                                 </span>
-                                            </span>
                                         </div>
                                     </li>
                                 @endforeach

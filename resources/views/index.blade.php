@@ -57,7 +57,8 @@
                             <ul class="product-list-widget product">
                                 @foreach ($produitsPopulaires as $product)
                                     <li>
-                                        <a href="#"><img src="{{ asset('storage/' . $product->image[0]) }}"
+                                        <a href="#"><img
+                                                src="{{ asset('storage/' . json_decode($product->image)[0]) }}"
                                                 alt=""></a>
                                         <div class="product-content-box">
                                             <div class="star-ratings">

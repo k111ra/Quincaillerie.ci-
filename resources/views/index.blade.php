@@ -58,7 +58,7 @@
                                 @foreach ($produitsPopulaires as $product)
                                     <li>
                                         <a href="#"><img
-                                                src="{{ asset('storage/' . json_decode($product->image)[0]) }}"
+                                                src="{{ asset('storage/' . json_decode($product->images)[0]) }}"
                                                 alt=""></a>
                                         <div class="product-content-box">
                                             <div class="star-ratings">

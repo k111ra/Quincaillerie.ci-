@@ -25,7 +25,7 @@ class ProductController extends Controller
     }
 
     // Pagination des résultats (par exemple, 10 produits par page)
-    $products = $query->paginate(10);
+    $products = $query->orderBy('id', 'desc')->paginate(10);
 
     return view('admin.products.index', compact('products'))->with('search', $request->input('search'));
   }

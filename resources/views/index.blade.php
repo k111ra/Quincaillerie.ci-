@@ -57,7 +57,7 @@
                             <ul class="product-list-widget product">
                                 @foreach ($produitsPopulaires as $product)
                                     <li>
-                                        <a href="#"><img src="{{ asset('storage/' . $product->image) }}"
+                                        <a href="#"><img src="{{ asset('storage/' . $product->image[0]) }}"
                                                 alt=""></a>
                                         <div class="product-content-box">
                                             <div class="star-ratings">
@@ -174,7 +174,7 @@
                                 </div><!-- testimonials end -->
                             </div><!-- wrap-testimonial end-->
                         </aside> --}}
-                        <aside class="widget products top-rated-products">
+                        {{-- <aside class="widget products top-rated-products">
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
 
@@ -208,7 +208,7 @@
 
 
                             </ul>
-                        </aside>
+                        </aside> --}}
                         <aside class="widget widget_media_image banner-image">
                             <a href="#"><img class="img-fluid" src="{{ 'front/assets/images/widget-banner-one.jpg' }}"
                                     alt="widget-banner"></a>

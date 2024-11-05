@@ -22,9 +22,26 @@
         </div>
     </div><!-- page-title end-->
 
-
     <!--site-main start-->
     <div class="site-main">
+
+        <!-- Affichage des messages d'erreur de validation -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <!-- Affichage du message de succès -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
         <!--google_map-->
         <div id="google_map" class="google_map">
@@ -50,22 +67,23 @@
                                     </div>
                                 </div><!-- section title end -->
                                 <form id="ttm-contactform" class="ttm-contactform wrap-form clearfix" method="post"
-                                    action="#">
+                                    action="{{ route('contact.store') }}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <label>
                                                 <span class="text-input"><i
-                                                        class="ttm-textcolor-darkgrey ti-user"></i><input name="your-name"
-                                                        type="text" value="" placeholder="Votre Nom"
+                                                        class="ttm-textcolor-darkgrey ti-user"></i><input name="name"
+                                                        type="text" value="{{ old('name') }}" placeholder="Votre Nom"
                                                         required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-lg-6">
                                             <label>
                                                 <span class="text-input"><i
-                                                        class="ttm-textcolor-darkgrey ti-mobile"></i><input
-                                                        name="your-phone" type="text" value=""
-                                                        placeholder="telephone" required="required"></span>
+                                                        class="ttm-textcolor-darkgrey ti-mobile"></i><input name="phone"
+                                                        type="text" value="{{ old('phone') }}" placeholder="telephone"
+                                                        required="required"></span>
                                             </label>
                                         </div>
                                     </div>
@@ -74,7 +92,7 @@
                                             <label>
                                                 <span class="text-input"><i
                                                         class="ttm-textcolor-darkgrey ti-email"></i><input name="email"
-                                                        type="email" value="" placeholder="Email"
+                                                        type="email" value="{{ old('email') }}" placeholder="Email"
                                                         required="required"></span>
                                             </label>
                                         </div>
@@ -82,14 +100,14 @@
                                             <label>
                                                 <span class="text-input"><i
                                                         class="ttm-textcolor-darkgrey ti-location-pin"></i><input
-                                                        name="venue" type="text" value=""
+                                                        name="location" type="text" value="{{ old('location') }}"
                                                         placeholder="localisation" required="required"></span>
                                             </label>
                                         </div>
                                     </div>
                                     <label>
                                         <span class="text-input"><i class="ttm-textcolor-darkgrey ti-comment"></i>
-                                            <textarea name="message" rows="3" cols="40" placeholder="Message" required="required"></textarea>
+                                            <textarea name="message" rows="3" cols="40" placeholder="Message" required="required">{{ old('message') }}</textarea>
                                         </span>
                                     </label>
                                     <input name="submit" type="submit" id="submit"
@@ -143,7 +161,6 @@
                 </div><!-- row end -->
             </div>
         </section>
-
 
     </div><!--site-main end-->
 @endsection

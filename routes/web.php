@@ -7,7 +7,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ContactPageController;
+use App\Http\Controllers\ContactController;
+// use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
@@ -26,7 +27,9 @@ $controller_path = 'App\Http\Controllers';
 
 // Routes publiques
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/contact', [ContactPageController::class, 'index'])->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');

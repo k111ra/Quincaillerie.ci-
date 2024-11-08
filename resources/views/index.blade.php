@@ -531,15 +531,19 @@
                                                 <div class="ttm-post-featured-outer">
                                                     <div class="ttm-post-thumbnail featured-thumbnail">
                                                         <!-- Image du post -->
-                                                        @if ($post->image && json_decode($post->image))
+                                                        @php
+                                                            $images = json_decode($post->image);
+                                                        @endphp
+
+                                                        @if (!empty($images) && is_array($images) && isset($images[0]))
                                                             <img class="img-fluid"
-                                                                src="{{ asset('storage/' . json_decode($post->image)[0]) }}"
-                                                                alt="{{ $post->title }}">
+                                                                src="{{ asset('storage/' . $images[0]) }}"
+                                                                alt="{{ $post->title }}" width="250px" height="350px">
                                                         @else
-                                                            <img class="img-fluid"
-                                                                src="{{ asset('assets/images/blog/default.jpg') }}"
-                                                                alt="Image par défaut">
+                                                            <p>Image non disponible</p>
+                                                            <!-- Message d'erreur si aucune image n'est disponible -->
                                                         @endif
+
                                                         <div class="ttm-box-post-date">
                                                             <span class="ttm-entry-date">
                                                                 <time class="entry-date"

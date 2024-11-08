@@ -313,7 +313,7 @@
                                             </ul>
                                         </li>
                                         <li class="mega-menu-item">
-                                            <a href="#" class="mega-menu-link">Blog</a>
+                                            <a href="/posts" class="mega-menu-link">Blog</a>
 
                                         </li>
                                         <li><a href="{{ route('contact') }}">Contactez-nous</a></li>

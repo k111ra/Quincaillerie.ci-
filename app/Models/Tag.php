@@ -26,4 +26,8 @@ class Tag extends Model
   {
     return $this->belongsToMany(Service::class, 'service_tag');
   }
+  public function posts()
+  {
+    return $this->belongsToMany(Post::class);
+  }
 }

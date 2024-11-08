@@ -534,7 +534,7 @@
                                                         @if ($post->image && json_decode($post->image))
                                                             <img class="img-fluid"
                                                                 src="{{ asset('storage/' . json_decode($post->image)[0]) }}"
-                                                                alt="Image du post">
+                                                                alt="{{ $post->title }}">
                                                         @else
                                                             <img class="img-fluid"
                                                                 src="{{ asset('assets/images/blog/default.jpg') }}"

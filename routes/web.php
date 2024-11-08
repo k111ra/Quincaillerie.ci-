@@ -43,6 +43,7 @@ Route::post('/cart/update', [CartController::class, 'update'])->name('cart.updat
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/posts', [PostController::class, 'post'])->name('posts');
 
 // Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout.process');
 

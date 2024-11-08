@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Contacts')
+@section('title', 'Services')
 @section('content')
     <!-- page-title -->
     <div class="ttm-page-title-row">

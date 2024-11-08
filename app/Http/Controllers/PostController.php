@@ -44,8 +44,8 @@ class PostController extends Controller
       'details' => 'required',
       'description' => 'required',
       'image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-      // 'tags' => 'nullable|array', // Allow multiple tags
-      // 'tags.*' => 'string|max:255' // Each tag is a string
+      'tags' => 'nullable|array',
+      'tags.*' => 'string|max:255'
     ]);
 
     // Handle multiple images
@@ -100,7 +100,14 @@ class PostController extends Controller
     $recentPosts = Post::latest()->limit(3)->get();
     $categories = Category::all();
 
-    return view('posts.show', compact('post', 'recentPosts', 'categories'));
+    return view('blogs.show', compact('post', 'recentPosts', 'categories'));
+  }
+  public function post()
+  {
+    $posts = Post::orderBy('id', 'desc')->paginate(10);
+    $categories = Category::all();
+
+    return view('blogs.index', compact('posts', 'categories'));
   }
 
   public function edit($id)
@@ -116,8 +123,8 @@ class PostController extends Controller
       'details' => 'nullable',
       'description' => 'required',
       'image.*' => 'nullable|image',
-      // 'tags' => 'nullable|array',
-      // 'tags.*' => 'exists:tags,id',
+      'tags' => 'nullable|array',
+      'tags.*' => 'exists:tags,id',
     ]);
 
     $post = Post::findOrFail($id);

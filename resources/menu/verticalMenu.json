@@ -12,22 +12,27 @@
     {
       "name": "Produits",
       "icon": "menu-icon tf-icons bx bxs-shopping-bags",
-      "slug": "Produis",
+      "slug": "Produits",
       "submenu": [
         {
           "url": "/admin/categories",
-          "name": "Categorie",
-          "slug": "Categorie"
+          "name": "Catégories",
+          "slug": "categories"
         },
         {
           "url": "/admin/tags",
-          "name": "tags",
+          "name": "Tags",
           "slug": "tags"
         },
         {
           "url": "/admin/products",
-          "name": "products",
+          "name": "Produits",
           "slug": "products"
+        },
+        {
+          "url": "/admin/recherche",
+          "name": "Recherche",
+          "slug": "recherche"
         }
       ]
     },

@@ -126,6 +126,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
 
   Route::prefix('/admin')->middleware(['auth', 'role:admin'])->group(function () {
 
+    Route::get('/recherche', [SearchController::class, 'showSearches'])->name('admin.search');
     // Route pour afficher toutes les commandes
     Route::get('/orders', [OrderController::class, 'indexAdmin'])->name('admin.orders.index');
     Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('admin.orders.edit');

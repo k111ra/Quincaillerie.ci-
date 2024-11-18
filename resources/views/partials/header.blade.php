@@ -123,6 +123,8 @@
                         </ul>
 
                         <!-- Cart Section -->
+                        <a href="/cart/show">
+                        </a>
                         <div class="cart dropdown mt-2 mt-lg-0">
                             <div class="dropdown_link d-flex flex-row align-items-center justify-content-end"
                                 data-toggle="dropdown">

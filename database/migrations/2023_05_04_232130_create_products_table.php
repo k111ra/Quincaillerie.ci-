@@ -19,6 +19,7 @@ return new class extends Migration
       $table->text('description');
       $table->decimal('prix', 8, 2);
       $table->integer('quantite');
+      $table->string('slug');
       $table->unsignedBigInteger('categorie_id');
       $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
       $table->timestamps();

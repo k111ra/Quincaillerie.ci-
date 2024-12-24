@@ -44,8 +44,15 @@
                     <tbody class="table-border-bottom-0">
                         @foreach ($products as $product)
                             <tr>
-                                <td>{{ $product->id }}</td>
-                                <td><strong>{{ $product->nom }}</strong></td>
+                                <!-- Calcul du numéro d'ordre -->
+                                <td>
+                                    {{ ($products->currentPage() - 1) * $products->perPage() + $loop->iteration }}
+                                </td>
+                                <td>
+                                    <a href="{{ url('product/' . $product->slug) }}">
+                                        <strong>{{ $product->nom }}</strong>
+                                    </a>
+                                </td>
                                 <td>
                                     @if ($product->images && json_decode($product->images))
                                         @foreach (json_decode($product->images) as $image)
@@ -56,7 +63,9 @@
                                         <p>Aucune image disponible</p>
                                     @endif
                                 </td>
-                                <td><span class="badge bg-label-primary me-1">Disponible</span></td>
+                                <td>
+                                    <span class="badge bg-label-primary me-1">Disponible</span>
+                                </td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

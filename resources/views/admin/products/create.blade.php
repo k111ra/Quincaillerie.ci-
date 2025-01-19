@@ -8,7 +8,7 @@
 @section('title', 'Produits')
 
 @section('content')
-    <div class="container">
+    <div class="{{ $container }}">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -26,74 +26,101 @@
                     <div class="card-body">
                         <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div>
+                            <div class="mb-3">
                                 <label for="nom" class="form-label">Nom :</label>
                                 <input type="text" class="form-control" name="nom" id="nom"
-                                    placeholder="Nom du produit" required>
+                                    placeholder="Nom du produit" value="{{ old('nom') }}" required>
+                                @if ($errors->has('nom'))
+                                    <div class="text-danger">{{ $errors->first('nom') }}</div>
+                                @endif
                             </div>
 
-                            <div>
+                            <div class="mb-3">
                                 <label for="description" class="form-label">Description :</label>
-                                <textarea class="form-control" name="description" id="description" placeholder="Description du produit" required></textarea>
+                                <textarea class="form-control" name="description" id="description" placeholder="Description du produit" required>{{ old('description') }}</textarea>
                                 @if ($errors->has('description'))
                                     <div class="text-danger">{{ $errors->first('description') }}</div>
                                 @endif
                             </div>
 
-                            <div>
+                            <div class="mb-3">
                                 <label for="prix" class="form-label">Prix :</label>
                                 <input type="number" class="form-control" name="prix" id="prix"
-                                    placeholder="Prix du produit" required>
+                                    placeholder="Prix du produit" value="{{ old('prix') }}" required>
+                                @if ($errors->has('prix'))
+                                    <div class="text-danger">{{ $errors->first('prix') }}</div>
+                                @endif
                             </div>
 
-                            <div>
-                                <label for="images">Images</label>
-                                <input type="file" name="images[]" multiple>
-                                {{-- <input type="file" class="form-control" name="image" id="image" required> --}}
+                            <div class="mb-3">
+                                <label for="images">Images :</label>
+                                <input type="file" class="form-control" name="images[]" multiple>
+                                @if ($errors->has('images'))
+                                    <div class="text-danger">{{ $errors->first('images') }}</div>
+                                @endif
                             </div>
 
-                            <div>
+                            <div class="mb-3">
                                 <label for="quantite" class="form-label">Quantité :</label>
                                 <input type="number" class="form-control" name="quantite" id="quantite"
-                                    placeholder="Quantité du produit" required>
+                                    placeholder="Quantité du produit" value="{{ old('quantite') }}" required>
+                                @if ($errors->has('quantite'))
+                                    <div class="text-danger">{{ $errors->first('quantite') }}</div>
+                                @endif
                             </div>
 
-                            {{-- <div>
-                          <label for="taille" class="form-label">Taille :</label>
-                          <select class="form-control" name="taille" id="taille" required>
-                            <option value="XS">XS</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                          </select>
-                        </div> --}}
-
-                            <div>
+                            <div class="mb-3">
                                 <label for="categorie_id" class="form-label">Catégorie :</label>
                                 <select class="form-control" name="categorie_id" id="categorie_id" required>
                                     @foreach ($categories as $categorie)
                                         <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
                                     @endforeach
                                 </select>
+                                @if ($errors->has('categorie_id'))
+                                    <div class="text-danger">{{ $errors->first('categorie_id') }}</div>
+                                @endif
                             </div>
 
-                            <div>
+                            <div class="mb-3">
+                                <label for="fournisseur" class="form-label">Fournisseur :</label>
+                                <div class="input-group">
+                                    <select class="form-select" id="fournisseur" name="fournisseur_id">
+                                        @foreach ($fournisseurs as $fournisseur)
+                                            <option value="{{ $fournisseur->id }}">{{ $fournisseur->nom }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label class="input-group-text" for="ajoutFournisseur">
+                                        <a type="button" class="" data-bs-toggle="modal"
+                                            data-bs-target="#modalAjoutFournisseur">
+                                            <i class="bx bxs-plus-circle"></i>
+                                        </a>
+                                    </label>
+                                </div>
+                                @if ($errors->has('fournisseur_id'))
+                                    <div class="text-danger">{{ $errors->first('fournisseur_id') }}</div>
+                                @endif
+
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="tags" class="form-label">Tags :</label>
                                 <select class="form-control" name="tags[]" id="tags" multiple>
                                     @foreach ($tags as $tag)
                                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                     @endforeach
                                 </select>
+                                @if ($errors->has('tags'))
+                                    <div class="text-danger">{{ $errors->first('tags') }}</div>
+                                @endif
                             </div>
 
                             <button type="submit" class="btn btn-primary">Ajouter</button>
                         </form>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    @include('admin.fournisseurs.create')
 @endsection

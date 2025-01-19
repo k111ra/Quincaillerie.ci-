@@ -13,18 +13,20 @@ return new class extends Migration
    */
   public function up()
   {
-    Schema::create('Products', function (Blueprint $table) {
-      $table->id();
-      $table->string('nom');
-      $table->text('description');
-      $table->decimal('prix', 8, 2);
-      $table->integer('quantite');
-      $table->string('slug');
-      $table->unsignedBigInteger('categorie_id');
-      $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
-      $table->timestamps();
-      $table->text('images')->nullable();
-    });
+    if (!Schema::hasTable('Products')) {
+      Schema::create('Products', function (Blueprint $table) {
+        $table->id();
+        $table->string('nom');
+        $table->text('description');
+        $table->decimal('prix', 8, 2);
+        $table->integer('quantite');
+        $table->string('slug');
+        $table->unsignedBigInteger('categorie_id');
+        $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
+        $table->timestamps();
+        $table->text('images')->nullable();
+      });
+    }
   }
 
   /**

@@ -6,30 +6,32 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('Product_tags', function (Blueprint $table) {
-          $table->id();
-          $table->unsignedBigInteger('product_id');
-          $table->unsignedBigInteger('tag_id');
-          $table->timestamps();
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    if (!Schema::hasTable('Product_tags')) {
+      Schema::create('Product_tags', function (Blueprint $table) {
+        $table->id();
+        $table->unsignedBigInteger('product_id');
+        $table->unsignedBigInteger('tag_id');
+        $table->timestamps();
 
-          $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
-        });
+        $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+      });
     }
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('Product_tags');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('Product_tags');
+  }
 };

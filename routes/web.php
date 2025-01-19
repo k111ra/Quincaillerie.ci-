@@ -8,6 +8,7 @@ use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FournisseurControlleur;
 // use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
@@ -20,6 +21,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -156,6 +158,13 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
       Route::put('/{product}', [ProductController::class, 'update'])->name('admin.products.update');
       Route::delete('/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+    });
+
+    // Routes pour fournisseur
+    Route::prefix('fournisseurs')->group(function () {
+      Route::get('/', [FournisseurControlleur::class, 'index'])->name('admin.fournisseurs.index');
+      Route::get('/create', [FournisseurControlleur::class, 'create'])->name('admin.fournisseurs.create');
+      Route::post('/store', [FournisseurControlleur::class, 'store'])->name('admin.fournisseurs.store');
     });
 
     // ... Autres routes d'administration

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Categorie;
 use App\Models\Category;
+use App\Models\Fournisseur;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -36,7 +37,8 @@ class ProductController extends Controller
   {
     $categories = Category::all();
     $tags = Tag::all();
-    return view('admin.products.create', compact('categories', 'tags'));
+    $fournisseurs = Fournisseur::all();
+    return view('admin.products.create', compact('categories', 'tags', 'fournisseurs'));
   }
   public function store(Request $request)
   {

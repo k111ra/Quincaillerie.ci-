@@ -51,6 +51,7 @@ class ProductController extends Controller
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
       'tags.*' => 'exists:tags,id',
+      'fournisseur_id' => 'required|exists:fournisseurs,id',
     ]);
 
     // Utilisation d'un bloc try-catch pour gérer les erreurs
@@ -63,6 +64,7 @@ class ProductController extends Controller
       $product->quantite = $request->quantite;
       $product->categorie_id = $request->categorie_id;
       $product->slug = Str::slug($request->nom);
+      $product->fournisseur_id = $request->fournisseur_id;
 
       // Stocker les images si elles existent
       $imagePaths = [];
@@ -109,8 +111,9 @@ class ProductController extends Controller
     $categories = Category::all();
     $tags = Tag::all();
     $productTags = $product->tags->pluck('id')->toArray();
+    $fournisseurs = Fournisseur::all();
 
-    return view('admin.products.edit', compact('product', 'categories', 'tags', 'productTags'));
+    return view('admin.products.edit', compact('product', 'categories', 'tags', 'productTags', 'fournisseurs'));
   }
 
 
@@ -126,6 +129,7 @@ class ProductController extends Controller
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
       'tags.*' => 'string', // Permet les tags non numériques pour les nouveaux tags
+      'fournisseur_id' => 'required|exists:fournisseurs,id',
     ]);
 
     // Mettre à jour les propriétés du produit avec les données validées
@@ -134,6 +138,7 @@ class ProductController extends Controller
     $product->prix = $validatedData['prix'];
     $product->quantite = $validatedData['quantite'];
     $product->categorie_id = $validatedData['categorie_id'];
+    $product->fournisseur_id = $validatedData['fournisseur_id'];
 
     // Traitement des nouvelles images
     if ($request->hasFile('images')) {

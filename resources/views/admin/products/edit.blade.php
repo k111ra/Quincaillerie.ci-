@@ -69,6 +69,26 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="fournisseur" class="form-label">Fournisseur :</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="fournisseur" name="fournisseur_id">
+                                            @foreach ($fournisseurs as $fournisseur)
+                                                <option value="{{ $fournisseur->id }}">{{ $fournisseur->nom }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label class="input-group-text" for="ajoutFournisseur">
+                                            <a type="button" class="" data-bs-toggle="modal"
+                                                data-bs-target="#modalAjoutFournisseur">
+                                                <i class="bx bxs-plus-circle"></i>
+                                            </a>
+                                        </label>
+                                    </div>
+                                    @if ($errors->has('fournisseur_id'))
+                                        <div class="text-danger">{{ $errors->first('fournisseur_id') }}</div>
+                                    @endif
+
+                                </div>
 
                                 <div>
                                     <label for="tags" class="form-label">Tags :</label>
@@ -102,6 +122,7 @@
             });
         });
     </script>
-
+    <!-- Modal -->
+    @include('admin.fournisseurs.create')
 
 @endsection

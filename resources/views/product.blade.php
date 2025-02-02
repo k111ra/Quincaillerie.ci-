@@ -153,21 +153,30 @@
                                                         <span class="dec quantity-button">-</span>
                                                     </div>
 
-
                                                 </div>
-                                                <div class="actions">
+                                                <div class="actions"
+                                                    style="display: flex; justify-content: space-between; align-items: center;">
                                                     <div class="add-to-cart">
                                                         <button type="submit"
                                                             class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor">Acheter</button>
                                                     </div>
-                                                    <br>
-                                                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                        href="{{ route('cart') }}">
-                                                        Allez au panier . <i class="fa fa-shopping-cart"></i>
-                                                    </a>
-
+                                                    <div class="go-to-cart">
+                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                            href="{{ route('cart') }}">
+                                                            Allez au panier .<i class="fa fa-shopping-cart"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="order-via-whatsapp">
+                                                        <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                            href="https://wa.me/2250747104513?text=Je%20souhaite%20commander%20ce%20produit:%20{{ $product->nom }}%20Quantité:%201%20Lien:%20http://quincaillerie.ci/product/sunt-doloribus-ea-do">
+                                                            Via WhatsApp .<i class="fa fa-whatsapp"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </form>
+
+
+
                                             <div class="buttons">
                                                 <a href="#" rel="nofollow" data-product-id="24006456"
                                                     data-product-type="simple" class="add_to_wishlist">

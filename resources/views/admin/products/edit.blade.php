@@ -124,5 +124,4 @@
     </script>
     <!-- Modal -->
     @include('admin.fournisseurs.create')
-
 @endsection

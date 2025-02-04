@@ -168,7 +168,7 @@
                                                     </div>
                                                     <div class="order-via-whatsapp">
                                                         <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                            href="https://wa.me/2250747104513?text=Je%20souhaite%20commander%20ce%20produit:%20{{ $product->nom }}%20Quantité:%201%20Lien:%20http://quincaillerie.ci/product/{{ $product->nom }}">
+                                                            href="https://wa.me/2250747104513?text=Je%20souhaite%20commander%20ce%20produit:%20{{ $product->nom }}%20Quantité:%201%20Lien:%20http://quincaillerie.ci/product/{{ $product->slug }}">
                                                             Via WhatsApp .<i class="fa fa-whatsapp"></i>
                                                         </a>
                                                     </div>

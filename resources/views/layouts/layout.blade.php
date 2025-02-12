@@ -12,12 +12,13 @@
     <meta name="keywords" content="{{ \App\Http\Controllers\SEOController::generateKeywords() }}">
     <meta name="author" content="Sidik Slims" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-4238780729755314">
     <title>Quincaillerie - @yield('title')</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4238780729755314"
-        crossorigin="anonymous"></script>
+    {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4238780729755314"
+        crossorigin="anonymous"></script> --}}
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />

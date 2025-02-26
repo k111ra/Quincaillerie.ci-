@@ -71,11 +71,19 @@
 
                             <div class="mb-3">
                                 <label for="categorie_id" class="form-label">Catégorie :</label>
-                                <select class="form-control" name="categorie_id" id="categorie_id" required>
-                                    @foreach ($categories as $categorie)
-                                        <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
-                                    @endforeach
-                                </select>
+                                <div class="input-group">
+                                    <select class="form-select" id="categorie_id" name="categorie_id" required>
+                                        @foreach ($categories as $categorie)
+                                            <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label class="input-group-text" for="ajoutCategorie">
+                                        <a type="button" class="" data-bs-toggle="modal"
+                                            data-bs-target="#modalAjoutCategorie">
+                                            <i class="bx bxs-plus-circle"></i>
+                                        </a>
+                                    </label>
+                                </div>
                                 @if ($errors->has('categorie_id'))
                                     <div class="text-danger">{{ $errors->first('categorie_id') }}</div>
                                 @endif
@@ -104,11 +112,20 @@
 
                             <div class="mb-3">
                                 <label for="tags" class="form-label">Tags :</label>
-                                <select class="form-control" name="tags[]" id="tags" multiple>
-                                    @foreach ($tags as $tag)
-                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                                    @endforeach
-                                </select>
+
+                                <div class="input-group">
+                                    <select class="form-select" name="tags[]" id="tags" multiple>
+                                        @foreach ($tags as $tag)
+                                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label class="input-group-text" for="ajoutTag">
+                                        <a type="button" class="" data-bs-toggle="modal"
+                                            data-bs-target="#modalAjoutTag">
+                                            <i class="bx bxs-plus-circle"></i>
+                                        </a>
+                                    </label>
+                                </div>
                                 @if ($errors->has('tags'))
                                     <div class="text-danger">{{ $errors->first('tags') }}</div>
                                 @endif
@@ -123,4 +140,6 @@
     </div>
     <!-- Modal -->
     @include('admin.fournisseurs.create')
+    @include('admin.categories.create')
+    @include('admin.tags.create')
 @endsection

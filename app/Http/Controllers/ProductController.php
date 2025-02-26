@@ -38,7 +38,8 @@ class ProductController extends Controller
     $categories = Category::all();
     $tags = Tag::all();
     $fournisseurs = Fournisseur::all();
-    return view('admin.products.create', compact('categories', 'tags', 'fournisseurs'));
+    $parents = Category::pluck('name', 'id')->prepend('None', '');
+    return view('admin.products.create', compact('categories', 'tags', 'fournisseurs', 'parents'));
   }
   public function store(Request $request)
   {

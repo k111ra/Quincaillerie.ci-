@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="❴❴ session()->get('locale') ?? app()->getLocale() ❵❵">
 
-<!-- Mirrored from themetechmount.com/html/fixfellow/header-style-02.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Feb 2023 10:58:19 GMT -->
 
 <head>
     <meta charset="utf-8">

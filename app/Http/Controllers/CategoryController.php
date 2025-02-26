@@ -36,7 +36,7 @@ class CategoryController extends Controller
     $category->slug = Str::slug($request->input('name'));
     $category->save();
 
-    return redirect()->route('admin.categories.index')->with('success', 'Category created successfully');
+    return redirect()->back()->with('success', 'Category created successfully');
   }
 
   public function edit(Category $category)

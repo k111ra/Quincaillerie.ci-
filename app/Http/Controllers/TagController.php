@@ -48,7 +48,7 @@ class TagController extends Controller
     $tag->slug = Str::slug($request->name);
     $tag->save();
 
-    return redirect()->route('admin.tags.index')->with('success', 'Le tag a été créé avec succès.');
+    return redirect()->back()->with('success', 'Le tag a été créé avec succès.');
   }
 
   /**

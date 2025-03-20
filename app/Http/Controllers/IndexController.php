@@ -12,10 +12,15 @@ class IndexController extends Controller
 {
   public function index()
   {
-    // Récupération des catégories principales avec leurs sous-catégories, triées aléatoirement
-    $categories = Category::with('children')
+    // Récupération des catégories principales avec leurs sous-catégories
+    $categories = Category::with(['children' => function ($query) {
+      $query->whereHas('products');
+    }])
       ->whereNull('parent_id')
-      ->inRandomOrder() // Mélanger les catégories
+      ->where(function ($query) {
+        $query->whereHas('products')
+          ->orWhereHas('children.products');
+      })
       ->get();
 
     // Récupération de tous les carrousels et produits
@@ -45,6 +50,21 @@ class IndexController extends Controller
     ));
   }
 
+  public function shop()
+  {
+    $products = Product::paginate(12);
+    $categories = Category::with(['children' => function ($query) {
+      $query->whereHas('products');
+    }])
+      ->whereNull('parent_id')
+      ->where(function ($query) {
+        $query->whereHas('products')
+          ->orWhereHas('children.products');
+      })
+      ->get();
+
+    return view('shop', compact('products', 'categories'));
+  }
 
   // Fonction privée pour récupérer les produits en fonction du slug de la catégorie
   private function getProductsByCategorySlug($slug)

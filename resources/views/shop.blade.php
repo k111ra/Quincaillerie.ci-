@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="page-title-heading">
-                            <h1 class="title">{{ $category->name }}</h1>
+                            <h1 class="title">{{ isset($category) ? $category->name : 'Tous les produits' }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span class="mr-1"><i class="ti ti-home"></i></span>
@@ -100,7 +100,9 @@
 
                         <!-- Pagination -->
                         <div class="pagination-block res-991-mt-0">
-                            {{ $products->appends(request()->input())->links() }}
+                            <div class="d-flex justify-content-center">
+                                {{ $products->appends(request()->input())->links('pagination::bootstrap-4') }}
+                            </div>
                         </div>
 
                     </div>

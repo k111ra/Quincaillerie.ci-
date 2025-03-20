@@ -279,7 +279,7 @@
                                         <li><a href="{{ url('/services') }}">Services</a></li>
 
                                         <li class="mega-menu-item megamenu-fw">
-                                            <a href="#" class="mega-menu-link">Boutiques</a>
+                                            <a href="/shop" class="">Boutiques</a>
                                             <ul class="mega-submenu megamenu-content" role="menu">
                                                 <li>
                                                     <div class="row">

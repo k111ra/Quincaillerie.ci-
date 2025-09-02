@@ -1,0 +1,2 @@
+ID CLIENT GOOGLE : 872867914773-rh0so37bthvq2bodr2f3c2gn58udul8c.apps.googleusercontent.com
+Code secret du client : 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

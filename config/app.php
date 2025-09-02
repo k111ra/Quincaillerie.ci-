@@ -166,8 +166,7 @@ return [
     Illuminate\View\ViewServiceProvider::class,
     Spatie\Permission\PermissionServiceProvider::class,
     Barryvdh\DomPDF\ServiceProvider::class,
-
-
+    Laravel\Socialite\SocialiteServiceProvider::class,
 
     /*
          * Package Service Providers...
@@ -198,6 +197,8 @@ return [
 
   'aliases' => Facade::defaultAliases()->merge([
     'PDF' => Barryvdh\DomPDF\Facade::class,
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
   ])->toArray(),
 
 ];

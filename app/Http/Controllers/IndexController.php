@@ -6,6 +6,7 @@ use App\Models\Carousel;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -28,14 +29,16 @@ class IndexController extends Controller
     $products = Product::all();
 
     // Récupération des produits pour différentes catégories spécifiques
-    $produitsPopulaires = $this->getProductsByCategorySlug('produits-populaires');
+    $produitsPopulaires = Product::whereHas('tags', function ($query) {
+      $query->where('slug', 'produit-populaire');
+    })->get();
     $bestseller = Category::where('slug', 'nos-produits-les-plus-vendus')->first(); // Ajout de cette ligne
     $produitsBestseller = $this->getProductsByCategorySlug('nos-produits-les-plus-vendus');
     $produitsSpecial = $this->getProductsByCategorySlug('specials');
     $produitsSolde = $this->getProductsByCategorySlug('en-solde');
 
     $posts = Post::latest()->paginate(6);
-
+    // dd($produitsPopulaires);
     // Retourner la vue avec les données compactées
     return view('index', compact(
       'categories',

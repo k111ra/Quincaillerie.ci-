@@ -57,9 +57,17 @@
                             <ul class="product-list-widget product">
                                 @foreach ($produitsPopulaires as $product)
                                     <li>
-                                        <a href="#"><img
-                                                src="{{ asset('storage/' . json_decode($product->images)[0]) }}"
-                                                alt=""></a>
+                                        <a href="{{ url('product/' . $product->slug) }}">
+                                            @php
+                                                $images = json_decode($product->images);
+                                            @endphp
+                                            @if (!empty($images) && isset($images[0]))
+                                                <img src="{{ asset('storage/' . $images[0]) }}" alt="{{ $product->nom }}">
+                                            @else
+                                                <img src="{{ asset('front/assets/images/default-image.png') }}"
+                                                    alt="Default Image">
+                                            @endif
+                                        </a>
                                         <div class="product-content-box">
                                             <div class="star-ratings">
                                                 <ul class="rating">
@@ -75,10 +83,11 @@
                                             </a>
                                             <span class="price">
                                                 <span class="product-Price-amount">
-                                                    <span
-                                                        class="product-Price-currencySymbol">{{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}
+                                                    <span class="product-Price-currencySymbol">
+                                                        {{ number_format($product->prix, 0, ',', ' ') . ' F CFA' }}
                                                     </span>
                                                 </span>
+                                            </span>
                                         </div>
                                     </li>
                                 @endforeach

@@ -364,7 +364,7 @@
                             <div
                                 class="user_zone_block d-flex flex-row align-items-center justify-content-end ml-auto">
                                 <div class="icon"><i class="fa fa-gift"></i></div>
-                                <h6 class="text">Nouvelle zone utilisateur</h6>
+                                <h6 class="text">Devenez Partenaire</h6>
                             </div>
                         </div>
                     </div>

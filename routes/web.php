@@ -38,6 +38,13 @@ Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
 Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name('product');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
+
+// Auth Google
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\Auth\GoogleController;
+
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/cart/show', [CartController::class, 'ShowCart'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');

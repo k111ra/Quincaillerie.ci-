@@ -86,6 +86,12 @@
                                             <span class="spinner"></span>
                                         </button>
                                     </div>
+
+                                    <div class="form-group text-center">
+                                        <a href="{{ route('auth.google') }}" class="btn btn-danger w-100">
+                                            <i class="fa fa-google"></i> Se connecter avec Google
+                                        </a>
+                                    </div>
                                     <div class="form-group d-flex justify-content-between">
                                         <div class="d-flex flex-row align-items-center justify-content-start">
                                             <input type="checkbox" {{ old('remember') ? 'checked' : '' }}> <span

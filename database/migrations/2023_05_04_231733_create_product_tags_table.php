@@ -13,8 +13,8 @@ return new class extends Migration
    */
   public function up()
   {
-    if (!Schema::hasTable('Product_tags')) {
-      Schema::create('Product_tags', function (Blueprint $table) {
+    if (!Schema::hasTable('product_tags')) {
+      Schema::create('product_tags', function (Blueprint $table) {
         $table->id();
         $table->unsignedBigInteger('product_id');
         $table->unsignedBigInteger('tag_id');

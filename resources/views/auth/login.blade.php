@@ -89,7 +89,7 @@
 
                                     <div class="form-group text-center">
                                         <a href="{{ route('auth.google') }}" class="btn btn-danger w-100">
-                                            <i class="fa fa-google"></i> Se connecter avec Google
+                                            <i class="fa fa-google"></i> Google
                                         </a>
                                     </div>
                                     <div class="form-group d-flex justify-content-between">

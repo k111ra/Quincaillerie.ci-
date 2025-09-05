@@ -24,6 +24,9 @@ use App\Http\Controllers\UserController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+// Auth Google
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\Auth\GoogleController;
 
 $controller_path = 'App\Http\Controllers';
 
@@ -39,9 +42,7 @@ Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.login');
 
-// Auth Google
-use Laravel\Socialite\Facades\Socialite;
-use App\Http\Controllers\Auth\GoogleController;
+
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

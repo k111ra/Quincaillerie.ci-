@@ -55,6 +55,50 @@
       "slug": "Blogs"
     },
     {
+      "name": "Partenaires",
+      "icon": "menu-icon tf-icons bx bxs-handshake",
+      "slug": "partners",
+      "submenu": [
+        {
+          "url": "/admin/partners",
+          "name": "Liste des Partenaires",
+          "slug": "partners-list"
+        },
+        {
+          "url": "/admin/partners/pending",
+          "name": "À Approuver",
+          "slug": "partners-pending"
+        },
+        {
+          "url": "/admin/partners/approved",
+          "name": "Approuvés",
+          "slug": "partners-approved"
+        }
+      ]
+    },
+    {
+      "name": "Offres",
+      "icon": "menu-icon tf-icons bx bx-gift",
+      "slug": "offers",
+      "submenu": [
+        {
+          "url": "/admin/offers",
+          "name": "Toutes les Offres",
+          "slug": "offers-all"
+        },
+        {
+          "url": "/admin/offers/pending",
+          "name": "À Approuver",
+          "slug": "offers-pending"
+        },
+        {
+          "url": "/admin/offers/approved",
+          "name": "Approuvées",
+          "slug": "offers-approved"
+        }
+      ]
+    },
+    {
       "name": "Services",
       "icon": "menu-icon tf-icons bx bx-buildings",
       "slug": "Produis",

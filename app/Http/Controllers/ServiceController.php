@@ -21,7 +21,7 @@ class ServiceController extends Controller
    */
   public function index()
   {
-    $services = Service::all();
+    $services = Service::where('status', 'approved')->get();
     $categories = Category::all();
     return view('services')->with([
       'services' => $services,
@@ -67,6 +67,13 @@ class ServiceController extends Controller
       $service->slug = Str::slug($request->input('title'));
       $service->categories_id = $request->input('categories_id');
       $service->user_id = Auth::user()->id; // Assurez-vous de stocker l'ID de l'utilisateur
+      if (Auth::user()->hasRole('admin')) {
+        $service->status = 'approved';
+        $service->approved_at = now();
+        $service->approved_by = Auth::id();
+      } else {
+        $service->status = 'pending_approval';
+      }
       $service->save();
 
       // Attachez les tags au service s'ils ont été fournis
@@ -101,7 +108,13 @@ class ServiceController extends Controller
    */
   public function show($slug)
   {
-    $service = Service::where('slug', $slug)->first();
+    $service = Service::where('slug', $slug)
+      ->where('status', 'approved')
+      ->first();
+
+    if (!$service) {
+      abort(404);
+    }
 
     //   if (!$service) {
     //     // Handle the case where the service with the given slug is not found, e.g., show a 404 page.

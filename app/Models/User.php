@@ -17,6 +17,9 @@ class User extends Authenticatable
     'email',
     'password',
     'tel',
+    'user_type',
+    'fournisseur_id',
+    'is_verified',
   ];
 
   protected $hidden = [
@@ -46,5 +49,17 @@ class User extends Authenticatable
   public function quotes()
   {
     return $this->hasMany(\App\Models\Quote::class);
+  }
+
+  // Relations partenaire
+  public function partner()
+  {
+    return $this->belongsTo(\App\Models\Fournisseur::class, 'fournisseur_id');
+  }
+
+  // Vérifier si l'utilisateur est partenaire
+  public function isPartner()
+  {
+    return $this->user_type === 'partner' || $this->hasRole('partner');
   }
 }

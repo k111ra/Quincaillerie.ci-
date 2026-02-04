@@ -210,4 +210,211 @@ class ProductController extends Controller
 
     return view('product', compact('product', 'categories'));
   }
+
+  /**
+   * Affiche les produits du partenaire connecté
+   */
+  public function partnerIndex()
+  {
+    $user = auth()->user();
+    $fournisseur = $user->partner;
+
+    if (!$fournisseur) {
+      return redirect()->route('partner.dashboard')->with('error', 'Profil partenaire non trouvé.');
+    }
+
+    $products = Product::where('fournisseur_id', $fournisseur->id)
+      ->orderBy('created_at', 'desc')
+      ->paginate(15);
+
+    return view('partner.products.index', compact('products'));
+  }
+
+  /**
+   * Affiche le formulaire de création de produit pour le partenaire
+   */
+  public function partnerCreate()
+  {
+    $categories = Category::all();
+    $tags = Tag::all();
+
+    return view('partner.products.create', compact('categories', 'tags'));
+  }
+
+  /**
+   * Enregistre un nouveau produit pour le partenaire
+   */
+  public function partnerStore(Request $request)
+  {
+    $user = auth()->user();
+    $fournisseur = $user->partner;
+
+    if (!$fournisseur) {
+      return redirect()->route('partner.dashboard')->with('error', 'Profil partenaire non trouvé.');
+    }
+
+    $request->validate([
+      'nom' => 'required|max:255',
+      'description' => 'required',
+      'prix' => 'required|numeric',
+      'quantite' => 'required|numeric',
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+      'categorie_id' => 'required|exists:categories,id',
+      'tags' => 'nullable|array',
+      'tags.*' => 'exists:tags,id',
+    ]);
+
+    try {
+      $product = new Product;
+      $product->nom = $request->nom;
+      $product->description = $request->description;
+      $product->prix = $request->prix;
+      $product->quantite = $request->quantite;
+      $product->categorie_id = $request->categorie_id;
+      $product->slug = Str::slug($request->nom);
+      $product->fournisseur_id = $fournisseur->id;
+
+      // Traitement des images
+      $imagePaths = [];
+      if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+          $path = $image->store('public/images/product');
+          $imagePaths[] = str_replace('public/', '', $path);
+        }
+      }
+
+      $product->images = json_encode($imagePaths);
+      $product->save();
+
+      // Ajouter les tags
+      if ($request->has('tags')) {
+        $product->tags()->attach($request->tags);
+      }
+
+      return redirect()->route('products.index')
+        ->with('success', 'Produit créé avec succès.');
+    } catch (\Exception $e) {
+      return redirect()->back()->with('error', 'Erreur lors de la création du produit : ' . $e->getMessage());
+    }
+  }
+
+  /**
+   * Affiche le formulaire d'édition de produit pour le partenaire
+   */
+  public function partnerEdit(Product $product)
+  {
+    $user = auth()->user();
+    $fournisseur = $user->partner;
+
+    // Vérifier que le produit appartient au partenaire
+    if ($product->fournisseur_id !== $fournisseur->id) {
+      return redirect()->route('products.index')->with('error', 'Accès non autorisé.');
+    }
+
+    $categories = Category::all();
+    $tags = Tag::all();
+    $productTags = $product->tags->pluck('id')->toArray();
+
+    return view('partner.products.edit', compact('product', 'categories', 'tags', 'productTags'));
+  }
+
+  /**
+   * Met à jour un produit du partenaire
+   */
+  public function partnerUpdate(Request $request, Product $product)
+  {
+    $user = auth()->user();
+    $fournisseur = $user->partner;
+
+    // Vérifier que le produit appartient au partenaire
+    if ($product->fournisseur_id !== $fournisseur->id) {
+      return redirect()->route('products.index')->with('error', 'Accès non autorisé.');
+    }
+
+    $request->validate([
+      'nom' => 'required|max:255',
+      'description' => 'required',
+      'prix' => 'required|numeric',
+      'quantite' => 'required|numeric',
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+      'categorie_id' => 'required|exists:categories,id',
+      'tags' => 'nullable|array',
+      'tags.*' => 'exists:tags,id',
+    ]);
+
+    try {
+      $product->nom = $request->nom;
+      $product->description = $request->description;
+      $product->prix = $request->prix;
+      $product->quantite = $request->quantite;
+      $product->categorie_id = $request->categorie_id;
+      $product->slug = Str::slug($request->nom);
+
+      // Traitement des images
+      if ($request->hasFile('images')) {
+        // Supprimer les anciennes images
+        if ($product->images) {
+          foreach (json_decode($product->images) as $image) {
+            Storage::delete('public/' . $image);
+          }
+        }
+
+        $imagePaths = [];
+        foreach ($request->file('images') as $image) {
+          $path = $image->store('public/images/product');
+          $imagePaths[] = str_replace('public/', '', $path);
+        }
+
+        $product->images = json_encode($imagePaths);
+      }
+
+      $product->save();
+
+      // Mettre à jour les tags
+      if ($request->has('tags')) {
+        $product->tags()->sync($request->tags);
+      } else {
+        $product->tags()->detach();
+      }
+
+      return redirect()->route('products.index')
+        ->with('success', 'Produit mis à jour avec succès.');
+    } catch (\Exception $e) {
+      return redirect()->back()->with('error', 'Erreur lors de la mise à jour : ' . $e->getMessage());
+    }
+  }
+
+  /**
+   * Supprime un produit du partenaire
+   */
+  public function partnerDestroy(Product $product)
+  {
+    $user = auth()->user();
+    $fournisseur = $user->partner;
+
+    // Vérifier que le produit appartient au partenaire
+    if ($product->fournisseur_id !== $fournisseur->id) {
+      return redirect()->route('products.index')->with('error', 'Accès non autorisé.');
+    }
+
+    try {
+      // Supprimer les images
+      if ($product->images) {
+        foreach (json_decode($product->images) as $image) {
+          Storage::delete('public/' . $image);
+        }
+      }
+
+      // Détacher les tags
+      $product->tags()->detach();
+
+      // Supprimer le produit
+      $product->delete();
+
+      return redirect()->route('products.index')
+        ->with('success', 'Produit supprimé avec succès.');
+    } catch (\Exception $e) {
+      return redirect()->back()->with('error', 'Erreur lors de la suppression : ' . $e->getMessage());
+    }
+  }
 }

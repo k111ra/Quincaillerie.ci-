@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminOfferController;
+use App\Http\Controllers\AdminPartnerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -21,6 +23,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PartnerOfferController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,13 +62,31 @@ Route::get('/shop', [IndexController::class, 'shop'])->name('shop.index');
 
 // Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout.process');
 
-
-
+// Routes partenaires (publiques - inscription)
+Route::get('/partner/register', [PartnerController::class, 'showRegisterForm'])->name('partner.register');
+Route::post('/partner/register', [PartnerController::class, 'register'])->name('partner.register.store');
 
 // Routes nécessitant une authentification
 Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+  Route::get('/partner/dashboard', [PartnerController::class, 'dashboard'])->name('partner.dashboard');
+  Route::prefix('partner')->middleware(['auth', 'role:partner'])->group(function () {
+    Route::get('/offers', [PartnerOfferController::class, 'index'])->name('partner.offers.index');
+    Route::get('/offers/create', [PartnerOfferController::class, 'create'])->name('partner.offers.create');
+    Route::post('/offers', [PartnerOfferController::class, 'store'])->name('partner.offers.store');
+    Route::get('/offers/{offer}/edit', [PartnerOfferController::class, 'edit'])->name('partner.offers.edit');
+    Route::put('/offers/{offer}', [PartnerOfferController::class, 'update'])->name('partner.offers.update');
+    Route::delete('/offers/{offer}', [PartnerOfferController::class, 'destroy'])->name('partner.offers.destroy');
+    
+    // Routes pour les produits partenaires
+    Route::get('/products', [ProductController::class, 'partnerIndex'])->name('products.index');
+    Route::get('/products/create', [ProductController::class, 'partnerCreate'])->name('products.create');
+    Route::post('/products', [ProductController::class, 'partnerStore'])->name('products.store');
+    Route::get('/products/{product}/edit', [ProductController::class, 'partnerEdit'])->name('products.edit');
+    Route::put('/products/{product}', [ProductController::class, 'partnerUpdate'])->name('products.update');
+    Route::delete('/products/{product}', [ProductController::class, 'partnerDestroy'])->name('products.destroy');
+  });
   Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
   Route::post('/checkout', [OrderController::class, 'store'])->name('checkout.store');
   Route::get('/order/{id}/devis', [OrderController::class, 'generateDevis'])->name('order.devis');
@@ -220,7 +242,31 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::put('/{carousel}', [CarouselController::class, 'update'])->name('admin.carousel.update'); // Mise à jour d'un carrousel
       Route::delete('/{carousel}', [CarouselController::class, 'destroy'])->name('admin.carousel.destroy'); // Suppression d'un carrousel
     });
+
+    // Routes pour les partenaires (Fournisseurs)
+    Route::prefix('partners')->group(function () {
+      Route::get('/', [AdminPartnerController::class, 'index'])->name('admin.partners.index'); // Liste complète
+      Route::get('/pending', [AdminPartnerController::class, 'pending'])->name('admin.partners.pending'); // À approuver
+      Route::get('/approved', [AdminPartnerController::class, 'approved'])->name('admin.partners.approved'); // Approuvés
+      Route::get('/{partner}', [AdminPartnerController::class, 'show'])->name('admin.partners.show'); // Détails
+      Route::post('/{partner}/approve', [AdminPartnerController::class, 'approve'])->name('admin.partners.approve'); // Approuver
+      Route::post('/{partner}/reject', [AdminPartnerController::class, 'reject'])->name('admin.partners.reject'); // Rejeter
+      Route::delete('/{partner}', [AdminPartnerController::class, 'destroy'])->name('admin.partners.destroy'); // Supprimer
+      Route::post('/{partner}/restore', [AdminPartnerController::class, 'restore'])->name('admin.partners.restore'); // Restaurer
+    });
+
+    // Routes pour les offres (Services partenaires)
+    Route::prefix('offers')->group(function () {
+      Route::get('/', [AdminOfferController::class, 'index'])->name('admin.offers.index');
+      Route::get('/pending', [AdminOfferController::class, 'pending'])->name('admin.offers.pending');
+      Route::get('/approved', [AdminOfferController::class, 'approved'])->name('admin.offers.approved');
+      Route::get('/{offer}', [AdminOfferController::class, 'show'])->name('admin.offers.show');
+      Route::post('/{offer}/approve', [AdminOfferController::class, 'approve'])->name('admin.offers.approve');
+      Route::post('/{offer}/reject', [AdminOfferController::class, 'reject'])->name('admin.offers.reject');
+      Route::delete('/{offer}', [AdminOfferController::class, 'destroy'])->name('admin.offers.destroy');
+    });
   });
+
 
   // ... Autres routes middleware auth
 });

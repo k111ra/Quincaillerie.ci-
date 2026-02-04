@@ -9,11 +9,29 @@ class Service extends Model
 {
   use HasFactory;
 
-  protected $fillable = ['title', 'description', 'user_id'];
+  protected $fillable = [
+    'title',
+    'description',
+    'slug',
+    'categories_id',
+    'user_id',
+    'status',
+    'approved_at',
+    'approved_by',
+  ];
+
+  protected $casts = [
+    'approved_at' => 'datetime',
+  ];
 
   public function user()
   {
     return $this->belongsTo(User::class);
+  }
+
+  public function category()
+  {
+    return $this->belongsTo(Category::class, 'categories_id');
   }
 
   public function images()

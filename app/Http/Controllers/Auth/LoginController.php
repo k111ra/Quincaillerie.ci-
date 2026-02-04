@@ -29,11 +29,17 @@ class LoginController extends Controller
     $credentials = $request->only('email', 'password');
 
     if (Auth::attempt($credentials)) {
-      if (Auth::user()->role == 'admin') {
-        return redirect()->route('admin.dashboard');
-      }
+      $user = Auth::user();
 
-      return redirect()->route('user.dashboard');
+      // Redirection basée sur le type/rôle d'utilisateur
+      if ($user->user_type === 'admin' || $user->hasRole('admin')) {
+        return redirect()->route('admin.dashboard');
+      } elseif ($user->user_type === 'partner' || $user->hasRole('partner')) {
+        return redirect()->route('partner.dashboard');
+      } else {
+        // Client par défaut
+        return redirect()->route('user.dashboard');
+      }
     }
 
     return back()->withErrors([

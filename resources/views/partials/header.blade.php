@@ -107,19 +107,28 @@
                                     <aside class="widget_account dropdown_content">
                                         <div class="widget_account_content">
                                             <ul>
-                                                @if(Auth::user()->hasRole('admin'))
-                                                    <li><i class="fa fa-cog mr-2"></i><a href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
-                                                    <li><i class="fa fa-users mr-2"></i><a href="{{ route('admin.partners.index') }}">Gérer Partenaires</a></li>
+                                                @if (Auth::user()->hasRole('admin'))
+                                                    <li><i class="fa fa-cog mr-2"></i><a
+                                                            href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
+                                                    <li><i class="fa fa-users mr-2"></i><a
+                                                            href="{{ route('admin.partners.index') }}">Gérer Partenaires</a>
+                                                    </li>
                                                     <hr style="margin: 5px 0;">
-                                                    <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('admin.dashboard') }}">Mon Compte</a></li>
+                                                    <li><i class="fa fa-sign-in mr-2"></i><a
+                                                            href="{{ route('admin.dashboard') }}">Mon Compte</a></li>
                                                 @elseif(Auth::user()->hasRole('partner'))
-                                                    <li><i class="fa fa-gift mr-2"></i><a href="{{ route('partner.dashboard') }}">Mon Dashboard</a></li>
-                                                    <li><i class="fa fa-box mr-2"></i><a href="{{ route('products.index') }}">Mes Produits</a></li>
-                                                    <li><i class="fa fa-shopping-bag mr-2"></i><a href="{{ route('partner.offers.index') }}">Mes Offres</a></li>
+                                                    <li><i class="fa fa-gift mr-2"></i><a
+                                                            href="{{ route('partner.dashboard') }}">Mon Dashboard</a></li>
+                                                    <li><i class="fa fa-box mr-2"></i><a
+                                                            href="{{ route('products.index') }}">Mes Produits</a></li>
+                                                    <li><i class="fa fa-shopping-bag mr-2"></i><a
+                                                            href="{{ route('partner.offers.index') }}">Mes Offres</a></li>
                                                     <hr style="margin: 5px 0;">
-                                                    <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('partner.dashboard') }}">Mon Compte</a></li>
+                                                    <li><i class="fa fa-sign-in mr-2"></i><a
+                                                            href="{{ route('partner.dashboard') }}">Mon Compte</a></li>
                                                 @else
-                                                    <li><i class="fa fa-sign-in mr-2"></i><a href="{{ route('user.dashboard') }}">Mon Compte</a></li>
+                                                    <li><i class="fa fa-sign-in mr-2"></i><a
+                                                            href="{{ route('user.dashboard') }}">Mon Compte</a></li>
                                                 @endif
                                                 <li>
                                                     <form action="{{ route('logout') }}" method="POST">
@@ -373,7 +382,8 @@
                                 </nav> --}}
 
                             </div><!-- site-navigation end-->
-                            <a href="{{ route('partner.register') }}" class="user_zone_block d-flex flex-row align-items-center justify-content-end ml-auto text-decoration-none">
+                            <a href="{{ route('partner.register') }}"
+                                class="user_zone_block d-flex flex-row align-items-center justify-content-end ml-auto text-decoration-none">
                                 <div class="icon"><i class="fa fa-gift"></i></div>
                                 <h6 class="text">Devenez Partenaire</h6>
                             </a>

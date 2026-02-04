@@ -87,4 +87,3 @@ class Fournisseur extends Model
     return $this->status === 'pending_approval';
   }
 }
-

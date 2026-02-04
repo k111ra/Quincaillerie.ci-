@@ -78,7 +78,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
     Route::get('/offers/{offer}/edit', [PartnerOfferController::class, 'edit'])->name('partner.offers.edit');
     Route::put('/offers/{offer}', [PartnerOfferController::class, 'update'])->name('partner.offers.update');
     Route::delete('/offers/{offer}', [PartnerOfferController::class, 'destroy'])->name('partner.offers.destroy');
-    
+
     // Routes pour les produits partenaires
     Route::get('/products', [ProductController::class, 'partnerIndex'])->name('products.index');
     Route::get('/products/create', [ProductController::class, 'partnerCreate'])->name('products.create');

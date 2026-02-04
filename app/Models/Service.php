@@ -39,9 +39,8 @@ class Service extends Model
     return $this->hasMany(Image::class);
   }
 
-public function tags()
-{
+  public function tags()
+  {
     return $this->belongsToMany(Tag::class);
-}
-
+  }
 }

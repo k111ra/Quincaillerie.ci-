@@ -2,7 +2,7 @@
 
 /**
  * SCRIPT DE TEST - MODULE PARTENAIRES MVP
- * 
+ *
  * Commandes à exécuter dans php artisan tinker
  * pour vérifier que tout est configuré correctement
  */
@@ -51,5 +51,3 @@ echo "  >>> \$user->assignRole('partner');\n\n";
 
 echo "Vérifier permissions de l'utilisateur:\n";
 echo "  >>> \$user->getPermissionNames()\n\n";
-
-?>

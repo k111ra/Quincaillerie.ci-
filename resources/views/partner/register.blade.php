@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -195,6 +196,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="partner-container">
         <div class="card">
@@ -235,7 +237,8 @@
                     @csrf
 
                     <!-- Informations personnelles -->
-                    <h5 class="mb-3" style="font-size: 16px; font-weight: 600; color: #333;">Informations personnelles</h5>
+                    <h5 class="mb-3" style="font-size: 16px; font-weight: 600; color: #333;">Informations personnelles
+                    </h5>
 
                     <div class="form-row">
                         <div class="form-group">
@@ -279,7 +282,8 @@
                     </div>
 
                     <!-- Informations entreprise -->
-                    <h5 class="mb-3 mt-4" style="font-size: 16px; font-weight: 600; color: #333;">Informations entreprise</h5>
+                    <h5 class="mb-3 mt-4" style="font-size: 16px; font-weight: 600; color: #333;">Informations
+                        entreprise</h5>
 
                     <div class="form-group form-row full">
                         <label for="company_name" class="form-label">Nom entreprise/magasin *</label>
@@ -313,9 +317,8 @@
 
                     <div class="form-group form-row full">
                         <label for="website" class="form-label">Site web</label>
-                        <input type="url" class="form-control @error('website') is-invalid @enderror"
-                            id="website" name="website" value="{{ old('website') }}"
-                            placeholder="https://example.com">
+                        <input type="url" class="form-control @error('website') is-invalid @enderror" id="website"
+                            name="website" value="{{ old('website') }}" placeholder="https://example.com">
                         @error('website')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -323,8 +326,8 @@
 
                     <div class="form-group form-row full">
                         <label for="description" class="form-label">Description activité</label>
-                        <textarea class="form-control @error('description') is-invalid @enderror"
-                            id="description" name="description" rows="3" placeholder="Décrivez votre activité et vos services...">{{ old('description') }}</textarea>
+                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                            rows="3" placeholder="Décrivez votre activité et vos services...">{{ old('description') }}</textarea>
                         @error('description')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -349,4 +352,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
+
 </html>

@@ -77,8 +77,9 @@ class PartnerController extends Controller
             return redirect()->route('index')
                 ->with('success', 'Inscription réussie! Nous examinons votre profil et vous confirmerons bientôt par email.');
         } catch (\Exception $e) {
+            \Log::error('Partner registration error: ' . $e->getMessage(), ['exception' => $e]);
             return back()->withInput()
-                ->with('error', 'Une erreur est survenue lors de l\'inscription. Veuillez réessayer.');
+                ->with('error', 'Une erreur est survenue lors de l\'inscription: ' . $e->getMessage());
         }
     }
 

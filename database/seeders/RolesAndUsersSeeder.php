@@ -19,24 +19,32 @@ class RolesAndUsersSeeder extends Seeder
     $adminRole = Role::firstOrCreate(['name' => 'admin']);
     $userRole = Role::firstOrCreate(['name' => 'user']);
 
-    // Création d'un utilisateur admin
-    $admin = User::create([
-      'name' => 'Admin User',
-      'email' => 'admin@example.com',
-      'password' => bcrypt('password123'),
-    ]);
+    // Création d'un utilisateur admin (avec vérification d'existence)
+    $admin = User::firstOrCreate(
+      ['email' => 'admin@example.com'],
+      [
+        'name' => 'Admin User',
+        'password' => bcrypt('password123'),
+      ]
+    );
 
     // Attribution du rôle admin à l'utilisateur admin
-    $admin->assignRole($adminRole);
+    if (!$admin->hasRole($adminRole)) {
+      $admin->assignRole($adminRole);
+    }
 
-    // Création d'un utilisateur simple
-    $user = User::create([
-      'name' => 'Regular User',
-      'email' => 'user@example.com',
-      'password' => bcrypt('password123'),
-    ]);
+    // Création d'un utilisateur simple (avec vérification d'existence)
+    $user = User::firstOrCreate(
+      ['email' => 'user@example.com'],
+      [
+        'name' => 'Regular User',
+        'password' => bcrypt('password123'),
+      ]
+    );
 
     // Attribution du rôle utilisateur à l'utilisateur simple
-    $user->assignRole($userRole);
+    if (!$user->hasRole($userRole)) {
+      $user->assignRole($userRole);
+    }
   }
 }

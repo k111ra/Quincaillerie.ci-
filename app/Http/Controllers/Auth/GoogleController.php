@@ -26,6 +26,8 @@ class GoogleController extends Controller
         'password' => bcrypt(uniqid()),
         // Ajoutez d'autres champs si nécessaire
       ]);
+      // Assigner le rôle 'user' par défaut aux nouveaux utilisateurs
+      $user->assignRole('user');
     }
 
     Auth::login($user);

@@ -18,6 +18,7 @@ class RolesAndUsersSeeder extends Seeder
     // Création des rôles (avec vérification d'existence)
     $adminRole = Role::firstOrCreate(['name' => 'admin']);
     $userRole = Role::firstOrCreate(['name' => 'user']);
+    $partnerRole = Role::firstOrCreate(['name' => 'partner']);
 
     // Création d'un utilisateur admin (avec vérification d'existence)
     $admin = User::firstOrCreate(

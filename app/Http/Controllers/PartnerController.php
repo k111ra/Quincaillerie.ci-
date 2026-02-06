@@ -9,6 +9,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class PartnerController extends Controller
 {
@@ -74,8 +75,11 @@ class PartnerController extends Controller
             // Lier l'utilisateur au fournisseur
             $user->update(['fournisseur_id' => $fournisseur->id]);
 
-            return redirect()->route('index')
-                ->with('success', 'Inscription réussie! Nous examinons votre profil et vous confirmerons bientôt par email.');
+            // Connecter automatiquement l'utilisateur
+            Auth::login($user);
+
+            return redirect()->route('partner.dashboard')
+                ->with('success', 'Bienvenue ! Votre compte partenaire a été créé avec succès. Nous examinons votre profil et vous confirmerons bientôt par email.');
         } catch (\Exception $e) {
             \Log::error('Partner registration error: ' . $e->getMessage(), ['exception' => $e]);
             return back()->withInput()

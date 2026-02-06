@@ -340,6 +340,9 @@
 
                                         </li>
                                         <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
+                                        <li><a href="{{ route('partner.register') }}" class="text-decoration-none">
+                                                <i class="fa fa-gift mr-2"></i>Devenez Partenaire
+                                            </a></li>
                                     </ul>
                                 </nav>
                                 {{-- <nav class="menu menu-mobile" id="menu">
@@ -382,10 +385,19 @@
                                 </nav> --}}
 
                             </div><!-- site-navigation end-->
+                            <!-- Version Desktop -->
                             <a href="{{ route('partner.register') }}"
-                                class="user_zone_block d-flex flex-row align-items-center justify-content-end ml-auto text-decoration-none">
+                                class="user_zone_block d-none d-lg-flex flex-row align-items-center justify-content-end ml-auto text-decoration-none">
                                 <div class="icon"><i class="fa fa-gift"></i></div>
                                 <h6 class="text">Devenez Partenaire</h6>
+                            </a>
+                            <!-- Version Mobile -->
+                            <a href="{{ route('partner.register') }}"
+                                class="user_zone_block d-flex d-lg-none flex-row align-items-center justify-content-end ml-auto text-decoration-none"
+                                style="font-size: 12px; padding: 8px 10px; background: #f8f9fa; border-radius: 5px;">
+                                <div class="icon" style="font-size: 14px;"><i class="fa fa-gift"></i></div>
+                                <h6 class="text" style="margin: 0; margin-left: 5px; font-size: 11px;">Devenez
+                                    Partenaire</h6>
                             </a>
                         </div>
                     </div>

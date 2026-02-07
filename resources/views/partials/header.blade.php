@@ -340,7 +340,8 @@
 
                                         </li>
                                         <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
-                                        <li><a href="{{ route('partner.register') }}" class="text-decoration-none">
+                                        <li class="d-block d-lg-none"><a href="{{ route('partner.register') }}"
+                                                class="text-decoration-none">
                                                 <i class="fa fa-gift mr-2"></i>Devenez Partenaire
                                             </a></li>
                                     </ul>

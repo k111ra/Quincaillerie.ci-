@@ -317,7 +317,7 @@
 
                     <div class="form-group form-row full">
                         <label for="website" class="form-label">Site web</label>
-                        <input type="url" class="form-control @error('website') is-invalid @enderror" id="website"
+                        <input type="text" class="form-control @error('website') is-invalid @enderror" id="website"
                             name="website" value="{{ old('website') }}" placeholder="https://example.com">
                         @error('website')
                             <div class="text-danger">{{ $message }}</div>

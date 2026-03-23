@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Auth;
 class PartnerController extends Controller
 {
   /**
+   * Affiche la page d'information pour devenir partenaire
+   */
+  public function showInfo()
+  {
+    return view('partner.info');
+  }
+
+  /**
    * Affiche le formulaire d'enregistrement partenaire
    */
   public function showRegisterForm()

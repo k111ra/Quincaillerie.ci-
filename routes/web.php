@@ -63,6 +63,7 @@ Route::get('/shop', [IndexController::class, 'shop'])->name('shop.index');
 // Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout.process');
 
 // Routes partenaires (publiques - inscription)
+Route::get('/partner/info', [PartnerController::class, 'showInfo'])->name('partner.info');
 Route::get('/partner/register', [PartnerController::class, 'showRegisterForm'])->name('partner.register');
 Route::post('/partner/register', [PartnerController::class, 'register'])->name('partner.register.store');
 

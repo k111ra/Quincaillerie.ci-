@@ -1,61 +1,107 @@
-<!DOCTYPE html>
-<html lang="fr">
+@extends('layouts.layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devenir Partenaire - Quincaillerie.ci</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+@section('title', 'Devenir Partenaire')
+
+@section('content')
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+        .partner-registration {
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
-        .partner-container {
+        .registration-container {
             width: 100%;
-            max-width: 600px;
-            padding: 20px;
+            max-width: 700px;
         }
 
-        .card {
+        .registration-card {
             border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            background: white;
         }
 
-        .card-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .registration-header {
+            background: linear-gradient(135deg, #f7a100 0%, #ff8823 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 50px 40px;
             text-align: center;
             border: none;
         }
 
-        .card-header h2 {
+        .registration-header h2 {
             margin: 0;
             font-weight: 700;
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
-        .card-header p {
+        .registration-header p {
             margin: 0;
-            font-size: 14px;
-            opacity: 0.9;
+            font-size: 16px;
+            opacity: 0.95;
         }
 
-        .card-body {
-            padding: 40px;
+        .registration-body {
+            padding: 50px 40px;
+        }
+
+        .benefits-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 35px;
+            border-left: 4px solid #f7a100;
+        }
+
+        .benefits-section h6 {
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .benefits-section ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .benefits-section li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f7a100;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
 
         .form-label {
@@ -63,65 +109,92 @@
             color: #333;
             margin-bottom: 8px;
             font-size: 14px;
+            display: block;
         }
 
         .form-control {
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 12px 15px;
+            border-radius: 10px;
+            padding: 14px 16px;
             font-size: 14px;
             transition: all 0.3s ease;
+            width: 100%;
         }
 
         .form-control:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+            border-color: #f7a100;
+            box-shadow: 0 0 0 0.2rem rgba(247, 161, 0, 0.15);
+            outline: none;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .form-control.is-invalid {
+            border-color: #dc3545;
         }
 
-        .form-row.full {
-            grid-template-columns: 1fr;
+        .info-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e7f3ff 0%, #d1e7ff 100%);
+            color: #0066cc;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .text-danger {
+            font-size: 13px;
+            margin-top: 6px;
+            color: #dc3545;
         }
 
         .btn-register {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f7a100 0%, #ff8823 100%);
             border: none;
             color: white;
-            padding: 12px;
+            padding: 16px 24px;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 12px;
             width: 100%;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 16px;
+            margin-top: 10px;
         }
 
         .btn-register:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(247, 161, 0, 0.4);
             color: white;
         }
 
-        .divider {
+        .alert {
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+        }
+
+        .alert-danger {
+            background: linear-gradient(135deg, #fee, #fdd);
+            color: #c53030;
+            border-left: 4px solid #e53e3e;
+        }
+
+        .navigation-links {
             text-align: center;
-            margin: 25px 0;
-            font-size: 14px;
-            color: #999;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
         }
 
         .login-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 15px;
         }
 
         .login-link a {
-            color: #667eea;
+            color: #f7a100;
             text-decoration: none;
             font-weight: 600;
         }
@@ -130,227 +203,210 @@
             text-decoration: underline;
         }
 
-        .alert {
-            border-radius: 8px;
-            border: none;
-            margin-bottom: 20px;
+        .divider {
+            font-size: 14px;
+            color: #999;
+            margin: 15px 0;
         }
 
-        .text-danger {
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        .header-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .header-link a {
-            display: flex;
-            align-items: center;
+        .divider a {
+            color: #f7a100;
             text-decoration: none;
-            color: #667eea;
             font-weight: 600;
         }
 
-        .header-link a img {
-            height: 50px;
-            margin-right: 10px;
+        .divider a:hover {
+            text-decoration: underline;
         }
 
-        .benefits {
-            background: #f8f9ff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 25px;
-            font-size: 13px;
-            color: #555;
-        }
+        @media (max-width: 768px) {
+            .registration-header {
+                padding: 30px 20px;
+            }
 
-        .benefits h6 {
-            margin-bottom: 10px;
-            color: #333;
-            font-weight: 600;
-        }
+            .registration-header h2 {
+                font-size: 24px;
+            }
 
-        .benefits ul {
-            margin: 0;
-            padding-left: 20px;
-        }
+            .registration-body {
+                padding: 30px 20px;
+            }
 
-        .benefits li {
-            margin-bottom: 5px;
-        }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
 
-        .info-badge {
-            display: inline-block;
-            background: #e7f3ff;
-            color: #0066cc;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-top: 5px;
+            .partner-registration {
+                padding: 20px 15px;
+            }
         }
     </style>
-</head>
 
-<body>
-    <div class="partner-container">
-        <div class="card">
-            <div class="card-header">
-                <h2>Devenir Partenaire</h2>
-                <p>Rejoignez notre réseau de fournisseurs et développez votre activité</p>
-            </div>
+    <div class="partner-registration">
+        <div class="registration-container">
+            <div class="registration-card">
+                <div class="registration-header">
+                    <h2>Devenir Partenaire</h2>
+                    <p>Rejoignez notre réseau de fournisseurs et développez votre activité</p>
+                </div>
 
-            <div class="card-body">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <strong>Erreur!</strong>
-                        <ul class="mb-0">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
+                <div class="registration-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Erreur!</strong>
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    <div class="benefits-section">
+                        <h6><i class="fas fa-star"></i> Avantages partenaires:</h6>
+                        <ul>
+                            <li>Accès à des milliers de clients actifs</li>
+                            <li>Gestion facile de vos offres et produits</li>
+                            <li>Notifications en temps réel des commandes</li>
+                            <li>Suivi des demandes et livraison simplifiée</li>
+                            <li>Support technique et formation inclus</li>
                         </ul>
                     </div>
-                @endif
 
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
+                    <form action="{{ route('partner.register.store') }}" method="POST">
+                        @csrf
 
-                <div class="benefits">
-                    <h6><i class="fas fa-star"></i> Avantages partenaires:</h6>
-                    <ul>
-                        <li>Accès à des milliers de clients</li>
-                        <li>Gestion facile de vos offres</li>
-                        <li>Notifications en temps réel</li>
-                        <li>Suivi des demandes en direct</li>
-                    </ul>
-                </div>
+                        <!-- Informations personnelles -->
+                        <div class="form-section">
+                            <h5 class="form-section-title">Informations personnelles</h5>
 
-                <form action="{{ route('partner.register.store') }}" method="POST">
-                    @csrf
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Nom complet *</label>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                        id="name" name="name" value="{{ old('name') }}" required>
+                                    @error('name')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
 
-                    <!-- Informations personnelles -->
-                    <h5 class="mb-3" style="font-size: 16px; font-weight: 600; color: #333;">Informations personnelles
-                    </h5>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                        id="email" name="email" value="{{ old('email') }}" required>
+                                    @error('email')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nom complet *</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                id="name" name="name" value="{{ old('name') }}" required>
-                            @error('name')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="password" class="form-label">Mot de passe *</label>
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                        id="password" name="password" required>
+                                    <div class="info-badge">Minimum 8 caractères</div>
+                                    @error('password')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password_confirmation" class="form-label">Confirmer mot de passe *</label>
+                                    <input type="password"
+                                        class="form-control @error('password_confirmation') is-invalid @enderror"
+                                        id="password_confirmation" name="password_confirmation" required>
+                                    @error('password_confirmation')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                id="email" name="email" value="{{ old('email') }}" required>
-                            @error('email')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                        <!-- Informations entreprise -->
+                        <div class="form-section">
+                            <h5 class="form-section-title">Informations entreprise</h5>
+
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label for="company_name" class="form-label">Nom entreprise/magasin *</label>
+                                    <input type="text" class="form-control @error('company_name') is-invalid @enderror"
+                                        id="company_name" name="company_name" value="{{ old('company_name') }}" required>
+                                    @error('company_name')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telephone" class="form-label">Téléphone *</label>
+                                    <input type="tel" class="form-control @error('telephone') is-invalid @enderror"
+                                        id="telephone" name="telephone" value="{{ old('telephone') }}" required>
+                                    @error('telephone')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="whatsapp_number" class="form-label">WhatsApp</label>
+                                    <input type="tel"
+                                        class="form-control @error('whatsapp_number') is-invalid @enderror"
+                                        id="whatsapp_number" name="whatsapp_number" value="{{ old('whatsapp_number') }}">
+                                    <div class="info-badge">Optionnel - pour les notifications</div>
+                                    @error('whatsapp_number')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label for="website" class="form-label">Site web</label>
+                                    <input type="text" class="form-control @error('website') is-invalid @enderror"
+                                        id="website" name="website" value="{{ old('website') }}"
+                                        placeholder="https://example.com">
+                                    @error('website')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label for="description" class="form-label">Description activité</label>
+                                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                                        rows="4" placeholder="Décrivez votre activité, vos produits et services...">{{ old('description') }}</textarea>
+                                    @error('description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-register">
+                            <i class="fas fa-check-circle"></i> Créer mon compte partenaire
+                        </button>
+                    </form>
+
+                    <div class="navigation-links">
+                        <div class="login-link">
+                            Vous avez déjà un compte? <a href="{{ route('login') }}">Se connecter</a>
+                        </div>
+
+                        <div class="divider">
+                            Ou <a href="{{ route('index') }}">retourner à l'accueil</a>
                         </div>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="password" class="form-label">Mot de passe *</label>
-                            <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                id="password" name="password" required>
-                            <div class="info-badge">Min. 8 caractères</div>
-                            @error('password')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password_confirmation" class="form-label">Confirmer mot de passe *</label>
-                            <input type="password" class="form-control" id="password_confirmation"
-                                name="password_confirmation" required>
-                            @error('password_confirmation')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <!-- Informations entreprise -->
-                    <h5 class="mb-3 mt-4" style="font-size: 16px; font-weight: 600; color: #333;">Informations
-                        entreprise</h5>
-
-                    <div class="form-group form-row full">
-                        <label for="company_name" class="form-label">Nom entreprise/magasin *</label>
-                        <input type="text" class="form-control @error('company_name') is-invalid @enderror"
-                            id="company_name" name="company_name" value="{{ old('company_name') }}" required>
-                        @error('company_name')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="telephone" class="form-label">Téléphone *</label>
-                            <input type="tel" class="form-control @error('telephone') is-invalid @enderror"
-                                id="telephone" name="telephone" value="{{ old('telephone') }}" required>
-                            @error('telephone')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label for="whatsapp_number" class="form-label">WhatsApp</label>
-                            <input type="tel" class="form-control @error('whatsapp_number') is-invalid @enderror"
-                                id="whatsapp_number" name="whatsapp_number" value="{{ old('whatsapp_number') }}">
-                            <div class="info-badge">Optionnel - pour les notifications</div>
-                            @error('whatsapp_number')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group form-row full">
-                        <label for="website" class="form-label">Site web</label>
-                        <input type="text" class="form-control @error('website') is-invalid @enderror" id="website"
-                            name="website" value="{{ old('website') }}" placeholder="https://example.com">
-                        @error('website')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group form-row full">
-                        <label for="description" class="form-label">Description activité</label>
-                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
-                            rows="3" placeholder="Décrivez votre activité et vos services...">{{ old('description') }}</textarea>
-                        @error('description')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <button type="submit" class="btn-register mt-3">
-                        <i class="fas fa-check-circle"></i> Créer mon compte partenaire
-                    </button>
-                </form>
-
-                <div class="login-link">
-                    Vous avez déjà un compte? <a href="{{ route('login') }}">Se connecter</a>
-                </div>
-
-                <div class="divider">
-                    Ou retournez à <a href="{{ route('index') }}" style="color: #667eea;">l'accueil</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-</body>
-
-</html>
+@endsection

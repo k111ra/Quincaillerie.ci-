@@ -340,7 +340,7 @@
 
                                         </li>
                                         <li><a href="{{ route('contact') }}">Contactez-nous</a></li>
-                                        <li class="d-block d-lg-none"><a href="{{ route('partner.register') }}"
+                                        <li class="d-block d-lg-none"><a href="{{ route('partner.info') }}"
                                                 class="text-decoration-none">
                                                 <i class="fa fa-gift mr-2"></i>Devenez Partenaire
                                             </a></li>
@@ -387,7 +387,7 @@
 
                             </div><!-- site-navigation end-->
                             <!-- Version Desktop -->
-                            <a href="{{ route('partner.register') }}"
+                            <a href="{{ route('partner.info') }}"
                                 class="user_zone_block d-none d-lg-flex flex-row align-items-center justify-content-end ml-auto text-decoration-none">
                                 <div class="icon"><i class="fa fa-gift"></i></div>
                                 <h6 class="text">Devenez Partenaire</h6>

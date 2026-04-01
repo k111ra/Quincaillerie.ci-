@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Categorie;
 use App\Models\Category;
 use App\Models\Fournisseur;
 use App\Models\Tag;
@@ -25,10 +24,48 @@ class ProductController extends Controller
       $query->where('nom', 'like', '%' . $request->input('search') . '%');
     }
 
-    // Pagination des résultats (par exemple, 10 produits par page)
-    $products = $query->orderBy('id', 'desc')->paginate(10);
+    // Filtrer par catégorie si sélectionnée
+    if ($request->has('categorie_id') && $request->input('categorie_id') != '') {
+      $query->where('categorie_id', $request->input('categorie_id'));
+    }
 
-    return view('admin.products.index', compact('products'))->with('search', $request->input('search'));
+    // Filtrer par fournisseur si sélectionné
+    if ($request->has('fournisseur_id') && $request->input('fournisseur_id') != '') {
+      $query->where('fournisseur_id', $request->input('fournisseur_id'));
+    }
+
+    // Tri des résultats
+    $sort = $request->input('sort', 'recent');
+    switch ($sort) {
+      case 'ancien':
+        $query->orderBy('id', 'asc');
+        break;
+      case 'nom_asc':
+        $query->orderBy('nom', 'asc');
+        break;
+      case 'nom_desc':
+        $query->orderBy('nom', 'desc');
+        break;
+      case 'prix_asc':
+        $query->orderBy('prix', 'asc');
+        break;
+      case 'prix_desc':
+        $query->orderBy('prix', 'desc');
+        break;
+      case 'recent':
+      default:
+        $query->orderBy('id', 'desc');
+        break;
+    }
+
+    // Récupérer les catégories et fournisseurs pour les filtres
+    $categories = Category::all();
+    $fournisseurs = Fournisseur::all();
+
+    // Pagination des résultats (par exemple, 15 produits par page)
+    $products = $query->paginate(15);
+
+    return view('admin.products.index', compact('products', 'categories', 'fournisseurs'));
   }
 
 
@@ -204,7 +241,7 @@ class ProductController extends Controller
 
   public function singleProduct($slug)
   {
-    $product = Product::where('slug', $slug)->first();
+    $product = Product::where('slug', $slug)->firstOrFail();
     $categories = Category::with('parent')->get();
     $parents = Category::pluck('name', 'id')->prepend('None', '');
 
@@ -416,5 +453,134 @@ class ProductController extends Controller
     } catch (\Exception $e) {
       return redirect()->back()->with('error', 'Erreur lors de la suppression : ' . $e->getMessage());
     }
+  }
+
+  /**
+   * Affiche le formulaire d'import des produits
+   */
+  public function showImportForm()
+  {
+    $categories = Category::all();
+    $fournisseurs = Fournisseur::all();
+    $tags = Tag::all();
+    return view('admin.products.import', compact('categories', 'fournisseurs', 'tags'));
+  }
+
+  /**
+   * Importe les produits à partir d'un fichier CSV
+   */
+  public function importProducts(Request $request)
+  {
+    $request->validate([
+      'csv_file' => 'required|file|mimes:csv,txt|max:5120',
+      'categorie_id' => 'required|exists:categories,id',
+      'fournisseur_id' => 'required|exists:fournisseurs,id',
+    ]);
+
+    try {
+      $file = $request->file('csv_file');
+      $path = $file->getRealPath();
+      $csv = array_map('str_getcsv', file($path));
+
+      // Vérifier que le CSV a un header
+      if (empty($csv)) {
+        return redirect()->back()->with('error', 'Le fichier CSV est vide.');
+      }
+
+      // Extraire le header (première ligne)
+      $header = array_shift($csv);
+
+      // Créer un mapping des colonnes
+      $headerMap = array_flip($header);
+
+      $imported = 0;
+      $errors = [];
+
+      foreach ($csv as $index => $row) {
+        try {
+          // Vérifier que la ligne n'est pas vide
+          if (empty(array_filter($row))) {
+            continue;
+          }
+
+          // Créer un tableau associatif avec le header
+          $data = array_combine($header, $row);
+
+          // Validation des données requises
+          if (!isset($data['nom']) || empty($data['nom'])) {
+            $errors[] = "Ligne " . ($index + 2) . ": Le nom du produit est requis.";
+            continue;
+          }
+
+          if (!isset($data['prix']) || empty($data['prix'])) {
+            $errors[] = "Ligne " . ($index + 2) . ": Le prix est requis.";
+            continue;
+          }
+
+          // Créer le produit
+          $product = new Product();
+          $product->nom = trim($data['nom']);
+          $product->description = isset($data['description']) ? trim($data['description']) : '';
+          $product->prix = floatval($data['prix']);
+          $product->quantite = isset($data['quantite']) ? intval($data['quantite']) : 0;
+          $product->categorie_id = $request->categorie_id;
+          $product->fournisseur_id = $request->fournisseur_id;
+          $product->slug = Str::slug($product->nom);
+          $product->images = json_encode([]);
+
+          $product->save();
+          $imported++;
+        } catch (\Exception $e) {
+          $errors[] = "Ligne " . ($index + 2) . ": " . $e->getMessage();
+        }
+      }
+
+      $message = "$imported produit(s) importé(s) avec succès.";
+      if (!empty($errors)) {
+        $message .= " " . count($errors) . " erreur(s) détectées.";
+      }
+
+      return redirect()->route('admin.products.index')
+        ->with('success', $message)
+        ->with('errors', $errors);
+    } catch (\Exception $e) {
+      return redirect()->back()->with('error', 'Erreur lors de l\'import : ' . $e->getMessage());
+    }
+  }
+
+  /**
+   * Export des produits en CSV
+   */
+  public function exportProducts()
+  {
+    $products = Product::with('category', 'fournisseur')->get();
+
+    $headers = array(
+      'Content-Type' => 'text/csv; charset=utf-8',
+      'Content-Disposition' => 'attachment; filename=produits_' . date('Y-m-d_H-i-s') . '.csv'
+    );
+
+    $callback = function () use ($products) {
+      $file = fopen('php://output', 'w');
+
+      // Header du CSV
+      fputcsv($file, ['nom', 'description', 'prix', 'quantite', 'categorie', 'fournisseur']);
+
+      // Données
+      foreach ($products as $product) {
+        fputcsv($file, [
+          $product->nom,
+          $product->description,
+          $product->prix,
+          $product->quantite,
+          $product->category ? $product->category->name : '',
+          $product->fournisseur ? $product->fournisseur->nom : ''
+        ]);
+      }
+
+      fclose($file);
+    };
+
+    return response()->stream($callback, 200, $headers);
   }
 }

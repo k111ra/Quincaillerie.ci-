@@ -190,7 +190,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
       Route::put('/{product}', [ProductController::class, 'update'])->name('admin.products.update');
       Route::delete('/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
-      
+
       // Routes pour l'import/export
       Route::get('/import/form', [ProductController::class, 'showImportForm'])->name('admin.products.import.form');
       Route::post('/import', [ProductController::class, 'importProducts'])->name('admin.products.import');

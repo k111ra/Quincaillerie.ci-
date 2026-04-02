@@ -15,7 +15,7 @@ class CarouselController extends Controller
    */
   public function index()
   {
-    $carousels = Carousel::all();
+    $carousels = Carousel::orderBy('created_at', 'desc')->paginate(10);
     return view('admin.slider.index', compact('carousels'));
   }
 
@@ -40,12 +40,15 @@ class CarouselController extends Controller
     $validated = $request->validate([
       'title' => 'required|string|max:255',
       'description' => 'nullable|string',
+      'link' => 'nullable|url|max:255',
       'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
     ]);
 
     $carousel = new Carousel();
     $carousel->title = $validated['title'];
-    $carousel->description = $validated['description'];
+    $carousel->description = $validated['description'] ?? null;
+    $carousel->link = $validated['link'] ?? null;
+
     $path = $request->file('image')->store('public/images/carousels');
     $carousel->image = str_replace('public/', '', $path);
     $carousel->save();
@@ -77,19 +80,21 @@ class CarouselController extends Controller
     $validatedData = $request->validate([
       'title' => 'required|string|max:255',
       'description' => 'nullable|string',
+      'link' => 'nullable|url|max:255',
       'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
     ]);
 
     $carousel = Carousel::findOrFail($id);
     $carousel->title = $validatedData['title'];
-    $carousel->description = $validatedData['description'];
+    $carousel->description = $validatedData['description'] ?? null;
+    $carousel->link = $validatedData['link'] ?? null;
 
     if ($request->hasFile('image')) {
       // Supprimer l'ancienne image
-      Storage::delete('public/images/' . $carousel->image);
+      Storage::delete('public/' . $carousel->image);
 
       // Sauvegarder la nouvelle image
-      $imagePath = $request->file('image')->store('public/images');
+      $imagePath = $request->file('image')->store('public/images/carousels');
       $carousel->image = str_replace('public/', '', $imagePath);
     }
 
@@ -108,7 +113,7 @@ class CarouselController extends Controller
   public function destroy($id)
   {
     $carousel = Carousel::findOrFail($id);
-    Storage::delete('public/images/' . $carousel->image);
+    Storage::delete('public/' . $carousel->image);
     $carousel->delete();
 
     return redirect()->route('admin.carousel.index')

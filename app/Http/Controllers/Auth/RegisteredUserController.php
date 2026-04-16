@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AdminNotificationMail;
 use App\Models\Category;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -10,6 +11,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Validator;
 
@@ -71,6 +74,23 @@ class RegisteredUserController extends Controller
     // Assigner le rôle 'user' (par défaut pour l'inscription standard)
     if (!$user->hasRole('user')) {
       $user->assignRole('user');
+    }
+
+    try {
+      Mail::to(config('mail.admin.address'))->send(new AdminNotificationMail(
+        'Nouvelle inscription client',
+        'Un nouveau client vient de créer un compte',
+        'Un nouvel utilisateur s\'est enregistré sur la plateforme.',
+        [
+          'Nom' => $user->name,
+          'Email' => $user->email,
+          'Téléphone' => $user->tel ?? 'Non renseigné',
+        ]
+      ));
+    } catch (\Throwable $e) {
+      Log::error('Admin customer registration notification failed: ' . $e->getMessage(), [
+        'user_id' => $user->id,
+      ]);
     }
 
     // Déclencher l'événement "Registered"

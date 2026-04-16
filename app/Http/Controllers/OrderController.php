@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AdminNotificationMail;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
@@ -10,7 +11,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 // use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 
 class OrderController extends Controller
@@ -87,6 +89,30 @@ class OrderController extends Controller
         'product_id' => $id,
         'quantity' => $details['quantity'],
         'price' => $details['price'],
+      ]);
+    }
+
+    $order->load('user');
+
+    try {
+      Mail::to(config('mail.admin.address'))->send(new AdminNotificationMail(
+        'Nouvelle commande reçue',
+        'Une nouvelle commande a été enregistrée',
+        'Un client vient de valider une nouvelle commande sur la plateforme.',
+        [
+          'Numéro de commande' => $order->order_number,
+          'Client' => $order->user->name ?? 'Client inconnu',
+          'Email' => $order->user->email ?? 'Non renseigné',
+          'Téléphone' => $order->user->tel ?? 'Non renseigné',
+          'Montant total' => number_format((float) $order->total_amount, 0, ',', ' ') . ' F CFA',
+          'Mode de livraison' => $order->shipping_method,
+          'Adresse de livraison' => $order->shipping_address,
+          'Statut' => $order->status,
+        ]
+      ));
+    } catch (\Throwable $e) {
+      Log::error('Admin order notification email failed: ' . $e->getMessage(), [
+        'order_id' => $order->id,
       ]);
     }
 

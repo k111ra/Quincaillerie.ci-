@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AdminNotificationMail;
 use App\Models\Fournisseur;
 use App\Models\User;
 use App\Models\Service;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 
 class PartnerController extends Controller
@@ -84,6 +86,28 @@ class PartnerController extends Controller
 
       // Lier l'utilisateur au fournisseur
       $user->update(['fournisseur_id' => $fournisseur->id]);
+
+      try {
+        Mail::to(config('mail.admin.address'))->send(new AdminNotificationMail(
+          'Nouvelle inscription partenaire',
+          'Un nouveau partenaire vient de s\'inscrire',
+          'Un partenaire demande une validation administrateur.',
+          [
+            'Entreprise' => $fournisseur->nom,
+            'Responsable' => $user->name,
+            'Email' => $user->email,
+            'Téléphone' => $fournisseur->phone_primary ?? $user->tel ?? 'Non renseigné',
+            'WhatsApp' => $fournisseur->whatsapp_number ?? 'Non renseigné',
+            'Site web' => $fournisseur->website ?? 'Non renseigné',
+            'Statut' => $fournisseur->status,
+          ]
+        ));
+      } catch (\Throwable $e) {
+        Log::error('Admin partner registration notification failed: ' . $e->getMessage(), [
+          'user_id' => $user->id,
+          'partner_id' => $fournisseur->id,
+        ]);
+      }
 
       // Connecter automatiquement l'utilisateur
       Auth::login($user);

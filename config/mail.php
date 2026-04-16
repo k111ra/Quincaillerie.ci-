@@ -95,6 +95,11 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'admin' => [
+        'address' => env('ADMIN_NOTIFICATION_EMAIL', 'admin@quincaillerie.ci'),
+        'name' => env('ADMIN_NOTIFICATION_NAME', 'Administrateur'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

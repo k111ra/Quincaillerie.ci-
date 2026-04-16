@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 
 class PartnerController extends Controller
 {
@@ -71,10 +73,10 @@ class PartnerController extends Controller
         'description' => $request->description,
         'website' => $request->website,
         'status' => 'pending_approval',
-        'notification_preferences' => json_encode([
+        'notification_preferences' => [
           'email' => true,
           'whatsapp' => !empty($request->whatsapp_number),
-        ]),
+        ],
       ]);
 
       // Assigner le rôle 'partner'
@@ -89,7 +91,7 @@ class PartnerController extends Controller
       return redirect()->route('partner.dashboard')
         ->with('success', 'Bienvenue ! Votre compte partenaire a été créé avec succès. Nous examinons votre profil et vous confirmerons bientôt par email.');
     } catch (\Exception $e) {
-      \Log::error('Partner registration error: ' . $e->getMessage(), ['exception' => $e]);
+      Log::error('Partner registration error: ' . $e->getMessage(), ['exception' => $e]);
       return back()->withInput()
         ->with('error', 'Une erreur est survenue lors de l\'inscription: ' . $e->getMessage());
     }
@@ -100,6 +102,7 @@ class PartnerController extends Controller
    */
   public function dashboard()
   {
+    /** @var \App\Models\User $user */
     $user = auth()->user();
 
     // Vérifier que l'utilisateur est un partenaire
@@ -134,5 +137,78 @@ class PartnerController extends Controller
     ];
 
     return view('partner.dashboard', compact('fournisseur', 'user', 'offers', 'products', 'stats'));
+  }
+
+  /**
+   * Met à jour le profil du partenaire connecté
+   */
+  public function updateProfile(Request $request)
+  {
+    /** @var \App\Models\User $user */
+    $user = auth()->user();
+
+    if ($user->user_type !== 'partner' && !$user->hasRole('partner')) {
+      return redirect()->route('index')->with('error', 'Accès non autorisé.');
+    }
+
+    $fournisseur = $user->partner;
+
+    if (!$fournisseur) {
+      return redirect()->route('index')->with('error', 'Profil partenaire non trouvé.');
+    }
+
+    $validated = $request->validate([
+      'name' => ['required', 'string', 'max:255'],
+      'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)],
+      'company_name' => ['required', 'string', 'max:255'],
+      'telephone' => ['required', 'string', 'max:20'],
+      'phone_secondary' => ['nullable', 'string', 'max:20'],
+      'adresse' => ['nullable', 'string', 'max:255'],
+      'whatsapp_number' => ['nullable', 'string', 'max:20'],
+      'website' => ['nullable', 'string', 'max:255'],
+      'description' => ['nullable', 'string', 'max:1000'],
+    ]);
+
+    $user->update([
+      'name' => $validated['name'],
+      'email' => $validated['email'],
+      'tel' => $validated['telephone'],
+    ]);
+
+    $preferences = $fournisseur->notification_preferences ?? [];
+    if (is_string($preferences)) {
+      $decodedPreferences = json_decode($preferences, true);
+      $preferences = is_array($decodedPreferences) ? $decodedPreferences : [];
+    }
+    if (!is_array($preferences)) {
+      $preferences = [];
+    }
+    $preferences['email'] = true;
+    $preferences['whatsapp'] = !empty($validated['whatsapp_number']);
+
+    $requiresReview = in_array($fournisseur->status, ['approved', 'active', 'rejected'], true);
+
+    $fournisseur->update([
+      'nom' => $validated['company_name'],
+      'adresse' => $validated['adresse'] ?? null,
+      'telephone' => $validated['telephone'],
+      'phone_primary' => $validated['telephone'],
+      'phone_secondary' => $validated['phone_secondary'] ?? null,
+      'email' => $validated['email'],
+      'email_primary' => $validated['email'],
+      'whatsapp_number' => $validated['whatsapp_number'] ?? null,
+      'website' => $validated['website'] ?? null,
+      'description' => $validated['description'] ?? null,
+      'status' => $requiresReview ? 'pending_approval' : $fournisseur->status,
+      'approved_at' => $requiresReview ? null : $fournisseur->approved_at,
+      'approved_by' => $requiresReview ? null : $fournisseur->approved_by,
+      'notification_preferences' => $preferences,
+    ]);
+
+    $message = $requiresReview
+      ? 'Vos informations ont été mises à jour. Votre profil est maintenant en attente de validation par un administrateur.'
+      : 'Vos informations ont été mises à jour avec succès.';
+
+    return redirect()->route('partner.dashboard')->with('success', $message);
   }
 }

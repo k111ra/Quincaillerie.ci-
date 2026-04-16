@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fournisseur;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class AdminPartnerController extends Controller
 {
@@ -53,6 +53,91 @@ class AdminPartnerController extends Controller
     {
         $partner->load('user');
         return view('admin.partners.show', compact('partner'));
+    }
+
+    /**
+     * Affiche le formulaire d'édition d'un partenaire
+     */
+    public function edit(Fournisseur $partner)
+    {
+        $partner->load('user');
+
+        return view('admin.partners.edit', compact('partner'));
+    }
+
+    /**
+     * Met à jour les informations d'un partenaire
+     */
+    public function update(Fournisseur $partner, Request $request)
+    {
+        $partner->load('user');
+
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($partner->user?->id)],
+            'tel' => ['nullable', 'string', 'max:20'],
+            'company_name' => ['required', 'string', 'max:255'],
+            'adresse' => ['nullable', 'string', 'max:255'],
+            'phone_primary' => ['required', 'string', 'max:20'],
+            'phone_secondary' => ['nullable', 'string', 'max:20'],
+            'email_secondary' => ['nullable', 'email', 'max:255'],
+            'whatsapp_number' => ['nullable', 'string', 'max:20'],
+            'website' => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string', 'max:1000'],
+            'status' => ['required', Rule::in(['pending_approval', 'approved', 'rejected', 'active'])],
+        ]);
+
+        if ($partner->user) {
+            $partner->user->update([
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'tel' => $validated['tel'] ?? $validated['phone_primary'],
+            ]);
+        }
+
+        $approvedAt = $partner->approved_at;
+        $approvedBy = $partner->approved_by;
+
+        if ($validated['status'] === 'approved' && !$partner->approved_at) {
+            $approvedAt = now();
+            $approvedBy = auth()->id();
+        } elseif ($validated['status'] !== 'approved') {
+            $approvedAt = null;
+            $approvedBy = null;
+        }
+
+        $preferences = $partner->notification_preferences ?? [];
+        if (is_string($preferences)) {
+            $decodedPreferences = json_decode($preferences, true);
+            $preferences = is_array($decodedPreferences) ? $decodedPreferences : [];
+        }
+        if (!is_array($preferences)) {
+            $preferences = [];
+        }
+        $preferences['email'] = true;
+        $preferences['whatsapp'] = !empty($validated['whatsapp_number']);
+
+        $partner->update([
+            'nom' => $validated['company_name'],
+            'adresse' => $validated['adresse'] ?? null,
+            'telephone' => $validated['phone_primary'],
+            'phone_primary' => $validated['phone_primary'],
+            'phone_secondary' => $validated['phone_secondary'] ?? null,
+            'email' => $validated['email'],
+            'email_primary' => $validated['email'],
+            'email_secondary' => $validated['email_secondary'] ?? null,
+            'whatsapp_number' => $validated['whatsapp_number'] ?? null,
+            'website' => $validated['website'] ?? null,
+            'description' => $validated['description'] ?? null,
+            'status' => $validated['status'],
+            'approved_at' => $approvedAt,
+            'approved_by' => $approvedBy,
+            'notification_preferences' => $preferences,
+        ]);
+
+        return redirect()
+            ->route('admin.partners.show', $partner)
+            ->with('success', 'Les informations du partenaire ont été mises à jour avec succès.');
     }
 
     /**

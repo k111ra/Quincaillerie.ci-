@@ -71,8 +71,10 @@ Route::post('/partner/register', [PartnerController::class, 'register'])->name('
 Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+  Route::put('/user/profile', [UserController::class, 'updateProfile'])->name('user.profile.update');
   Route::get('/partner/dashboard', [PartnerController::class, 'dashboard'])->name('partner.dashboard');
   Route::prefix('partner')->middleware(['auth', 'role:partner'])->group(function () {
+    Route::put('/profile', [PartnerController::class, 'updateProfile'])->name('partner.profile.update');
     Route::get('/offers', [PartnerOfferController::class, 'index'])->name('partner.offers.index');
     Route::get('/offers/create', [PartnerOfferController::class, 'create'])->name('partner.offers.create');
     Route::post('/offers', [PartnerOfferController::class, 'store'])->name('partner.offers.store');
@@ -254,6 +256,8 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::get('/', [AdminPartnerController::class, 'index'])->name('admin.partners.index'); // Liste complète
       Route::get('/pending', [AdminPartnerController::class, 'pending'])->name('admin.partners.pending'); // À approuver
       Route::get('/approved', [AdminPartnerController::class, 'approved'])->name('admin.partners.approved'); // Approuvés
+      Route::get('/{partner}/edit', [AdminPartnerController::class, 'edit'])->name('admin.partners.edit'); // Édition
+      Route::put('/{partner}', [AdminPartnerController::class, 'update'])->name('admin.partners.update'); // Mise à jour
       Route::get('/{partner}', [AdminPartnerController::class, 'show'])->name('admin.partners.show'); // Détails
       Route::post('/{partner}/approve', [AdminPartnerController::class, 'approve'])->name('admin.partners.approve'); // Approuver
       Route::post('/{partner}/reject', [AdminPartnerController::class, 'reject'])->name('admin.partners.reject'); // Rejeter

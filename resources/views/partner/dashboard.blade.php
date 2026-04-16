@@ -32,6 +32,18 @@
 
             <!-- Main Content -->
             <div class="col-md-9">
+                @if (session('success'))
+                    <div class="alert alert-success mb-3">
+                        <i class="fa fa-check-circle"></i> {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger mb-3">
+                        <i class="fa fa-times-circle"></i> {{ session('error') }}
+                    </div>
+                @endif
+
                 <!-- Status Alert -->
                 <div class="alert alert-info mb-3">
                     <strong>Status Partenaire:</strong>
@@ -118,6 +130,120 @@
                                 <p>{{ $fournisseur->approved_at->format('d/m/Y à H:i') }}</p>
                             </div>
                         @endif
+
+                        <hr>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="mb-3"><i class="fa fa-edit"></i> Modifier mes informations</h5>
+                                <p class="text-muted small">
+                                    Toute modification de votre profil partenaire sera transmise à l'administrateur pour
+                                    validation.
+                                </p>
+
+                                <form action="{{ route('partner.profile.update') }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label"><strong>Votre nom</strong></label>
+                                            <input type="text" name="name"
+                                                class="form-control @error('name') is-invalid @enderror"
+                                                value="{{ old('name', $user->name) }}" required>
+                                            @error('name')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label"><strong>Nom de l'entreprise</strong></label>
+                                            <input type="text" name="company_name"
+                                                class="form-control @error('company_name') is-invalid @enderror"
+                                                value="{{ old('company_name', $fournisseur->nom) }}" required>
+                                            @error('company_name')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label"><strong>Email</strong></label>
+                                            <input type="email" name="email"
+                                                class="form-control @error('email') is-invalid @enderror"
+                                                value="{{ old('email', $fournisseur->email_primary ?? $user->email) }}"
+                                                required>
+                                            @error('email')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label"><strong>Téléphone principal</strong></label>
+                                            <input type="text" name="telephone"
+                                                class="form-control @error('telephone') is-invalid @enderror"
+                                                value="{{ old('telephone', $fournisseur->phone_primary ?? $user->tel) }}"
+                                                required>
+                                            @error('telephone')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label"><strong>Téléphone secondaire</strong></label>
+                                            <input type="text" name="phone_secondary"
+                                                class="form-control @error('phone_secondary') is-invalid @enderror"
+                                                value="{{ old('phone_secondary', $fournisseur->phone_secondary) }}">
+                                            @error('phone_secondary')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label"><strong>WhatsApp</strong></label>
+                                            <input type="text" name="whatsapp_number"
+                                                class="form-control @error('whatsapp_number') is-invalid @enderror"
+                                                value="{{ old('whatsapp_number', $fournisseur->whatsapp_number) }}">
+                                            @error('whatsapp_number')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Adresse</strong></label>
+                                        <input type="text" name="adresse"
+                                            class="form-control @error('adresse') is-invalid @enderror"
+                                            value="{{ old('adresse', $fournisseur->adresse) }}">
+                                        @error('adresse')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Site web</strong></label>
+                                        <input type="text" name="website"
+                                            class="form-control @error('website') is-invalid @enderror"
+                                            value="{{ old('website', $fournisseur->website) }}">
+                                        @error('website')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Description</strong></label>
+                                        <textarea name="description" rows="4" class="form-control @error('description') is-invalid @enderror">{{ old('description', $fournisseur->description) }}</textarea>
+                                        @error('description')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-save"></i> Enregistrer mes modifications
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Tab 2: Mes Offres -->

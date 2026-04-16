@@ -3,9 +3,22 @@
 
 
     <div class="container mt-4">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
+                    <a href="#profil" class="list-group-item list-group-item-action active" data-toggle="tab">Mon profil</a>
                     <a href="#panier" class="list-group-item list-group-item-action" data-toggle="tab">Mon panier</a>
                     <a href="#favoris" class="list-group-item list-group-item-action" data-toggle="tab">Mes favoris</a>
                     <a href="#commandes" class="list-group-item list-group-item-action" data-toggle="tab">Mes commandes</a>
@@ -14,7 +27,46 @@
             </div>
             <div class="col-md-9">
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="panier">
+                    <div class="tab-pane fade show active" id="profil">
+                        <h4>Mes informations personnelles</h4>
+                        <form action="{{ route('user.profile.update') }}" method="POST" class="mt-3">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="mb-3">
+                                <label class="form-label">Nom complet</label>
+                                <input type="text" name="name"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    value="{{ old('name', $user->name ?? auth()->user()->name) }}" required>
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Adresse email</label>
+                                <input type="email" name="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email', $user->email ?? auth()->user()->email) }}" required>
+                                @error('email')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Téléphone</label>
+                                <input type="text" name="tel" class="form-control @error('tel') is-invalid @enderror"
+                                    value="{{ old('tel', $user->tel ?? auth()->user()->tel) }}">
+                                @error('tel')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enregistrer mes modifications</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="panier">
                         <h4>Mon panier</h4>
                         {{-- Affichage des produits du panier --}}
                         @if (session('cart'))

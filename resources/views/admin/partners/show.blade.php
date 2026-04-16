@@ -122,6 +122,10 @@
                         <h5 class="mb-0">Actions</h5>
                     </div>
                     <div class="card-body">
+                        <a href="{{ route('admin.partners.edit', $partner) }}" class="btn btn-primary w-100 mb-3">
+                            <i class="bx bx-edit"></i> Modifier les informations
+                        </a>
+
                         @if ($partner->status === 'pending_approval')
                             <!-- Approve Button -->
                             <form action="{{ route('admin.partners.approve', $partner) }}" method="POST" class="mb-3">

@@ -1,5 +1,17 @@
 <?php
 
+$sanitizeMailAddress = static function ($value, $default = null) {
+    $address = trim((string) ($value ?: $default ?: ''));
+
+    if (preg_match('/^\[.*?\]\(mailto:(.*?)\)$/i', $address, $matches)) {
+        $address = $matches[1];
+    }
+
+    $address = preg_replace('/^mailto:/i', '', $address);
+
+    return trim($address, " \t\n\r\0\x0B<>");
+};
+
 return [
 
     /*
@@ -91,12 +103,12 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => $sanitizeMailAddress(env('MAIL_FROM_ADDRESS'), 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
     'admin' => [
-        'address' => env('ADMIN_NOTIFICATION_EMAIL', 'admin@quincaillerie.ci'),
+        'address' => $sanitizeMailAddress(env('ADMIN_NOTIFICATION_EMAIL'), 'admin@quincaillerie.ci'),
         'name' => env('ADMIN_NOTIFICATION_NAME', 'Administrateur'),
     ],
 

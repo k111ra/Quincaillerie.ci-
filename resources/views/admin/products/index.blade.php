@@ -165,7 +165,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <span class="badge bg-label-success">{{ number_format($product->prix, 2) }} €</span>
+                                    <span class="badge bg-label-success">{{ number_format($product->prix, 0, ',', ' ') }} F CFA</span>
                                 </td>
                                 <td>
                                     <span

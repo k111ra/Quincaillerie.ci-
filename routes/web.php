@@ -39,8 +39,8 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/services', [ServiceController::class, 'index'])->name('services');
-Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/offres', [ServiceController::class, 'index'])->name('offers');
+Route::get('/offres/{slug}', [ServiceController::class, 'show'])->name('offers.show');
 Route::get('/shop/{slug}', [ShopController::class, 'shop'])->name('shop');
 Route::get('/product/{slug}', [ProductController::class, 'singleProduct'])->name('product');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
@@ -230,17 +230,6 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::delete('/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
       Route::get('/{post}', [PostController::class, 'show'])->name('admin.posts.show');
     });
-
-    // Routes pour les services
-    // Route::prefix('services')->group(function () use ($controller_path) {
-    Route::get('/services', [ServiceController::class, 'create'])->name('admin.services.create');
-    Route::post('/store', [ServiceController::class, 'store'])->name('admin.services.store');
-    Route::get('/{service}/edit', [ServiceController::class, 'edit'])->name('admin.services.edit');
-    Route::delete('/{service}', [ServiceController::class, 'destroy'])->name('admin.services.destroy');
-    Route::put('/services/{id}', [ServiceController::class, 'update'])->name('admin.services.update');
-
-
-    // });
 
     Route::prefix('carousel')->group(function () {
       Route::post('/', [CarouselController::class, 'store'])->name('admin.carousel.store'); // Pour créer un carrousel

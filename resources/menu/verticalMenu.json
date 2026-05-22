@@ -99,28 +99,6 @@
       ]
     },
     {
-      "name": "Services",
-      "icon": "menu-icon tf-icons bx bx-buildings",
-      "slug": "Produis",
-      "submenu": [
-        {
-          "url": "/admin/services",
-          "name": "Services",
-          "slug": "Services"
-        },
-        {
-          "url": "/admin/tags",
-          "name": "tags",
-          "slug": "tags"
-        },
-        {
-          "url": "/admin/products",
-          "name": "products",
-          "slug": "products"
-        }
-      ]
-    },
-    {
       "name": "Layouts",
       "icon": "menu-icon tf-icons bx bx-layout",
       "slug": "layouts",

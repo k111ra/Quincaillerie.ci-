@@ -1,6 +1,13 @@
 @extends('layouts.layout')
 @section('title', $service->title)
 @section('content')
+    @php
+        $rawWhatsapp = optional($service->user->partner)->whatsapp_number ?: optional($service->user)->tel;
+        $whatsappNumber = $rawWhatsapp ? preg_replace('/\D+/', '', $rawWhatsapp) : null;
+        $offerUrl = route('offers.show', $service->slug);
+        $whatsappMessage = "J'ai vu votre offre sur le site quincaillerie.ci ({$offerUrl}), je veux plus de details";
+        $whatsappLink = $whatsappNumber ? 'https://wa.me/' . $whatsappNumber . '?text=' . urlencode($whatsappMessage) : null;
+    @endphp
 
     <!-- page-title -->
     <div class="ttm-page-title-row">
@@ -87,8 +94,13 @@
                                     <div class="ttm-blogbox-desc-footer">
                                         <div class="ttm-blogbox-footer-readmore">
                                             <div class="ttm-blogbox-footer-left">
-                                                <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                    href="https://wa.me/message/7Y7IEJZGVG7NA1">DEVIS</a>
+                                                @if ($whatsappLink)
+                                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                        href="{{ $whatsappLink }}" target="_blank" rel="noopener noreferrer">DEVIS</a>
+                                                @else
+                                                    <span
+                                                        class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-grey disabled">DEVIS indisponible</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="ttm-social-share-wrapper">

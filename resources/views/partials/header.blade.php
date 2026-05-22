@@ -297,7 +297,7 @@
                                     <ul class="nav" data-in="fadeInDown" data-out="fadeOutUp">
                                         <li><a href="{{ url('/') }}">Accueil</a></li>
 
-                                        <li><a href="{{ url('/services') }}">Services</a></li>
+                                        <li><a href="{{ route('offers') }}">Offres partenaires</a></li>
 
                                         <li class="mega-menu-item megamenu-fw">
                                             <a href="/shop" class="">Boutiques</a>
@@ -349,7 +349,7 @@
                                 {{-- <nav class="menu menu-mobile" id="menu">
                                     <ul class="nav" data-in="fadeInDown" data-out="fadeOutUp">
                                         <li><a href="{{ url('/') }}">Accueil</a></li>
-                                        <li><a href="{{ url('/services') }}">Services</a></li>
+                                        <li><a href="{{ route('offers') }}">Offres partenaires</a></li>
                                         <li class="mega-menu-item megamenu-fw">
                                             <a href="#" class="mega-menu-link">Boutiques</a>
                                             <ul class="mega-submenu megamenu-content" role="menu">

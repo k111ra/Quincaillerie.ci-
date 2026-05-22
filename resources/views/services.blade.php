@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Services')
+@section('title', 'Offres partenaires')
 @section('content')
     <!-- page-title -->
     <div class="ttm-page-title-row">
@@ -8,13 +8,13 @@
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="page-title-heading">
-                            <h1 class="title">Services</h1>
+                            <h1 class="title">Offres partenaires</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span class="mr-1"><i class="ti ti-home"></i></span>
                             <a title="Homepage" href="/">Accueil</a>
                             <span class="ttm-bread-sep">&nbsp;/&nbsp;</span>
-                            <span class="ttm-textcolor-skincolor">Service</span>
+                            <span class="ttm-textcolor-skincolor">Offres partenaires</span>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                         <div class="ttm-blogbox-desc-footer">
                                             <div class="ttm-blogbox-footer-readmore">
                                                 <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-black"
-                                                    href="{{ route('services.show', $service->slug) }}" title="">Voir
+                                                    href="{{ route('offers.show', $service->slug) }}" title="">Voir
                                                     Plus <i class="ti ti-angle-double-right"></i></a>
                                             </div>
                                         </div>

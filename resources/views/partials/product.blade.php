@@ -11,14 +11,14 @@
 
                     @if (!empty($images) && count($images) > 0)
                         <img class="img-fluid pro-image-front" src="{{ asset('storage/' . $images[0]) }}"
-                            alt="Image Front">
+                            alt="Image Front" style="width: 100%; height: 250px; object-fit: cover;">
                         @if (isset($images[1]))
                             <img class="img-fluid pro-image-back" src="{{ asset('storage/' . $images[1]) }}"
-                                alt="Image Back">
+                                alt="Image Back" style="width: 100%; height: 250px; object-fit: cover;">
                         @endif
                     @else
                         <img class="img-fluid pro-image-front"
-                            src="{{ asset('front/assets/images/default-image.png') }}" alt="Default Image">
+                            src="{{ asset('front/assets/images/default-image.png') }}" alt="Default Image" style="width: 100%; height: 250px; object-fit: cover;">
                     @endif
                 </div>
             </a>

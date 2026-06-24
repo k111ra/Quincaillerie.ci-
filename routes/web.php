@@ -35,6 +35,7 @@ use App\Http\Controllers\Auth\GoogleController;
 $controller_path = 'App\Http\Controllers';
 
 // Routes publiques
+Route::get('/sitemap.xml', [\App\Http\Controllers\SEOController::class, 'sitemap'])->name('sitemap');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

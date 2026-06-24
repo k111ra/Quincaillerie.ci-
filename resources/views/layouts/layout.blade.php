@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="❴❴ session()->get('locale') ?? app()->getLocale() ❵❵">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
-    {{-- <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}"> --}}
-    <meta name="keywords" content="{{ \App\Http\Controllers\SEOController::generateKeywords() }}">
     <meta name="author" content="Sidik Slims" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
     <meta name="google-adsense-account" content="ca-pub-4238780729755314">
-    <title>Quincaillerie - @yield('title')</title>
+
+    {{-- Balises SEO (titre, description, canonical, Open Graph, Twitter, JSON-LD) --}}
+    @include('partials.seo')
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -20,7 +19,7 @@
         crossorigin="anonymous"></script>
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('front/assets/images/favicon.ico') }}" />
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

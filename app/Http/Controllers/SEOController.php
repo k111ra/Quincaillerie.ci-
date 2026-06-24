@@ -2,126 +2,85 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Post;
 
 class SEOController extends Controller
 {
-  public static function generateKeywords()
+  /**
+   * Génère dynamiquement le sitemap.xml du site.
+   * Inclut les pages statiques, produits, catégories et articles.
+   */
+  public function sitemap()
   {
-    // Liste des mots-clés
-    $keywords = [
-      'Les meilleures quincailleries d\'Abidjan et de Côte d\'Ivoire',
-      'meuble etagere salle de bain',
-      'meuble salle de bain original',
-      'quincaillerie de salle de bain',
-      'meuble salle de bain etagere',
-      'etagere rangement salle de bain',
-      'meuble salle',
-      'dimension meuble salle de bain',
-      'jet de douche',
-      'dans salle de bain magasin de bricolage',
-      'mr bricolage catalogue en ligne',
-      'bricolage magasin',
-      'site bricolage',
-      'site de bricolage',
-      'catalogue brico dépôt',
-      'bricolage maison',
-      'quincaillerie near me',
-      'brico dépôt catalogue',
-      'bricoleur à domicile',
-      'bricolage en ligne',
-      'catalogue bricorama',
-      'trouver un bricoleur',
-      'brouette de jardin',
-      'bricolage à domicile',
-      'dressing mr bricolage',
-      'cuisine mr bricolage',
-      'materiel bricolage',
-      'bricoleur du dimanche',
-      'bricolage pas cher',
-      'service bricolage',
-      'magasin outillage',
-      'bricolage france',
-      'promo bricolage',
-      'bricolage maroc',
-      'recherche bricoleur',
-      'catalogue mr bricolage',
-      'vente bricolage',
-      'bricoma maroc',
-      'petit bricolage',
-      'service bricolage à domicile',
-      'brico jardin',
-      'outils bricolage',
-      'trouver un bricoleur à domicile',
-      'catalogue bricolage en ligne',
-      'site bricolage en ligne',
-      'mr bricolage catalogue jardin',
-      'application bricolage',
-      'magasin bricolage en ligne',
-      'black friday outillage',
-      'etagere bricolage',
-      'catalogue brico depot',
-      'trouver bricoleur',
-      'cuisine monsieur bricolage',
-      'matériel de bricolage',
-      'site bricolage pas cher',
-      'cours de bricolage',
-      'outils pas cher',
-      'soldes bricolage',
-      'papier peint mr bricolage',
-      'devis brico depot',
-      'bricolage service',
-      'mr bricolage cuisine',
-      'rangement bricolage',
-      'magasin de bricolage le plus proche',
-      'parasol mr bricolage',
-      'site de bricolage pas cher',
-      'bricoleur a domicile',
-      'brico promo',
-      'promo brico depot',
-      'black friday bricolage',
-      'outillage black friday',
-      'meuble salle de bain mr bricolage',
-      'brouette jardin',
-      'castorama jardin',
-      'recherche bricoleur a domicile',
-      'bricolage domicile',
-      'tonnelle mr bricolage',
-      'bricozor magasin',
-      'brico online shop',
-      'catalogue monsieur bricolage',
-      'portail mr bricolage',
-      'soldes outillage',
-      'store brico',
-      'tout pour la maison',
-      'trouver bricoleur a domicile',
-      'mister materiaux',
-      'piscine mr bricolage',
-      'site de bricolage en ligne',
-      'bricoleur professionnel',
-      'outil de bricolage',
-      'serre de jardin mr bricolage',
-      'formation bricolage',
-      'deco depot',
-      'salle de bain mr bricolage catalogue',
-      'catalogue brico dépôt 2023',
-      'magasin de bricolage en ligne',
-      'entreprise bricolage',
-      'mr bricolage abidjan',
-      'monsieur bricolage abidjan',
-      'plan de travail mr bricolage',
-      'magasins bricolage',
-      'brico catalogue',
-      'bricolage abidjan',
-      'brico en ligne',
-      'mr bricolage abidjan catalogue en ligne',
-      'mr bricolage ci',
-      'service de bricolage',
-      'papier peint brico',
-      'climatiseur mr bricolage',
-    ];
+    $urls = [];
 
-    // Convertir le tableau de mots-clés en une chaîne séparée par des virgules
-    return implode(', ', $keywords);
+    // Pages statiques principales
+    $urls[] = ['loc' => url('/'),         'priority' => '1.0', 'freq' => 'daily'];
+    $urls[] = ['loc' => route('shop.index'), 'priority' => '0.9', 'freq' => 'daily'];
+    $urls[] = ['loc' => route('offers'),  'priority' => '0.7', 'freq' => 'weekly'];
+    $urls[] = ['loc' => route('posts'),   'priority' => '0.6', 'freq' => 'weekly'];
+    $urls[] = ['loc' => route('contact'), 'priority' => '0.4', 'freq' => 'monthly'];
+
+    // Produits
+    Product::select('slug', 'updated_at')->whereNotNull('slug')->chunk(500, function ($products) use (&$urls) {
+      foreach ($products as $p) {
+        $urls[] = [
+          'loc' => route('product', $p->slug),
+          'lastmod' => optional($p->updated_at)->toAtomString(),
+          'priority' => '0.8',
+          'freq' => 'weekly',
+        ];
+      }
+    });
+
+    // Catégories
+    Category::select('slug', 'updated_at')->whereNotNull('slug')->get()->each(function ($c) use (&$urls) {
+      $urls[] = [
+        'loc' => route('shop', $c->slug),
+        'lastmod' => optional($c->updated_at)->toAtomString(),
+        'priority' => '0.7',
+        'freq' => 'weekly',
+      ];
+    });
+
+    // Articles de blog
+    Post::select('slug', 'updated_at')->whereNotNull('slug')->get()->each(function ($post) use (&$urls) {
+      $urls[] = [
+        'loc' => route('posts.show', $post->slug),
+        'lastmod' => optional($post->updated_at)->toAtomString(),
+        'priority' => '0.6',
+        'freq' => 'monthly',
+      ];
+    });
+
+    $content = $this->buildXml($urls);
+
+    return response($content, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+  }
+
+  /**
+   * Construit le XML du sitemap à partir d'un tableau d'URLs.
+   */
+  private function buildXml(array $urls): string
+  {
+    $xml  = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+    foreach ($urls as $u) {
+      $xml .= "  <url>\n";
+      $xml .= "    <loc>" . htmlspecialchars($u['loc'], ENT_XML1) . "</loc>\n";
+      if (!empty($u['lastmod'])) {
+        $xml .= "    <lastmod>" . $u['lastmod'] . "</lastmod>\n";
+      }
+      $xml .= "    <changefreq>" . ($u['freq'] ?? 'weekly') . "</changefreq>\n";
+      $xml .= "    <priority>" . ($u['priority'] ?? '0.5') . "</priority>\n";
+      $xml .= "  </url>\n";
+    }
+
+    $xml .= '</urlset>';
+
+    return $xml;
   }
 }

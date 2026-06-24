@@ -1,5 +1,37 @@
 @extends('layouts.layout')
 @section('title', $product->nom)
+@section('meta_description', \Illuminate\Support\Str::limit(strip_tags($product->description), 160))
+@section('canonical', route('product', $product->slug))
+@section('og_type', 'product')
+
+@php
+  $seoImages = json_decode($product->images, true) ?: [];
+  $seoImageUrl = !empty($seoImages) ? asset('storage/' . $seoImages[0]) : asset('front/assets/images/logo.png');
+@endphp
+@section('og_image', $seoImageUrl)
+
+@section('structured_data')
+<script type="application/ld+json">
+{!! json_encode([
+  '@context' => 'https://schema.org',
+  '@type' => 'Product',
+  'name' => $product->nom,
+  'description' => \Illuminate\Support\Str::limit(strip_tags($product->description), 300, ''),
+  'image' => $seoImageUrl,
+  'sku' => (string) $product->id,
+  'category' => optional($product->category)->name,
+  'offers' => [
+    '@type' => 'Offer',
+    'price' => number_format((float) $product->prix, 0, '.', ''),
+    'priceCurrency' => 'XOF',
+    'availability' => ($product->quantite ?? 1) > 0
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+    'url' => route('product', $product->slug),
+  ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endsection
 
 @section('content')
 

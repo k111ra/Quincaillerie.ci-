@@ -231,9 +231,7 @@
                     <div class="col-lg-9 content-area">
                         <div class="products products-fitter">
 
-                            {{-- Sections dynamiques configurées depuis le back-office
-                                 (Admin > Sections d'accueil). Chaque section affiche une
-                                 catégorie ou un tag, dans l'ordre et le style choisis. --}}
+                            
                             @foreach ($homeSections as $homeSection)
                                 <div class="mb-4">
                                     @include('partials.home_section', ['section' => $homeSection])

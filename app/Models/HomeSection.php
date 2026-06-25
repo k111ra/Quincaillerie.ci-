@@ -59,6 +59,19 @@ class HomeSection extends Model
     }
 
     /**
+     * Récupère les produits d'une catégorie précise, dans la limite de la section.
+     * Utilisé par l'affichage en onglets pour que chaque sous-catégorie ait
+     * sa propre liste (et non une part d'une limite globale).
+     */
+    public function productsForCategory($categoryId)
+    {
+        $limit = $this->limit > 0 ? $this->limit : 8;
+
+        return Product::where('categorie_id', $categoryId)
+            ->latest()->limit($limit)->get();
+    }
+
+    /**
      * La catégorie source (null si la section est basée sur un tag).
      */
     public function category(): ?Category

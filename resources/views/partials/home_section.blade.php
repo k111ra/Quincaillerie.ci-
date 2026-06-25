@@ -4,31 +4,39 @@
 @endphp
 
 @if ($products->isNotEmpty())
-    @if ($section->display === 'tabs' && $section->type === 'category' && optional($section->category())->children->isNotEmpty())
+    @php
+        // Pour les onglets : on regroupe par sous-catégorie, chacune avec sa
+        // propre liste (jusqu'à la limite), et on ignore les sous-catégories vides.
+        $tabGroups = collect();
+        if ($section->display === 'tabs' && $section->type === 'category' && $section->category()) {
+            $tabGroups = $section->category()->children
+                ->map(function ($child) use ($section) {
+                    return ['category' => $child, 'products' => $section->productsForCategory($child->id)];
+                })
+                ->filter(fn ($group) => $group['products']->isNotEmpty())
+                ->values();
+        }
+    @endphp
+
+    @if ($tabGroups->isNotEmpty())
         {{-- Affichage en onglets par sous-catégorie --}}
-        @php
-            $parent = $section->category();
-            $children = $parent->children;
-        @endphp
         <div class="ttm-tabs">
             <div class="content-sec-head-style">
                 <div class="content-area-sec-title">
                     <h5>{{ $section->title }}</h5>
                 </div>
                 <ul class="tabs text-right">
-                    @foreach ($children as $child)
-                        <li class="tab"><a href="#section-{{ $section->id }}-{{ $child->id }}">{{ $child->name }}</a></li>
+                    @foreach ($tabGroups as $group)
+                        <li class="tab"><a href="#section-{{ $section->id }}-{{ $group['category']->id }}">{{ $group['category']->name }}</a></li>
                     @endforeach
                 </ul>
             </div>
             <div class="content-tab">
-                @foreach ($children as $child)
-                    <div class="content-inner" id="section-{{ $section->id }}-{{ $child->id }}">
+                @foreach ($tabGroups as $group)
+                    <div class="content-inner" id="section-{{ $section->id }}-{{ $group['category']->id }}">
                         <div class="products row">
-                            @foreach ($products as $product)
-                                @if ($product->categorie_id == $child->id)
-                                    @include('partials.product', ['product' => $product])
-                                @endif
+                            @foreach ($group['products'] as $product)
+                                @include('partials.product', ['product' => $product])
                             @endforeach
                         </div>
                     </div>

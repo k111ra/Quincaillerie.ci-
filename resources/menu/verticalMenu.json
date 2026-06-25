@@ -43,6 +43,12 @@
       "slug": "carousel"
     },
     {
+      "url": "/admin/home-sections",
+      "name": "Sections d'accueil",
+      "icon": "menu-icon tf-icons bx bx-home-smile",
+      "slug": "home-sections"
+    },
+    {
       "url": "/admin/posts",
       "name": "Blogs",
       "icon": "menu-icon tf-icons bx bx-happy-heart-eyes",
@@ -56,7 +62,7 @@
     },
     {
       "name": "Partenaires",
-      "icon": "menu-icon tf-icons bx bxs-handshake",
+      "icon": "menu-icon tf-icons bx bxs-group",
       "slug": "partners",
       "submenu": [
         {

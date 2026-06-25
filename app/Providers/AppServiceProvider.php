@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\View\Components\GuestLayout;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -27,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
    */
   public function boot()
   {
+    Paginator::useBootstrapFive();
+
     Blade::component('guest-layout', GuestLayout::class);
     View::composer('*', function ($view) {
       $categories = Category::with('children', 'products')->get();

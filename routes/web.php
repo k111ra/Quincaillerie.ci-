@@ -13,6 +13,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FournisseurControlleur;
 // use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\OrderController;
@@ -253,6 +254,17 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::post('/{partner}/reject', [AdminPartnerController::class, 'reject'])->name('admin.partners.reject'); // Rejeter
       Route::delete('/{partner}', [AdminPartnerController::class, 'destroy'])->name('admin.partners.destroy'); // Supprimer
       Route::post('/{partner}/restore', [AdminPartnerController::class, 'restore'])->name('admin.partners.restore'); // Restaurer
+    });
+
+    // Routes pour les sections de la page d'accueil
+    Route::prefix('home-sections')->group(function () {
+      Route::get('/', [HomeSectionController::class, 'index'])->name('admin.home-sections.index');
+      Route::get('/create', [HomeSectionController::class, 'create'])->name('admin.home-sections.create');
+      Route::post('/', [HomeSectionController::class, 'store'])->name('admin.home-sections.store');
+      Route::get('/{home_section}/edit', [HomeSectionController::class, 'edit'])->name('admin.home-sections.edit');
+      Route::put('/{home_section}', [HomeSectionController::class, 'update'])->name('admin.home-sections.update');
+      Route::post('/{home_section}/toggle', [HomeSectionController::class, 'toggle'])->name('admin.home-sections.toggle');
+      Route::delete('/{home_section}', [HomeSectionController::class, 'destroy'])->name('admin.home-sections.destroy');
     });
 
     // Routes pour les offres (Services partenaires)

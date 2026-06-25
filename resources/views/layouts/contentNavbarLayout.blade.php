@@ -1,4 +1,4 @@
-@extends('layouts/commonMaster' )
+@extends('layouts.commonMaster' )
 
 @php
 /* Display elements */
@@ -24,7 +24,7 @@ $container = ($container ?? 'container-xxl');
   <div class="layout-container">
 
     @if ($isMenu)
-    @include('layouts/sections/menu/verticalMenu')
+    @include('layouts.sections.menu.verticalMenu')
     @endif
 
 
@@ -32,7 +32,7 @@ $container = ($container ?? 'container-xxl');
     <div class="layout-page">
       <!-- BEGIN: Navbar-->
       @if ($isNavbar)
-      @include('layouts/sections/navbar/navbar')
+      @include('layouts.sections.navbar.navbar')
       @endif
       <!-- END: Navbar-->
 

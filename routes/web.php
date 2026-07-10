@@ -184,6 +184,20 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
       Route::put('/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     });
 
+    // Routes pour les cotations automatiques (demandes de devis par email)
+    Route::prefix('cotations')->group(function () {
+      Route::get('/', [\App\Http\Controllers\QuoteRequestController::class, 'index'])->name('admin.cotations.index');
+      Route::post('/process', [\App\Http\Controllers\QuoteRequestController::class, 'processNow'])->name('admin.cotations.process');
+      Route::get('/{cotation}', [\App\Http\Controllers\QuoteRequestController::class, 'show'])->name('admin.cotations.show');
+      Route::put('/{cotation}', [\App\Http\Controllers\QuoteRequestController::class, 'update'])->name('admin.cotations.update');
+      Route::post('/{cotation}/items', [\App\Http\Controllers\QuoteRequestController::class, 'addItem'])->name('admin.cotations.items.add');
+      Route::delete('/{cotation}/items/{item}', [\App\Http\Controllers\QuoteRequestController::class, 'removeItem'])->name('admin.cotations.items.remove');
+      Route::post('/{cotation}/send', [\App\Http\Controllers\QuoteRequestController::class, 'send'])->name('admin.cotations.send');
+      Route::post('/{cotation}/reject', [\App\Http\Controllers\QuoteRequestController::class, 'reject'])->name('admin.cotations.reject');
+      Route::get('/{cotation}/pdf/client', [\App\Http\Controllers\QuoteRequestController::class, 'downloadClientPdf'])->name('admin.cotations.download-client');
+      Route::get('/{cotation}/pdf/fournisseurs', [\App\Http\Controllers\QuoteRequestController::class, 'downloadSupplierDoc'])->name('admin.cotations.download-supplier');
+    });
+
     // ... Autres routes d'administration
 
     // Routes pour les produits

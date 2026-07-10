@@ -317,6 +317,10 @@
             <span><i class="bx bx-file text-primary me-2"></i>Devis en attente</span>
             <span class="badge bg-label-primary">{{ $quotesPending }}</span>
           </li>
+          <li class="d-flex align-items-center justify-content-between mb-3">
+            <span><i class="bx bx-mail-send text-success me-2"></i>Cotations par email</span>
+            <a href="{{ route('admin.cotations.index') }}" class="badge bg-label-success">Ouvrir</a>
+          </li>
           <li class="d-flex align-items-center justify-content-between">
             <span><i class="bx bx-envelope text-secondary me-2"></i>Messages reçus</span>
             <span class="badge bg-label-secondary">{{ $messagesCount }}</span>

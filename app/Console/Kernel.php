@@ -15,7 +15,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // Traitement automatique des demandes de cotation (toutes les 10 minutes)
+        $schedule->command('cotations:process')
+            ->everyTenMinutes()
+            ->withoutOverlapping()
+            ->runInBackground();
     }
 
     /**

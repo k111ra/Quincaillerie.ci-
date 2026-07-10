@@ -463,3 +463,81 @@
 		}
 		.wrap-login .form-group.justify-content-between .d-flex:first-child{ margin-bottom: 15px; }
 }
+
+/* ============================================================
+   HEADER MOBILE — optimisation ergonomique (ajout)
+   Placé en fin de fichier pour surcharger volontairement les
+   règles ci-dessus. Objectifs : moins d'espace perdu, cibles
+   tactiles plus grandes, et panier toujours accessible.
+   ============================================================ */
+@media (max-width: 991px) {
+
+	/* Barre promo plus compacte */
+	.top_bar { padding: 6px 0; }
+	.top_bar_user { font-size: 13px; line-height: 1.4; }
+
+	/* Logo : limite l'espace vertical perdu */
+	.header_main .site-branding { padding: 10px 0 !important; }
+	#logo-img { width: 190px !important; max-width: 100%; height: auto; }
+
+	/* Zone compte : liens sur une ligne, cibles tactiles confortables */
+	.header_extra { padding: 8px 0 !important; }
+	.header_extra .navbar-nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 2px 14px;
+	}
+	.header_extra .navbar-nav .nav-item a {
+		display: inline-block;
+		padding: 8px 2px;
+		font-size: 14px;
+		white-space: nowrap;
+	}
+
+	/* Recherche : champ et bouton plus grands et faciles à toucher */
+	.header_search { padding-top: 6px; }
+	#search_block_top #search_query_top { height: 46px; font-size: 15px; padding-left: 14px; }
+	#search_block_top .btn.button-search { height: 46px; width: 46px; font-size: 16px; }
+
+	/* Panier compact, séparateur ajusté */
+	.cart { margin-left: 20px; }
+	.cart::before { left: -10px; top: 6px; height: 55%; }
+}
+
+@media (max-width: 575px) {
+
+	/* Répartition logo / actions : un peu plus de place au logo */
+	.header_main .row { align-items: center; }
+	.header_main .row > .order-1 { flex: 0 0 44%; max-width: 44%; }
+	.header_main .row > .order-2 { flex: 0 0 56%; max-width: 56%; }
+
+	#logo-img { width: 100% !important; max-width: 165px; }
+
+	/* Compte + panier sur la même ligne, alignés à droite */
+	.header_extra {
+		flex-direction: row !important;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 10px;
+	}
+
+	/* Panier en icône seule : on gagne de la place sans perdre l'accès */
+	.cart_content { display: none; }
+	.cart { margin-left: 12px; }
+	.cart::before { display: none; }
+}
+
+/* Correctif UX : le panier était totalement masqué (<480px),
+   on le garde accessible sous forme d'icône avec son compteur. */
+@media only screen and (max-width: 479px) {
+	.cart { display: flex !important; align-items: center; }
+	.cart_content { display: none; }
+	.cart_icon i { font-size: 24px; }
+
+	#logo-img { max-width: 150px; }
+	.header_extra .navbar-nav .nav-item a { font-size: 13px; padding: 8px 1px; }
+
+	/* La recherche reste pleine largeur et lisible */
+	#search_block_top #search_query_top { width: 100%; }
+}

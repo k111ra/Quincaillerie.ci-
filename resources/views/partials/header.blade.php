@@ -1,4 +1,4 @@
-<header id="masthead" class="header ttm-header-style-02">
+<header id="masthead" class="header ttm-header-style-01">
     <!-- top_bar -->
     <div class="top_bar">
         <div class="container">
@@ -82,17 +82,31 @@
                         <ul class="navbar-nav ms-auto">
                             <!-- Authentication Links -->
                             @guest
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="" href="{{ route('login') }}">{{ __('Connexion') }}</a>
-                                    </li>
-                                @endif
-
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="" href="{{ route('register') }}">{{ __('S\'inscrire') }}</a>
-                                    </li>
-                                @endif
+                                <div class="account dropdown">
+                                    <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="account_icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="account_content">
+                                            <div class="account_text"><a href="{{ route('login') }}">Mon compte</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="account_extra dropdown_link" data-toggle="dropdown">Compte</div>
+                                    <aside class="widget_account dropdown_content">
+                                        <div class="widget_account_content">
+                                            <ul>
+                                                @if (Route::has('login'))
+                                                    <li><i class="fa fa-sign-in mr-2"></i><a
+                                                            href="{{ route('login') }}">{{ __('Connexion') }}</a></li>
+                                                @endif
+                                                @if (Route::has('register'))
+                                                    <li><i class="fa fa-user-plus mr-2"></i><a
+                                                            href="{{ route('register') }}">{{ __('S\'inscrire') }}</a></li>
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
                             @else
                                 <div class="account dropdown">
                                     <div class="d-flex flex-row align-items-center justify-content-start">
@@ -200,7 +214,7 @@
     </div>
     <!-- haeder-main end -->
     <!-- site-header-menu -->
-    <div id="site-header-menu" class="site-header-menu clearfix">
+    <div id="site-header-menu" class="site-header-menu ttm-bgcolor-white clearfix">
         <div class="site-header-menu-inner stickable-header">
             <div class="container">
                 <div class="row">

@@ -1113,6 +1113,20 @@ a {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+/* Fond blanc pour la zone logo / recherche / compte (style-01) */
+.ttm-header-style-01 .header_main{ background-color: #fff; }
+/* Sur fond blanc, rendre les icônes et textes du compte/panier lisibles
+   (par défaut ils sont blancs, donc invisibles). */
+.ttm-header-style-01 .account_text a,
+.ttm-header-style-01 .cart_text a,
+.ttm-header-style-01 .account_icon,
+.ttm-header-style-01 .cart_icon i{
+    color: #02112b;
+}
+/* Bordure visible du champ de recherche arrondi */
+.ttm-header-style-01 .header_search .header_search_content{
+    border: 1px solid #e3e9f2;
+}
 
 /** Header_search **/
 .header_search{ padding: 15px 0 14px; }

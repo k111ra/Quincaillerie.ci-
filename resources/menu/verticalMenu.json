@@ -83,6 +83,12 @@
       ]
     },
     {
+      "url": "/admin/clients",
+      "name": "Clients",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "admin-clients"
+    },
+    {
       "name": "Offres",
       "icon": "menu-icon tf-icons bx bx-gift",
       "slug": "offers",

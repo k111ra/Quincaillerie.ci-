@@ -85,6 +85,14 @@
                                     </button>
                                 </div>
 
+                                <div class="form-group text-center">
+                                    <a href="{{ route('auth.google') }}" class="btn btn-danger w-100"
+                                        data-google-cta="1" data-google-cta-source="auth_register">
+                                        <i class="fa fa-google"></i> Continuer avec Google
+                                        <span class="badge badge-light ml-2">Recommande</span>
+                                    </a>
+                                </div>
+
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>

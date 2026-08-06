@@ -12,6 +12,7 @@ use App\Models\Message;
 use App\Models\Fournisseur;
 use App\Models\SearchLog;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -116,14 +117,66 @@ class AdminController extends Controller
             ->get();
 
         return view('admin.dashboard', compact(
-            'productsCount', 'categoriesCount', 'clientsCount', 'partnersCount', 'partnersPending',
-            'ordersCount', 'ordersPending', 'ordersShipped', 'ordersDelivered', 'ordersCancelled',
-            'revenueTotal', 'revenueMonth', 'ordersThisMonth', 'panierMoyen',
-            'revenueChartLabels', 'revenueChartData',
-            'outOfStockCount', 'lowStockCount', 'lowStockProducts', 'stockValue', 'seuilStockBas',
-            'topProducts', 'topQtyMax', 'categoriesStats', 'catMax',
-            'recentOrders', 'quotesPending', 'quotesTotal', 'messagesCount', 'recentMessages',
+            'productsCount',
+            'categoriesCount',
+            'clientsCount',
+            'partnersCount',
+            'partnersPending',
+            'ordersCount',
+            'ordersPending',
+            'ordersShipped',
+            'ordersDelivered',
+            'ordersCancelled',
+            'revenueTotal',
+            'revenueMonth',
+            'ordersThisMonth',
+            'panierMoyen',
+            'revenueChartLabels',
+            'revenueChartData',
+            'outOfStockCount',
+            'lowStockCount',
+            'lowStockProducts',
+            'stockValue',
+            'seuilStockBas',
+            'topProducts',
+            'topQtyMax',
+            'categoriesStats',
+            'catMax',
+            'recentOrders',
+            'quotesPending',
+            'quotesTotal',
+            'messagesCount',
+            'recentMessages',
             'popularSearches'
         ));
+    }
+
+    /**
+     * Liste des utilisateurs clients (hors partenaires et administrateurs).
+     */
+    public function clients(Request $request)
+    {
+        $q = trim((string) $request->query('q', ''));
+
+        $clients = User::query()
+            ->where(function ($builder) {
+                $builder->whereNotIn('user_type', ['partner', 'admin'])
+                    ->orWhereNull('user_type');
+            })
+            ->whereDoesntHave('roles', function ($roleQuery) {
+                $roleQuery->whereIn('name', ['admin', 'partner']);
+            })
+            ->when($q !== '', function ($builder) use ($q) {
+                $builder->where(function ($searchQuery) use ($q) {
+                    $searchQuery->where('name', 'like', '%' . $q . '%')
+                        ->orWhere('email', 'like', '%' . $q . '%')
+                        ->orWhere('tel', 'like', '%' . $q . '%');
+                });
+            })
+            ->orderByDesc('created_at')
+            ->paginate(20)
+            ->withQueryString();
+
+        return view('admin.clients.index', compact('clients', 'q'));
     }
 }

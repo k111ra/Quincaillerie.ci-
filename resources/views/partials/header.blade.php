@@ -103,6 +103,12 @@
                                                     <li><i class="fa fa-user-plus mr-2"></i><a
                                                             href="{{ route('register') }}">{{ __('S\'inscrire') }}</a></li>
                                                 @endif
+                                                <li><i class="fa fa-google mr-2"></i><a
+                                                    href="{{ route('auth.google') }}" data-google-cta="1"
+                                                    data-google-cta-source="header_dropdown">Connexion Google
+                                                    (Recommande)</a></li>
+                                                <li><i class="fa fa-bolt mr-2"></i><a href="#" data-toggle="modal"
+                                                        data-target="#googleLoginModal">Connexion rapide</a></li>
                                             </ul>
                                         </div>
                                     </aside>
@@ -127,6 +133,9 @@
                                                     <li><i class="fa fa-users mr-2"></i><a
                                                             href="{{ route('admin.partners.index') }}">Gérer Partenaires</a>
                                                     </li>
+                                                        <li><i class="fa fa-user-circle mr-2"></i><a
+                                                            href="{{ route('admin.clients.index') }}">Gérer Clients</a>
+                                                        </li>
                                                     <hr style="margin: 5px 0;">
                                                     <li><i class="fa fa-sign-in mr-2"></i><a
                                                             href="{{ route('admin.dashboard') }}">Mon Compte</a></li>
@@ -212,6 +221,34 @@
             </div>
         </div>
     </div>
+
+    @guest
+        <div class="modal fade" id="googleLoginModal" tabindex="-1" role="dialog" aria-labelledby="googleLoginModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="googleLoginModalLabel">Connexion rapide</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Connectez-vous rapidement avec votre compte Google pour accéder a votre espace client.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <a href="{{ route('auth.google') }}" class="btn btn-danger" data-google-cta="1"
+                            data-google-cta-source="header_modal">
+                            <i class="fa fa-google"></i> Continuer avec Google
+                            <span class="badge badge-light ml-2">Recommande</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endguest
+
     <!-- haeder-main end -->
     <!-- site-header-menu -->
     <div id="site-header-menu" class="site-header-menu ttm-bgcolor-white clearfix">

@@ -182,6 +182,54 @@
     <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
     <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
     <script src="{{ asset('front/assets/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+
+    <script>
+        (function() {
+            function emitGoogleCtaClick(source, href) {
+                var payload = {
+                    event: 'google_cta_click',
+                    cta_source: source || 'unknown',
+                    cta_url: href || '',
+                    page_path: window.location.pathname,
+                    page_title: document.title
+                };
+
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'google_cta_click', {
+                        cta_source: payload.cta_source,
+                        cta_url: payload.cta_url,
+                        page_path: payload.page_path,
+                        page_title: payload.page_title
+                    });
+                }
+
+                if (Array.isArray(window.dataLayer)) {
+                    window.dataLayer.push(payload);
+                }
+
+                try {
+                    window.sessionStorage.setItem('google_cta_source', payload.cta_source);
+                    window.sessionStorage.setItem('google_cta_clicked_at', String(Date.now()));
+                } catch (e) {
+                    // Ignore storage errors (private mode, quotas, policies).
+                }
+            }
+
+            document.addEventListener('click', function(event) {
+                var target = event.target;
+                if (!target) {
+                    return;
+                }
+
+                var link = target.closest('[data-google-cta="1"]');
+                if (!link) {
+                    return;
+                }
+
+                emitGoogleCtaClick(link.getAttribute('data-google-cta-source'), link.getAttribute('href'));
+            });
+        })();
+    </script>
     <!-- Javascript end-->
 
     <!-- Google Tag Manager (noscript) -->

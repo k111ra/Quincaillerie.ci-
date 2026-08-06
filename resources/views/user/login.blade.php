@@ -153,6 +153,13 @@
                                             <span class="spinner"></span>
                                         </button>
                                     </div>
+                                    <div class="form-group text-center">
+                                        <a href="{{ route('auth.google') }}" class="btn btn-danger w-100"
+                                            data-google-cta="1" data-google-cta-source="user_login">
+                                            <i class="fa fa-google"></i> Continuer avec Google
+                                            <span class="badge badge-light ml-2">Recommande</span>
+                                        </a>
+                                    </div>
                                     <div class="form-group d-flex justify-content-between">
                                         <div class="d-flex flex-row align-items-center justify-content-start">
                                             <input type="checkbox" {{ old('remember') ? 'checked' : '' }}> <span

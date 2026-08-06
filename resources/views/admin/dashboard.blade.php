@@ -137,6 +137,9 @@
         </div>
         <span class="fw-semibold d-block">Clients inscrits</span>
         <small class="text-muted">{{ $partnersCount }} partenaire(s)</small>
+        <div class="mt-2">
+          <a href="{{ route('admin.clients.index') }}" class="btn btn-sm btn-outline-info">Voir la liste</a>
+        </div>
       </div>
     </div>
   </div>

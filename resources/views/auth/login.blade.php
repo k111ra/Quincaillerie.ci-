@@ -38,6 +38,15 @@
                             <div class="wrap-login">
                                 <form method="POST" action="{{ route('login') }}" id="loginForm">
                                     @csrf
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul class="mb-0">
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <div class="form-group">
                                         <i class="fa fa-envelope-o"></i>
                                         <input id="email" type="email" name="email"
@@ -88,8 +97,10 @@
                                     </div>
 
                                     <div class="form-group text-center">
-                                        <a href="{{ route('auth.google') }}" class="btn btn-danger w-100">
-                                            <i class="fa fa-google"></i> Google
+                                        <a href="{{ route('auth.google') }}" class="btn btn-danger w-100"
+                                            data-google-cta="1" data-google-cta-source="auth_login">
+                                            <i class="fa fa-google"></i> Continuer avec Google
+                                            <span class="badge badge-light ml-2">Recommande</span>
                                         </a>
                                     </div>
                                     <div class="form-group d-flex justify-content-between">

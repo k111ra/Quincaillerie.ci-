@@ -51,7 +51,7 @@ Route::get('/admin/login', [LoginPageController::class, 'admin'])->name('admin.l
 
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
-Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/cart/show', [CartController::class, 'ShowCart'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
@@ -165,6 +165,7 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::prefix('/admin')->middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/recherche', [SearchController::class, 'showSearches'])->name('admin.search');
+    Route::get('/clients', [AdminController::class, 'clients'])->name('admin.clients.index');
     // Route pour afficher toutes les commandes
     Route::get('/orders', [OrderController::class, 'indexAdmin'])->name('admin.orders.index');
     Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('admin.orders.edit');

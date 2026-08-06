@@ -15,6 +15,29 @@
             </div>
         @endif
 
+        @if (session('warning'))
+            <div class="alert alert-warning">
+                {{ session('warning') }}
+            </div>
+        @endif
+
+        @if (session('info'))
+            <div class="alert alert-info">
+                {{ session('info') }}
+            </div>
+        @endif
+
+        @if (!empty($user->tel ?? auth()->user()->tel))
+            <div class="alert alert-light border d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+                <div class="mb-2 mb-md-0">
+                    Simplifiez vos prochaines connexions avec l'option Google en un clic.
+                </div>
+                <a href="{{ route('auth.google') }}" class="btn btn-danger btn-sm">
+                    <i class="fa fa-google"></i> Continuer avec Google
+                </a>
+            </div>
+        @endif
+
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
@@ -29,7 +52,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="profil">
                         <h4>Mes informations personnelles</h4>
-                        <form action="{{ route('user.profile.update') }}" method="POST" class="mt-3">
+                        <form action="{{ route('user.profile.update') }}" method="POST" class="mt-3" id="profile-form">
                             @csrf
                             @method('PUT')
 

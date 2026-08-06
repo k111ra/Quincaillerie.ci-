@@ -38,7 +38,17 @@ class LoginController extends Controller
         return redirect()->route('partner.dashboard');
       } else {
         // Client par défaut
-        return redirect()->route('user.dashboard');
+        if (empty($user->tel)) {
+          return redirect()->to(route('user.dashboard') . '#profil')->with(
+            'warning',
+            'Ajoutez votre numéro de téléphone pour compléter votre profil client.'
+          );
+        }
+
+        return redirect()->route('user.dashboard')->with(
+          'info',
+          'Astuce: vous pouvez aussi vous connecter avec Google lors de vos prochaines visites.'
+        );
       }
     }
 

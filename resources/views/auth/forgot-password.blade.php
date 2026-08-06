@@ -76,6 +76,14 @@
                                         </button>
                                     </div>
 
+                                    <div class="form-group text-center">
+                                        <a href="{{ route('auth.google') }}" class="btn btn-danger w-100"
+                                            data-google-cta="1" data-google-cta-source="auth_forgot_password">
+                                            <i class="fa fa-google"></i> Continuer avec Google
+                                            <span class="badge badge-light ml-2">Recommande</span>
+                                        </a>
+                                    </div>
+
                                     <div class="form-group d-flex justify-content-center">
                                         <a href="{{ route('login') }}" id="back-to-login-link"
                                             class="forgot-password-link"><u>Retour à la connexion</u></a>

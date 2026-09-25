@@ -1,5 +1,6 @@
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset(mix('assets/vendor/libs/jquery/jquery.js')) }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="{{ asset(mix('assets/vendor/libs/popper/popper.js')) }}"></script>
 <script src="{{ asset(mix('assets/vendor/js/bootstrap.js')) }}"></script>
 <script src="{{ asset(mix('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')) }}"></script>

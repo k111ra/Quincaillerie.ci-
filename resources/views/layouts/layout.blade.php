@@ -151,12 +151,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    <script src="{{ asset('front/assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('front/assets/js/tether.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <script src="{{ asset('front/assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery.easing.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery-waypoints.js') }}"></script>
     <script src="{{ asset('front/assets/js/jquery-validate.js') }}"></script>
@@ -236,6 +233,35 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRPWSJW9" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    {{-- Modale "Connexion rapide" : doit rester au niveau racine du document,
+         sinon le contexte d'empilement du <header> la fait passer sous .modal-backdrop. --}}
+@guest
+    <div class="modal fade" id="googleLoginModal" tabindex="-1" role="dialog" aria-labelledby="googleLoginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="googleLoginModalLabel">Connexion rapide</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Connectez-vous rapidement avec votre compte Google pour accéder a votre espace client.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <a href="{{ route('auth.google') }}" class="btn btn-danger" data-google-cta="1"
+                        data-google-cta-source="header_modal">
+                        <i class="fa fa-google"></i> Continuer avec Google
+                        <span class="badge badge-light ml-2">Recommande</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+@endguest
 
 </body>
 

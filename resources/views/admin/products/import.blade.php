@@ -40,9 +40,9 @@
 
                             <!-- Sélection de la catégorie -->
                             <div class="mb-3">
-                                <label class="form-label" for="categorie_id">Catégorie *</label>
+                                <label class="form-label" for="categorie_id">Catégorie par défaut</label>
                                 <select class="form-select @error('categorie_id') is-invalid @enderror" id="categorie_id"
-                                    name="categorie_id" required>
+                                    name="categorie_id">
                                     <option value="">Sélectionnez une catégorie</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
@@ -54,6 +54,7 @@
                                 @error('categorie_id')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
+                                <small class="form-text text-muted">Vous pouvez aussi utiliser une colonne <code>categorie</code> dans le CSV. Elle sera créée automatiquement si nécessaire.</small>
                             </div>
 
                             <!-- Sélection du fournisseur -->
@@ -112,6 +113,7 @@
                         <ul class="list-unstyled">
                             <li><strong class="text-danger">nom</strong> (obligatoire)</li>
                             <li><strong class="text-danger">prix</strong> (obligatoire)</li>
+                            <li><strong>categorie</strong> ou <strong>category</strong> (optionnel, créée automatiquement si absente)</li>
                             <li><strong>description</strong> (optionnel)</li>
                             <li><strong>quantite</strong> (optionnel, défaut: 0)</li>
                         </ul>

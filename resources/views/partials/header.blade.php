@@ -91,7 +91,7 @@
                                             <div class="account_text"><a href="{{ route('login') }}">Mon compte</a></div>
                                         </div>
                                     </div>
-                                    <div class="account_extra dropdown_link" data-toggle="dropdown">Compte</div>
+                                    <div class="account_extra dropdown_link">Compte</div>
                                     <aside class="widget_account dropdown_content">
                                         <div class="widget_account_content">
                                             <ul>
@@ -123,7 +123,7 @@
                                             <div class="account_text"><a href="#"> {{ Auth::user()->name }}</a></div>
                                         </div>
                                     </div>
-                                    <div class="account_extra dropdown_link" data-toggle="dropdown">Mon compte</div>
+                                    <div class="account_extra dropdown_link">Mon compte</div>
                                     <aside class="widget_account dropdown_content">
                                         <div class="widget_account_content">
                                             <ul>
@@ -170,8 +170,7 @@
                         <a href="/cart/show">
                         </a>
                         <div class="cart dropdown mt-2 mt-lg-0">
-                            <div class="dropdown_link d-flex flex-row align-items-center justify-content-end"
-                                data-toggle="dropdown">
+                            <div class="dropdown_link d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
                                     <i class="fa fa-shopping-cart"></i>
                                     <!-- Nombre d'articles dans le panier -->
@@ -222,32 +221,6 @@
         </div>
     </div>
 
-    @guest
-        <div class="modal fade" id="googleLoginModal" tabindex="-1" role="dialog" aria-labelledby="googleLoginModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="googleLoginModalLabel">Connexion rapide</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Connectez-vous rapidement avec votre compte Google pour accéder a votre espace client.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <a href="{{ route('auth.google') }}" class="btn btn-danger" data-google-cta="1"
-                            data-google-cta-source="header_modal">
-                            <i class="fa fa-google"></i> Continuer avec Google
-                            <span class="badge badge-light ml-2">Recommande</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endguest
 
     <!-- haeder-main end -->
     <!-- site-header-menu -->
@@ -459,6 +432,44 @@
     </div>
     <!-- site-header-menu end -->
 </header>
+<script>
+    // Dropdowns du header (.dropdown_link -> .dropdown_content) : la feuille de style
+    // du theme affiche le panneau via la classe .show sur le parent .dropdown.
+    (function() {
+        function closeAll(except) {
+            var opened = document.querySelectorAll('.dropdown.show');
+            for (var i = 0; i < opened.length; i++) {
+                if (opened[i] !== except) {
+                    opened[i].classList.remove('show');
+                }
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            var link = event.target.closest ? event.target.closest('.dropdown_link') : null;
+
+            if (!link) {
+                closeAll(null);
+                return;
+            }
+
+            var parent = link.closest('.dropdown');
+            if (!parent) {
+                return;
+            }
+
+            event.preventDefault();
+            closeAll(parent);
+            parent.classList.toggle('show');
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAll(null);
+            }
+        });
+    })();
+</script>
 <script>
     $(document).ready(function() {
         $('#show-more').click(function() {

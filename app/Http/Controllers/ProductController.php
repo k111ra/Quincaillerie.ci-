@@ -473,47 +473,97 @@ class ProductController extends Controller
   {
     $request->validate([
       'csv_file' => 'required|file|mimes:csv,txt|max:5120',
-      'categorie_id' => 'required|exists:categories,id',
+      'categorie_id' => 'nullable|exists:categories,id',
       'fournisseur_id' => 'required|exists:fournisseurs,id',
     ]);
 
     try {
       $file = $request->file('csv_file');
       $path = $file->getRealPath();
-      $csv = array_map('str_getcsv', file($path));
+      $handle = fopen($path, 'rb');
 
-      // Vérifier que le CSV a un header
-      if (empty($csv)) {
+      if ($handle === false) {
+        return redirect()->back()->with('error', 'Impossible de lire le fichier CSV.');
+      }
+
+      $firstLine = fgets($handle);
+      if ($firstLine === false) {
+        fclose($handle);
         return redirect()->back()->with('error', 'Le fichier CSV est vide.');
       }
 
-      // Extraire le header (première ligne)
-      $header = array_shift($csv);
+      $delimiter = $this->detectCsvDelimiter($firstLine);
+      rewind($handle);
+      $header = fgetcsv($handle, 0, $delimiter);
 
-      // Créer un mapping des colonnes
-      $headerMap = array_flip($header);
+      if ($header === false || empty(array_filter($header, 'strlen'))) {
+        fclose($handle);
+        return redirect()->back()->with('error', 'Le fichier CSV ne contient pas d’en-tête.');
+      }
+
+      $header = array_map(function ($column) {
+        return strtolower(trim(ltrim($column, "\xEF\xBB\xBF")));
+      }, $header);
+
+      $missingColumns = array_diff(['nom', 'prix'], $header);
+      if (!empty($missingColumns)) {
+        fclose($handle);
+        return redirect()->back()->with('error', 'Colonnes obligatoires manquantes : ' . implode(', ', $missingColumns) . '.');
+      }
 
       $imported = 0;
       $errors = [];
 
-      foreach ($csv as $index => $row) {
+      $lineNumber = 1;
+      while (($row = fgetcsv($handle, 0, $delimiter)) !== false) {
+        $lineNumber++;
         try {
-          // Vérifier que la ligne n'est pas vide
-          if (empty(array_filter($row))) {
+          if (empty(array_filter($row, function ($value) {
+            return trim((string) $value) !== '';
+          }))) {
+            continue;
+          }
+
+          if (count($row) > count($header)) {
+            $errors[] = "Ligne " . $lineNumber . ": nombre de colonnes invalide.";
             continue;
           }
 
           // Créer un tableau associatif avec le header
-          $data = array_combine($header, $row);
+          $data = array_combine($header, array_pad($row, count($header), null));
 
           // Validation des données requises
-          if (!isset($data['nom']) || empty($data['nom'])) {
-            $errors[] = "Ligne " . ($index + 2) . ": Le nom du produit est requis.";
+          if (trim((string) ($data['nom'] ?? '')) === '') {
+            $errors[] = "Ligne " . $lineNumber . ": Le nom du produit est requis.";
             continue;
           }
 
-          if (!isset($data['prix']) || empty($data['prix'])) {
-            $errors[] = "Ligne " . ($index + 2) . ": Le prix est requis.";
+          $price = $this->normalizeCsvNumber($data['prix'] ?? null);
+          if ($price === null) {
+            $errors[] = "Ligne " . $lineNumber . ": Le prix doit être un nombre valide.";
+            continue;
+          }
+
+          $quantity = $this->normalizeCsvInteger($data['quantite'] ?? null);
+          if ($quantity === null) {
+            $errors[] = "Ligne " . $lineNumber . ": La quantité doit être un entier valide.";
+            continue;
+          }
+
+          $categoryName = trim((string) ($data['categorie'] ?? $data['category'] ?? ''));
+          if ($categoryName !== '') {
+            $category = Category::whereRaw('LOWER(name) = ?', [mb_strtolower($categoryName)])->first();
+            if (!$category) {
+              $category = Category::create([
+                'name' => $categoryName,
+                'slug' => Str::slug($categoryName),
+              ]);
+            }
+            $categoryId = $category->id;
+          } elseif ($request->filled('categorie_id')) {
+            $categoryId = $request->categorie_id;
+          } else {
+            $errors[] = "Ligne " . $lineNumber . ": La catégorie est requise dans le CSV ou dans le formulaire.";
             continue;
           }
 
@@ -521,9 +571,9 @@ class ProductController extends Controller
           $product = new Product();
           $product->nom = trim($data['nom']);
           $product->description = isset($data['description']) ? trim($data['description']) : '';
-          $product->prix = floatval($data['prix']);
-          $product->quantite = isset($data['quantite']) ? intval($data['quantite']) : 0;
-          $product->categorie_id = $request->categorie_id;
+          $product->prix = $price;
+          $product->quantite = $quantity;
+          $product->categorie_id = $categoryId;
           $product->fournisseur_id = $request->fournisseur_id;
           $product->slug = Str::slug($product->nom);
           $product->images = json_encode([]);
@@ -531,9 +581,11 @@ class ProductController extends Controller
           $product->save();
           $imported++;
         } catch (\Exception $e) {
-          $errors[] = "Ligne " . ($index + 2) . ": " . $e->getMessage();
+          $errors[] = "Ligne " . $lineNumber . ": " . $e->getMessage();
         }
       }
+
+      fclose($handle);
 
       $message = "$imported produit(s) importé(s) avec succès.";
       if (!empty($errors)) {
@@ -563,6 +615,8 @@ class ProductController extends Controller
     $callback = function () use ($products) {
       $file = fopen('php://output', 'w');
 
+      fwrite($file, "\xEF\xBB\xBF");
+
       // Header du CSV
       fputcsv($file, ['nom', 'description', 'prix', 'quantite', 'categorie', 'fournisseur']);
 
@@ -582,5 +636,46 @@ class ProductController extends Controller
     };
 
     return response()->stream($callback, 200, $headers);
+  }
+
+  private function detectCsvDelimiter(string $line): string
+  {
+    $delimiters = [',', ';', "\t"];
+    $counts = array_map(function ($delimiter) use ($line) {
+      return substr_count($line, $delimiter);
+    }, $delimiters);
+
+    return $delimiters[array_search(max($counts), $counts, true)];
+  }
+
+  private function normalizeCsvNumber($value): ?float
+  {
+    $value = trim((string) $value);
+    if ($value === '') {
+      return null;
+    }
+
+    $value = str_replace(["\xC2\xA0", ' '], '', $value);
+    if (strpos($value, ',') !== false && strpos($value, '.') === false) {
+      $value = str_replace(',', '.', $value);
+    } elseif (strpos($value, ',') !== false && strpos($value, '.') !== false) {
+      $value = str_replace(',', '', $value);
+    }
+
+    return is_numeric($value) ? (float) $value : null;
+  }
+
+  private function normalizeCsvInteger($value): ?int
+  {
+    if ($value === null || trim((string) $value) === '') {
+      return 0;
+    }
+
+    $value = trim((string) $value);
+    if (!preg_match('/^-?\d+$/', $value)) {
+      return null;
+    }
+
+    return (int) $value;
   }
 }

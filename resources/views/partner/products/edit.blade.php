@@ -135,7 +135,7 @@
                         <label for="images" class="form-label">Modifier les Images du Produit</label>
                         <input type="file" class="form-control @error('images') is-invalid @enderror" id="images"
                             name="images[]" multiple accept="image/*">
-                        <small class="form-text text-muted">Vous pouvez sélectionner plusieurs images (max 2MB par
+                        <small class="form-text text-muted">Vous pouvez sélectionner plusieurs images (max 50 Mo par
                             image)</small>
                         @error('images')
                             <span class="invalid-feedback">{{ $message }}</span>

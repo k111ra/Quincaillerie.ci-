@@ -50,6 +50,7 @@
 
                                     <!-- Input pour les nouvelles images -->
                                     <input class="form-control" type="file" id="images" name="images[]" multiple>
+                                    <small class="form-text text-muted">Taille maximale : 50 Mo par image.</small>
                                 </div>
 
                                 <div>

@@ -55,6 +55,7 @@
                             <div class="mb-3">
                                 <label for="images">Images :</label>
                                 <input type="file" class="form-control" name="images[]" multiple>
+                                <small class="form-text text-muted">Taille maximale : 50 Mo par image.</small>
                                 @if ($errors->has('images'))
                                     <div class="text-danger">{{ $errors->first('images') }}</div>
                                 @endif

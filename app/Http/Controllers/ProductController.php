@@ -85,7 +85,7 @@ class ProductController extends Controller
       'description' => 'nullable',
       'prix' => 'required|numeric',
       'quantite' => 'required|numeric',
-      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:51200',
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
       'tags.*' => 'exists:tags,id',
@@ -163,7 +163,7 @@ class ProductController extends Controller
       'description' => 'required',
       'prix' => 'required|numeric',
       'quantite' => 'required|numeric',
-      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Valider plusieurs images
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:51200', // Valider plusieurs images (50 Mo max chacune)
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
       'tags.*' => 'string', // Permet les tags non numériques pour les nouveaux tags
@@ -295,7 +295,7 @@ class ProductController extends Controller
       'description' => 'required',
       'prix' => 'required|numeric',
       'quantite' => 'required|numeric',
-      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:51200',
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
       'tags.*' => 'exists:tags,id',
@@ -373,7 +373,7 @@ class ProductController extends Controller
       'description' => 'required',
       'prix' => 'required|numeric',
       'quantite' => 'required|numeric',
-      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+      'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:51200',
       'categorie_id' => 'required|exists:categories,id',
       'tags' => 'nullable|array',
       'tags.*' => 'exists:tags,id',

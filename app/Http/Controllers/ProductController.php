@@ -82,7 +82,7 @@ class ProductController extends Controller
   {
     $request->validate([
       'nom' => 'required|max:255',
-      'description' => 'required',
+      'description' => 'nullable',
       'prix' => 'required|numeric',
       'quantite' => 'required|numeric',
       'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -475,6 +475,13 @@ class ProductController extends Controller
       'csv_file' => 'required|file|mimes:csv,txt|max:5120',
       'categorie_id' => 'nullable|exists:categories,id',
       'fournisseur_id' => 'required|exists:fournisseurs,id',
+    ], [
+      'csv_file.required' => 'Veuillez sélectionner un fichier CSV.',
+      'csv_file.file' => 'Le fichier sélectionné est invalide.',
+      'csv_file.mimes' => 'Le fichier doit être au format CSV ou TXT.',
+      'csv_file.max' => 'Le fichier ne doit pas dépasser 5 Mo.',
+      'fournisseur_id.required' => 'Veuillez sélectionner un fournisseur.',
+      'fournisseur_id.exists' => 'Le fournisseur sélectionné est invalide.',
     ]);
 
     try {

@@ -14,6 +14,11 @@
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        @elseif (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @elseif ($errors->any())
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Erreurs détectées:</strong>
@@ -35,7 +40,7 @@
                         </h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
 
                             <!-- Sélection de la catégorie -->

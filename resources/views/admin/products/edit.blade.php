@@ -27,7 +27,7 @@
                                 </div>
                                 <div>
                                     <label for="description" class="form-label">Description :</label>
-                                    <textarea class="form-control" name="description" id="description" required placeholder="">{{ $product->description }}</textarea>
+                                    <textarea class="form-control" name="description" id="description" placeholder="">{{ $product->description }}</textarea>
                                 </div>
 
                                 <div>

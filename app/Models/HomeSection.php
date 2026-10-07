@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class HomeSection extends Model
 {
@@ -47,11 +48,22 @@ class HomeSection extends Model
      */
     protected function activeSponsorings()
     {
-        return DB::table('product_sponsorings')
-            ->select('product_id')
-            ->where('status', 'active')
-            ->where('expires_at', '>', now())
-            ->groupBy('product_id');
+        if (Schema::hasTable('sponsoring_campaigns') && Schema::hasColumn('product_sponsorings', 'campaign_id')) {
+            return DB::table('product_sponsorings as ps')
+                ->leftJoin('sponsoring_campaigns as sc', 'ps.campaign_id', '=', 'sc.id')
+                ->select('ps.product_id')
+                ->selectRaw("MAX(CASE WHEN sc.plan_code = 'shock' THEN 1 ELSE 0 END) AS is_shock")
+                ->where('ps.status', 'active')
+                ->where('ps.expires_at', '>', now())
+                ->groupBy('ps.product_id');
+        }
+
+        return DB::table('product_sponsorings as ps')
+            ->select('ps.product_id')
+            ->selectRaw('0 AS is_shock')
+            ->where('ps.status', 'active')
+            ->where('ps.expires_at', '>', now())
+            ->groupBy('ps.product_id');
     }
 
     /**
@@ -73,6 +85,7 @@ class HomeSection extends Model
             ->whereIn('products.categorie_id', $this->categoryIds())
             ->select('products.*')
             ->selectRaw('CASE WHEN active_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+            ->selectRaw('COALESCE(active_sponsorings.is_shock, 0) AS is_shock')
             ->orderByDesc('is_sponsored')
             ->orderByDesc('products.created_at')
             ->limit($limit)
@@ -94,6 +107,7 @@ class HomeSection extends Model
             ->where('products.categorie_id', $categoryId)
             ->select('products.*')
             ->selectRaw('CASE WHEN active_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+            ->selectRaw('COALESCE(active_sponsorings.is_shock, 0) AS is_shock')
             ->orderByDesc('is_sponsored')
             ->orderByDesc('products.created_at')
             ->limit($limit)

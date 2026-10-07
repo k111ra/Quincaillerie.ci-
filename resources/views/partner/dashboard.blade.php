@@ -20,8 +20,9 @@
                         <i class="fa fa-star"></i> Sponsoring <i class="fa fa-angle-down float-right"></i>
                     </a>
                     <div class="collapse" id="partnerSponsoringMenu">
-                        <a href="{{ route('products.index') }}" class="list-group-item list-group-item-action pl-5">
-                            <i class="fa fa-bullhorn"></i> Sponsoriser un produit
+                        <a href="{{ route('partner.sponsoring.index') }}"
+                            class="list-group-item list-group-item-action pl-5">
+                            <i class="fa fa-bullhorn"></i> Offres de sponsoring
                         </a>
                     </div>
                     <a href="#demandes" class="list-group-item list-group-item-action" data-toggle="tab">

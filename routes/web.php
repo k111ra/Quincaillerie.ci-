@@ -27,6 +27,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PartnerOfferController;
+use App\Http\Controllers\PartnerSponsoringController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -80,6 +81,10 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/sponsoring/{reference}', [SponsoringController::class, 'confirmation'])->name('sponsoring.confirmation');
   Route::prefix('partner')->middleware(['auth', 'role:partner'])->group(function () {
     Route::put('/profile', [PartnerController::class, 'updateProfile'])->name('partner.profile.update');
+    Route::get('/sponsoring', [PartnerSponsoringController::class, 'index'])->name('partner.sponsoring.index');
+    Route::post('/sponsoring/purchase', [PartnerSponsoringController::class, 'store'])->name('partner.sponsoring.store');
+    Route::get('/sponsoring/{reference}', [PartnerSponsoringController::class, 'confirmation'])
+      ->name('partner.sponsoring.confirmation');
     Route::get('/offers', [PartnerOfferController::class, 'index'])->name('partner.offers.index');
     Route::get('/offers/create', [PartnerOfferController::class, 'create'])->name('partner.offers.create');
     Route::post('/offers', [PartnerOfferController::class, 'store'])->name('partner.offers.store');
@@ -171,6 +176,8 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
     Route::get('/sponsorings', [SponsoringController::class, 'adminIndex'])->name('admin.sponsorings.index');
     Route::post('/sponsorings/{sponsoring}/activate', [SponsoringController::class, 'adminActivate'])
       ->name('admin.sponsorings.activate');
+    Route::post('/sponsoring-campaigns/{campaign}/activate', [SponsoringController::class, 'adminActivateCampaign'])
+      ->name('admin.sponsoring-campaigns.activate');
     Route::get('/clients', [AdminController::class, 'clients'])->name('admin.clients.index');
     // Route pour afficher toutes les commandes
     Route::get('/orders', [OrderController::class, 'indexAdmin'])->name('admin.orders.index');

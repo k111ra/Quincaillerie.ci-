@@ -12,6 +12,7 @@ class ProductSponsoring extends Model
         'reference',
         'product_id',
         'user_id',
+        'campaign_id',
         'partner_phone',
         'amount',
         'duration_days',
@@ -34,6 +35,11 @@ class ProductSponsoring extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function campaign(): BelongsTo
+    {
+        return $this->belongsTo(SponsoringCampaign::class, 'campaign_id');
     }
 
     public static function generateReference(): string

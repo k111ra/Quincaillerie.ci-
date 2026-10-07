@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductSponsoring;
+use App\Models\SponsoringCampaign;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class SponsoringController extends Controller
 {
@@ -54,6 +57,7 @@ class SponsoringController extends Controller
             'product:id,nom,slug',
             'user:id,name,email',
         ])
+            ->whereNull('campaign_id')
             ->when($validated['status'] ?? null, function ($query, $status) {
                 $query->where('status', $status);
             })
@@ -61,7 +65,32 @@ class SponsoringController extends Controller
             ->paginate(20)
             ->withQueryString();
 
-        return view('admin.sponsorings.index', compact('sponsorings'));
+        $campaigns = SponsoringCampaign::with([
+            'products:id,nom',
+            'user:id,name,email',
+        ])
+            ->when($validated['status'] ?? null, function ($query, $status) {
+                $query->where('status', $status);
+            })
+            ->latest()
+            ->paginate(20, ['*'], 'campaign_page')
+            ->withQueryString();
+
+        $individualStats = ProductSponsoring::whereNull('campaign_id')
+            ->selectRaw('status, COUNT(*) as total')
+            ->groupBy('status')
+            ->pluck('total', 'status');
+        $campaignStats = SponsoringCampaign::selectRaw('status, COUNT(*) as total')
+            ->groupBy('status')
+            ->pluck('total', 'status');
+
+        $stats = [
+            'pending' => (int) ($individualStats['pending'] ?? 0) + (int) ($campaignStats['pending'] ?? 0),
+            'active' => (int) ($individualStats['active'] ?? 0) + (int) ($campaignStats['active'] ?? 0),
+            'expired' => (int) ($individualStats['expired'] ?? 0) + (int) ($campaignStats['expired'] ?? 0),
+        ];
+
+        return view('admin.sponsorings.index', compact('sponsorings', 'campaigns', 'stats'));
     }
 
     public function adminActivate(ProductSponsoring $sponsoring)
@@ -80,5 +109,68 @@ class SponsoringController extends Controller
 
         return redirect()->route('admin.sponsorings.index')
             ->with('success', 'Le sponsoring a été activé.');
+    }
+
+    public function adminActivateCampaign(SponsoringCampaign $campaign)
+    {
+        $error = DB::transaction(function () use ($campaign) {
+            $campaign = SponsoringCampaign::whereKey($campaign->id)
+                ->lockForUpdate()
+                ->firstOrFail();
+
+            if ($campaign->status !== 'pending') {
+                return 'Seules les campagnes en attente peuvent être activées.';
+            }
+
+            $products = $campaign->products;
+            if ($products->isEmpty()) {
+                return 'Cette campagne ne contient plus de produit à sponsoriser.';
+            }
+
+            $startsAt = now();
+            $expiresAt = $startsAt->copy()->addDays($campaign->duration_days);
+
+            $campaign->update([
+                'status' => 'active',
+                'starts_at' => $startsAt,
+                'expires_at' => $expiresAt,
+            ]);
+
+            foreach ($products as $product) {
+                ProductSponsoring::create([
+                    'reference' => $this->generateUniqueReference(),
+                    'product_id' => $product->id,
+                    'user_id' => $campaign->user_id,
+                    'campaign_id' => $campaign->id,
+                    'partner_phone' => $campaign->partner_phone,
+                    'amount' => 0,
+                    'duration_days' => $campaign->duration_days,
+                    'status' => 'active',
+                    'starts_at' => $startsAt,
+                    'expires_at' => $expiresAt,
+                ]);
+            }
+
+            return null;
+        });
+
+        if ($error) {
+            return redirect()->route('admin.sponsorings.index')->with('error', $error);
+        }
+
+        return redirect()->route('admin.sponsorings.index')
+            ->with('success', 'La campagne a été validée et ses produits sont maintenant sponsorisés.');
+    }
+
+    private function generateUniqueReference(): string
+    {
+        do {
+            $reference = 'SPON-' . Str::upper(Str::random(6));
+        } while (
+            ProductSponsoring::where('reference', $reference)->exists()
+            || SponsoringCampaign::where('reference', $reference)->exists()
+        );
+
+        return $reference;
     }
 }

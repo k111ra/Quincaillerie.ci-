@@ -6,7 +6,9 @@
             <a href="{{ url('product/' . $product->slug) }}">
                 <div class="product-image-box">
                     @if ($product->is_sponsored ?? false)
-                        <span class="badge badge-warning position-absolute m-2">⭐ Produit certifié</span>
+                        <span class="badge badge-warning position-absolute m-2">
+                            {{ ($product->is_shock ?? false) ? '🔥 Offre Choc' : '⭐ Produit certifié' }}
+                        </span>
                     @endif
                     @php
                         $images = is_array($product->images)

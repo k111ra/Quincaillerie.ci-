@@ -67,6 +67,8 @@
                             <label for="prix" class="form-label">Prix (F CFA) <span class="text-danger">*</span></label>
                             <input type="number" class="form-control @error('prix') is-invalid @enderror" id="prix"
                                 name="prix" value="{{ old('prix') }}" step="0.01" required>
+                            <small class="form-text text-muted">Veuillez inclure une marge supplémentaire de 10 % dans le prix
+                                de chaque produit pour couvrir ses frais d'hébergement et d'expédition.</small>
                             @error('prix')
                                 <span class="invalid-feedback">{{ $message }}</span>
                             @enderror

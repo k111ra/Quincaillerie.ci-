@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class HomeSection extends Model
 {
@@ -42,6 +43,18 @@ class HomeSection extends Model
     }
 
     /**
+     * Produits sponsorisés encore actifs, sans doublonner les produits.
+     */
+    protected function activeSponsorings()
+    {
+        return DB::table('product_sponsorings')
+            ->select('product_id')
+            ->where('status', 'active')
+            ->where('expires_at', '>', now())
+            ->groupBy('product_id');
+    }
+
+    /**
      * Récupère les produits de la section selon son type (catégorie ou tag).
      */
     public function products()
@@ -54,8 +67,16 @@ class HomeSection extends Model
             })->latest()->limit($limit)->get();
         }
 
-        return Product::whereIn('categorie_id', $this->categoryIds())
-            ->latest()->limit($limit)->get();
+        return Product::leftJoinSub($this->activeSponsorings(), 'active_sponsorings', function ($join) {
+            $join->on('products.id', '=', 'active_sponsorings.product_id');
+        })
+            ->whereIn('products.categorie_id', $this->categoryIds())
+            ->select('products.*')
+            ->selectRaw('CASE WHEN active_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+            ->orderByDesc('is_sponsored')
+            ->orderByDesc('products.created_at')
+            ->limit($limit)
+            ->get();
     }
 
     /**
@@ -67,8 +88,16 @@ class HomeSection extends Model
     {
         $limit = $this->limit > 0 ? $this->limit : 8;
 
-        return Product::where('categorie_id', $categoryId)
-            ->latest()->limit($limit)->get();
+        return Product::leftJoinSub($this->activeSponsorings(), 'active_sponsorings', function ($join) {
+            $join->on('products.id', '=', 'active_sponsorings.product_id');
+        })
+            ->where('products.categorie_id', $categoryId)
+            ->select('products.*')
+            ->selectRaw('CASE WHEN active_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+            ->orderByDesc('is_sponsored')
+            ->orderByDesc('products.created_at')
+            ->limit($limit)
+            ->get();
     }
 
     /**

@@ -47,7 +47,9 @@
                         @foreach ($products as $product)
                             <tr>
                                 <td>
-                                    <strong>{{ $product->nom }}</strong>
+                                    <a href="{{ route('product', $product->slug) }}" class="text-dark">
+                                        <strong>{{ $product->nom }}</strong>
+                                    </a>
                                 </td>
                                 <td>
                                     @if ($product->category)

@@ -79,6 +79,11 @@
           "url": "/admin/partners/approved",
           "name": "Approuvés",
           "slug": "partners-approved"
+        },
+        {
+          "url": "/admin/sponsorings",
+          "name": "Sponsorings",
+          "slug": "sponsorings"
         }
       ]
     },

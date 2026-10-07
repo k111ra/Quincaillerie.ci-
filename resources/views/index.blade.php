@@ -231,7 +231,21 @@
                     <div class="col-lg-9 content-area">
                         <div class="products products-fitter">
 
-                            
+                            @if ($sponsoredProducts->isNotEmpty())
+                                <section class="mb-4" aria-labelledby="sponsored-products-title">
+                                    <div class="content-sec-head-style">
+                                        <div class="content-area-sec-title">
+                                            <h5 id="sponsored-products-title">⭐ Produits certifiés</h5>
+                                        </div>
+                                    </div>
+                                    <div class="products row">
+                                        @foreach ($sponsoredProducts as $product)
+                                            @include('partials.product', ['product' => $product])
+                                        @endforeach
+                                    </div>
+                                </section>
+                            @endif
+
                             @foreach ($homeSections as $homeSection)
                                 <div class="mb-4">
                                     @include('partials.home_section', ['section' => $homeSection])

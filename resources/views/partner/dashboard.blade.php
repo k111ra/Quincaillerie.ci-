@@ -15,6 +15,15 @@
                     <a href="#produits" class="list-group-item list-group-item-action" data-toggle="tab">
                         <i class="fa fa-box"></i> Mes Produits
                     </a>
+                    <a href="#partnerSponsoringMenu" class="list-group-item list-group-item-action"
+                        data-toggle="collapse" aria-expanded="false" aria-controls="partnerSponsoringMenu">
+                        <i class="fa fa-star"></i> Sponsoring <i class="fa fa-angle-down float-right"></i>
+                    </a>
+                    <div class="collapse" id="partnerSponsoringMenu">
+                        <a href="{{ route('products.index') }}" class="list-group-item list-group-item-action pl-5">
+                            <i class="fa fa-bullhorn"></i> Sponsoriser un produit
+                        </a>
+                    </div>
                     <a href="#demandes" class="list-group-item list-group-item-action" data-toggle="tab">
                         <i class="fa fa-envelope"></i> Demandes Reçues
                     </a>
@@ -436,7 +445,9 @@
                                             @forelse($products->take(5) as $product)
                                                 <tr>
                                                     <td>
-                                                        <strong>{{ $product->nom ?? $product->name }}</strong>
+                                                        <a href="{{ route('product', $product->slug) }}" class="text-dark">
+                                                            <strong>{{ $product->nom ?? $product->name }}</strong>
+                                                        </a>
                                                     </td>
                                                     <td>
                                                         @if ($product->category)

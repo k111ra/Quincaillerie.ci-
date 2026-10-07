@@ -22,6 +22,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\SponsoringController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PartnerController;
@@ -75,6 +76,8 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
   Route::put('/user/profile', [UserController::class, 'updateProfile'])->name('user.profile.update');
   Route::get('/partner/dashboard', [PartnerController::class, 'dashboard'])->name('partner.dashboard');
+  Route::post('/products/{product}/sponsoring', [SponsoringController::class, 'initiate'])->name('sponsoring.initiate');
+  Route::get('/sponsoring/{reference}', [SponsoringController::class, 'confirmation'])->name('sponsoring.confirmation');
   Route::prefix('partner')->middleware(['auth', 'role:partner'])->group(function () {
     Route::put('/profile', [PartnerController::class, 'updateProfile'])->name('partner.profile.update');
     Route::get('/offers', [PartnerOfferController::class, 'index'])->name('partner.offers.index');
@@ -165,6 +168,9 @@ Route::middleware(['auth'])->group(function () use ($controller_path) {
   Route::prefix('/admin')->middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/recherche', [SearchController::class, 'showSearches'])->name('admin.search');
+    Route::get('/sponsorings', [SponsoringController::class, 'adminIndex'])->name('admin.sponsorings.index');
+    Route::post('/sponsorings/{sponsoring}/activate', [SponsoringController::class, 'adminActivate'])
+      ->name('admin.sponsorings.activate');
     Route::get('/clients', [AdminController::class, 'clients'])->name('admin.clients.index');
     // Route pour afficher toutes les commandes
     Route::get('/orders', [OrderController::class, 'indexAdmin'])->name('admin.orders.index');

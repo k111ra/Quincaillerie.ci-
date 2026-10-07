@@ -73,7 +73,11 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 ml-auto mr-auto">
                                         <div class="product-gallery easyzoom-product-gallery clearfix">
                                             @php
-                                                $images = json_decode($product->images);
+                                                $images = $product->images;
+                                                if (is_string($images)) {
+                                                    $images = json_decode($images, true);
+                                                }
+                                                $images = is_array($images) ? $images : [];
                                             @endphp
 
                                             @if ($images && count($images) > 0)
@@ -83,7 +87,8 @@
                                                             <a href="{{ asset('storage/' . $images[0]) }}">
                                                                 <img class="img-fluid"
                                                                     src="{{ asset('storage/' . $images[0]) }}"
-                                                                    alt="Image du produit" />
+                                                                    alt="{{ $product->nom }}"
+                                                                    style="width: 100%; height: auto; object-fit: contain; display: block;" />
                                                             </a>
                                                         </div>
                                                     </div>
@@ -96,8 +101,8 @@
                                                 <div class="mt-35 mb-35">
                                                     <ul class="thumbnails easyzoom-gallery-slider"
                                                         data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":true, "infinite":true, "vertical":true}'>
-                                                        @if ($product->images && json_decode($product->images))
-                                                            @foreach (json_decode($product->images) as $image)
+                                                        @if (count($images) > 0)
+                                                            @foreach ($images as $image)
                                                                 <li>
                                                                     <a href="{{ asset('storage/' . $image) }}"
                                                                         data-standard="{{ asset('storage/' . $image) }}">
@@ -208,6 +213,23 @@
                                                 </div>
                                             </form>
 
+                                            @auth
+                                                <form action="{{ route('sponsoring.initiate', $product) }}" method="POST"
+                                                    class="mt-3">
+                                                    @csrf
+                                                    <label for="partner_phone">Téléphone du partenaire (facultatif)</label>
+                                                    <input type="text" name="partner_phone" id="partner_phone"
+                                                        class="form-control mb-2" value="{{ old('partner_phone') }}"
+                                                        maxlength="30">
+                                                    @error('partner_phone')
+                                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                                    @enderror
+                                                    <button type="submit"
+                                                        class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor w-100">
+                                                        ⭐ Sponsoriser ce produit — 2 000 FCFA / 5 jours
+                                                    </button>
+                                                </form>
+                                            @endauth
 
 
                                             <div class="buttons">

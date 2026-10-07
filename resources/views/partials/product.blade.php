@@ -5,8 +5,13 @@
         <div class="product-box-inner">
             <a href="{{ url('product/' . $product->slug) }}">
                 <div class="product-image-box">
+                    @if ($product->is_sponsored ?? false)
+                        <span class="badge badge-warning position-absolute m-2">⭐ Produit certifié</span>
+                    @endif
                     @php
-                        $images = json_decode($product->images);
+                        $images = is_array($product->images)
+                            ? $product->images
+                            : json_decode($product->images ?? '[]');
                     @endphp
 
                     @if (!empty($images) && count($images) > 0)

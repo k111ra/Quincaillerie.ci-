@@ -55,7 +55,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/megamenu.css') }}">
 
     <!-- shortcodes -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/shortcodes.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('front/assets/css/shortcodes.css') }}?v={{ filemtime(public_path('front/assets/css/shortcodes.css')) }}" />
 
     <!-- main -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/main.css') }}" />

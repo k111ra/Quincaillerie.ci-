@@ -74,9 +74,19 @@ class HomeSection extends Model
         $limit = $this->limit > 0 ? $this->limit : 8;
 
         if ($this->type === 'tag') {
-            return Product::whereHas('tags', function ($q) {
-                $q->where('tags.id', $this->source_id);
-            })->latest()->limit($limit)->get();
+            return Product::leftJoinSub($this->activeSponsorings(), 'active_sponsorings', function ($join) {
+                $join->on('products.id', '=', 'active_sponsorings.product_id');
+            })
+                ->whereHas('tags', function ($q) {
+                    $q->where('tags.id', $this->source_id);
+                })
+                ->select('products.*')
+                ->selectRaw('CASE WHEN active_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+                ->selectRaw('COALESCE(active_sponsorings.is_shock, 0) AS is_shock')
+                ->orderByDesc('is_sponsored')
+                ->orderByDesc('products.created_at')
+                ->limit($limit)
+                ->get();
         }
 
         return Product::leftJoinSub($this->activeSponsorings(), 'active_sponsorings', function ($join) {

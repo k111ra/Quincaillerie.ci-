@@ -1,7 +1,58 @@
 @extends('layouts.layout')
 @section('title', 'Accueil')
 @section('content')
+    <link rel="stylesheet" href="{{ asset('front/assets/css/home-catalog.css') }}?v={{ filemtime(public_path('front/assets/css/home-catalog.css')) }}">
     @include('partials.slider')
+
+    @if ($homeCategories->isNotEmpty())
+        <section class="home-category-shortcuts" aria-labelledby="home-category-title">
+            <div class="container">
+                <div class="home-section-heading">
+                    <div>
+                        <span class="home-section-eyebrow">Explorez le catalogue</span>
+                        <h2 id="home-category-title">Acheter par catégorie</h2>
+                    </div>
+                    <a href="{{ route('shop.index') }}" class="home-section-link">Voir le catalogue <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="home-category-list">
+                    @foreach ($homeCategories as $category)
+                        @php
+                            $categoryName = mb_strtolower($category->name);
+                            $categoryIcon = 'fa-tags';
+                            foreach ([
+                                'outil' => 'fa-wrench',
+                                'plomb' => 'fa-tint',
+                                'électric' => 'fa-bolt',
+                                'electric' => 'fa-bolt',
+                                'peinture' => 'fa-paint-brush',
+                                'carrelage' => 'fa-th',
+                                'construction' => 'fa-building',
+                                'sécurité' => 'fa-shield',
+                                'securite' => 'fa-shield',
+                                'éclairage' => 'fa-lightbulb-o',
+                                'eclairage' => 'fa-lightbulb-o',
+                                'domotique' => 'fa-home',
+                                'matériaux' => 'fa-cubes',
+                                'materiaux' => 'fa-cubes',
+                            ] as $keyword => $icon) {
+                                if (str_contains($categoryName, $keyword)) {
+                                    $categoryIcon = $icon;
+                                    break;
+                                }
+                            }
+                        @endphp
+                        <a class="home-category-card" href="{{ route('shop', $category->slug) }}">
+                            <span class="home-category-icon"><i class="fa {{ $categoryIcon }}" aria-hidden="true"></i></span>
+                            <span class="home-category-name">{{ $category->name }}</span>
+                            <span class="home-category-count">
+                                {{ $category->products_count }} produit{{ $category->products_count === 1 ? '' : 's' }}
+                            </span>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
 
     <!--site-main start-->
@@ -33,9 +84,9 @@
 
         <!-- sidebar -->
         <div class="sidebar ttm-sidebar-left pt-40 pb-40 clearfix">
-            <div class="container">
+            <div class="container homepage-catalog">
                 <!-- row -->
-                <div class="row">
+                <div class="row homepage-catalog-row">
                     <div class="col-lg-3 widget-area sidebar-left">
                         <aside class="widget widget-text">
                             <h3 class="widget-title">Offres spéciales</h3>
@@ -55,11 +106,13 @@
                         <aside class="widget products top-rated-products">
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
-                                @foreach ($produitsPopulaires as $product)
+                                @foreach ($popularProducts as $product)
                                     <li>
                                         <a href="{{ url('product/' . $product->slug) }}">
                                             @php
-                                                $images = json_decode($product->images);
+                                                $images = is_array($product->images)
+                                                    ? $product->images
+                                                    : json_decode($product->images ?? '[]');
                                             @endphp
                                             @if (!empty($images) && isset($images[0]))
                                                 <img src="{{ asset('storage/' . $images[0]) }}" alt="{{ $product->nom }}">
@@ -188,7 +241,7 @@
                             <h3 class="widget-title">Produits populaires</h3>
                             <ul class="product-list-widget product">
 
-                                @foreach ($produitsPopulaires as $product)
+                                @foreach ($popularProducts as $product)
                                     <li>
                                         <a href="#"><img src="{{ asset('storage/' . $product->image) }}"
                                                 alt=""></a>
@@ -228,7 +281,7 @@
                                     alt="widget-banner"></a>
                         </aside>
                     </div>
-                    <div class="col-lg-9 content-area">
+                    <div class="col-lg-12 content-area homepage-content-area">
                         <div class="products products-fitter">
 
                             @if ($sponsoredProducts->isNotEmpty())
@@ -246,10 +299,44 @@
                                 </section>
                             @endif
 
+                            @if ($popularProducts->isNotEmpty())
+                                <section class="home-product-section mb-5" aria-labelledby="popular-products-title">
+                                    <div class="home-section-heading">
+                                        <div>
+                                            <span class="home-section-eyebrow">Les incontournables</span>
+                                            <h2 id="popular-products-title">Produits populaires</h2>
+                                        </div>
+                                        <a href="{{ route('shop.index') }}" class="home-section-link">Voir tous les produits <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="products row">
+                                        @foreach ($popularProducts as $product)
+                                            @include('partials.product', ['product' => $product])
+                                        @endforeach
+                                    </div>
+                                </section>
+                            @endif
+
+                            @if ($newProducts->isNotEmpty())
+                                <section class="home-product-section mb-5" aria-labelledby="new-products-title">
+                                    <div class="home-section-heading">
+                                        <div>
+                                            <span class="home-section-eyebrow">Ajoutés récemment</span>
+                                            <h2 id="new-products-title">Nouveautés</h2>
+                                        </div>
+                                        <a href="{{ route('shop.index') }}" class="home-section-link">Découvrir le catalogue <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="products row">
+                                        @foreach ($newProducts as $product)
+                                            @include('partials.product', ['product' => $product])
+                                        @endforeach
+                                    </div>
+                                </section>
+                            @endif
+
                             @foreach ($homeSections as $homeSection)
-                                <div class="mb-4">
+                                <section class="home-product-section mb-5">
                                     @include('partials.home_section', ['section' => $homeSection])
-                                </div>
+                                </section>
                             @endforeach
 
 

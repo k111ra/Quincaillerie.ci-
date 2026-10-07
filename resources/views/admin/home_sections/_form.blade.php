@@ -19,15 +19,15 @@
 <div class="mb-3">
     <label class="form-label" for="title">Titre de la section</label>
     <input type="text" id="title" name="title" class="form-control"
-        value="{{ old('title', $section->title ?? '') }}" placeholder="Ex. Nos produits les plus vendus" required>
-    <small class="text-muted">Ce titre s'affiche au-dessus de la liste de produits sur l'accueil.</small>
+        value="{{ old('title', $section->title ?? '') }}" placeholder="Ex. Nos produits de plomberie" required>
+    <small class="text-muted">Exemples : Outillage, Plomberie, Peinture ou Promotions du moment.</small>
 </div>
 
 <div class="mb-3">
     <label class="form-label" for="type">Type de source</label>
     <select id="type" name="type" class="form-select" onchange="toggleSource()">
-        <option value="category" {{ $type === 'category' ? 'selected' : '' }}>Catégorie</option>
-        <option value="tag" {{ $type === 'tag' ? 'selected' : '' }}>Tag</option>
+        <option value="category" {{ $type === 'category' ? 'selected' : '' }}>Univers catégorie</option>
+        <option value="tag" {{ $type === 'tag' ? 'selected' : '' }}>Sélection par tag</option>
     </select>
 </div>
 
@@ -42,7 +42,7 @@
             </option>
         @endforeach
     </select>
-    <small class="text-muted">Les produits de cette catégorie <em>et de ses sous-catégories</em> seront affichés.</small>
+    <small class="text-muted">Les produits de cette catégorie et de ses sous-catégories seront proposés, avec les produits sponsorisés en priorité.</small>
 </div>
 
 <div class="mb-3 d-none" id="source-tag">
@@ -56,7 +56,7 @@
             </option>
         @endforeach
     </select>
-    <small class="text-muted">Tous les produits portant ce tag seront affichés.</small>
+    <small class="text-muted">Affiche les produits associés à ce tag, du plus récent au plus ancien.</small>
 </div>
 
 {{-- Valeur réellement envoyée : alimentée par le select actif via JS --}}
@@ -71,13 +71,14 @@
             <option value="slider" {{ $display === 'slider' ? 'selected' : '' }}>Carrousel (slider)</option>
             <option value="tabs" {{ $display === 'tabs' ? 'selected' : '' }}>Onglets par sous-catégorie</option>
         </select>
-        <small class="text-muted">« Onglets » ne fonctionne qu'avec une catégorie ayant des sous-catégories.</small>
+        <small class="text-muted">Le carrousel crée une rangée compacte. Les onglets nécessitent une catégorie avec des sous-catégories.</small>
     </div>
 
     <div class="col-md-4 mb-3">
-        <label class="form-label" for="limit">Nombre de produits</label>
+        <label class="form-label" for="limit">Nombre maximal de produits</label>
         <input type="number" id="limit" name="limit" class="form-control" min="1" max="50"
             value="{{ old('limit', $section->limit ?? 8) }}" required>
+        <small class="text-muted">8 produits sont recommandés pour garder une page lisible.</small>
     </div>
 
     <div class="col-md-4 mb-3">

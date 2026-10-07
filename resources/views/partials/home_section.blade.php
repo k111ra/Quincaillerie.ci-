@@ -1,6 +1,7 @@
 {{-- Rend une section d'accueil dynamique. Attend $section (App\Models\HomeSection). --}}
 @php
     $products = $section->products();
+    $sourceCategory = $section->category();
 @endphp
 
 @if ($products->isNotEmpty())
@@ -8,8 +9,8 @@
         // Pour les onglets : on regroupe par sous-catégorie, chacune avec sa
         // propre liste (jusqu'à la limite), et on ignore les sous-catégories vides.
         $tabGroups = collect();
-        if ($section->display === 'tabs' && $section->type === 'category' && $section->category()) {
-            $tabGroups = $section->category()->children
+        if ($section->display === 'tabs' && $sourceCategory) {
+            $tabGroups = $sourceCategory->children
                 ->map(function ($child) use ($section) {
                     return ['category' => $child, 'products' => $section->productsForCategory($child->id)];
                 })
@@ -25,6 +26,9 @@
                 <div class="content-area-sec-title">
                     <h5>{{ $section->title }}</h5>
                 </div>
+                @if ($sourceCategory)
+                    <a class="home-section-link" href="{{ route('shop', $sourceCategory->slug) }}">Voir la catégorie <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                @endif
                 <ul class="tabs text-right">
                     @foreach ($tabGroups as $group)
                         <li class="tab"><a href="#section-{{ $section->id }}-{{ $group['category']->id }}">{{ $group['category']->name }}</a></li>
@@ -51,6 +55,9 @@
                     <div class="content-area-sec-title">
                         <h5>{{ $section->title }}</h5>
                     </div>
+                    @if ($sourceCategory)
+                        <a class="home-section-link" href="{{ route('shop', $sourceCategory->slug) }}">Voir la catégorie <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-12">
@@ -68,6 +75,9 @@
             <div class="content-area-sec-title">
                 <h5>{{ $section->title }}</h5>
             </div>
+            @if ($sourceCategory)
+                <a class="home-section-link" href="{{ route('shop', $sourceCategory->slug) }}">Voir la catégorie <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            @endif
         </div>
         <div class="products row">
             @foreach ($products as $product)

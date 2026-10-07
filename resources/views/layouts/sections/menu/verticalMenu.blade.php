@@ -34,24 +34,23 @@
     @php
     $activeClass = null;
     $currentRouteName = Route::currentRouteName();
+    $matchesMenuRoute = function ($slugs) use ($currentRouteName) {
+      foreach ((array) $slugs as $slug) {
+        if ($currentRouteName === $slug || str_starts_with($currentRouteName, $slug . '.')) {
+          return true;
+        }
+      }
 
-    if ($currentRouteName === $menu->slug) {
-    $activeClass = 'active';
+      return false;
+    };
+
+    if ($matchesMenuRoute($menu->slug)) {
+    $activeClass = isset($menu->submenu) ? 'active open' : 'active';
     }
     elseif (isset($menu->submenu)) {
-    if (gettype($menu->slug) === 'array') {
-    foreach($menu->slug as $slug){
-    if (str_contains($currentRouteName,$slug) and strpos($currentRouteName,$slug) === 0) {
+    if ($matchesMenuRoute($menu->slug)) {
     $activeClass = 'active open';
     }
-    }
-    }
-    else{
-    if (str_contains($currentRouteName,$menu->slug) and strpos($currentRouteName,$menu->slug) === 0) {
-    $activeClass = 'active open';
-    }
-    }
-
     }
     @endphp
 

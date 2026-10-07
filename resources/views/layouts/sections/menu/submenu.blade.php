@@ -7,22 +7,22 @@
   $activeClass = null;
   $active = 'active open';
   $currentRouteName = Route::currentRouteName();
+  $matchesMenuRoute = function ($slugs) use ($currentRouteName) {
+    foreach ((array) $slugs as $slug) {
+      if ($currentRouteName === $slug || str_starts_with($currentRouteName, $slug . '.')) {
+        return true;
+      }
+    }
 
-  if ($currentRouteName === $submenu->slug) {
-  $activeClass = 'active';
+    return false;
+  };
+
+  if ($matchesMenuRoute($submenu->slug)) {
+  $activeClass = isset($submenu->submenu) ? $active : 'active';
   }
   elseif (isset($submenu->submenu)) {
-  if (gettype($submenu->slug) === 'array') {
-  foreach($submenu->slug as $slug){
-  if (str_contains($currentRouteName,$slug) and strpos($currentRouteName,$slug) === 0) {
+  if ($matchesMenuRoute($submenu->slug)) {
   $activeClass = $active;
-  }
-  }
-  }
-  else{
-  if (str_contains($currentRouteName,$submenu->slug) and strpos($currentRouteName,$submenu->slug) === 0) {
-  $activeClass = $active;
-  }
   }
   }
   @endphp

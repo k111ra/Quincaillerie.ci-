@@ -25,6 +25,13 @@ class IndexController extends Controller
       })
       ->get();
 
+    $homeCategories = Category::withCount('products')
+      ->has('products')
+      ->orderByDesc('products_count')
+      ->orderBy('name')
+      ->limit(8)
+      ->get();
+
     // Récupération de tous les carrousels
     $carousels = Carousel::all();
 
@@ -44,20 +51,42 @@ class IndexController extends Controller
       ->limit(8)
       ->get();
 
-    // Produits populaires affichés dans la barre latérale (basés sur un tag).
-    $produitsPopulaires = Product::whereHas('tags', function ($query) {
+    $popularProducts = Product::whereHas('tags', function ($query) {
       $query->where('slug', 'produit-populaire');
-    })->get();
+    })
+      ->leftJoinSub($activeSponsorings, 'popular_sponsorings', function ($join) {
+        $join->on('products.id', '=', 'popular_sponsorings.product_id');
+      })
+      ->select('products.*')
+      ->selectRaw('CASE WHEN popular_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+      ->selectRaw('COALESCE(popular_sponsorings.is_shock, 0) AS is_shock')
+      ->orderByDesc('is_sponsored')
+      ->orderByDesc('products.id')
+      ->limit(12)
+      ->get();
+
+    $newProducts = Product::leftJoinSub($activeSponsorings, 'new_sponsorings', function ($join) {
+      $join->on('products.id', '=', 'new_sponsorings.product_id');
+    })
+      ->select('products.*')
+      ->selectRaw('CASE WHEN new_sponsorings.product_id IS NULL THEN 0 ELSE 1 END AS is_sponsored')
+      ->selectRaw('COALESCE(new_sponsorings.is_shock, 0) AS is_shock')
+      ->orderByDesc('is_sponsored')
+      ->orderByDesc('products.id')
+      ->limit(8)
+      ->get();
 
     $posts = Post::latest()->paginate(6);
 
     // Retourner la vue avec les données compactées
     return view('index', compact(
       'categories',
+      'homeCategories',
       'carousels',
       'homeSections',
       'sponsoredProducts',
-      'produitsPopulaires',
+      'popularProducts',
+      'newProducts',
       'posts'
     ));
   }

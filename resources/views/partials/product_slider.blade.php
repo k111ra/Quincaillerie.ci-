@@ -1,11 +1,18 @@
 {{-- Carte produit pour les carrousels (slider). Attend $product. --}}
 @php
-    $images = json_decode($product->images);
+    $images = is_array($product->images)
+        ? $product->images
+        : json_decode($product->images ?? '[]');
 @endphp
 <div class="product">
     <div class="product-box">
         <div class="product-box-inner">
             <div class="product-image-box">
+                @if ($product->is_sponsored ?? false)
+                    <span class="badge badge-warning position-absolute m-2">
+                        {{ ($product->is_shock ?? false) ? '🔥 Offre Choc' : '⭐ Produit certifié' }}
+                    </span>
+                @endif
                 @if (!empty($images) && count($images) > 0)
                     <img class="img-fluid pro-image-front" src="{{ asset('storage/' . $images[0]) }}" alt="{{ $product->nom }}">
                     @if (isset($images[1]))

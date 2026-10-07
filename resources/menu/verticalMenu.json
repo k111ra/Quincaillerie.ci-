@@ -37,16 +37,21 @@
       ]
     },
     {
-      "url": "/admin/carousel",
-      "name": "carousel",
-      "icon": "menu-icon tf-icons bx bxs-slideshow",
-      "slug": "carousel"
-    },
-    {
-      "url": "/admin/home-sections",
-      "name": "Sections d'accueil",
+      "name": "Page d'accueil",
       "icon": "menu-icon tf-icons bx bx-home-smile",
-      "slug": "home-sections"
+      "slug": ["admin.carousel", "admin.home-sections"],
+      "submenu": [
+        {
+          "url": "/admin/carousel",
+          "name": "Bannières et carrousel",
+          "slug": "admin.carousel"
+        },
+        {
+          "url": "/admin/home-sections",
+          "name": "Sections produits",
+          "slug": "admin.home-sections"
+        }
+      ]
     },
     {
       "url": "/admin/posts",

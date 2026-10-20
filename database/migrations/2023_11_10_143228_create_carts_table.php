@@ -8,6 +8,14 @@ class CreateCartsTable extends Migration
 {
     public function up()
     {
+        if (Schema::hasTable('carts')) {
+            Schema::table('carts', function (Blueprint $table) {
+                $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            });
+
+            return;
+        }
+
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable(); // Si votre application a des utilisateurs

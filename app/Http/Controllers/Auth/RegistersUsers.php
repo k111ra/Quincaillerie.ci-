@@ -1,9 +1,10 @@
 <?php
 
-namespace Illuminate\Foundation\Auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Models\Category;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
